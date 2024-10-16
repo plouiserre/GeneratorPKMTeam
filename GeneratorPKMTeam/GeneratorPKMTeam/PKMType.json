@@ -1,0 +1,1391 @@
+﻿{
+  "PKMTypes": [
+    {
+      "Nom": "Acier",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 1
+        }
+      ]
+    },
+    {
+      "Nom": "Combat",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 0
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 0.5
+        }
+      ]
+    },
+    {
+      "Nom": "Dragon",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 0
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 1
+        }
+      ]
+    },
+    {
+      "Nom": "Eau",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 1
+        }
+      ]
+    },
+    {
+      "Nom": "Electrique",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 2
+        }
+      ]
+    },
+    {
+      "Nom": "Fée",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 1
+        }
+      ]
+    },
+    {
+      "Nom": "Feu",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 1
+        }
+      ]
+    },
+    {
+      "Nom": "Glace",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 2
+        }
+      ]
+    },
+    {
+      "Nom": "Insecte",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 0.5
+        }
+      ]
+    },
+    {
+      "Nom": "Normal",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 0
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 1
+        }
+      ]
+    },
+    {
+      "Nom": "Plante",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 0.5
+        }
+      ]
+    },
+    {
+      "Nom": "Poison",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 0
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 1
+        }
+      ]
+    },
+    {
+      "Nom": "Psy",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 0
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 1
+        }
+      ]
+    },
+    {
+      "Nom": "Roche",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 2
+        }
+      ]
+    },
+    {
+      "Nom": "Sol",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 0
+        }
+      ]
+    },
+    {
+      "Nom": "Spectre",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 0
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 1
+        }
+      ]
+    },
+    {
+      "Nom": "Ténèbres",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 1
+        }
+      ]
+    },
+    {
+      "Nom": "Fée",
+      "RelPKMTypes": [
+        {
+          "TypePKM": "Acier",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Combat",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Dragon",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Eau",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Electrique",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Fée",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Feu",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Glace",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Insecte",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Normal",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Plante",
+          "ModeImpact": 2
+        },
+        {
+          "TypePKM": "Poison",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Psy",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Roche",
+          "ModeImpact": 0.5
+        },
+        {
+          "TypePKM": "Sol",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Spectre",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Ténèbres",
+          "ModeImpact": 1
+        },
+        {
+          "TypePKM": "Vol",
+          "ModeImpact": 1
+        }
+      ]
+    }
+  ]
+}
+
