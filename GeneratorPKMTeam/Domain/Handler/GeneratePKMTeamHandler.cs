@@ -9,15 +9,18 @@ namespace GeneratorPKMTeam.Domain.Handler
     public class GeneratePKMTeamHandler : IGeneratePKMTeamHandler
     {
         private ILoadPKMTypes _loadPKMTypes;
+        private ISelectPKMTypes _selectPKMTypes;
 
-        public GeneratePKMTeamHandler(ILoadPKMTypes loadPKMTypes)
+        public GeneratePKMTeamHandler(ILoadPKMTypes loadPKMTypes, ISelectPKMTypes selectPKMTypes)
         {
             _loadPKMTypes = loadPKMTypes;
+            _selectPKMTypes = selectPKMTypes;
         }
 
         public void Generate()
         {
-            _loadPKMTypes.GetPKMDatas();
+            var allPKMTypes = _loadPKMTypes.GetPKMDatas();
+            _selectPKMTypes.ChoosePKMTypes(allPKMTypes);
         }
     }
 }

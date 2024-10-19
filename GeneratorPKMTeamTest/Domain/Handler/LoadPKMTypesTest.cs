@@ -25,6 +25,11 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         [Fact]
         public void LoadPKMTypesFromJson()
         {
+            string[] expectedTypes = {
+                    "Acier", "Combat", "Dragon", "Eau", "Electrik", "Fée",
+                    "Feu", "Glace", "Insecte", "Normal", "Plante", "Poison",
+                    "Psy", "Roche", "Sol", "Spectre", "Ténèbres", "Vol"
+                };
             var persistence = Substitute.For<IPKMTypePersistence>();
             persistence.GetPKMDatas().Returns<PKMDatas>(_datasFake);
             var load = new LoadPKMTypes(persistence);
@@ -32,10 +37,11 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var result = load.GetPKMDatas();
 
             Assert.NotNull(result);
-            Assert.Equal(3, result.PKMTypes.Count);
-            Assert.Equal("Feu", result.PKMTypes[0].Nom);
-            Assert.Equal("Eau", result.PKMTypes[1].Nom);
-            Assert.Equal("Plante", result.PKMTypes[2].Nom);
+            Assert.Equal(18, result.PKMTypes.Count);
+            for (int i = 0; i < expectedTypes.Length; i++)
+            {
+                Assert.Equal(expectedTypes[i], result.PKMTypes[i].Nom);
+            }
         }
 
 

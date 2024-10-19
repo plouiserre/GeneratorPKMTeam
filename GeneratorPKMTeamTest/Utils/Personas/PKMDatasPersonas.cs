@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using GeneratorPKMTeam;
 
 namespace GeneratorPKMTeamTest.Utils.Personas
@@ -12,15 +8,16 @@ namespace GeneratorPKMTeamTest.Utils.Personas
         {
             var personas = new PKMDatas();
             personas.PKMTypes = new List<PKMType>();
-            var firstPKMType = new PKMType();
-            firstPKMType.Nom = "Feu";
-            var secondPKMType = new PKMType();
-            secondPKMType.Nom = "Eau";
-            var thirdPKMType = new PKMType();
-            thirdPKMType.Nom = "Plante";
-            personas.PKMTypes.Add(firstPKMType);
-            personas.PKMTypes.Add(secondPKMType);
-            personas.PKMTypes.Add(thirdPKMType);
+            string[] types = {
+                "Acier", "Combat", "Dragon", "Eau", "Electrik", "Fée",
+                "Feu", "Glace", "Insecte", "Normal", "Plante", "Poison",
+                "Psy", "Roche", "Sol", "Spectre", "Ténèbres", "Vol"
+            };
+
+            foreach (var type in types)
+            {
+                personas.PKMTypes.Add(new PKMType { Nom = type });
+            }
             return personas;
         }
     }
