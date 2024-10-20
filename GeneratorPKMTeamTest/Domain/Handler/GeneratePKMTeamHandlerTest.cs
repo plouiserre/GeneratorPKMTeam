@@ -27,7 +27,8 @@ namespace GeneratorPKMTeamTest.Domain.Handler
 
             var loadPKMTypes = new LoadPKMTypes(PMKPersistence);
             var selectPKMTypes = new SelectPKMTypes();
-            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes);
+            var fightPKMTypes = new FightPKMTypes();
+            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, fightPKMTypes);
 
             handler.Generate();
         }

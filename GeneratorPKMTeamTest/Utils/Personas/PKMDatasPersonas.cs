@@ -16,9 +16,26 @@ namespace GeneratorPKMTeamTest.Utils.Personas
 
             foreach (var type in types)
             {
-                personas.PKMTypes.Add(new PKMType { Nom = type });
+                var pkmType = new PKMType { Nom = type };
+                pkmType.RelPKMTypes = GenererRelPKMTypes(types);
+                personas.PKMTypes.Add(pkmType);
             }
             return personas;
+        }
+
+
+        private static List<RelPKMType> GenererRelPKMTypes(string[] types)
+        {
+            var relPKMTypesGeneres = new List<RelPKMType>();
+            float[] relValeurs = { 0.5f, 1, 2 };
+            foreach (string typePKM in types)
+            {
+                Random randomIndex = new Random();
+                int index = randomIndex.Next(0, 2);
+                float valeur = relValeurs[index];
+                relPKMTypesGeneres.Add(new RelPKMType() { TypePKM = typePKM, ModeImpact = valeur });
+            }
+            return relPKMTypesGeneres;
         }
     }
 }

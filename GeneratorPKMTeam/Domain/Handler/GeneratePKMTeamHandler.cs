@@ -10,17 +10,20 @@ namespace GeneratorPKMTeam.Domain.Handler
     {
         private ILoadPKMTypes _loadPKMTypes;
         private ISelectPKMTypes _selectPKMTypes;
+        private IFightPKMTypes _fightPKMTypes;
 
-        public GeneratePKMTeamHandler(ILoadPKMTypes loadPKMTypes, ISelectPKMTypes selectPKMTypes)
+        public GeneratePKMTeamHandler(ILoadPKMTypes loadPKMTypes, ISelectPKMTypes selectPKMTypes, IFightPKMTypes fightPKMTypes)
         {
             _loadPKMTypes = loadPKMTypes;
             _selectPKMTypes = selectPKMTypes;
+            _fightPKMTypes = fightPKMTypes;
         }
 
         public void Generate()
         {
             var allPKMTypes = _loadPKMTypes.GetPKMDatas();
-            _selectPKMTypes.ChoosePKMTypes(allPKMTypes);
+            var PKMTypesChoisis = _selectPKMTypes.ChoosePKMTypes(allPKMTypes);
+            var faiblesPKMTypes = _fightPKMTypes.RetournerTousFaiblesPKMTypes(PKMTypesChoisis);
         }
     }
 }
