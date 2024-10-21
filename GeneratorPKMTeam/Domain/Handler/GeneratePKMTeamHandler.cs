@@ -11,12 +11,15 @@ namespace GeneratorPKMTeam.Domain.Handler
         private ILoadPKMTypes _loadPKMTypes;
         private ISelectPKMTypes _selectPKMTypes;
         private IFightPKMTypes _fightPKMTypes;
+        private IResultFightPKMTypes _resultFightPKMTypes;
 
-        public GeneratePKMTeamHandler(ILoadPKMTypes loadPKMTypes, ISelectPKMTypes selectPKMTypes, IFightPKMTypes fightPKMTypes)
+        public GeneratePKMTeamHandler(ILoadPKMTypes loadPKMTypes, ISelectPKMTypes selectPKMTypes,
+                IFightPKMTypes fightPKMTypes, IResultFightPKMTypes resultFightPKMTypes)
         {
             _loadPKMTypes = loadPKMTypes;
             _selectPKMTypes = selectPKMTypes;
             _fightPKMTypes = fightPKMTypes;
+            _resultFightPKMTypes = resultFightPKMTypes;
         }
 
         public void Generate()
@@ -24,6 +27,7 @@ namespace GeneratorPKMTeam.Domain.Handler
             var allPKMTypes = _loadPKMTypes.GetPKMDatas();
             var PKMTypesChoisis = _selectPKMTypes.ChoosePKMTypes(allPKMTypes);
             var faiblesPKMTypes = _fightPKMTypes.RetournerTousFaiblesPKMTypes(PKMTypesChoisis);
+            var classificationResult = _resultFightPKMTypes.AccepterResultatTirage(faiblesPKMTypes);
         }
     }
 }
