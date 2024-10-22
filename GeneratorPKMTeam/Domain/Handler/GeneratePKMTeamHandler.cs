@@ -26,8 +26,8 @@ namespace GeneratorPKMTeam.Domain.Handler
         {
             var allPKMTypes = _loadPKMTypes.GetPKMDatas();
             var PKMTypesChoisis = _selectPKMTypes.ChoosePKMTypes(allPKMTypes);
-            var faiblesPKMTypes = _fightPKMTypes.RetournerTousFaiblesPKMTypes(PKMTypesChoisis);
-            var classificationResult = _resultFightPKMTypes.AccepterResultatTirage(faiblesPKMTypes);
+            var PKMTypesfaibles = _fightPKMTypes.RetournerTousFaiblesPKMTypes(PKMTypesChoisis);
+            var classificationResult = _resultFightPKMTypes.NoterResultatTirage(PKMTypesfaibles);
         }
     }
 }

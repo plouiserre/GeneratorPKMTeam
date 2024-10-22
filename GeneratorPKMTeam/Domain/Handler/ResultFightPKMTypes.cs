@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using GeneratorPKMTeam.Domain.Models;
 
 namespace GeneratorPKMTeam.Domain.Handler
@@ -9,15 +5,22 @@ namespace GeneratorPKMTeam.Domain.Handler
     public class ResultFightPKMTypes : IResultFightPKMTypes
     {
         private const double NombrePKMTypes = 18;
-        public ResultatTirageStatus AccepterResultatTirage(List<RelPKMType> listPKMTypesFaibles)
+
+        public ResultatTirage NoterResultatTirage(List<RelPKMType> listPKMTypesFaibles)
         {
             double pourcentPKMTypesFaiblesTrouves = listPKMTypesFaibles.Count / NombrePKMTypes * 100;
             if (pourcentPKMTypesFaiblesTrouves <= 30)
-                return ResultatTirageStatus.Faible;
+                return BuildResultatTirage(pourcentPKMTypesFaiblesTrouves, ResultatTirageStatus.Faible);
             else if (pourcentPKMTypesFaiblesTrouves <= 80)
-                return ResultatTirageStatus.Acceptable;
+                return BuildResultatTirage(pourcentPKMTypesFaiblesTrouves, ResultatTirageStatus.Acceptable);
             else
-                return ResultatTirageStatus.Parfait;
+                return BuildResultatTirage(pourcentPKMTypesFaiblesTrouves, ResultatTirageStatus.Parfait);
+        }
+
+        private ResultatTirage BuildResultatTirage(double pourcent, ResultatTirageStatus status)
+        {
+            var resultatTirage = new ResultatTirage() { NoteResultatTirage = pourcent, ResultatStatus = status };
+            return resultatTirage;
         }
     }
 }

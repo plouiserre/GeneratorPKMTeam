@@ -31,7 +31,7 @@ namespace GeneratorPKMTeamTest.Utils.Personas
             foreach (string typePKM in types)
             {
                 Random randomIndex = new Random();
-                int index = randomIndex.Next(0, 2);
+                int index = randomIndex.Next(0, 3);
                 float valeur = relValeurs[index];
                 relPKMTypesGeneres.Add(new RelPKMType() { TypePKM = typePKM, ModeImpact = valeur });
             }

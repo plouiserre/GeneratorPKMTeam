@@ -45,9 +45,10 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         {
             var resultFightPKMTypes = new ResultFightPKMTypes();
 
-            var decision = resultFightPKMTypes.AccepterResultatTirage(peuPKMTypesFaibles);
+            var resultat = resultFightPKMTypes.NoterResultatTirage(peuPKMTypesFaibles);
 
-            Assert.Equal(ResultatTirageStatus.Faible, decision);
+            Assert.Equal(ResultatTirageStatus.Faible, resultat.ResultatStatus);
+            Assert.True(resultat.NoteResultatTirage < 30);
         }
 
 
@@ -56,9 +57,10 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         {
             var resultFightPKMTypes = new ResultFightPKMTypes();
 
-            var decision = resultFightPKMTypes.AccepterResultatTirage(quelquesPKMTypesFaibles);
+            var resultat = resultFightPKMTypes.NoterResultatTirage(quelquesPKMTypesFaibles);
 
-            Assert.Equal(ResultatTirageStatus.Acceptable, decision);
+            Assert.Equal(ResultatTirageStatus.Acceptable, resultat.ResultatStatus);
+            Assert.True(resultat.NoteResultatTirage < 80);
         }
 
         [Fact]
@@ -66,9 +68,10 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         {
             var resultFightPKMTypes = new ResultFightPKMTypes();
 
-            var decision = resultFightPKMTypes.AccepterResultatTirage(bcpPKMTypesFaibles);
+            var resultat = resultFightPKMTypes.NoterResultatTirage(bcpPKMTypesFaibles);
 
-            Assert.Equal(ResultatTirageStatus.Parfait, decision);
+            Assert.Equal(ResultatTirageStatus.Parfait, resultat.ResultatStatus);
+            Assert.True(resultat.NoteResultatTirage > 80);
         }
     }
 }
