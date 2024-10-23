@@ -45,14 +45,14 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         public void GererTirageFaibleAvecListeTiragePleine()
         {
             var premierTirageFaible = BuildTiragePKMTypesDataTest(10, ResultatTirageStatus.Faible);
-            var secondTirageAcceptable = BuildTiragePKMTypesDataTest(47, ResultatTirageStatus.Acceptable);
-            var troisiemeTirageParfait = BuildTiragePKMTypesDataTest(87, ResultatTirageStatus.Parfait);
+            var secondTirageAcceptable = BuildTiragePKMTypesDataTest(67, ResultatTirageStatus.Acceptable);
+            var troisiemeTirageParfait = BuildTiragePKMTypesDataTest(100, ResultatTirageStatus.Parfait);
             var quatriemeTirageFaible = BuildTiragePKMTypesDataTest(6.66, ResultatTirageStatus.Faible);
             var cinquièmeTirageAcceptable = BuildTiragePKMTypesDataTest(77, ResultatTirageStatus.Acceptable);
-            var sixiemeTirageParfait = BuildTiragePKMTypesDataTest(99.99, ResultatTirageStatus.Parfait);
+            var sixiemeTirageParfait = BuildTiragePKMTypesDataTest(100, ResultatTirageStatus.Parfait);
             var septiemeTirageFaible = BuildTiragePKMTypesDataTest(24.87, ResultatTirageStatus.Faible);
-            var huitiemeTirageAcceptable = BuildTiragePKMTypesDataTest(47, ResultatTirageStatus.Acceptable);
-            var neuviemeTirageParfait = BuildTiragePKMTypesDataTest(88.99, ResultatTirageStatus.Parfait);
+            var huitiemeTirageAcceptable = BuildTiragePKMTypesDataTest(62, ResultatTirageStatus.Acceptable);
+            var neuviemeTirageParfait = BuildTiragePKMTypesDataTest(100, ResultatTirageStatus.Parfait);
             var dixiemeTirageFaible = BuildTiragePKMTypesDataTest(8.65, ResultatTirageStatus.Faible);
             var precedentsTiragesSauvegardes = new List<TiragePKMTypes>() { premierTirageFaible, secondTirageAcceptable,
             troisiemeTirageParfait, quatriemeTirageFaible, cinquièmeTirageAcceptable, sixiemeTirageParfait,
@@ -75,19 +75,19 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         {
             double scorePlusFaible = 6.66;
             var premierTirageFaible = BuildTiragePKMTypesDataTest(10, ResultatTirageStatus.Faible);
-            var secondTirageAcceptable = BuildTiragePKMTypesDataTest(47, ResultatTirageStatus.Acceptable);
-            var troisiemeTirageParfait = BuildTiragePKMTypesDataTest(87, ResultatTirageStatus.Parfait);
+            var secondTirageAcceptable = BuildTiragePKMTypesDataTest(67, ResultatTirageStatus.Acceptable);
+            var troisiemeTirageParfait = BuildTiragePKMTypesDataTest(100, ResultatTirageStatus.Parfait);
             var quatriemeTirageFaible = BuildTiragePKMTypesDataTest(scorePlusFaible, ResultatTirageStatus.Faible);
             var cinquièmeTirageAcceptable = BuildTiragePKMTypesDataTest(77, ResultatTirageStatus.Acceptable);
-            var sixiemeTirageParfait = BuildTiragePKMTypesDataTest(99.99, ResultatTirageStatus.Parfait);
+            var sixiemeTirageParfait = BuildTiragePKMTypesDataTest(100, ResultatTirageStatus.Parfait);
             var septiemeTirageFaible = BuildTiragePKMTypesDataTest(24.87, ResultatTirageStatus.Faible);
-            var huitiemeTirageAcceptable = BuildTiragePKMTypesDataTest(47, ResultatTirageStatus.Acceptable);
-            var neuviemeTirageParfait = BuildTiragePKMTypesDataTest(88.99, ResultatTirageStatus.Parfait);
-            var dixiemeTirageFaible = BuildTiragePKMTypesDataTest(8.65, ResultatTirageStatus.Acceptable);
+            var huitiemeTirageAcceptable = BuildTiragePKMTypesDataTest(92.87, ResultatTirageStatus.Acceptable);
+            var neuviemeTirageParfait = BuildTiragePKMTypesDataTest(100, ResultatTirageStatus.Parfait);
+            var dixiemeTirageFaible = BuildTiragePKMTypesDataTest(88.65, ResultatTirageStatus.Acceptable);
             var precedentsTiragesSauvegardes = new List<TiragePKMTypes>() { premierTirageFaible, secondTirageAcceptable,
             troisiemeTirageParfait, quatriemeTirageFaible, cinquièmeTirageAcceptable, sixiemeTirageParfait,
             septiemeTirageFaible, huitiemeTirageAcceptable, neuviemeTirageParfait, dixiemeTirageFaible };
-            var nouveauTirage = BuildTiragePKMTypesDataTest(42.0, ResultatTirageStatus.Acceptable);
+            var nouveauTirage = BuildTiragePKMTypesDataTest(62.0, ResultatTirageStatus.Acceptable);
 
             var gererTirage = new GererResultatTiragePKMTypes();
 
@@ -98,7 +98,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             {
                 Assert.NotEqual(scorePlusFaible, tirage.NoteTirage);
             }
-            Assert.Equal(42.0, tirages[9].NoteTirage);
+            Assert.Equal(62.0, tirages[9].NoteTirage);
             Assert.Equal(ResultatTirageStatus.Acceptable, tirages[9].ResultatTirageStatus);
         }
 
@@ -106,17 +106,17 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         public void GererDeuxTirageAcceptablesAvecListeTiragePleineComposesAcceptablesParfaits()
         {
             double premierNouveauTirageNote = 79.99;
-            double secondNouveauTirageNote = 34.98;
-            var premierTirageFaible = BuildTiragePKMTypesDataTest(36, ResultatTirageStatus.Acceptable);
-            var secondTirageAcceptable = BuildTiragePKMTypesDataTest(47, ResultatTirageStatus.Acceptable);
-            var troisiemeTirageParfait = BuildTiragePKMTypesDataTest(87, ResultatTirageStatus.Parfait);
+            double secondNouveauTirageNote = 64.98;
+            var premierTirageFaible = BuildTiragePKMTypesDataTest(66, ResultatTirageStatus.Acceptable);
+            var secondTirageAcceptable = BuildTiragePKMTypesDataTest(67, ResultatTirageStatus.Acceptable);
+            var troisiemeTirageParfait = BuildTiragePKMTypesDataTest(100, ResultatTirageStatus.Parfait);
             var quatriemeTirageFaible = BuildTiragePKMTypesDataTest(89.89, ResultatTirageStatus.Parfait);
             var cinquièmeTirageAcceptable = BuildTiragePKMTypesDataTest(77, ResultatTirageStatus.Acceptable);
-            var sixiemeTirageParfait = BuildTiragePKMTypesDataTest(99.99, ResultatTirageStatus.Parfait);
+            var sixiemeTirageParfait = BuildTiragePKMTypesDataTest(100, ResultatTirageStatus.Parfait);
             var septiemeTirageFaible = BuildTiragePKMTypesDataTest(69.0, ResultatTirageStatus.Acceptable);
-            var huitiemeTirageAcceptable = BuildTiragePKMTypesDataTest(47, ResultatTirageStatus.Acceptable);
-            var neuviemeTirageParfait = BuildTiragePKMTypesDataTest(88.99, ResultatTirageStatus.Parfait);
-            var dixiemeTirageFaible = BuildTiragePKMTypesDataTest(58.65, ResultatTirageStatus.Acceptable);
+            var huitiemeTirageAcceptable = BuildTiragePKMTypesDataTest(68.9, ResultatTirageStatus.Acceptable);
+            var neuviemeTirageParfait = BuildTiragePKMTypesDataTest(100, ResultatTirageStatus.Parfait);
+            var dixiemeTirageFaible = BuildTiragePKMTypesDataTest(65.65, ResultatTirageStatus.Acceptable);
             var precedentsTiragesSauvegardes = new List<TiragePKMTypes>() { premierTirageFaible, secondTirageAcceptable,
             troisiemeTirageParfait, quatriemeTirageFaible, cinquièmeTirageAcceptable, sixiemeTirageParfait,
             septiemeTirageFaible, huitiemeTirageAcceptable, neuviemeTirageParfait, dixiemeTirageFaible };
@@ -135,41 +135,6 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             }
             Assert.Equal(premierNouveauTirageNote, tirages[9].NoteTirage);
             Assert.Equal(ResultatTirageStatus.Acceptable, tirages[9].ResultatTirageStatus);
-        }
-
-        [Fact]
-        public void GererDeuxTirageParfaitsAvecListeTiragePleineComposesParfaits()
-        {
-            double premierNouveauTirageNote = 89.99;
-            double secondNouveauTirageNote = 80.98;
-            var premierTirageFaible = BuildTiragePKMTypesDataTest(82.98, ResultatTirageStatus.Parfait);
-            var secondTirageAcceptable = BuildTiragePKMTypesDataTest(97.86, ResultatTirageStatus.Parfait);
-            var troisiemeTirageParfait = BuildTiragePKMTypesDataTest(87, ResultatTirageStatus.Parfait);
-            var quatriemeTirageFaible = BuildTiragePKMTypesDataTest(89.89, ResultatTirageStatus.Parfait);
-            var cinquièmeTirageAcceptable = BuildTiragePKMTypesDataTest(85.25, ResultatTirageStatus.Parfait);
-            var sixiemeTirageParfait = BuildTiragePKMTypesDataTest(93.99, ResultatTirageStatus.Parfait);
-            var septiemeTirageFaible = BuildTiragePKMTypesDataTest(89.69, ResultatTirageStatus.Parfait);
-            var huitiemeTirageAcceptable = BuildTiragePKMTypesDataTest(94, ResultatTirageStatus.Parfait);
-            var neuviemeTirageParfait = BuildTiragePKMTypesDataTest(88.99, ResultatTirageStatus.Parfait);
-            var dixiemeTirageFaible = BuildTiragePKMTypesDataTest(88.65, ResultatTirageStatus.Parfait);
-            var precedentsTiragesSauvegardes = new List<TiragePKMTypes>() { premierTirageFaible, secondTirageAcceptable,
-            troisiemeTirageParfait, quatriemeTirageFaible, cinquièmeTirageAcceptable, sixiemeTirageParfait,
-            septiemeTirageFaible, huitiemeTirageAcceptable, neuviemeTirageParfait, dixiemeTirageFaible };
-            var premierNouveauTirage = BuildTiragePKMTypesDataTest(premierNouveauTirageNote, ResultatTirageStatus.Parfait);
-            var secondNouveauTirage = BuildTiragePKMTypesDataTest(secondNouveauTirageNote, ResultatTirageStatus.Parfait);
-
-            var gererTirage = new GererResultatTiragePKMTypes();
-
-            List<TiragePKMTypes> tirages = gererTirage.TirerPKMTypes(precedentsTiragesSauvegardes, premierNouveauTirage);
-            tirages = gererTirage.TirerPKMTypes(tirages, secondNouveauTirage);
-
-            Assert.True(10 == tirages.Count);
-            foreach (var tirage in tirages)
-            {
-                Assert.NotEqual(secondNouveauTirageNote, tirage.NoteTirage);
-            }
-            Assert.Equal(premierNouveauTirageNote, tirages[9].NoteTirage);
-            Assert.Equal(ResultatTirageStatus.Parfait, tirages[9].ResultatTirageStatus);
         }
 
         private TiragePKMTypes BuildTiragePKMTypesDataTest(double NoteTirage, ResultatTirageStatus resultatTirageStatus)

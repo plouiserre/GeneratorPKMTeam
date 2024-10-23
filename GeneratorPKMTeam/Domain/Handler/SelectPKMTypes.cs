@@ -15,7 +15,7 @@ namespace GeneratorPKMTeam.Domain.Handler
 
         public List<PKMType> ChoosePKMTypes(PKMDatas datas)
         {
-            _datas = datas;
+            _datas = datas.Clone() as PKMDatas;
             var pkmTypes = new List<PKMType>();
             var allPKMTypes = _datas.PKMTypes;
             for (int i = 0; i < 9; i++)

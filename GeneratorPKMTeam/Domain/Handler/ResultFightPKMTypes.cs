@@ -9,9 +9,9 @@ namespace GeneratorPKMTeam.Domain.Handler
         public ResultatTirage NoterResultatTirage(List<RelPKMType> listPKMTypesFaibles)
         {
             double pourcentPKMTypesFaiblesTrouves = listPKMTypesFaibles.Count / NombrePKMTypes * 100;
-            if (pourcentPKMTypesFaiblesTrouves <= 30)
+            if (pourcentPKMTypesFaiblesTrouves < 60)
                 return BuildResultatTirage(pourcentPKMTypesFaiblesTrouves, ResultatTirageStatus.Faible);
-            else if (pourcentPKMTypesFaiblesTrouves <= 80)
+            else if (pourcentPKMTypesFaiblesTrouves < 100)
                 return BuildResultatTirage(pourcentPKMTypesFaiblesTrouves, ResultatTirageStatus.Acceptable);
             else
                 return BuildResultatTirage(pourcentPKMTypesFaiblesTrouves, ResultatTirageStatus.Parfait);

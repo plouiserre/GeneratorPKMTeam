@@ -38,6 +38,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
                 new RelPKMType(){TypePKM="Sol", ModeImpact=2},
                 new RelPKMType(){TypePKM="Spectre", ModeImpact=2},
                 new RelPKMType(){TypePKM="Tenèbres", ModeImpact=2},
+                new RelPKMType(){TypePKM="Vol", ModeImpact=2},
             };
         }
         [Fact]
