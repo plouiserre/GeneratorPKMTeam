@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GeneratorPKMTeam.Domain.CustomException;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driving;
 
@@ -31,8 +32,11 @@ namespace GeneratorPKMTeam.Domain.Handler
         public void Generate()
         {
             var allPKMTypes = _loadPKMTypes.GetPKMDatas();
+            int count = 0;
             while (ContinuerACalculer())
             {
+                if (count >= 100)
+                    throw new CombinaisonParfaitesIntrouvablesException();
                 var PKMTypesChoisis = _selectPKMTypes.ChoosePKMTypes(allPKMTypes);
                 var PKMTypesfaibles = _fightPKMTypes.RetournerTousFaiblesPKMTypes(PKMTypesChoisis);
                 var classificationResult = _resultFightPKMTypes.NoterResultatTirage(PKMTypesfaibles);
@@ -43,6 +47,7 @@ namespace GeneratorPKMTeam.Domain.Handler
                     PKMTypes = PKMTypesChoisis
                 };
                 TiragePKMTypes = _gererResultatTiragePKMTypes.TirerPKMTypes(TiragePKMTypes, tirageATraiter);
+                count += 1;
             }
         }
 
