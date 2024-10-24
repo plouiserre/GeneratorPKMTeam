@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    public interface ILoadPKMTypes
+    public interface IChargerPKMTypes
     {
-        PKMDatas GetPKMDatas();
+        PKMDonnees AvoirPKMDatas();
     }
 }

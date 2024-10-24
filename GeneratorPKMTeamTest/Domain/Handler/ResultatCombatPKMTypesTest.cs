@@ -8,13 +8,13 @@ using GeneratorPKMTeam.Domain.Models;
 
 namespace GeneratorPKMTeamTest.Domain.Handler
 {
-    public class ResultFightPKMTypesTest
+    public class ResultatCombatPKMTypesTest
     {
         private List<RelPKMType> peuPKMTypesFaibles;
         private List<RelPKMType> quelquesPKMTypesFaibles;
         private List<RelPKMType> bcpPKMTypesFaibles;
 
-        public ResultFightPKMTypesTest()
+        public ResultatCombatPKMTypesTest()
         {
             peuPKMTypesFaibles = new List<RelPKMType>(){
                 new RelPKMType(){TypePKM="Acier", ModeImpact=2},

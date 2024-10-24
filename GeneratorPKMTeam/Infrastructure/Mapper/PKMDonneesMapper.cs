@@ -6,11 +6,11 @@ using GeneratorPKMTeam.Infrastructure.Connector.JsonModels;
 
 namespace GeneratorPKMTeam.Infrastructure.Mapper
 {
-    public class PKMDatasMapper
+    public class PKMDonneesMapper
     {
-        public static PKMDatas ToDomain(PKMDatasInf json)
+        public static PKMDonnees ToDomain(PKMDonneesInf json)
         {
-            return new PKMDatas() { PKMTypes = json.PKMTypes.Select(o => ToDomain(o)).ToList() };
+            return new PKMDonnees() { PKMTypes = json.PKMTypes.Select(o => ToDomain(o)).ToList() };
         }
 
         private static PKMType ToDomain(PKMTypeInf type)

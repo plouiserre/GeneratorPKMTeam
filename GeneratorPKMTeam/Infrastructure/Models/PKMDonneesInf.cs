@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GeneratorPKMTeam.Infrastructure.Connector.JsonModels
 {
-    public class PKMDatasInf
+    public class PKMDonneesInf
     {
         public List<PKMTypeInf> PKMTypes { get; set; }
     }

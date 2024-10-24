@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using GeneratorPKMTeam.Domain.CustomException;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driving;
@@ -10,36 +6,36 @@ namespace GeneratorPKMTeam.Domain.Handler
 {
     public class GeneratePKMTeamHandler : IGeneratePKMTeamHandler
     {
-        private ILoadPKMTypes _loadPKMTypes;
-        private ISelectPKMTypes _selectPKMTypes;
-        private IFightPKMTypes _fightPKMTypes;
-        private IResultFightPKMTypes _resultFightPKMTypes;
+        private IChargerPKMTypes _chargementPKMTypes;
+        private IChoisirPKMTypes _choisirPKMTypes;
+        private ICombattrePKMTypes _combattrePKMTypes;
+        private IResultCombatPKMTypes _resultCombatPKMTypes;
         private IGererResultatTiragePKMTypes _gererResultatTiragePKMTypes;
         public List<TiragePKMTypes> TiragePKMTypes;
 
-        public GeneratePKMTeamHandler(ILoadPKMTypes loadPKMTypes, ISelectPKMTypes selectPKMTypes,
-                IFightPKMTypes fightPKMTypes, IResultFightPKMTypes resultFightPKMTypes, IGererResultatTiragePKMTypes
-                gererResultatTiragePKMTypes)
+        public GeneratePKMTeamHandler(IChargerPKMTypes chargementPKMTypes, IChoisirPKMTypes choisirPKMTypes,
+                ICombattrePKMTypes combattrePKMTypes, IResultCombatPKMTypes resultCombatPKMTypes,
+                IGererResultatTiragePKMTypes gererResultatTiragePKMTypes)
         {
-            _loadPKMTypes = loadPKMTypes;
-            _selectPKMTypes = selectPKMTypes;
-            _fightPKMTypes = fightPKMTypes;
-            _resultFightPKMTypes = resultFightPKMTypes;
+            _chargementPKMTypes = chargementPKMTypes;
+            _choisirPKMTypes = choisirPKMTypes;
+            _combattrePKMTypes = combattrePKMTypes;
+            _resultCombatPKMTypes = resultCombatPKMTypes;
             _gererResultatTiragePKMTypes = gererResultatTiragePKMTypes;
             TiragePKMTypes = new List<TiragePKMTypes>();
         }
 
-        public void Generate()
+        public void Generer()
         {
-            var allPKMTypes = _loadPKMTypes.GetPKMDatas();
-            int count = 0;
+            var tousPKMTypes = _chargementPKMTypes.AvoirPKMDatas();
+            int comptage = 0;
             while (ContinuerACalculer())
             {
-                if (count >= 100)
+                if (comptage >= 100)
                     throw new CombinaisonParfaitesIntrouvablesException();
-                var PKMTypesChoisis = _selectPKMTypes.ChoosePKMTypes(allPKMTypes);
-                var PKMTypesfaibles = _fightPKMTypes.RetournerTousFaiblesPKMTypes(PKMTypesChoisis);
-                var classificationResult = _resultFightPKMTypes.NoterResultatTirage(PKMTypesfaibles);
+                var PKMTypesChoisis = _choisirPKMTypes.SelectionnerPKMTypes(tousPKMTypes);
+                var PKMTypesfaibles = _combattrePKMTypes.RetournerTousFaiblesPKMTypes(PKMTypesChoisis);
+                var classificationResult = _resultCombatPKMTypes.NoterResultatTirage(PKMTypesfaibles);
                 var tirageATraiter = new TiragePKMTypes()
                 {
                     ResultatTirageStatus = classificationResult.ResultatStatus,
@@ -47,7 +43,7 @@ namespace GeneratorPKMTeam.Domain.Handler
                     PKMTypes = PKMTypesChoisis
                 };
                 TiragePKMTypes = _gererResultatTiragePKMTypes.TirerPKMTypes(TiragePKMTypes, tirageATraiter);
-                count += 1;
+                comptage += 1;
             }
         }
 

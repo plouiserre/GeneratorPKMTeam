@@ -7,19 +7,19 @@ using GeneratorPKMTeam.Domain.Port.Driven;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    public class LoadPKMTypes : ILoadPKMTypes
+    public class ChargerPKMTypes : IChargerPKMTypes
     {
         private IPKMTypePersistence _persistence;
-        public LoadPKMTypes(IPKMTypePersistence persistence)
+        public ChargerPKMTypes(IPKMTypePersistence persistence)
         {
             _persistence = persistence;
         }
 
-        public PKMDatas GetPKMDatas()
+        public PKMDonnees AvoirPKMDatas()
         {
-            var data = _persistence.GetPKMDatas();
+            var data = _persistence.GetPKMDonnees();
             if (data == null || data.PKMTypes == null || data.PKMTypes.Count == 0)
-                throw new LoadingPKMTypesException();
+                throw new ChargementTypesPKMException();
             return data;
         }
     }

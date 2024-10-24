@@ -2,11 +2,11 @@ using GeneratorPKMTeam;
 
 namespace GeneratorPKMTeamTest.Utils.Personas
 {
-    public class PKMDatasPersonas
+    public class PKMDonneesPersonas
     {
-        public static PKMDatas GetPersonas()
+        public static PKMDonnees GetPersonas()
         {
-            var personas = new PKMDatas();
+            var personas = new PKMDonnees();
             personas.PKMTypes = new List<PKMType>();
             string[] types = {
                 "Acier", "Combat", "Dragon", "Eau", "Electrik", "Fée",

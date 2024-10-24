@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 
 namespace GeneratorPKMTeam.Domain.CustomException
 {
-    public class LoadingPKMTypesException : Exception
+    public class ChargementTypesPKMException : Exception
     {
         public string CustomMessage { get; set; }
-        public ErrorType ErrorType { get; set; }
+        public TypeErreur TypeErreur { get; set; }
 
-        public LoadingPKMTypesException()
+        public ChargementTypesPKMException()
         {
             CustomMessage = "Aucune donnée n'a été récupérée";
-            ErrorType = ErrorType.NoPKMTypesData;
+            TypeErreur = TypeErreur.NoPKMTypesData;
         }
     }
 }

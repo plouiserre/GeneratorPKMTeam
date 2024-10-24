@@ -7,6 +7,6 @@ namespace GeneratorPKMTeam.Domain.Port.Driving
 {
     public interface IGeneratePKMTeamHandler
     {
-        void Generate();
+        void Generer();
     }
 }

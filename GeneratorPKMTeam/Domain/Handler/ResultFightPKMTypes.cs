@@ -2,7 +2,7 @@ using GeneratorPKMTeam.Domain.Models;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    public class ResultFightPKMTypes : IResultFightPKMTypes
+    public class ResultFightPKMTypes : IResultCombatPKMTypes
     {
         private const double NombrePKMTypes = 18;
 

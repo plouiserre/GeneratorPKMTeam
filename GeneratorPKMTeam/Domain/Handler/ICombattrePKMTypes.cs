@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    public interface IFightPKMTypes
+    public interface ICombattrePKMTypes
     {
         public List<RelPKMType> RetournerTousFaiblesPKMTypes(List<PKMType> pkmTypes);
     }

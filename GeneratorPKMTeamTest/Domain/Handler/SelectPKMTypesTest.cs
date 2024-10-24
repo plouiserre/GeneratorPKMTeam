@@ -11,29 +11,29 @@ namespace GeneratorPKMTeamTest.Domain.Handler
 {
     public class SelectPKMTypesTest
     {
-        private PKMDatas _datasFake;
+        private PKMDonnees _datasFake;
 
         public SelectPKMTypesTest()
         {
-            _datasFake = PKMDatasPersonas.GetPersonas();
+            _datasFake = PKMDonneesPersonas.GetPersonas();
         }
 
         [Fact]
-        public void ShouldBeReturnNinePKMTypes()
+        public void DoitRetournerNeufPKMTypes()
         {
-            var selectPKMTypes = new SelectPKMTypes();
+            var selectPKMTypes = new ChoisirPKMTypes();
 
-            var result = selectPKMTypes.ChoosePKMTypes(_datasFake);
+            var result = selectPKMTypes.SelectionnerPKMTypes(_datasFake);
 
             Assert.Equal(9, result.Count);
         }
 
         [Fact]
-        public void ShouldBeReturnNineDifferentsPKMTypes()
+        public void DoitRetournerNeufDifferentsPKMTypes()
         {
-            var selectPKMTypes = new SelectPKMTypes();
+            var selectPKMTypes = new ChoisirPKMTypes();
 
-            var result = selectPKMTypes.ChoosePKMTypes(_datasFake);
+            var result = selectPKMTypes.SelectionnerPKMTypes(_datasFake);
 
             for (int i = 0; i < 9; i++)
             {
@@ -45,17 +45,23 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         }
 
         [Fact]
-        public void ShouldBeReturnDifferentsResultInEachRun()
+        public void DoitRetournerDifferentsResultatAChaqueLancement()
         {
-            var selectPKMTypes = new SelectPKMTypes();
+            var selectPKMTypes = new ChoisirPKMTypes();
 
-            var firstResult = selectPKMTypes.ChoosePKMTypes(_datasFake);
-            var secondResult = selectPKMTypes.ChoosePKMTypes(_datasFake);
+            var firstResult = selectPKMTypes.SelectionnerPKMTypes(_datasFake);
+            var secondResult = selectPKMTypes.SelectionnerPKMTypes(_datasFake);
 
+            bool toutEstEgal = true;
             for (int i = 0; i < 9; i++)
             {
-                Assert.NotEqual(firstResult[i].Nom, secondResult[i].Nom);
+                if (firstResult[i].Nom != secondResult[i].Nom)
+                {
+                    toutEstEgal = false;
+                    break;
+                }
             }
+            Assert.False(toutEstEgal);
         }
     }
 }

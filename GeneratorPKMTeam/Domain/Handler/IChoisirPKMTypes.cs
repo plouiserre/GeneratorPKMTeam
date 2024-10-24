@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    public interface ISelectPKMTypes
+    public interface IChoisirPKMTypes
     {
-        List<PKMType> ChoosePKMTypes(PKMDatas datas);
+        List<PKMType> SelectionnerPKMTypes(PKMDonnees datas);
     }
 }

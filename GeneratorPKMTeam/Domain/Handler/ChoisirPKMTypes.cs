@@ -5,17 +5,17 @@ using System.Threading.Tasks;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    public class SelectPKMTypes : ISelectPKMTypes
+    public class ChoisirPKMTypes : IChoisirPKMTypes
     {
-        private PKMDatas _datas;
+        private PKMDonnees _datas;
 
-        public SelectPKMTypes()
+        public ChoisirPKMTypes()
         {
         }
 
-        public List<PKMType> ChoosePKMTypes(PKMDatas datas)
+        public List<PKMType> SelectionnerPKMTypes(PKMDonnees datas)
         {
-            _datas = datas.Clone() as PKMDatas;
+            _datas = datas.Clone() as PKMDonnees;
             var pkmTypes = new List<PKMType>();
             var allPKMTypes = _datas.PKMTypes;
             for (int i = 0; i < 9; i++)

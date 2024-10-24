@@ -1,17 +1,17 @@
 ﻿using System;
 namespace GeneratorPKMTeam
 {
-	public class PKMDatas : ICloneable
+	public class PKMDonnees : ICloneable
 	{
 		public List<PKMType> PKMTypes { get; set; }
 
-		public PKMDatas()
+		public PKMDonnees()
 		{
 		}
 
 		public object Clone()
 		{
-			var PKMDatasCopie = new PKMDatas();
+			var PKMDatasCopie = new PKMDonnees();
 			PKMDatasCopie.PKMTypes = new List<PKMType>();
 			foreach (var PKMType in PKMTypes)
 			{

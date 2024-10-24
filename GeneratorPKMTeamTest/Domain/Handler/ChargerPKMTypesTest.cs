@@ -12,18 +12,18 @@ using GeneratorPKMTeamTest.Utils.Personas;
 
 namespace GeneratorPKMTeamTest.Domain.Handler
 {
-    public class LoadPKMTypesTest
+    public class ChargerPKMTypesTest
     {
 
-        private PKMDatas _datasFake;
+        private PKMDonnees _datasFake;
 
-        public LoadPKMTypesTest()
+        public ChargerPKMTypesTest()
         {
-            _datasFake = PKMDatasPersonas.GetPersonas();
+            _datasFake = PKMDonneesPersonas.GetPersonas();
         }
 
         [Fact]
-        public void LoadPKMTypesFromJson()
+        public void ChargerPKMTypesFromJson()
         {
             string[] expectedTypes = {
                     "Acier", "Combat", "Dragon", "Eau", "Electrik", "Fée",
@@ -31,10 +31,10 @@ namespace GeneratorPKMTeamTest.Domain.Handler
                     "Psy", "Roche", "Sol", "Spectre", "Ténèbres", "Vol"
                 };
             var persistence = Substitute.For<IPKMTypePersistence>();
-            persistence.GetPKMDatas().Returns<PKMDatas>(_datasFake);
-            var load = new LoadPKMTypes(persistence);
+            persistence.GetPKMDonnees().Returns<PKMDonnees>(_datasFake);
+            var load = new ChargerPKMTypes(persistence);
 
-            var result = load.GetPKMDatas();
+            var result = load.AvoirPKMDatas();
 
             Assert.NotNull(result);
             Assert.Equal(18, result.PKMTypes.Count);
@@ -46,16 +46,16 @@ namespace GeneratorPKMTeamTest.Domain.Handler
 
 
         [Fact]
-        public void ThrowsLoadingPKMTypesExceptionWhenLoadingFailed()
+        public void LancerChargementTypesPKMExceptionQuandChargementEchoue()
         {
             var persistence = Substitute.For<IPKMTypePersistence>();
-            persistence.GetPKMDatas().Returns<PKMDatas>(new PKMDatas());
-            var load = new LoadPKMTypes(persistence);
+            persistence.GetPKMDonnees().Returns<PKMDonnees>(new PKMDonnees());
+            var load = new ChargerPKMTypes(persistence);
 
-            var result = Assert.Throws<LoadingPKMTypesException>(() => load.GetPKMDatas());
+            var result = Assert.Throws<ChargementTypesPKMException>(() => load.AvoirPKMDatas());
 
             Assert.Equal("Aucune donnée n'a été récupérée", result.CustomMessage);
-            Assert.Equal(ErrorType.NoPKMTypesData, result.ErrorType);
+            Assert.Equal(TypeErreur.NoPKMTypesData, result.TypeErreur);
         }
     }
 }

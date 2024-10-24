@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    public class FightPKMTypes : IFightPKMTypes
+    public class CombattrePKMTypes : ICombattrePKMTypes
     {
         private List<RelPKMType> tousRelPkmTypes;
 
-        public FightPKMTypes()
+        public CombattrePKMTypes()
         {
             tousRelPkmTypes = new List<RelPKMType>();
         }

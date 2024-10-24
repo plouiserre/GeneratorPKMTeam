@@ -7,6 +7,6 @@ namespace GeneratorPKMTeam.Domain.Port.Driven
 {
     public interface IPKMTypePersistence
     {
-        public PKMDatas GetPKMDatas();
+        public PKMDonnees GetPKMDonnees();
     }
 }

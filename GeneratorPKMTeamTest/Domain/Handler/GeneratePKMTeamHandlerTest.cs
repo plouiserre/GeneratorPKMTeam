@@ -14,28 +14,28 @@ namespace GeneratorPKMTeamTest.Domain.Handler
 {
     public class GeneratePKMTeamHandlerTest
     {
-        private PKMDatas _fakeDatas;
+        private PKMDonnees _fakeDatas;
 
         public GeneratePKMTeamHandlerTest()
         {
-            _fakeDatas = PKMDatasPersonas.GetPersonas();
+            _fakeDatas = PKMDonneesPersonas.GetPersonas();
         }
 
         [Fact]
-        public void GeneratePKMTeamIsOK()
+        public void GeneratePKMTeamEstOK()
         {
             var PMKPersistence = Substitute.For<IPKMTypePersistence>();
-            PMKPersistence.GetPKMDatas().Returns(_fakeDatas);
+            PMKPersistence.GetPKMDonnees().Returns(_fakeDatas);
 
-            var loadPKMTypes = new LoadPKMTypes(PMKPersistence);
-            var selectPKMTypes = new SelectPKMTypes();
-            var fightPKMTypes = new FightPKMTypes();
+            var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
+            var selectPKMTypes = new ChoisirPKMTypes();
+            var fightPKMTypes = new CombattrePKMTypes();
             var resultFightPKMTypes = new ResultFightPKMTypes();
             var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
             var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, fightPKMTypes, resultFightPKMTypes,
                             gererResultatTiragePKMTypes);
 
-            handler.Generate();
+            handler.Generer();
 
             Assert.Equal(10, handler.TiragePKMTypes.Count);
             foreach (var tirage in handler.TiragePKMTypes)
@@ -44,27 +44,26 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             }
         }
 
-        //TODO voir plus tard si on fait un test pour générer une exception
         [Fact]
         public void GeneratePKMTeamSeTermineJamais()
         {
             var PMKPersistence = Substitute.For<IPKMTypePersistence>();
-            PMKPersistence.GetPKMDatas().Returns(_fakeDatas);
+            PMKPersistence.GetPKMDonnees().Returns(_fakeDatas);
             var gererResultatTiragePKMTypes = Substitute.For<IGererResultatTiragePKMTypes>();
             gererResultatTiragePKMTypes.TirerPKMTypes(Arg.Any<List<TiragePKMTypes>>(), Arg.Any<TiragePKMTypes>()).Returns(new List<TiragePKMTypes>());
 
-            var loadPKMTypes = new LoadPKMTypes(PMKPersistence);
-            var selectPKMTypes = new SelectPKMTypes();
-            var fightPKMTypes = new FightPKMTypes();
+            var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
+            var selectPKMTypes = new ChoisirPKMTypes();
+            var fightPKMTypes = new CombattrePKMTypes();
             var resultFightPKMTypes = new ResultFightPKMTypes();
             var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, fightPKMTypes, resultFightPKMTypes,
                             gererResultatTiragePKMTypes);
 
-            var result = Assert.Throws<CombinaisonParfaitesIntrouvablesException>(() => handler.Generate());
+            var result = Assert.Throws<CombinaisonParfaitesIntrouvablesException>(() => handler.Generer());
 
 
             Assert.Equal("Les 10 combinaisons parfaites n'ont pas été trouvé", result.CustomMessage);
-            Assert.Equal(ErrorType.NoCombinaisonsParfaitesTrouvees, result.ErrorType);
+            Assert.Equal(TypeErreur.NoCombinaisonsParfaitesTrouvees, result.TypeErreur);
         }
     }
 }

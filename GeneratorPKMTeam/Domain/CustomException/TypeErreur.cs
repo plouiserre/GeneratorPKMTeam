@@ -1,6 +1,6 @@
 namespace GeneratorPKMTeam.Domain.CustomException
 {
-    public enum ErrorType
+    public enum TypeErreur
     {
         NoPKMTypesData,
         NoCombinaisonsParfaitesTrouvees

@@ -7,10 +7,10 @@ using GeneratorPKMTeam.Domain.Handler;
 
 namespace GeneratorPKMTeamTest.Domain.Handler
 {
-    public class FightPKMTypesTest
+    public class CombattrePKMTypesTest
     {
         [Fact]
-        public void ShouldBeReturnAllWeakPkmTypes()
+        public void DoitRetournerTouslesPkmTypesFaiblesDeCeType()
         {
             var eauPkmType = new PKMType();
             eauPkmType.Nom = "Eau";
@@ -51,7 +51,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             PKMTypes.Add(feePkmType);
 
             //init class
-            var fightPkmType = new FightPKMTypes();
+            var fightPkmType = new CombattrePKMTypes();
 
             var typesFaibles = fightPkmType.RetournerTousFaiblesPKMTypes(PKMTypes);
 

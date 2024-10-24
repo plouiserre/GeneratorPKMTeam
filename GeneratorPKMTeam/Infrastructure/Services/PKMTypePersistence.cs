@@ -10,7 +10,7 @@ namespace GeneratorPKMTeam.Infrastructure.Services
     public class PKMTypePersistence : IPKMTypePersistence
     {
 
-        public PKMDatas GetPKMDatas()
+        public PKMDonnees GetPKMDonnees()
         {
             var pkms = new PKMTypeJson();
             return pkms.GetPKMDatas();

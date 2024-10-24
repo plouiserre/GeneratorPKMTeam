@@ -6,15 +6,15 @@ using GeneratorPKMTeam.Infrastructure.Services;
 var connector = new PKMTypeJson();
 var PMKPersistence = new PKMTypePersistence();
 
-var loadPKMTypes = new LoadPKMTypes(PMKPersistence);
-var selectPKMTypes = new SelectPKMTypes();
-var fightPKMTypes = new FightPKMTypes();
+var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
+var selectPKMTypes = new ChoisirPKMTypes();
+var fightPKMTypes = new CombattrePKMTypes();
 var resultFightPKMTypes = new ResultFightPKMTypes();
 var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
 var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, fightPKMTypes, resultFightPKMTypes,
                 gererResultatTiragePKMTypes);
 
-handler.Generate();
+handler.Generer();
 
 var tiragesAAfficher = handler.TiragePKMTypes;
 
