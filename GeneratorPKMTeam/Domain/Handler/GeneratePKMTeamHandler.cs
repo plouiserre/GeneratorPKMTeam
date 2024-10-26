@@ -35,6 +35,7 @@ namespace GeneratorPKMTeam.Domain.Handler
                     throw new CombinaisonParfaitesIntrouvablesException();
                 var PKMTypesChoisis = _choisirPKMTypes.SelectionnerPKMTypes(tousPKMTypes);
                 var PKMTypesfaibles = _combattrePKMTypes.RetournerTousFaiblesPKMTypes(PKMTypesChoisis);
+                var PKMTypesDangereux = _combattrePKMTypes.RetournerPKMTypesDangereux(tousPKMTypes.PKMTypes, PKMTypesChoisis);
                 var classificationResult = _resultCombatPKMTypes.NoterResultatTirage(PKMTypesfaibles);
                 var tirageATraiter = new TiragePKMTypes()
                 {

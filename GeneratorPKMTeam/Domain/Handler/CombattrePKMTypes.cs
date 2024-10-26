@@ -7,11 +7,12 @@ namespace GeneratorPKMTeam.Domain.Handler
 {
     public class CombattrePKMTypes : ICombattrePKMTypes
     {
-        private List<RelPKMType> tousRelPkmTypes;
+        private List<RelPKMType> _tousRelPkmTypes;
+        private List<PKMType> _tousPKMTypes;
 
         public CombattrePKMTypes()
         {
-            tousRelPkmTypes = new List<RelPKMType>();
+            _tousRelPkmTypes = new List<RelPKMType>();
         }
 
         public List<RelPKMType> RetournerTousFaiblesPKMTypes(List<PKMType> pkmTypes)
@@ -21,7 +22,7 @@ namespace GeneratorPKMTeam.Domain.Handler
                 var relPKMTypes = RetournerFaiblesPKMTypesPourUnType(PKMType);
                 ConstruireResultatsRelPKMTypesSansDoublon(relPKMTypes);
             }
-            return tousRelPkmTypes;
+            return _tousRelPkmTypes;
         }
 
         private List<RelPKMType> RetournerFaiblesPKMTypesPourUnType(PKMType pkmType)
@@ -37,13 +38,43 @@ namespace GeneratorPKMTeam.Domain.Handler
             return relPkmTypes;
         }
 
+        public List<RelPKMType> RetournerPKMTypesDangereux(List<PKMType> tousPKMTypes, List<PKMType> pkmTypes)
+        {
+            _tousPKMTypes = tousPKMTypes;
+            var pkmTypesNames = pkmTypes.Select(o => o.Nom).ToList();
+            foreach (var pkmTypePeutEtreDangereux in _tousPKMTypes)
+            {
+                var relPKMTypes = RetournerDangereuxPKMTypesPourUnType(pkmTypePeutEtreDangereux, pkmTypesNames);
+                ConstruireResultatsRelPKMTypesSansDoublon(relPKMTypes);
+            }
+            return _tousRelPkmTypes;
+        }
+
+        private List<RelPKMType> RetournerDangereuxPKMTypesPourUnType(PKMType pkmTypePeutEtreDangereux, List<string> pkmTypesNomsEnDanger)
+        {
+            var relPkmTypes = new List<RelPKMType>();
+            foreach (var relPKMType in pkmTypePeutEtreDangereux.RelPKMTypes)
+            {
+                if (relPKMType.ModeImpact > 1 && pkmTypesNomsEnDanger.Any(o => o == relPKMType.TypePKM))
+                {
+                    var relPKMTypeDef = new RelPKMType()
+                    {
+                        TypePKM = pkmTypePeutEtreDangereux.Nom,
+                        ModeImpact = relPKMType.ModeImpact,
+                    };
+                    relPkmTypes.Add(relPKMTypeDef);
+                }
+            }
+            return relPkmTypes;
+        }
+
         private void ConstruireResultatsRelPKMTypesSansDoublon(List<RelPKMType> relPKMTypes)
         {
             foreach (var relPkmType in relPKMTypes)
             {
                 if (!VerifierDoublonRelPKMTypes(relPkmType))
                 {
-                    tousRelPkmTypes.Add(relPkmType);
+                    _tousRelPkmTypes.Add(relPkmType);
                 }
             }
         }
@@ -51,7 +82,7 @@ namespace GeneratorPKMTeam.Domain.Handler
         private bool VerifierDoublonRelPKMTypes(RelPKMType relPKMType)
         {
             bool doublonPresent = false;
-            foreach (var relPKMTypeAVerif in tousRelPkmTypes)
+            foreach (var relPKMTypeAVerif in _tousRelPkmTypes)
             {
                 if (relPKMTypeAVerif.TypePKM == relPKMType.TypePKM)
                 {
