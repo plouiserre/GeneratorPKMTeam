@@ -9,7 +9,7 @@ var PMKPersistence = new PKMTypePersistence();
 var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
 var selectPKMTypes = new ChoisirPKMTypes();
 var fightPKMTypes = new CombattrePKMTypes();
-var resultFightPKMTypes = new ResultFightPKMTypes();
+var resultFightPKMTypes = new ResultatCombatPKMTypes();
 var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
 var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, fightPKMTypes, resultFightPKMTypes,
                 gererResultatTiragePKMTypes);

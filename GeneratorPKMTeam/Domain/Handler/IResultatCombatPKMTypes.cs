@@ -6,8 +6,8 @@ using GeneratorPKMTeam.Domain.Models;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    public interface IResultCombatPKMTypes
+    public interface IResultatCombatPKMTypes
     {
-        ResultatTirage NoterResultatTirage(List<RelPKMType> listPKMTypesFaibles);
+        ResultatTirage NoterResultatTirage(List<RelPKMType> listesPKMTypesFaibles, List<RelPKMType> listesPKMTypesDangereux);
     }
 }

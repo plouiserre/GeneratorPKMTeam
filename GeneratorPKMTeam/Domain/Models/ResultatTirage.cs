@@ -9,8 +9,10 @@ namespace GeneratorPKMTeam.Domain.Models
 
     public enum ResultatTirageStatus
     {
-        Faible, //>30%
-        Acceptable, //>80%
-        Parfait //<80%
+        Faible, //>20%
+        Passables, // > 40%
+        Acceptable, //>60%
+        Bonnes, // > 80%
+        Excellent //<80%
     }
 }

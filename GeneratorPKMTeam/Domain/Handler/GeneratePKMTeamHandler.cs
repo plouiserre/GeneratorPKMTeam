@@ -9,12 +9,12 @@ namespace GeneratorPKMTeam.Domain.Handler
         private IChargerPKMTypes _chargementPKMTypes;
         private IChoisirPKMTypes _choisirPKMTypes;
         private ICombattrePKMTypes _combattrePKMTypes;
-        private IResultCombatPKMTypes _resultCombatPKMTypes;
+        private IResultatCombatPKMTypes _resultCombatPKMTypes;
         private IGererResultatTiragePKMTypes _gererResultatTiragePKMTypes;
         public List<TiragePKMTypes> TiragePKMTypes;
 
         public GeneratePKMTeamHandler(IChargerPKMTypes chargementPKMTypes, IChoisirPKMTypes choisirPKMTypes,
-                ICombattrePKMTypes combattrePKMTypes, IResultCombatPKMTypes resultCombatPKMTypes,
+                ICombattrePKMTypes combattrePKMTypes, IResultatCombatPKMTypes resultCombatPKMTypes,
                 IGererResultatTiragePKMTypes gererResultatTiragePKMTypes)
         {
             _chargementPKMTypes = chargementPKMTypes;
@@ -36,7 +36,7 @@ namespace GeneratorPKMTeam.Domain.Handler
                 var PKMTypesChoisis = _choisirPKMTypes.SelectionnerPKMTypes(tousPKMTypes);
                 var PKMTypesfaibles = _combattrePKMTypes.RetournerTousFaiblesPKMTypes(PKMTypesChoisis);
                 var PKMTypesDangereux = _combattrePKMTypes.RetournerPKMTypesDangereux(tousPKMTypes.PKMTypes, PKMTypesChoisis);
-                var classificationResult = _resultCombatPKMTypes.NoterResultatTirage(PKMTypesfaibles);
+                var classificationResult = _resultCombatPKMTypes.NoterResultatTirage(PKMTypesfaibles, PKMTypesDangereux);
                 var tirageATraiter = new TiragePKMTypes()
                 {
                     ResultatTirageStatus = classificationResult.ResultatStatus,
@@ -56,7 +56,7 @@ namespace GeneratorPKMTeam.Domain.Handler
             {
                 foreach (var tirage in TiragePKMTypes)
                 {
-                    if (tirage.ResultatTirageStatus != ResultatTirageStatus.Parfait)
+                    if (tirage.ResultatTirageStatus != ResultatTirageStatus.Excellent)
                         return true;
                 }
                 return false;
