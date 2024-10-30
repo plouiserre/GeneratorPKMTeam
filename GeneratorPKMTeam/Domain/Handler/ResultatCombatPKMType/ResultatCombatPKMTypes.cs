@@ -1,6 +1,6 @@
 using GeneratorPKMTeam.Domain.Models;
 
-namespace GeneratorPKMTeam.Domain.Handler
+namespace GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType
 {
     public class ResultatCombatPKMTypes : IResultatCombatPKMTypes
     {
@@ -9,9 +9,19 @@ namespace GeneratorPKMTeam.Domain.Handler
         private double _pourcentPKMTypesDangereuxTrouves;
         private double _pourcentPKMTypesFinales;
         private ResultatTirageStatus _statusTirage;
+        private List<PKMType> _pkmTypes;
+        private IResultatCombatPKMTypeATK _resultatCombatPKMTypeATK;
+        private IResultatCombatPKMTypeDEF _resultatCombatPKMTypeDEF;
 
-        public ResultatTirage NoterResultatTirage(List<RelPKMType> listPKMTypesFaibles, List<RelPKMType> listesPKMTypesDangereux)
+        public ResultatCombatPKMTypes(IResultatCombatPKMTypeATK resultatCombatPKMTypeATK, IResultatCombatPKMTypeDEF resultatCombatPKMTypeDEF)
         {
+            _resultatCombatPKMTypeATK = resultatCombatPKMTypeATK;
+            _resultatCombatPKMTypeDEF = resultatCombatPKMTypeDEF;
+        }
+
+        public ResultatTirage NoterResultatTirage(List<RelPKMType> listPKMTypesFaibles, List<RelPKMType> listesPKMTypesDangereux, List<PKMType> PKMTypes)
+        {
+            _pkmTypes = PKMTypes;
             CalculerPourcentFinal(listPKMTypesFaibles, listesPKMTypesDangereux);
             DeterminerStatusTirage();
             return BuildResultatTirage(_pourcentPKMTypesFinales, _statusTirage);
@@ -26,13 +36,14 @@ namespace GeneratorPKMTeam.Domain.Handler
 
         private void CalculerPourcentPKMTypesFaibles(List<RelPKMType> listPKMTypesFaibles)
         {
-            _pourcentPKMTypesFaiblesTrouves = listPKMTypesFaibles.Count / NombrePKMTypes * 100;
+            var resultatTirage = _resultatCombatPKMTypeATK.NoterResultatTirage(listPKMTypesFaibles);
+            _pourcentPKMTypesFaiblesTrouves = resultatTirage.NoteResultatTirage;
         }
 
         private void CalculerPourcentPKMTypesDangereux(List<RelPKMType> listPKMTypesDangereux)
         {
-            double nbrePKMTypesNonDangereux = NombrePKMTypes - listPKMTypesDangereux.Count;
-            _pourcentPKMTypesDangereuxTrouves = nbrePKMTypesNonDangereux / NombrePKMTypes * 100;
+            var resultatTirage = _resultatCombatPKMTypeDEF.NoterResultatTirage(listPKMTypesDangereux, _pkmTypes);
+            _pourcentPKMTypesDangereuxTrouves = resultatTirage.NoteResultatTirage;
         }
 
         private void DeterminerStatusTirage()
@@ -45,8 +56,10 @@ namespace GeneratorPKMTeam.Domain.Handler
                 _statusTirage = ResultatTirageStatus.Acceptable;
             else if (_pourcentPKMTypesFinales < 80)
                 _statusTirage = ResultatTirageStatus.Bonnes;
-            else
+            else if (_pourcentPKMTypesFinales < 100)
                 _statusTirage = ResultatTirageStatus.Excellent;
+            else
+                _statusTirage = ResultatTirageStatus.Parfait;
         }
 
         private ResultatTirage BuildResultatTirage(double pourcent, ResultatTirageStatus status)

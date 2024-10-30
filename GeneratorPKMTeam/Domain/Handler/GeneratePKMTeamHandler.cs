@@ -1,4 +1,5 @@
 using GeneratorPKMTeam.Domain.CustomException;
+using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driving;
 
@@ -36,7 +37,7 @@ namespace GeneratorPKMTeam.Domain.Handler
                 var PKMTypesChoisis = _choisirPKMTypes.SelectionnerPKMTypes(tousPKMTypes);
                 var PKMTypesfaibles = _combattrePKMTypes.RetournerTousFaiblesPKMTypes(PKMTypesChoisis);
                 var PKMTypesDangereux = _combattrePKMTypes.RetournerPKMTypesDangereux(tousPKMTypes.PKMTypes, PKMTypesChoisis);
-                var classificationResult = _resultCombatPKMTypes.NoterResultatTirage(PKMTypesfaibles, PKMTypesDangereux);
+                var classificationResult = _resultCombatPKMTypes.NoterResultatTirage(PKMTypesfaibles, PKMTypesDangereux, PKMTypesChoisis);
                 var tirageATraiter = new TiragePKMTypes()
                 {
                     ResultatTirageStatus = classificationResult.ResultatStatus,
@@ -56,7 +57,7 @@ namespace GeneratorPKMTeam.Domain.Handler
             {
                 foreach (var tirage in TiragePKMTypes)
                 {
-                    if (tirage.ResultatTirageStatus != ResultatTirageStatus.Excellent)
+                    if (tirage.ResultatTirageStatus != ResultatTirageStatus.Parfait)
                         return true;
                 }
                 return false;

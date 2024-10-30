@@ -10,5 +10,7 @@ namespace GeneratorPKMTeam.Domain.Handler
         public List<RelPKMType> RetournerTousFaiblesPKMTypes(List<PKMType> pkmTypes);
 
         public List<RelPKMType> RetournerPKMTypesDangereux(List<PKMType> tousPKMTypes, List<PKMType> pkmTypes);
+
+        public List<RelPKMType> RetournerPKMTypesContres(List<RelPKMType> PKMTypesDangereux, List<PKMType> PKMTypesDEF);
     }
 }

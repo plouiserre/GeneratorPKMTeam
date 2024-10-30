@@ -13,6 +13,7 @@ namespace GeneratorPKMTeam.Domain.Models
         Passables, // > 40%
         Acceptable, //>60%
         Bonnes, // > 80%
-        Excellent //<80%
+        Excellent, //>100%
+        Parfait // 100
     }
 }

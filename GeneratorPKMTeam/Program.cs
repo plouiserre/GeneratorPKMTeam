@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using GeneratorPKMTeam.Domain.Handler;
+using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
 using GeneratorPKMTeam.Infrastructure.Connector;
 using GeneratorPKMTeam.Infrastructure.Services;
 
@@ -9,7 +10,9 @@ var PMKPersistence = new PKMTypePersistence();
 var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
 var selectPKMTypes = new ChoisirPKMTypes();
 var fightPKMTypes = new CombattrePKMTypes();
-var resultFightPKMTypes = new ResultatCombatPKMTypes();
+var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
+var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF(fightPKMTypes);
+var resultFightPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
 var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
 var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, fightPKMTypes, resultFightPKMTypes,
                 gererResultatTiragePKMTypes);

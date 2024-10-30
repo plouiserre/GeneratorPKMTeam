@@ -15,6 +15,35 @@ namespace GeneratorPKMTeam.Domain.Handler
             _tousRelPkmTypes = new List<RelPKMType>();
         }
 
+        public List<RelPKMType> RetournerPKMTypesContres(List<RelPKMType> PKMTypesDangereux, List<PKMType> PKMTypesDEF)
+        {
+            var resultRelPKMTypes = new List<RelPKMType>();
+            var relPKMTypes = RetournerTousFaiblesPKMTypes(PKMTypesDEF);
+            foreach (var relPKMType in relPKMTypes)
+            {
+                foreach (var PKMTypeATK in PKMTypesDangereux)
+                {
+                    if (relPKMType.TypePKM == PKMTypeATK.TypePKM && !VerifierDoublonPKMTypes(resultRelPKMTypes, PKMTypeATK))
+                        resultRelPKMTypes.Add(PKMTypeATK);
+                }
+            }
+            return resultRelPKMTypes;
+        }
+
+        private bool VerifierDoublonPKMTypes(List<RelPKMType> relPKMTypes, RelPKMType relPKMType)
+        {
+            bool doublonPresent = false;
+            foreach (var relPKMTypeToCompare in relPKMTypes)
+            {
+                if (relPKMTypeToCompare.TypePKM == relPKMType.TypePKM)
+                {
+                    doublonPresent = true;
+                    break;
+                }
+            }
+            return doublonPresent;
+        }
+
         public List<RelPKMType> RetournerTousFaiblesPKMTypes(List<PKMType> pkmTypes)
         {
             foreach (var PKMType in pkmTypes)

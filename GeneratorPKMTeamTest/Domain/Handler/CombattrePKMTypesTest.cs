@@ -71,5 +71,23 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             Assert.Equal("Vol", typesDangereux[8].TypePKM);
             Assert.Equal(2, typesDangereux[8].ModeImpact);
         }
+
+        [Fact]
+        public void DoitRetournerPKMTypesContres()
+        {
+            var PKMTypesATK = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Eau", "Fée", "Roche", "Spectre", "Normal", "Insecte" });
+            var PKMTypesDEF = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Electrik", "Feu", "Plante", "Vol", "Poison", "Glace" });
+            var relPKMTypes = PKMTypesATK.Select(o => new RelPKMType() { TypePKM = o.Nom, ModeImpact = 2 }).ToList();
+
+            var combattrePkmType = new CombattrePKMTypes();
+
+            var PKMTypesContres = combattrePkmType.RetournerPKMTypesContres(relPKMTypes, PKMTypesDEF);
+
+            Assert.Equal(4, PKMTypesContres.Count);
+            Assert.Contains("Eau", PKMTypesContres.Select(o => o.TypePKM));
+            Assert.Contains("Roche", PKMTypesContres.Select(o => o.TypePKM));
+            Assert.Contains("Insecte", PKMTypesContres.Select(o => o.TypePKM));
+            Assert.Contains("Fée", PKMTypesContres.Select(o => o.TypePKM));
+        }
     }
 }
