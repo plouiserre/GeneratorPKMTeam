@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using GeneratorPKMTeam;
 using GeneratorPKMTeam.Domain.CustomException;
 using GeneratorPKMTeam.Domain.Handler;
+using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driven;
 using GeneratorPKMTeamTest.Utils.Personas;
@@ -29,10 +30,12 @@ namespace GeneratorPKMTeamTest.Domain.Handler
 
             var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
             var selectPKMTypes = new ChoisirPKMTypes();
-            var fightPKMTypes = new CombattrePKMTypes();
-            var resultFightPKMTypes = new ResultFightPKMTypes();
+            var combattrePKMTypes = new CombattrePKMTypes();
+            var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
+            var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF(combattrePKMTypes);
+            var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
             var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
-            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, fightPKMTypes, resultFightPKMTypes,
+            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, combattrePKMTypes, resultatCombatPKMTypes,
                             gererResultatTiragePKMTypes);
 
             handler.Generer();
@@ -54,9 +57,11 @@ namespace GeneratorPKMTeamTest.Domain.Handler
 
             var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
             var selectPKMTypes = new ChoisirPKMTypes();
-            var fightPKMTypes = new CombattrePKMTypes();
-            var resultFightPKMTypes = new ResultFightPKMTypes();
-            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, fightPKMTypes, resultFightPKMTypes,
+            var combattrePKMTypes = new CombattrePKMTypes();
+            var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
+            var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF(combattrePKMTypes);
+            var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
+            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, combattrePKMTypes, resultatCombatPKMTypes,
                             gererResultatTiragePKMTypes);
 
             var result = Assert.Throws<CombinaisonParfaitesIntrouvablesException>(() => handler.Generer());

@@ -1,4 +1,5 @@
 using GeneratorPKMTeam.Domain.CustomException;
+using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driving;
 
@@ -9,12 +10,12 @@ namespace GeneratorPKMTeam.Domain.Handler
         private IChargerPKMTypes _chargementPKMTypes;
         private IChoisirPKMTypes _choisirPKMTypes;
         private ICombattrePKMTypes _combattrePKMTypes;
-        private IResultCombatPKMTypes _resultCombatPKMTypes;
+        private IResultatCombatPKMTypes _resultCombatPKMTypes;
         private IGererResultatTiragePKMTypes _gererResultatTiragePKMTypes;
         public List<TiragePKMTypes> TiragePKMTypes;
 
         public GeneratePKMTeamHandler(IChargerPKMTypes chargementPKMTypes, IChoisirPKMTypes choisirPKMTypes,
-                ICombattrePKMTypes combattrePKMTypes, IResultCombatPKMTypes resultCombatPKMTypes,
+                ICombattrePKMTypes combattrePKMTypes, IResultatCombatPKMTypes resultCombatPKMTypes,
                 IGererResultatTiragePKMTypes gererResultatTiragePKMTypes)
         {
             _chargementPKMTypes = chargementPKMTypes;
@@ -35,7 +36,8 @@ namespace GeneratorPKMTeam.Domain.Handler
                     throw new CombinaisonParfaitesIntrouvablesException();
                 var PKMTypesChoisis = _choisirPKMTypes.SelectionnerPKMTypes(tousPKMTypes);
                 var PKMTypesfaibles = _combattrePKMTypes.RetournerTousFaiblesPKMTypes(PKMTypesChoisis);
-                var classificationResult = _resultCombatPKMTypes.NoterResultatTirage(PKMTypesfaibles);
+                var PKMTypesDangereux = _combattrePKMTypes.RetournerPKMTypesDangereux(tousPKMTypes.PKMTypes, PKMTypesChoisis);
+                var classificationResult = _resultCombatPKMTypes.NoterResultatTirage(PKMTypesfaibles, PKMTypesDangereux, PKMTypesChoisis);
                 var tirageATraiter = new TiragePKMTypes()
                 {
                     ResultatTirageStatus = classificationResult.ResultatStatus,

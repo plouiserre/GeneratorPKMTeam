@@ -4,68 +4,90 @@ using System.Linq;
 using System.Threading.Tasks;
 using GeneratorPKMTeam;
 using GeneratorPKMTeam.Domain.Handler;
+using GeneratorPKMTeamTest.Utils.Helper;
 
 namespace GeneratorPKMTeamTest.Domain.Handler
 {
     public class CombattrePKMTypesTest
     {
+        public CombattrePKMTypesTest()
+        {
+
+        }
+
         [Fact]
         public void DoitRetournerTouslesPkmTypesFaiblesDeCeType()
         {
-            var eauPkmType = new PKMType();
-            eauPkmType.Nom = "Eau";
-            eauPkmType.RelPKMTypes = new List<RelPKMType>(){
-                new RelPKMType(){TypePKM="Plante", ModeImpact=0.5f},
-                new RelPKMType(){TypePKM="Fée", ModeImpact=1},
-                new RelPKMType(){TypePKM="Feu", ModeImpact=2},
-                new RelPKMType(){TypePKM="Poison", ModeImpact=1},
-                new RelPKMType(){TypePKM="Roche", ModeImpact=2},
-                new RelPKMType(){TypePKM="Dragon", ModeImpact=0.5f}
-            };
+            List<PKMType> PKMTypes = DatasHelperTest.RetournerDonneesPKMTypes(new List<string>() { "Eau", "Plante", "Fée" });
 
-            var plantePKMType = new PKMType();
-            plantePKMType.Nom = "Plante";
-            plantePKMType.RelPKMTypes = new List<RelPKMType>(){
-                new RelPKMType(){TypePKM="Eau", ModeImpact=2},
-                new RelPKMType(){TypePKM="Electrik", ModeImpact=1},
-                new RelPKMType(){TypePKM="Feu",ModeImpact=0.5f},
-                new RelPKMType(){TypePKM="Vol",ModeImpact=0.5f},
-                new RelPKMType(){TypePKM="Roche", ModeImpact=2},
-                new RelPKMType(){TypePKM="Psy", ModeImpact=1}
-            };
+            var combattrePkmType = new CombattrePKMTypes();
 
-            var feePkmType = new PKMType();
-            feePkmType.Nom = "Fée";
-            feePkmType.RelPKMTypes = new List<RelPKMType>(){
-                new RelPKMType(){TypePKM="Insecte", ModeImpact=1},
-                new RelPKMType(){TypePKM="Combat", ModeImpact=2},
-                new RelPKMType(){TypePKM="Poison",ModeImpact=0.5f},
-                new RelPKMType(){TypePKM="Spectre",ModeImpact=1},
-                new RelPKMType(){TypePKM="Acier", ModeImpact=0.5f},
-                new RelPKMType(){TypePKM="Dragon", ModeImpact=2}
-            };
+            var typesFaibles = combattrePkmType.RetournerTousFaiblesPKMTypes(PKMTypes);
 
-            var PKMTypes = new List<PKMType>();
-            PKMTypes.Add(eauPkmType);
-            PKMTypes.Add(plantePKMType);
-            PKMTypes.Add(feePkmType);
-
-            //init class
-            var fightPkmType = new CombattrePKMTypes();
-
-            var typesFaibles = fightPkmType.RetournerTousFaiblesPKMTypes(PKMTypes);
-
-            Assert.Equal(5, typesFaibles.Count);
+            Assert.Equal(7, typesFaibles.Count);
             Assert.Equal("Feu", typesFaibles[0].TypePKM);
             Assert.Equal(2, typesFaibles[0].ModeImpact);
             Assert.Equal("Roche", typesFaibles[1].TypePKM);
             Assert.Equal(2, typesFaibles[1].ModeImpact);
-            Assert.Equal("Eau", typesFaibles[2].TypePKM);
+            Assert.Equal("Sol", typesFaibles[2].TypePKM);
             Assert.Equal(2, typesFaibles[2].ModeImpact);
-            Assert.Equal("Combat", typesFaibles[3].TypePKM);
+            Assert.Equal("Eau", typesFaibles[3].TypePKM);
             Assert.Equal(2, typesFaibles[3].ModeImpact);
-            Assert.Equal("Dragon", typesFaibles[4].TypePKM);
+            Assert.Equal("Combat", typesFaibles[4].TypePKM);
             Assert.Equal(2, typesFaibles[4].ModeImpact);
+            Assert.Equal("Dragon", typesFaibles[5].TypePKM);
+            Assert.Equal(2, typesFaibles[5].ModeImpact);
+            Assert.Equal("Ténèbres", typesFaibles[6].TypePKM);
+            Assert.Equal(2, typesFaibles[6].ModeImpact);
+        }
+
+        [Fact]
+        public void DoitRetournerTouslesPKMDangereux()
+        {
+            List<PKMType> PKMTypes = DatasHelperTest.RetournerDonneesPKMTypes(new List<string>() { "Acier", "Combat", "Roche" });
+            List<PKMType> tousPKMTypes = DatasHelperTest.RetournerDonneesPKMTypes(null);
+
+            var combattrePkmType = new CombattrePKMTypes();
+
+            var typesDangereux = combattrePkmType.RetournerPKMTypesDangereux(tousPKMTypes, PKMTypes);
+
+            Assert.Equal(9, typesDangereux.Count);
+            Assert.Equal("Acier", typesDangereux[0].TypePKM);
+            Assert.Equal(2, typesDangereux[0].ModeImpact);
+            Assert.Equal("Combat", typesDangereux[1].TypePKM);
+            Assert.Equal(2, typesDangereux[1].ModeImpact);
+            Assert.Equal("Eau", typesDangereux[2].TypePKM);
+            Assert.Equal(2, typesDangereux[2].ModeImpact);
+            Assert.Equal("Fée", typesDangereux[3].TypePKM);
+            Assert.Equal(2, typesDangereux[3].ModeImpact);
+            Assert.Equal("Feu", typesDangereux[4].TypePKM);
+            Assert.Equal(2, typesDangereux[4].ModeImpact);
+            Assert.Equal("Plante", typesDangereux[5].TypePKM);
+            Assert.Equal(2, typesDangereux[5].ModeImpact);
+            Assert.Equal("Psy", typesDangereux[6].TypePKM);
+            Assert.Equal(2, typesDangereux[6].ModeImpact);
+            Assert.Equal("Sol", typesDangereux[7].TypePKM);
+            Assert.Equal(2, typesDangereux[7].ModeImpact);
+            Assert.Equal("Vol", typesDangereux[8].TypePKM);
+            Assert.Equal(2, typesDangereux[8].ModeImpact);
+        }
+
+        [Fact]
+        public void DoitRetournerPKMTypesContres()
+        {
+            var PKMTypesATK = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Eau", "Fée", "Roche", "Spectre", "Normal", "Insecte" });
+            var PKMTypesDEF = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Electrik", "Feu", "Plante", "Vol", "Poison", "Glace" });
+            var relPKMTypes = PKMTypesATK.Select(o => new RelPKMType() { TypePKM = o.Nom, ModeImpact = 2 }).ToList();
+
+            var combattrePkmType = new CombattrePKMTypes();
+
+            var PKMTypesContres = combattrePkmType.RetournerPKMTypesContres(relPKMTypes, PKMTypesDEF);
+
+            Assert.Equal(4, PKMTypesContres.Count);
+            Assert.Contains("Eau", PKMTypesContres.Select(o => o.TypePKM));
+            Assert.Contains("Roche", PKMTypesContres.Select(o => o.TypePKM));
+            Assert.Contains("Insecte", PKMTypesContres.Select(o => o.TypePKM));
+            Assert.Contains("Fée", PKMTypesContres.Select(o => o.TypePKM));
         }
     }
 }
