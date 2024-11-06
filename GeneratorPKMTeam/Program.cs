@@ -14,7 +14,7 @@ var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
 var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF(fightPKMTypes);
 var resultFightPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
 var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
-var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, fightPKMTypes, resultFightPKMTypes,
+var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultFightPKMTypes,
                 gererResultatTiragePKMTypes);
 
 handler.Generer();

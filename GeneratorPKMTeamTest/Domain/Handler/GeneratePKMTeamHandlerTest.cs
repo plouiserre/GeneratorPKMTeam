@@ -35,7 +35,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF(combattrePKMTypes);
             var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
             var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
-            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, combattrePKMTypes, resultatCombatPKMTypes,
+            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
                             gererResultatTiragePKMTypes);
 
             handler.Generer();
@@ -61,7 +61,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
             var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF(combattrePKMTypes);
             var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
-            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, combattrePKMTypes, resultatCombatPKMTypes,
+            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
                             gererResultatTiragePKMTypes);
 
             var result = Assert.Throws<CombinaisonParfaitesIntrouvablesException>(() => handler.Generer());
