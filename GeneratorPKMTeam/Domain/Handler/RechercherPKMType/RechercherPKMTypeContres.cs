@@ -16,9 +16,9 @@ namespace GeneratorPKMTeam.Domain.Handler.RechercherPKMType
             _rechercherPKMTypesFaibles = rechercherPKMTypeFaibles;
         }
 
-        public List<PKMType> TrouverPKMType(List<PKMType> PKMTypes)
+        public List<PKMType> TrouverPKMType(List<PKMType> PKMTypesChoisis)
         {
-            var PKMTypesFaibles = _rechercherPKMTypesFaibles.TrouverPKMType(PKMTypes);
+            var PKMTypesFaibles = _rechercherPKMTypesFaibles.TrouverPKMType(PKMTypesChoisis);
             foreach (var PKMType in PKMTypesFaibles)
             {
                 foreach (var PKMTypeDEF in _PKMADefendre)
