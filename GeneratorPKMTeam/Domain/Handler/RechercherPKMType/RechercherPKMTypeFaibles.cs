@@ -11,27 +11,28 @@ namespace GeneratorPKMTeam.Domain.Handler.RechercherPKMType
         {
         }
 
-        public List<RelPKMType> TrouverPKMType(List<PKMType> PKMTypes)
+        public List<PKMType> TrouverPKMType(List<PKMType> PKMTypes)
         {
             foreach (var PKMType in PKMTypes)
             {
                 var relPKMTypes = RetournerFaiblesPKMTypesPourUnType(PKMType);
                 ConstruireResultatsRelPKMTypesSansDoublon(relPKMTypes);
             }
-            return _tousRelPkmTypes;
+            return _PKMTypesRecherches;
         }
 
-        private List<RelPKMType> RetournerFaiblesPKMTypesPourUnType(PKMType pkmType)
+        private List<PKMType> RetournerFaiblesPKMTypesPourUnType(PKMType pkmType)
         {
-            var relPkmTypes = new List<RelPKMType>();
+            var pkmTypes = new List<PKMType>();
             foreach (var relPkmType in pkmType.RelPKMTypes)
             {
                 if (relPkmType.ModeImpact > 1)
                 {
-                    relPkmTypes.Add(relPkmType);
+                    var PKMType = new PKMType() { Nom = relPkmType.TypePKM };
+                    pkmTypes.Add(PKMType);
                 }
             }
-            return relPkmTypes;
+            return pkmTypes;
         }
     }
 }

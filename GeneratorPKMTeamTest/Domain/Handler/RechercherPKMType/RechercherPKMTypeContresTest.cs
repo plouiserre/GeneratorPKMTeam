@@ -22,10 +22,10 @@ namespace GeneratorPKMTeamTest.Domain.Handler.RechercherPKMType
             var PKMTypesContres = rechercherPKMTypeContres.TrouverPKMType(PKMTypesDEF);
 
             Assert.Equal(4, PKMTypesContres.Count);
-            Assert.Contains("Eau", PKMTypesContres.Select(o => o.TypePKM));
-            Assert.Contains("Roche", PKMTypesContres.Select(o => o.TypePKM));
-            Assert.Contains("Insecte", PKMTypesContres.Select(o => o.TypePKM));
-            Assert.Contains("Fée", PKMTypesContres.Select(o => o.TypePKM));
+            Assert.Contains("Eau", PKMTypesContres.Select(o => o.Nom));
+            Assert.Contains("Roche", PKMTypesContres.Select(o => o.Nom));
+            Assert.Contains("Insecte", PKMTypesContres.Select(o => o.Nom));
+            Assert.Contains("Fée", PKMTypesContres.Select(o => o.Nom));
         }
     }
 }

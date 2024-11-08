@@ -7,6 +7,6 @@ namespace GeneratorPKMTeam.Domain.Handler.RechercherPKMType
 {
     public interface IRechercherPKMType
     {
-        List<RelPKMType> TrouverPKMType(List<PKMType> PKMTypes);
+        List<PKMType> TrouverPKMType(List<PKMType> PKMTypes);
     }
 }

@@ -8,29 +8,29 @@ namespace GeneratorPKMTeam.Domain.Handler.RechercherPKMType
     public abstract class RechercherPKMType
     {
 
-        protected List<RelPKMType> _tousRelPkmTypes { get; set; }
+        protected List<PKMType> _PKMTypesRecherches { get; set; }
 
         public RechercherPKMType()
         {
-            _tousRelPkmTypes = new List<RelPKMType>();
+            _PKMTypesRecherches = new List<PKMType>();
         }
 
-        protected void ConstruireResultatsRelPKMTypesSansDoublon(List<RelPKMType> relPKMTypes)
+        protected void ConstruireResultatsRelPKMTypesSansDoublon(List<PKMType> PKMTypes)
         {
-            foreach (var relPkmType in relPKMTypes)
+            foreach (var pKMType in PKMTypes)
             {
-                if (!VerifierDoublonPKMTypes(relPkmType.TypePKM))
+                if (!VerifierDoublonPKMTypes(pKMType.Nom))
                 {
-                    _tousRelPkmTypes.Add(relPkmType);
+                    _PKMTypesRecherches.Add(pKMType);
                 }
             }
         }
         protected bool VerifierDoublonPKMTypes(string NomPKMType)
         {
             bool doublonPresent = false;
-            foreach (var relPKMTypeAVerif in _tousRelPkmTypes)
+            foreach (var pKMTypeAVerif in _PKMTypesRecherches)
             {
-                if (relPKMTypeAVerif.TypePKM == NomPKMType)
+                if (pKMTypeAVerif.Nom == NomPKMType)
                 {
                     doublonPresent = true;
                     break;

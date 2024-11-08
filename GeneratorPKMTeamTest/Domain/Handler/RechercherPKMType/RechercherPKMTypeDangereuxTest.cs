@@ -21,24 +21,15 @@ namespace GeneratorPKMTeamTest.Domain.Handler.RechercherPKMType
             var typesDangereux = rechercherPKMDangereux.TrouverPKMType(PKMTypes);
 
             Assert.Equal(9, typesDangereux.Count);
-            Assert.Equal("Acier", typesDangereux[0].TypePKM);
-            Assert.Equal(2, typesDangereux[0].ModeImpact);
-            Assert.Equal("Combat", typesDangereux[1].TypePKM);
-            Assert.Equal(2, typesDangereux[1].ModeImpact);
-            Assert.Equal("Eau", typesDangereux[2].TypePKM);
-            Assert.Equal(2, typesDangereux[2].ModeImpact);
-            Assert.Equal("Fée", typesDangereux[3].TypePKM);
-            Assert.Equal(2, typesDangereux[3].ModeImpact);
-            Assert.Equal("Feu", typesDangereux[4].TypePKM);
-            Assert.Equal(2, typesDangereux[4].ModeImpact);
-            Assert.Equal("Plante", typesDangereux[5].TypePKM);
-            Assert.Equal(2, typesDangereux[5].ModeImpact);
-            Assert.Equal("Psy", typesDangereux[6].TypePKM);
-            Assert.Equal(2, typesDangereux[6].ModeImpact);
-            Assert.Equal("Sol", typesDangereux[7].TypePKM);
-            Assert.Equal(2, typesDangereux[7].ModeImpact);
-            Assert.Equal("Vol", typesDangereux[8].TypePKM);
-            Assert.Equal(2, typesDangereux[8].ModeImpact);
+            Assert.Equal("Acier", typesDangereux[0].Nom);
+            Assert.Equal("Combat", typesDangereux[1].Nom);
+            Assert.Equal("Eau", typesDangereux[2].Nom);
+            Assert.Equal("Fée", typesDangereux[3].Nom);
+            Assert.Equal("Feu", typesDangereux[4].Nom);
+            Assert.Equal("Plante", typesDangereux[5].Nom);
+            Assert.Equal("Psy", typesDangereux[6].Nom);
+            Assert.Equal("Sol", typesDangereux[7].Nom);
+            Assert.Equal("Vol", typesDangereux[8].Nom);
         }
     }
 }

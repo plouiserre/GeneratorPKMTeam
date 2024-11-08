@@ -14,34 +14,32 @@ namespace GeneratorPKMTeam.Domain.Handler.RechercherPKMType
             _tousPKMTypes = tousPKMTypes;
         }
 
-
-        public List<RelPKMType> TrouverPKMType(List<PKMType> PKMTypes)
+        public List<PKMType> TrouverPKMType(List<PKMType> PKMTypes)
         {
             var pkmTypesNames = PKMTypes.Select(o => o.Nom).ToList();
             foreach (var pkmTypePeutEtreDangereux in _tousPKMTypes)
             {
-                var relPKMTypes = RetournerDangereuxPKMTypesPourUnType(pkmTypePeutEtreDangereux, pkmTypesNames);
-                ConstruireResultatsRelPKMTypesSansDoublon(relPKMTypes);
+                var pKMTypes = RetournerDangereuxPKMTypesPourUnType(pkmTypePeutEtreDangereux, pkmTypesNames);
+                ConstruireResultatsRelPKMTypesSansDoublon(pKMTypes);
             }
-            return _tousRelPkmTypes;
+            return _PKMTypesRecherches;
         }
 
-        private List<RelPKMType> RetournerDangereuxPKMTypesPourUnType(PKMType pkmTypePeutEtreDangereux, List<string> pkmTypesNomsEnDanger)
+        private List<PKMType> RetournerDangereuxPKMTypesPourUnType(PKMType pkmTypePeutEtreDangereux, List<string> pkmTypesNomsEnDanger)
         {
-            var relPkmTypes = new List<RelPKMType>();
+            var pkmTypes = new List<PKMType>();
             foreach (var relPKMType in pkmTypePeutEtreDangereux.RelPKMTypes)
             {
                 if (relPKMType.ModeImpact > 1 && pkmTypesNomsEnDanger.Any(o => o == relPKMType.TypePKM))
                 {
-                    var relPKMTypeDef = new RelPKMType()
+                    var pKMType = new PKMType()
                     {
-                        TypePKM = pkmTypePeutEtreDangereux.Nom,
-                        ModeImpact = relPKMType.ModeImpact,
+                        Nom = pkmTypePeutEtreDangereux.Nom
                     };
-                    relPkmTypes.Add(relPKMTypeDef);
+                    pkmTypes.Add(pKMType);
                 }
             }
-            return relPkmTypes;
+            return pkmTypes;
         }
     }
 }

@@ -16,20 +16,20 @@ namespace GeneratorPKMTeam.Domain.Handler.RechercherPKMType
             _rechercherPKMTypesFaibles = rechercherPKMTypeFaibles;
         }
 
-        public List<RelPKMType> TrouverPKMType(List<PKMType> PKMTypes)
+        public List<PKMType> TrouverPKMType(List<PKMType> PKMTypes)
         {
-            var relPKMTypes = _rechercherPKMTypesFaibles.TrouverPKMType(PKMTypes);
-            foreach (var relPKMType in relPKMTypes)
+            var PKMTypesFaibles = _rechercherPKMTypesFaibles.TrouverPKMType(PKMTypes);
+            foreach (var PKMType in PKMTypesFaibles)
             {
                 foreach (var PKMTypeDEF in _PKMADefendre)
                 {
-                    if (relPKMType.TypePKM == PKMTypeDEF.Nom && !VerifierDoublonPKMTypes(PKMTypeDEF.Nom))
+                    if (PKMType.Nom == PKMTypeDEF.Nom && !VerifierDoublonPKMTypes(PKMTypeDEF.Nom))
                     {
-                        _tousRelPkmTypes.Add(relPKMType);
+                        _PKMTypesRecherches.Add(PKMType);
                     }
                 }
             }
-            return _tousRelPkmTypes;
+            return _PKMTypesRecherches;
         }
     }
 }
