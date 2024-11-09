@@ -30,21 +30,20 @@ namespace GeneratorPKMTeamTest.Domain.Handler
 
             var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
             var selectPKMTypes = new ChoisirPKMTypes();
-            var combattrePKMTypes = new CombattrePKMTypes();
             var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
             var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
-            // var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
-            // var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
-            // var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
-            //                 gererResultatTiragePKMTypes);
+            var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
+            var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
+            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
+                            gererResultatTiragePKMTypes);
 
-            // handler.Generer();
+            handler.Generer();
 
-            // Assert.Equal(10, handler.TiragePKMTypes.Count);
-            // foreach (var tirage in handler.TiragePKMTypes)
-            // {
-            //     Assert.Equal(ResultatTirageStatus.Parfait, tirage.ResultatTirageStatus);
-            // }
+            Assert.Equal(10, handler.TiragePKMTypes.Count);
+            foreach (var tirage in handler.TiragePKMTypes)
+            {
+                Assert.Equal(ResultatTirageStatus.Parfait, tirage.ResultatTirageStatus);
+            }
         }
 
         [Fact]
@@ -57,18 +56,17 @@ namespace GeneratorPKMTeamTest.Domain.Handler
 
             var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
             var selectPKMTypes = new ChoisirPKMTypes();
-            var combattrePKMTypes = new CombattrePKMTypes();
             var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
             var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
-            // var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
-            // var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
-            //                 gererResultatTiragePKMTypes);
+            var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
+            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
+                            gererResultatTiragePKMTypes);
 
-            // var result = Assert.Throws<CombinaisonParfaitesIntrouvablesException>(() => handler.Generer());
+            var result = Assert.Throws<CombinaisonParfaitesIntrouvablesException>(() => handler.Generer());
 
 
-            // Assert.Equal("Les 10 combinaisons parfaites n'ont pas été trouvé", result.CustomMessage);
-            // Assert.Equal(TypeErreur.NoCombinaisonsParfaitesTrouvees, result.TypeErreur);
+            Assert.Equal("Les 10 combinaisons parfaites n'ont pas été trouvé", result.CustomMessage);
+            Assert.Equal(TypeErreur.NoCombinaisonsParfaitesTrouvees, result.TypeErreur);
         }
     }
 }

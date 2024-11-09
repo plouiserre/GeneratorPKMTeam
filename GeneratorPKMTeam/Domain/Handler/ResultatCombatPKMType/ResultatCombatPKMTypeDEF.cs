@@ -11,7 +11,6 @@ namespace GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType
         private const double NombrePKMTypes = 18;
 
         private List<RelPKMType> _listesPKMTypesFaibles;
-        private ICombattrePKMTypes _combattrePKMTypes;
 
         public ResultatCombatPKMTypeDEF()
         {

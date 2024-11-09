@@ -31,8 +31,7 @@ namespace GeneratorPKMTeam.Domain.Handler
             var tousPKMTypes = _chargementPKMTypes.AvoirPKMDatas();
             int comptage = 0;
             InitiateRecherchePKMType(tousPKMTypes.PKMTypes);
-            //while (ContinuerACalculer())
-            while (comptage < 20)
+            while (ContinuerACalculer())
             {
                 if (comptage >= 100)
                     throw new CombinaisonParfaitesIntrouvablesException();
@@ -41,14 +40,14 @@ namespace GeneratorPKMTeam.Domain.Handler
                 var PKMTypesDangereux = _rechercherPKMTypeDangereux.TrouverPKMType(PKMTypesChoisis);
                 var rechercherPKMTypeContres = new RechercherPKMTypeContres(PKMTypesDangereux, _rechercherPKMTypeFaibles);
                 var PKMTypesContres = rechercherPKMTypeContres.TrouverPKMType(PKMTypesChoisis);
-                // var classificationResult = _resultCombatPKMTypes.NoterResultatTirage(PKMTypesfaibles, PKMTypesDangereux, PKMTypesChoisis);
-                // var tirageATraiter = new TiragePKMTypes()
-                // {
-                //     ResultatTirageStatus = classificationResult.ResultatStatus,
-                //     NoteTirage = classificationResult.NoteResultatTirage,
-                //     PKMTypes = PKMTypesChoisis
-                // };
-                // TiragePKMTypes = _gererResultatTiragePKMTypes.TirerPKMTypes(TiragePKMTypes, tirageATraiter);
+                var classificationResult = _resultCombatPKMTypes.NoterResultatTirage(PKMTypesfaibles, PKMTypesDangereux, PKMTypesContres);
+                var tirageATraiter = new TiragePKMTypes()
+                {
+                    ResultatTirageStatus = classificationResult.ResultatStatus,
+                    NoteTirage = classificationResult.NoteResultatTirage,
+                    PKMTypes = PKMTypesChoisis
+                };
+                TiragePKMTypes = _gererResultatTiragePKMTypes.TirerPKMTypes(TiragePKMTypes, tirageATraiter);
                 comptage += 1;
             }
         }
