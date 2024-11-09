@@ -6,6 +6,7 @@ using GeneratorPKMTeam;
 
 namespace GeneratorPKMTeamTest.Utils.Personas
 {
+    //TODO supprimer cette classe
     public static class RelPKMTypePersonas
     {
         private static List<RelPKMType> peuPKMTypesFaibles;

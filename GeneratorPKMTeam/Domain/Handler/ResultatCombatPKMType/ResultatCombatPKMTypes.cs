@@ -9,7 +9,9 @@ namespace GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType
         private double _pourcentPKMTypesDangereuxTrouves;
         private double _pourcentPKMTypesFinales;
         private ResultatTirageStatus _statusTirage;
-        private List<PKMType> _pkmTypes;
+        private List<PKMType> _pkmTypesFaibles;
+        private List<PKMType> _pkmTypesDangereux;
+        private List<PKMType> _pkmTypesContrables;
         private IResultatCombatPKMTypeATK _resultatCombatPKMTypeATK;
         private IResultatCombatPKMTypeDEF _resultatCombatPKMTypeDEF;
 
@@ -19,30 +21,32 @@ namespace GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType
             _resultatCombatPKMTypeDEF = resultatCombatPKMTypeDEF;
         }
 
-        public ResultatTirage NoterResultatTirage(List<RelPKMType> listPKMTypesFaibles, List<RelPKMType> listesPKMTypesDangereux, List<PKMType> PKMTypes)
+        public ResultatTirage NoterResultatTirage(List<PKMType> PKMTypesFaibles, List<PKMType> PKMTypesDangereux, List<PKMType> PKMTypesContrables)
         {
-            _pkmTypes = PKMTypes;
-            CalculerPourcentFinal(listPKMTypesFaibles, listesPKMTypesDangereux);
+            _pkmTypesFaibles = PKMTypesFaibles;
+            _pkmTypesDangereux = PKMTypesDangereux;
+            _pkmTypesContrables = PKMTypesContrables;
+            CalculerPourcentFinal();
             DeterminerStatusTirage();
             return BuildResultatTirage(_pourcentPKMTypesFinales, _statusTirage);
         }
 
-        private void CalculerPourcentFinal(List<RelPKMType> listPKMTypesFaibles, List<RelPKMType> listesPKMTypesDangereux)
+        private void CalculerPourcentFinal()
         {
-            CalculerPourcentPKMTypesFaibles(listPKMTypesFaibles);
-            CalculerPourcentPKMTypesDangereux(listesPKMTypesDangereux);
+            CalculerPourcentPKMTypesFaibles();
+            CalculerPourcentPKMTypesDangereux();
             _pourcentPKMTypesFinales = (_pourcentPKMTypesFaiblesTrouves + _pourcentPKMTypesDangereuxTrouves) / 2;
         }
 
-        private void CalculerPourcentPKMTypesFaibles(List<RelPKMType> listPKMTypesFaibles)
+        private void CalculerPourcentPKMTypesFaibles()
         {
-            var resultatTirage = _resultatCombatPKMTypeATK.NoterResultatTirage(listPKMTypesFaibles);
+            var resultatTirage = _resultatCombatPKMTypeATK.NoterResultatTirage(_pkmTypesFaibles);
             _pourcentPKMTypesFaiblesTrouves = resultatTirage.NoteResultatTirage;
         }
 
-        private void CalculerPourcentPKMTypesDangereux(List<RelPKMType> listPKMTypesDangereux)
+        private void CalculerPourcentPKMTypesDangereux()
         {
-            var resultatTirage = _resultatCombatPKMTypeDEF.NoterResultatTirage(listPKMTypesDangereux, _pkmTypes);
+            var resultatTirage = _resultatCombatPKMTypeDEF.NoterResultatTirage(_pkmTypesDangereux, _pkmTypesContrables);
             _pourcentPKMTypesDangereuxTrouves = resultatTirage.NoteResultatTirage;
         }
 

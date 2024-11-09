@@ -8,6 +8,6 @@ namespace GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType
 {
     public interface IResultatCombatPKMTypeATK
     {
-        ResultatTirage NoterResultatTirage(List<RelPKMType> listesPKMTypesFaibles);
+        ResultatTirage NoterResultatTirage(List<PKMType> listesPKMTypesFaibles);
     }
 }

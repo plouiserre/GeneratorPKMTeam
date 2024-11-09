@@ -26,14 +26,12 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
         [Fact]
         public void ResultatTiragePkmDangereuxPeuContrable()
         {
-            var pkmTypesContres = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Acier" });
-            var relPKMTypesContres = pkmTypesContres.Select(o => new RelPKMType() { TypePKM = o.Nom, ModeImpact = 2 }).ToList();
-            var combattrePKMTypes = Substitute.For<ICombattrePKMTypes>();
-            combattrePKMTypes.RetournerPKMTypesContres(Arg.Any<List<RelPKMType>>(), Arg.Any<List<PKMType>>()).Returns(relPKMTypesContres);
+            var pkmTypesDangereux = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Acier", "Dragon", "Eau", "Glace", "Poison", "Psy", "Roche", "Sol", "Vol" });
+            var pkmTypesContrables = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Glace", "Psy" });
 
-            var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF(combattrePKMTypes);
+            var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
 
-            var resultat = resultatCombatPKMTypeDEF.NoterResultatTirage(peuPKMTypesDangereux, tiragePKMTypes);
+            var resultat = resultatCombatPKMTypeDEF.NoterResultatTirage(pkmTypesDangereux, pkmTypesContrables);
 
             Assert.Equal(ResultatTirageStatus.Faible, resultat.ResultatStatus);
             Assert.True(resultat.NoteResultatTirage < 30);
@@ -42,30 +40,26 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
         [Fact]
         public void ResultatTiragePkmDangereuxQuelquesContrable()
         {
-            var pkmTypesContres = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Acier", "Combat", "Dragon" });
-            var relPKMTypesContres = pkmTypesContres.Select(o => new RelPKMType() { TypePKM = o.Nom, ModeImpact = 2 }).ToList();
-            var combattrePKMTypes = Substitute.For<ICombattrePKMTypes>();
-            combattrePKMTypes.RetournerPKMTypesContres(Arg.Any<List<RelPKMType>>(), Arg.Any<List<PKMType>>()).Returns(relPKMTypesContres);
+            var pkmTypesDangereux = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Acier", "Dragon", "Eau", "Glace", "Poison", "Psy", "Roche", "Sol", "Vol" });
+            var pkmTypesContrables = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Dragon", "Eau", "Glace", "Psy", "Roche", "Sol", "Vol" });
 
-            var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF(combattrePKMTypes);
+            var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
 
-            var resultat = resultatCombatPKMTypeDEF.NoterResultatTirage(peuPKMTypesDangereux, tiragePKMTypes);
+            var resultat = resultatCombatPKMTypeDEF.NoterResultatTirage(pkmTypesDangereux, pkmTypesContrables);
 
             Assert.Equal(ResultatTirageStatus.Acceptable, resultat.ResultatStatus);
-            Assert.True(resultat.NoteResultatTirage < 100 && resultat.NoteResultatTirage > 30);
+            Assert.True(resultat.NoteResultatTirage > 30 && resultat.NoteResultatTirage < 100);
         }
 
         [Fact]
         public void ResultatTiragePkmDangereuxTousContrable()
         {
-            var pkmTypesContres = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Acier", "Combat", "Dragon", "Eau", "Electrique" });
-            var relPKMTypesContres = pkmTypesContres.Select(o => new RelPKMType() { TypePKM = o.Nom, ModeImpact = 2 }).ToList();
-            var combattrePKMTypes = Substitute.For<ICombattrePKMTypes>();
-            combattrePKMTypes.RetournerPKMTypesContres(Arg.Any<List<RelPKMType>>(), Arg.Any<List<PKMType>>()).Returns(relPKMTypesContres);
+            var pkmTypesDangereux = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Acier", "Dragon", "Eau", "Glace", "Poison", "Psy", "Roche", "Sol", "Vol" });
+            var pkmTypesContrables = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Acier", "Dragon", "Eau", "Glace", "Poison", "Psy", "Roche", "Sol", "Vol" });
 
-            var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF(combattrePKMTypes);
+            var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
 
-            var resultat = resultatCombatPKMTypeDEF.NoterResultatTirage(peuPKMTypesDangereux, tiragePKMTypes);
+            var resultat = resultatCombatPKMTypeDEF.NoterResultatTirage(pkmTypesDangereux, pkmTypesContrables);
 
             Assert.Equal(ResultatTirageStatus.Parfait, resultat.ResultatStatus);
             Assert.Equal(100, resultat.NoteResultatTirage);

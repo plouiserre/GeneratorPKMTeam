@@ -11,15 +11,15 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
 {
     public class ResultatCombatPKMTypeATKTest
     {
-        private List<RelPKMType> peuPKMTypesFaibles;
-        private List<RelPKMType> quelquesPKMTypesFaibles;
-        private List<RelPKMType> bcpPKMTypesFaibles;
+        private List<PKMType> peuPKMTypesFaibles;
+        private List<PKMType> quelquesPKMTypesFaibles;
+        private List<PKMType> bcpPKMTypesFaibles;
 
         public ResultatCombatPKMTypeATKTest()
         {
-            peuPKMTypesFaibles = RelPKMTypePersonas.RetournerRelPKMType(FrequenceRelPKMType.Peu, NomListRelPKMType.Faibles);
-            quelquesPKMTypesFaibles = RelPKMTypePersonas.RetournerRelPKMType(FrequenceRelPKMType.Quelques, NomListRelPKMType.Faibles);
-            bcpPKMTypesFaibles = RelPKMTypePersonas.RetournerRelPKMType(FrequenceRelPKMType.Beaucoup, NomListRelPKMType.Faibles);
+            peuPKMTypesFaibles = PKMDonneesPersonas.RetournerPKMType(FrequenceRelPKMType.Peu, NomListRelPKMType.Faibles);
+            quelquesPKMTypesFaibles = PKMDonneesPersonas.RetournerPKMType(FrequenceRelPKMType.Quelques, NomListRelPKMType.Faibles);
+            bcpPKMTypesFaibles = PKMDonneesPersonas.RetournerPKMType(FrequenceRelPKMType.Beaucoup, NomListRelPKMType.Faibles);
         }
 
         [Fact]

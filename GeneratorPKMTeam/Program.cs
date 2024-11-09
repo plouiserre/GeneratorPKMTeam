@@ -11,26 +11,26 @@ var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
 var selectPKMTypes = new ChoisirPKMTypes();
 var fightPKMTypes = new CombattrePKMTypes();
 var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
-var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF(fightPKMTypes);
-var resultFightPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
-var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
-var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultFightPKMTypes,
-                gererResultatTiragePKMTypes);
+var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
+// var resultFightPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
+// var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
+// var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultFightPKMTypes,
+//                 gererResultatTiragePKMTypes);
 
-handler.Generer();
+// handler.Generer();
 
-var tiragesAAfficher = handler.TiragePKMTypes;
+// var tiragesAAfficher = handler.TiragePKMTypes;
 
-for (int i = 0; i < tiragesAAfficher.Count; i++)
-{
-    var tirage = tiragesAAfficher[i];
-    int tirageNumero = i + 1;
-    Console.WriteLine("Tirage n°" + tirageNumero);
-    foreach (var pkmType in tirage.PKMTypes)
-    {
-        Console.WriteLine(pkmType.Nom);
-    }
-    Console.WriteLine("-------FIN Tirage n°" + tirageNumero);
-}
+// for (int i = 0; i < tiragesAAfficher.Count; i++)
+// {
+//     var tirage = tiragesAAfficher[i];
+//     int tirageNumero = i + 1;
+//     Console.WriteLine("Tirage n°" + tirageNumero);
+//     foreach (var pkmType in tirage.PKMTypes)
+//     {
+//         Console.WriteLine(pkmType.Nom);
+//     }
+//     Console.WriteLine("-------FIN Tirage n°" + tirageNumero);
+// }
 
 Console.Read();
