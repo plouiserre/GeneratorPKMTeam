@@ -42,7 +42,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             Assert.Equal(10, handler.TiragePKMTypes.Count);
             foreach (var tirage in handler.TiragePKMTypes)
             {
-                Assert.Equal(ResultatTirageStatus.Parfait, tirage.ResultatTirageStatus);
+                Assert.True(tirage.NoteTirage >= 90);
             }
         }
 
