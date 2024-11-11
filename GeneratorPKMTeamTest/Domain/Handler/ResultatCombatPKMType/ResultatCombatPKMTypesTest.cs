@@ -41,7 +41,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
             var resultat = resultatCombatPKMTypes.NoterResultatTirage(peuPKMTypesFaibles, bcpPKMTypesDangereux, pKMTypes);
 
             Assert.Equal(ResultatTirageStatus.Faible, resultat.ResultatStatus);
-            Assert.True(resultat.NoteResultatTirage < 20);
+            Assert.Equal(19, resultat.NoteResultatTirage);
         }
 
 
@@ -55,7 +55,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
             var resultat = resultatCombatPKMTypes.NoterResultatTirage(quelquesPKMTypesFaibles, quelquesPKMTypesDangereux, pKMTypes);
 
             Assert.Equal(ResultatTirageStatus.Acceptable, resultat.ResultatStatus);
-            Assert.True(resultat.NoteResultatTirage < 60);
+            Assert.Equal(59, resultat.NoteResultatTirage);
         }
 
         [Fact]
@@ -74,14 +74,14 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
         [Fact]
         public void ResultatTiragePKMFaiblesFaiblesPKMDangereuxAcceptablesObtientResultatPassables()
         {
-            var resultatCombatPKMTypeATK = MockIResultatCombatPKMTypeATK(19, ResultatTirageStatus.Faible);
-            var resultatCombatPKMTypeDEF = MockIResultatCombatPKMTypeDEF(55, ResultatTirageStatus.Acceptable);
+            var resultatCombatPKMTypeATK = MockIResultatCombatPKMTypeATK(19.33, ResultatTirageStatus.Faible);
+            var resultatCombatPKMTypeDEF = MockIResultatCombatPKMTypeDEF(55.87, ResultatTirageStatus.Acceptable);
             var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
 
             var resultat = resultatCombatPKMTypes.NoterResultatTirage(peuPKMTypesFaibles, quelquesPKMTypesDangereux, pKMTypes);
 
             Assert.Equal(ResultatTirageStatus.Passables, resultat.ResultatStatus);
-            Assert.True(resultat.NoteResultatTirage < 40);
+            Assert.Equal(37.60, resultat.NoteResultatTirage);
         }
 
         [Fact]
@@ -149,7 +149,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
             Assert.True(resultat.NoteResultatTirage < 80);
         }
 
-        private IResultatCombatPKMTypeATK MockIResultatCombatPKMTypeATK(int NoteResultatTirage, ResultatTirageStatus resultatTirageStatus)
+        private IResultatCombatPKMTypeATK MockIResultatCombatPKMTypeATK(double NoteResultatTirage, ResultatTirageStatus resultatTirageStatus)
         {
             var resultatCombatPKMTypeATK = Substitute.For<IResultatCombatPKMTypeATK>();
             resultatCombatPKMTypeATK.NoterResultatTirage(Arg.Any<List<PKMType>>())
@@ -157,7 +157,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
             return resultatCombatPKMTypeATK;
         }
 
-        private IResultatCombatPKMTypeDEF MockIResultatCombatPKMTypeDEF(int NoteResultatTirage, ResultatTirageStatus resultatTirageStatus)
+        private IResultatCombatPKMTypeDEF MockIResultatCombatPKMTypeDEF(double NoteResultatTirage, ResultatTirageStatus resultatTirageStatus)
         {
             var resultatCombatPKMTypeDEF = Substitute.For<IResultatCombatPKMTypeDEF>();
             resultatCombatPKMTypeDEF.NoterResultatTirage(Arg.Any<List<PKMType>>(), Arg.Any<List<PKMType>>())

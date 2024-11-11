@@ -34,7 +34,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
             var resultat = resultatCombatPKMTypeDEF.NoterResultatTirage(pkmTypesDangereux, pkmTypesContrables);
 
             Assert.Equal(ResultatTirageStatus.Faible, resultat.ResultatStatus);
-            Assert.True(resultat.NoteResultatTirage < 30);
+            Assert.Equal(22.22, resultat.NoteResultatTirage);
         }
 
         [Fact]
@@ -48,7 +48,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
             var resultat = resultatCombatPKMTypeDEF.NoterResultatTirage(pkmTypesDangereux, pkmTypesContrables);
 
             Assert.Equal(ResultatTirageStatus.Acceptable, resultat.ResultatStatus);
-            Assert.True(resultat.NoteResultatTirage > 30 && resultat.NoteResultatTirage < 100);
+            Assert.Equal(77.78, resultat.NoteResultatTirage);
         }
 
         [Fact]

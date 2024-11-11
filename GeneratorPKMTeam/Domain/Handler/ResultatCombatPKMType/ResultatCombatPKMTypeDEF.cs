@@ -36,7 +36,8 @@ namespace GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType
         {
             double nombrePKMTypesContres = PKMTypesContres.Count;
             double nombrePKMTypesDangereux = PKMTypesDangereux.Count;
-            return nombrePKMTypesContres / nombrePKMTypesDangereux * 100;
+            double resultat = nombrePKMTypesContres / nombrePKMTypesDangereux * 100;
+            return Math.Round(resultat, 2);
         }
     }
 }

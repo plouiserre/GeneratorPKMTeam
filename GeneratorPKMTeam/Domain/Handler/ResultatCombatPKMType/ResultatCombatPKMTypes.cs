@@ -35,7 +35,8 @@ namespace GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType
         {
             CalculerPourcentPKMTypesFaibles();
             CalculerPourcentPKMTypesDangereux();
-            _pourcentPKMTypesFinales = (_pourcentPKMTypesFaiblesTrouves + _pourcentPKMTypesDangereuxTrouves) / 2;
+            double resultat = (_pourcentPKMTypesFaiblesTrouves + _pourcentPKMTypesDangereuxTrouves) / 2;
+            _pourcentPKMTypesFinales = Math.Round(resultat, 2);
         }
 
         private void CalculerPourcentPKMTypesFaibles()
