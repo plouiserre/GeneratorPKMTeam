@@ -1,4 +1,5 @@
 using GeneratorPKMTeam.Domain.CustomException;
+using GeneratorPKMTeam.Domain.Handler.RechercherPKMType;
 using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driving;
@@ -9,18 +10,15 @@ namespace GeneratorPKMTeam.Domain.Handler
     {
         private IChargerPKMTypes _chargementPKMTypes;
         private IChoisirPKMTypes _choisirPKMTypes;
-        private ICombattrePKMTypes _combattrePKMTypes;
         private IResultatCombatPKMTypes _resultCombatPKMTypes;
         private IGererResultatTiragePKMTypes _gererResultatTiragePKMTypes;
         public List<TiragePKMTypes> TiragePKMTypes;
 
         public GeneratePKMTeamHandler(IChargerPKMTypes chargementPKMTypes, IChoisirPKMTypes choisirPKMTypes,
-                ICombattrePKMTypes combattrePKMTypes, IResultatCombatPKMTypes resultCombatPKMTypes,
-                IGererResultatTiragePKMTypes gererResultatTiragePKMTypes)
+                IResultatCombatPKMTypes resultCombatPKMTypes, IGererResultatTiragePKMTypes gererResultatTiragePKMTypes)
         {
             _chargementPKMTypes = chargementPKMTypes;
             _choisirPKMTypes = choisirPKMTypes;
-            _combattrePKMTypes = combattrePKMTypes;
             _resultCombatPKMTypes = resultCombatPKMTypes;
             _gererResultatTiragePKMTypes = gererResultatTiragePKMTypes;
             TiragePKMTypes = new List<TiragePKMTypes>();
@@ -35,15 +33,8 @@ namespace GeneratorPKMTeam.Domain.Handler
                 if (comptage >= 100)
                     throw new CombinaisonParfaitesIntrouvablesException();
                 var PKMTypesChoisis = _choisirPKMTypes.SelectionnerPKMTypes(tousPKMTypes);
-                var PKMTypesfaibles = _combattrePKMTypes.RetournerTousFaiblesPKMTypes(PKMTypesChoisis);
-                var PKMTypesDangereux = _combattrePKMTypes.RetournerPKMTypesDangereux(tousPKMTypes.PKMTypes, PKMTypesChoisis);
-                var classificationResult = _resultCombatPKMTypes.NoterResultatTirage(PKMTypesfaibles, PKMTypesDangereux, PKMTypesChoisis);
-                var tirageATraiter = new TiragePKMTypes()
-                {
-                    ResultatTirageStatus = classificationResult.ResultatStatus,
-                    NoteTirage = classificationResult.NoteResultatTirage,
-                    PKMTypes = PKMTypesChoisis
-                };
+                var evaluation = new EvaluerPKMChoisis(_resultCombatPKMTypes, tousPKMTypes.PKMTypes);
+                var tirageATraiter = evaluation.Evaluer(PKMTypesChoisis);
                 TiragePKMTypes = _gererResultatTiragePKMTypes.TirerPKMTypes(TiragePKMTypes, tirageATraiter);
                 comptage += 1;
             }
@@ -57,7 +48,7 @@ namespace GeneratorPKMTeam.Domain.Handler
             {
                 foreach (var tirage in TiragePKMTypes)
                 {
-                    if (tirage.ResultatTirageStatus != ResultatTirageStatus.Parfait)
+                    if (tirage.NoteTirage < 90)
                         return true;
                 }
                 return false;

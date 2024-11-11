@@ -12,22 +12,22 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
 {
     public class ResultatCombatPKMTypesTest
     {
-        private List<RelPKMType> peuPKMTypesFaibles;
-        private List<RelPKMType> quelquesPKMTypesFaibles;
-        private List<RelPKMType> bcpPKMTypesFaibles;
-        private List<RelPKMType> peuPKMTypesDangereux;
-        private List<RelPKMType> quelquesPKMTypesDangereux;
-        private List<RelPKMType> bcpPKMTypesDangereux;
+        private List<PKMType> peuPKMTypesFaibles;
+        private List<PKMType> quelquesPKMTypesFaibles;
+        private List<PKMType> bcpPKMTypesFaibles;
+        private List<PKMType> peuPKMTypesDangereux;
+        private List<PKMType> quelquesPKMTypesDangereux;
+        private List<PKMType> bcpPKMTypesDangereux;
         private List<PKMType> pKMTypes;
 
         public ResultatCombatPKMTypesTest()
         {
-            peuPKMTypesFaibles = RelPKMTypePersonas.RetournerRelPKMType(FrequenceRelPKMType.Peu, NomListRelPKMType.Faibles);
-            quelquesPKMTypesFaibles = RelPKMTypePersonas.RetournerRelPKMType(FrequenceRelPKMType.Quelques, NomListRelPKMType.Faibles);
-            bcpPKMTypesFaibles = RelPKMTypePersonas.RetournerRelPKMType(FrequenceRelPKMType.Beaucoup, NomListRelPKMType.Faibles);
-            peuPKMTypesDangereux = RelPKMTypePersonas.RetournerRelPKMType(FrequenceRelPKMType.Peu, NomListRelPKMType.Dangereux);
-            quelquesPKMTypesDangereux = RelPKMTypePersonas.RetournerRelPKMType(FrequenceRelPKMType.Quelques, NomListRelPKMType.Dangereux);
-            bcpPKMTypesDangereux = RelPKMTypePersonas.RetournerRelPKMType(FrequenceRelPKMType.Beaucoup, NomListRelPKMType.Dangereux);
+            peuPKMTypesFaibles = PKMDonneesPersonas.RetournerPKMType(FrequenceRelPKMType.Peu, NomListRelPKMType.Faibles);
+            quelquesPKMTypesFaibles = PKMDonneesPersonas.RetournerPKMType(FrequenceRelPKMType.Quelques, NomListRelPKMType.Faibles);
+            bcpPKMTypesFaibles = PKMDonneesPersonas.RetournerPKMType(FrequenceRelPKMType.Beaucoup, NomListRelPKMType.Faibles);
+            peuPKMTypesDangereux = PKMDonneesPersonas.RetournerPKMType(FrequenceRelPKMType.Peu, NomListRelPKMType.Dangereux);
+            quelquesPKMTypesDangereux = PKMDonneesPersonas.RetournerPKMType(FrequenceRelPKMType.Quelques, NomListRelPKMType.Dangereux);
+            bcpPKMTypesDangereux = PKMDonneesPersonas.RetournerPKMType(FrequenceRelPKMType.Beaucoup, NomListRelPKMType.Dangereux);
             var pKMDonnees = PKMDonneesPersonas.GetPersonas();
             pKMTypes = pKMDonnees.PKMTypes;
         }
@@ -41,7 +41,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
             var resultat = resultatCombatPKMTypes.NoterResultatTirage(peuPKMTypesFaibles, bcpPKMTypesDangereux, pKMTypes);
 
             Assert.Equal(ResultatTirageStatus.Faible, resultat.ResultatStatus);
-            Assert.True(resultat.NoteResultatTirage < 20);
+            Assert.Equal(19, resultat.NoteResultatTirage);
         }
 
 
@@ -55,7 +55,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
             var resultat = resultatCombatPKMTypes.NoterResultatTirage(quelquesPKMTypesFaibles, quelquesPKMTypesDangereux, pKMTypes);
 
             Assert.Equal(ResultatTirageStatus.Acceptable, resultat.ResultatStatus);
-            Assert.True(resultat.NoteResultatTirage < 60);
+            Assert.Equal(59, resultat.NoteResultatTirage);
         }
 
         [Fact]
@@ -74,14 +74,14 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
         [Fact]
         public void ResultatTiragePKMFaiblesFaiblesPKMDangereuxAcceptablesObtientResultatPassables()
         {
-            var resultatCombatPKMTypeATK = MockIResultatCombatPKMTypeATK(19, ResultatTirageStatus.Faible);
-            var resultatCombatPKMTypeDEF = MockIResultatCombatPKMTypeDEF(55, ResultatTirageStatus.Acceptable);
+            var resultatCombatPKMTypeATK = MockIResultatCombatPKMTypeATK(19.33, ResultatTirageStatus.Faible);
+            var resultatCombatPKMTypeDEF = MockIResultatCombatPKMTypeDEF(55.87, ResultatTirageStatus.Acceptable);
             var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
 
             var resultat = resultatCombatPKMTypes.NoterResultatTirage(peuPKMTypesFaibles, quelquesPKMTypesDangereux, pKMTypes);
 
             Assert.Equal(ResultatTirageStatus.Passables, resultat.ResultatStatus);
-            Assert.True(resultat.NoteResultatTirage < 40);
+            Assert.Equal(37.60, resultat.NoteResultatTirage);
         }
 
         [Fact]
@@ -149,18 +149,18 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
             Assert.True(resultat.NoteResultatTirage < 80);
         }
 
-        private IResultatCombatPKMTypeATK MockIResultatCombatPKMTypeATK(int NoteResultatTirage, ResultatTirageStatus resultatTirageStatus)
+        private IResultatCombatPKMTypeATK MockIResultatCombatPKMTypeATK(double NoteResultatTirage, ResultatTirageStatus resultatTirageStatus)
         {
             var resultatCombatPKMTypeATK = Substitute.For<IResultatCombatPKMTypeATK>();
-            resultatCombatPKMTypeATK.NoterResultatTirage(Arg.Any<List<RelPKMType>>())
+            resultatCombatPKMTypeATK.NoterResultatTirage(Arg.Any<List<PKMType>>())
             .Returns(new ResultatTirage() { NoteResultatTirage = NoteResultatTirage, ResultatStatus = resultatTirageStatus });
             return resultatCombatPKMTypeATK;
         }
 
-        private IResultatCombatPKMTypeDEF MockIResultatCombatPKMTypeDEF(int NoteResultatTirage, ResultatTirageStatus resultatTirageStatus)
+        private IResultatCombatPKMTypeDEF MockIResultatCombatPKMTypeDEF(double NoteResultatTirage, ResultatTirageStatus resultatTirageStatus)
         {
             var resultatCombatPKMTypeDEF = Substitute.For<IResultatCombatPKMTypeDEF>();
-            resultatCombatPKMTypeDEF.NoterResultatTirage(Arg.Any<List<RelPKMType>>(), Arg.Any<List<PKMType>>())
+            resultatCombatPKMTypeDEF.NoterResultatTirage(Arg.Any<List<PKMType>>(), Arg.Any<List<PKMType>>())
             .Returns(new ResultatTirage() { NoteResultatTirage = NoteResultatTirage, ResultatStatus = resultatTirageStatus });
             return resultatCombatPKMTypeDEF;
         }

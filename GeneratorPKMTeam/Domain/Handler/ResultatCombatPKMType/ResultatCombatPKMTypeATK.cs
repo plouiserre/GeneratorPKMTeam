@@ -10,23 +10,25 @@ namespace GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType
     {
         private const double NombrePKMTypes = 18;
 
-        private List<RelPKMType> _listesPKMTypesFaibles;
+        private List<PKMType> _PKMTypesFaibles;
 
-        public ResultatTirage NoterResultatTirage(List<RelPKMType> listesPKMTypesFaibles)
+        public ResultatTirage NoterResultatTirage(List<PKMType> PKMTypesFaibles)
         {
-            _listesPKMTypesFaibles = listesPKMTypesFaibles;
+            _PKMTypesFaibles = PKMTypesFaibles;
             double note = CalculNoteTirage();
+            var resultatTirageStatus = ResultatTirageStatus.Parfait;
             if (note < 60)
-                return BuildResultatTirage(30, ResultatTirageStatus.Faible);
+                resultatTirageStatus = ResultatTirageStatus.Faible;
             else if (note < 100)
-                return BuildResultatTirage(100, ResultatTirageStatus.Acceptable);
-            else
-                return BuildResultatTirage(100, ResultatTirageStatus.Parfait);
+                resultatTirageStatus = ResultatTirageStatus.Acceptable;
+            return BuildResultatTirage(note, resultatTirageStatus);
         }
 
         private double CalculNoteTirage()
         {
-            return _listesPKMTypesFaibles.Count / NombrePKMTypes * 100;
+            double resultat = _PKMTypesFaibles.Count / NombrePKMTypes * 100;
+            double resultatArrondi = Math.Round(resultat, 2);
+            return resultatArrondi;
         }
 
         private ResultatTirage BuildResultatTirage(double note, ResultatTirageStatus resultatTirage)

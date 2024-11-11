@@ -11,17 +11,14 @@ namespace GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType
         private const double NombrePKMTypes = 18;
 
         private List<RelPKMType> _listesPKMTypesFaibles;
-        private ICombattrePKMTypes _combattrePKMTypes;
 
-        public ResultatCombatPKMTypeDEF(ICombattrePKMTypes combattrePKMTypes)
+        public ResultatCombatPKMTypeDEF()
         {
-            _combattrePKMTypes = combattrePKMTypes;
         }
 
-        public ResultatTirage NoterResultatTirage(List<RelPKMType> listesPKMTypesDangereux, List<PKMType> PKMTypes)
+        public ResultatTirage NoterResultatTirage(List<PKMType> pkmTypesDangereux, List<PKMType> pkmTypesContrables)
         {
-            var PKMTypesContres = _combattrePKMTypes.RetournerPKMTypesContres(listesPKMTypesDangereux, PKMTypes);
-            double pourcentagePKMTypesContres = CalculerPourcentPKMTypesContres(PKMTypesContres, listesPKMTypesDangereux);
+            double pourcentagePKMTypesContres = CalculerPourcentPKMTypesContres(pkmTypesDangereux, pkmTypesContrables);
             if (pourcentagePKMTypesContres < 30)
             {
                 return new ResultatTirage() { ResultatStatus = ResultatTirageStatus.Faible, NoteResultatTirage = pourcentagePKMTypesContres };
@@ -35,11 +32,12 @@ namespace GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType
         }
 
 
-        private double CalculerPourcentPKMTypesContres(List<RelPKMType> PKMTypesContres, List<RelPKMType> PKMTypesDangereux)
+        private double CalculerPourcentPKMTypesContres(List<PKMType> PKMTypesDangereux, List<PKMType> PKMTypesContres)
         {
             double nombrePKMTypesContres = PKMTypesContres.Count;
             double nombrePKMTypesDangereux = PKMTypesDangereux.Count;
-            return nombrePKMTypesContres / nombrePKMTypesDangereux * 100;
+            double resultat = nombrePKMTypesContres / nombrePKMTypesDangereux * 100;
+            return Math.Round(resultat, 2);
         }
     }
 }

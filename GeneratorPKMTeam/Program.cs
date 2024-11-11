@@ -9,12 +9,11 @@ var PMKPersistence = new PKMTypePersistence();
 
 var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
 var selectPKMTypes = new ChoisirPKMTypes();
-var fightPKMTypes = new CombattrePKMTypes();
 var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
-var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF(fightPKMTypes);
+var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
 var resultFightPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
 var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
-var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, fightPKMTypes, resultFightPKMTypes,
+var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultFightPKMTypes,
                 gererResultatTiragePKMTypes);
 
 handler.Generer();

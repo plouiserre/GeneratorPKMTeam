@@ -30,12 +30,11 @@ namespace GeneratorPKMTeamTest.Domain.Handler
 
             var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
             var selectPKMTypes = new ChoisirPKMTypes();
-            var combattrePKMTypes = new CombattrePKMTypes();
             var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
-            var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF(combattrePKMTypes);
+            var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
             var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
             var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
-            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, combattrePKMTypes, resultatCombatPKMTypes,
+            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
                             gererResultatTiragePKMTypes);
 
             handler.Generer();
@@ -43,7 +42,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             Assert.Equal(10, handler.TiragePKMTypes.Count);
             foreach (var tirage in handler.TiragePKMTypes)
             {
-                Assert.Equal(ResultatTirageStatus.Parfait, tirage.ResultatTirageStatus);
+                Assert.True(tirage.NoteTirage >= 90);
             }
         }
 
@@ -57,11 +56,10 @@ namespace GeneratorPKMTeamTest.Domain.Handler
 
             var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
             var selectPKMTypes = new ChoisirPKMTypes();
-            var combattrePKMTypes = new CombattrePKMTypes();
             var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
-            var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF(combattrePKMTypes);
+            var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
             var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
-            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, combattrePKMTypes, resultatCombatPKMTypes,
+            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
                             gererResultatTiragePKMTypes);
 
             var result = Assert.Throws<CombinaisonParfaitesIntrouvablesException>(() => handler.Generer());
