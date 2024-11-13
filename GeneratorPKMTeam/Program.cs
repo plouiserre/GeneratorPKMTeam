@@ -4,7 +4,6 @@ using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
 using GeneratorPKMTeam.Infrastructure.Connector;
 using GeneratorPKMTeam.Infrastructure.Services;
 
-var connector = new PKMTypeJson();
 var PMKPersistence = new PKMTypePersistence();
 
 var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
@@ -30,6 +29,13 @@ for (int i = 0; i < tiragesAAfficher.Count; i++)
         Console.WriteLine(pkmType.Nom);
     }
     Console.WriteLine("-------FIN Tirage n°" + tirageNumero);
+}
+
+var connector = new PKMJson();
+var pkms = connector.RecupererListePKMs();
+foreach (var pkm in pkms.TousPKMs)
+{
+    Console.WriteLine("Nom " + pkm.Nom + " generation " + pkm.Generation + " types " + String.Join(" ", pkm.PKMTypes));
 }
 
 Console.Read();
