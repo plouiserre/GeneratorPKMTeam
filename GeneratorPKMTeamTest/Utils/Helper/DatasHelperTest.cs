@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using GeneratorPKMTeam;
-using GeneratorPKMTeam.Infrastructure.Connector.JsonModels;
 using GeneratorPKMTeam.Infrastructure.Mapper;
+using GeneratorPKMTeam.Infrastructure.Models.PKMDonnees;
 
 namespace GeneratorPKMTeamTest.Utils.Helper
 {
