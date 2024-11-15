@@ -12,12 +12,13 @@ var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
 var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
 var resultFightPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
 var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
-var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultFightPKMTypes,
+var choisirMeilleuresCombinaisonsTypes = new ChoisirMeilleuresCombinaisonsTypes(loadPKMTypes, selectPKMTypes, resultFightPKMTypes,
                 gererResultatTiragePKMTypes);
+var handler = new GeneratePKMTeamHandler(choisirMeilleuresCombinaisonsTypes);
 
 handler.Generer();
 
-var tiragesAAfficher = handler.TiragePKMTypes;
+var tiragesAAfficher = handler.TypesChoisis;
 
 for (int i = 0; i < tiragesAAfficher.Count; i++)
 {

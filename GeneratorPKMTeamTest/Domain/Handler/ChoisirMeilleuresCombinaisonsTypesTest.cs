@@ -13,17 +13,17 @@ using NSubstitute;
 
 namespace GeneratorPKMTeamTest.Domain.Handler
 {
-    public class GeneratePKMTeamHandlerTest
+    public class ChoisirMeilleuresCombinaisonsTypesTest
     {
         private PKMDonnees _fakeDatas;
 
-        public GeneratePKMTeamHandlerTest()
+        public ChoisirMeilleuresCombinaisonsTypesTest()
         {
             _fakeDatas = PKMDonneesPersonas.GetPersonas();
         }
 
         [Fact]
-        public void GeneratePKMTeamEstOK()
+        public void ChoixMeilleuresCombinaisonsTypesEstOK()
         {
             var PMKPersistence = Substitute.For<IPKMTypePersistence>();
             PMKPersistence.GetPKMDonnees().Returns(_fakeDatas);
@@ -34,20 +34,20 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
             var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
             var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
-            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
+            var handler = new ChoisirMeilleuresCombinaisonsTypes(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
                             gererResultatTiragePKMTypes);
 
-            handler.Generer();
+            var typesChoisis = handler.Choisir();
 
-            Assert.Equal(10, handler.TiragePKMTypes.Count);
-            foreach (var tirage in handler.TiragePKMTypes)
+            Assert.Equal(10, typesChoisis.Count);
+            foreach (var tirage in typesChoisis)
             {
                 Assert.True(tirage.NoteTirage >= 90);
             }
         }
 
         [Fact]
-        public void GeneratePKMTeamSeTermineJamais()
+        public void ChoixMeilleuresCombinaisonsTypesSeTermineJamais()
         {
             var PMKPersistence = Substitute.For<IPKMTypePersistence>();
             PMKPersistence.GetPKMDonnees().Returns(_fakeDatas);
@@ -59,10 +59,10 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
             var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
             var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
-            var handler = new GeneratePKMTeamHandler(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
+            var handler = new ChoisirMeilleuresCombinaisonsTypes(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
                             gererResultatTiragePKMTypes);
 
-            var result = Assert.Throws<CombinaisonParfaitesIntrouvablesException>(() => handler.Generer());
+            var result = Assert.Throws<CombinaisonParfaitesIntrouvablesException>(() => handler.Choisir());
 
 
             Assert.Equal("Les 10 combinaisons parfaites n'ont pas été trouvé", result.CustomMessage);
