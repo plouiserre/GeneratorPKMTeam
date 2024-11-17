@@ -4,6 +4,11 @@ namespace GeneratorPKMTeamTest.Utils.Personas
 {
     public class PKMDonneesPersonas
     {
+        private static string[] types = {
+                "Acier", "Combat", "Dragon", "Eau", "Electrik", "Fée",
+                "Feu", "Glace", "Insecte", "Normal", "Plante", "Poison",
+                "Psy", "Roche", "Sol", "Spectre", "Ténèbres", "Vol"
+            };
         private static List<PKMType> peuPKMTypesFaibles;
         private static List<PKMType> quelquesPKMTypesFaibles;
         private static List<PKMType> bcpPKMTypesFaibles;
@@ -15,11 +20,6 @@ namespace GeneratorPKMTeamTest.Utils.Personas
         {
             var personas = new PKMDonnees();
             personas.PKMTypes = new List<PKMType>();
-            string[] types = {
-                "Acier", "Combat", "Dragon", "Eau", "Electrik", "Fée",
-                "Feu", "Glace", "Insecte", "Normal", "Plante", "Poison",
-                "Psy", "Roche", "Sol", "Spectre", "Ténèbres", "Vol"
-            };
 
             foreach (var type in types)
             {
@@ -28,6 +28,17 @@ namespace GeneratorPKMTeamTest.Utils.Personas
                 personas.PKMTypes.Add(pkmType);
             }
             return personas;
+        }
+
+        public static List<PKMType> RecupererTypesPKM(int nombre)
+        {
+            var PKMTypes = new List<PKMType>();
+            for (int i = 0; i < nombre; i++)
+            {
+                var pkmType = new PKMType { Nom = types[i] };
+                PKMTypes.Add(pkmType);
+            }
+            return PKMTypes;
         }
 
 
