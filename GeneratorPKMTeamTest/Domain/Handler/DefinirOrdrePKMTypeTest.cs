@@ -57,6 +57,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             Assert.Equal(2, regroupmentTypesPKM[5].Count);
         }
 
+        //TODO reprendre ce test pour le faire tjs OK
         [Fact]
         public void OnRecupereBienDesTypesDansDesOrdresDifferents()
         {
