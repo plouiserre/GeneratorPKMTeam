@@ -4,6 +4,9 @@ using GeneratorPKMTeam;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.CustomException;
 using GeneratorPKMTeamTest.Utils.Personas;
+using NSubstitute;
+using GeneratorPKMTeam.Infrastructure.Services;
+using GeneratorPKMTeam.Domain.Port.Driven;
 
 namespace GeneratorPKMTeamTest.Domain.Handler
 {
@@ -38,10 +41,13 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         public void OnRecupereSixPokemonsAvecLesBonsTypesOuIlYaUnBonOuPlusieursChoixAChaqueFoisPourInferieurOuEgalSecondeGeneration()
         {
             int generation = 2;
-            var pkmsMock = DatasHelperTest.RetournersPKMsOuChaqueTypeEstPresentUneOuPlusieursFois(2);
-            RecupererPKMs(pkmsMock);
 
-            var recuperationPKMs = new RecuperationPKMs(pkmsMock.ToList(), generation);
+            var pkmsStore = DatasHelperTest.RetournersPKMsOuChaqueTypeEstPresentUneOuPlusieursFois(2);
+            RecupererPKMs(pkmsStore);
+
+            var pkmPersistence = MockPKMPersistence(pkmsStore.ToList());
+
+            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, generation);
 
             var pkms = recuperationPKMs.Recuperer(PKMTypesOrdonnees);
 
@@ -84,11 +90,12 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         public void ProvoqueUnePKMAvecTypeInexistantExceptionSiPKMAUnTypeNonTrouve()
         {
             int generation = 2;
-            var pkmsMock = DatasHelperTest.RetournersPKMsOuChaqueTypeEstPresentUneOuPlusieursFois(2);
             var PKMTypesOrdonneesErreur = new Dictionary<int, List<PKMType>>(){
                 {1, new List<PKMType>(){new PKMType(){Nom = "Dinosaure"}}}
             };
-            var recuperationPKMs = new RecuperationPKMs(pkmsMock.ToList(), generation);
+            var pkmsStore = DatasHelperTest.RetournersPKMsOuChaqueTypeEstPresentUneOuPlusieursFois(2);
+            var pkmPersistence = MockPKMPersistence(pkmsStore.ToList());
+            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, generation);
 
             var result = Assert.Throws<PKMAvecTypeInexistantException>(() => recuperationPKMs.Recuperer(PKMTypesOrdonneesErreur));
 
@@ -100,16 +107,25 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         public void ProvoqueUnePKMAvecTypeInexistantExceptionSiPKMAUnDoubleTypeNonTrouve()
         {
             int generation = 2;
-            var pkmsMock = DatasHelperTest.RetournersPKMsOuChaqueTypeEstPresentUneOuPlusieursFois(2);
+            var pkmsStore = DatasHelperTest.RetournersPKMsOuChaqueTypeEstPresentUneOuPlusieursFois(2);
             var PKMTypesOrdonneesErreur = new Dictionary<int, List<PKMType>>(){
                 {1, new List<PKMType>(){new PKMType(){Nom = "Eau"}, new PKMType(){Nom="Feu"}}}
             };
-            var recuperationPKMs = new RecuperationPKMs(pkmsMock.ToList(), generation);
+            var pkmPersistence = MockPKMPersistence(pkmsStore.ToList());
+            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, generation);
 
             var result = Assert.Throws<PKMAvecTypeInexistantException>(() => recuperationPKMs.Recuperer(PKMTypesOrdonneesErreur));
 
             Assert.Equal("Aucun PKM trouvé avec le type Eau-Feu", result.CustomMessage);
             Assert.Equal(TypeErreur.PKMAvecPKMTypeInexistant, result.TypeErreur);
+        }
+
+
+        private IPKMPersistence MockPKMPersistence(List<PKM> pKMs)
+        {
+            var pkmPersistence = Substitute.For<IPKMPersistence>();
+            pkmPersistence.GetPKMs().Returns(new PKMs() { TousPKMs = pKMs });
+            return pkmPersistence;
         }
     }
 }

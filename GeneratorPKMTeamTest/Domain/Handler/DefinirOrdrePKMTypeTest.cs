@@ -66,15 +66,28 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             Dictionary<int, List<PKMType>> premierRegroupmentTypesPKM = definirOrdre.Generer(PKMTypesPKM);
             Dictionary<int, List<PKMType>> deuxièmeRegroupmentTypesPKM = definirOrdre.Generer(PKMTypesPKM);
 
-            Assert.NotEqual(premierRegroupmentTypesPKM[0][0].Nom, deuxièmeRegroupmentTypesPKM[0][0].Nom);
-            Assert.NotEqual(premierRegroupmentTypesPKM[1][0].Nom, deuxièmeRegroupmentTypesPKM[1][0].Nom);
-            Assert.NotEqual(premierRegroupmentTypesPKM[2][0].Nom, deuxièmeRegroupmentTypesPKM[2][0].Nom);
-            Assert.NotEqual(premierRegroupmentTypesPKM[2][1].Nom, deuxièmeRegroupmentTypesPKM[2][1].Nom);
-            Assert.NotEqual(premierRegroupmentTypesPKM[3][0].Nom, deuxièmeRegroupmentTypesPKM[3][0].Nom);
-            Assert.NotEqual(premierRegroupmentTypesPKM[4][0].Nom, deuxièmeRegroupmentTypesPKM[4][0].Nom);
-            Assert.NotEqual(premierRegroupmentTypesPKM[4][1].Nom, deuxièmeRegroupmentTypesPKM[4][1].Nom);
-            Assert.NotEqual(premierRegroupmentTypesPKM[5][0].Nom, deuxièmeRegroupmentTypesPKM[5][0].Nom);
-            Assert.NotEqual(premierRegroupmentTypesPKM[5][1].Nom, deuxièmeRegroupmentTypesPKM[5][1].Nom);
+            bool tousEgaux = EstCeQueLesRegroupementDesTypesSontEgaux(premierRegroupmentTypesPKM, deuxièmeRegroupmentTypesPKM);
+
+            Assert.False(tousEgaux);
+        }
+
+        private bool EstCeQueLesRegroupementDesTypesSontEgaux(Dictionary<int, List<PKMType>> premierRegroupmentTypesPKM,
+        Dictionary<int, List<PKMType>> deuxièmeRegroupmentTypesPKM)
+        {
+            bool premiereComparaisonTypeEgale = premierRegroupmentTypesPKM[0][0].Nom == deuxièmeRegroupmentTypesPKM[0][0].Nom;
+            bool deuxiemeComparaisonTypeEgale = premierRegroupmentTypesPKM[1][0].Nom == deuxièmeRegroupmentTypesPKM[1][0].Nom;
+            bool troisiemeComparaisonTypeEgale = premierRegroupmentTypesPKM[2][0].Nom == deuxièmeRegroupmentTypesPKM[2][0].Nom;
+            bool quatriemeComparaisonTypeEgale = premierRegroupmentTypesPKM[2][1].Nom == deuxièmeRegroupmentTypesPKM[2][1].Nom;
+            bool cinquiemeComparaisonTypeEgale = premierRegroupmentTypesPKM[3][0].Nom == deuxièmeRegroupmentTypesPKM[3][0].Nom;
+            bool sixiemeComparaisonTypeEgale = premierRegroupmentTypesPKM[4][0].Nom == deuxièmeRegroupmentTypesPKM[4][0].Nom;
+            bool septiemeComparaisonTypeEgale = premierRegroupmentTypesPKM[4][1].Nom == deuxièmeRegroupmentTypesPKM[4][1].Nom;
+            bool huitiemeComparaisonTypeEgale = premierRegroupmentTypesPKM[5][0].Nom == deuxièmeRegroupmentTypesPKM[5][0].Nom;
+            bool neuviemeComparaisonTypeEgale = premierRegroupmentTypesPKM[5][1].Nom == deuxièmeRegroupmentTypesPKM[5][1].Nom;
+
+            return premiereComparaisonTypeEgale && deuxiemeComparaisonTypeEgale && troisiemeComparaisonTypeEgale && quatriemeComparaisonTypeEgale
+             && cinquiemeComparaisonTypeEgale && sixiemeComparaisonTypeEgale && septiemeComparaisonTypeEgale && huitiemeComparaisonTypeEgale
+             && neuviemeComparaisonTypeEgale;
+
         }
     }
 }

@@ -4,22 +4,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using GeneratorPKMTeam.Domain.CustomException;
 using GeneratorPKMTeam.Domain.Models;
+using GeneratorPKMTeam.Domain.Port.Driven;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
     public class RecuperationPKMs : IRecuperationPKMs
     {
+        private IPKMPersistence _pkmPersistence;
         private List<PKM> _pkms;
         private int _generation;
 
-        public RecuperationPKMs(List<PKM> pKMs, int generation)
+        public RecuperationPKMs(IPKMPersistence pkmPersistence, int generation)
         {
-            _pkms = pKMs;
+            _pkmPersistence = pkmPersistence;
             _generation = generation;
         }
 
         public List<PKM> Recuperer(Dictionary<int, List<PKMType>> PKMTypesOrdonnees)
         {
+            RecupererPKMDonnees();
             var pkmsRecherches = new List<PKM>();
             foreach (var PKMTypes in PKMTypesOrdonnees)
             {
@@ -44,6 +47,12 @@ namespace GeneratorPKMTeam.Domain.Handler
                 }
             }
             return pkmsRecherches;
+        }
+
+        private void RecupererPKMDonnees()
+        {
+            var pkms = _pkmPersistence.GetPKMs();
+            _pkms = pkms.TousPKMs;
         }
     }
 }

@@ -8,19 +8,21 @@ namespace GeneratorPKMTeam.Domain.Handler
 {
     public class GeneratePKMTeamHandler : IGeneratePKMTeamHandler
     {
+        private IAssemblerEquipePKM _assemblerEquipePKM;
         private IChoisirMeilleuresCombinaisonsTypes _meilleursCombinaisonsTypes;
-        public List<TiragePKMTypes> TypesChoisis;
+        public List<TiragePKMTypes> TiragePKMTypes;
 
-        public GeneratePKMTeamHandler(IChoisirMeilleuresCombinaisonsTypes meilleursCombinaisonsTypes)
+        public GeneratePKMTeamHandler(IChoisirMeilleuresCombinaisonsTypes meilleursCombinaisonsTypes, IAssemblerEquipePKM assemblerEquipePKM)
         {
+            _assemblerEquipePKM = assemblerEquipePKM;
             _meilleursCombinaisonsTypes = meilleursCombinaisonsTypes;
         }
 
-        public void Generer()
+        public Dictionary<int, List<PKM>> Generer()
         {
-            TypesChoisis = _meilleursCombinaisonsTypes.Choisir();
+            TiragePKMTypes = _meilleursCombinaisonsTypes.Choisir();
+            var pkmsChoisis = _assemblerEquipePKM.Assembler(TiragePKMTypes);
+            return pkmsChoisis;
         }
-
-
     }
 }
