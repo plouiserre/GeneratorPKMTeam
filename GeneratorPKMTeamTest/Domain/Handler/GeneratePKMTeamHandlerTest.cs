@@ -26,9 +26,8 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         public void RecupererPlusieursListesPKMsOptimiser()
         {
 
-            var choisirMeilleuresCombinaisonsTypes = InitChoisirMeilleuresCombinaisonsTypes();
-            var assemblerEquipePKM = InitAssemblerEquipePKM();
-            var genererMeilleuresEquipesPKM = new GeneratePKMTeamHandler(choisirMeilleuresCombinaisonsTypes, assemblerEquipePKM);
+            var trouverTypePKMEquipePKM = InitTrouverTypePKMEquipePKM();
+            var genererMeilleuresEquipesPKM = new GeneratePKMTeamHandler(trouverTypePKMEquipePKM);
 
             var resultats = genererMeilleuresEquipesPKM.Generer();
 
@@ -36,6 +35,14 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             {
                 Assert.Equal(6, resultat.Value.Count);
             }
+        }
+
+        private TrouverTypePKMEquipePKM InitTrouverTypePKMEquipePKM()
+        {
+            var choisirMeilleuresCombinaisonsTypes = InitChoisirMeilleuresCombinaisonsTypes();
+            var assemblerEquipePKM = InitAssemblerEquipePKM();
+            var trouverTypePKMEquipePKM = new TrouverTypePKMEquipePKM(choisirMeilleuresCombinaisonsTypes, assemblerEquipePKM);
+            return trouverTypePKMEquipePKM;
         }
 
         private ChoisirMeilleuresCombinaisonsTypes InitChoisirMeilleuresCombinaisonsTypes()

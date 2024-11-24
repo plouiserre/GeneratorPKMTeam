@@ -19,21 +19,22 @@ namespace GeneratorPKMTeam.Domain.Handler
             _recuperationPKMs = recuperationPKMs;
         }
 
-        public Dictionary<int, List<PKM>> Assembler(List<TiragePKMTypes> tirages)
+        public List<PKM> Assembler(TiragePKMTypes tirage)
         {
-            var resultat = new Dictionary<int, List<PKM>>();
+            var resultat = new List<PKM>();
 
-            for (int i = 0; i < tirages.Count; i++)
+            try
             {
-                var tirage = tirages[i];
-
                 var typeOrdonnees = _definirOrdrePKMType.Generer(tirage.PKMTypes);
 
-                var pkmsTrouves = _recuperationPKMs.Recuperer(typeOrdonnees);
+                resultat = _recuperationPKMs.Recuperer(typeOrdonnees);
 
-                resultat.Add(i, pkmsTrouves);
+                return resultat;
             }
-            return resultat;
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
     }
 }

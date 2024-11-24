@@ -6,8 +6,8 @@ using GeneratorPKMTeam.Domain.Models;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    public interface IAssemblerEquipePKM
+    public interface ITrouverTypePKMEquipePKM
     {
-        List<PKM> Assembler(TiragePKMTypes tirage);
+        List<PKM> GenererEquipePKM();
     }
 }

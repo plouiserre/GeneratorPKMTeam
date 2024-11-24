@@ -4,6 +4,6 @@ namespace GeneratorPKMTeam.Domain.Handler
 {
     public interface IGererResultatTiragePKMTypes
     {
-        List<TiragePKMTypes> TirerPKMTypes(List<TiragePKMTypes> tiragesPKMTypesSauvegardes, TiragePKMTypes tiragePKMTypesATraiter);
+        bool GarderTirage(TiragePKMTypes tiragePKMTypesATraiter);
     }
 }

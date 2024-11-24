@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using GeneratorPKMTeam.Domain.CustomException;
 using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
@@ -14,7 +15,6 @@ namespace GeneratorPKMTeam.Domain.Handler
         private IChoisirPKMTypes _choisirPKMTypes;
         private IResultatCombatPKMTypes _resultCombatPKMTypes;
         private IGererResultatTiragePKMTypes _gererResultatTiragePKMTypes;
-        private List<TiragePKMTypes> _tiragePKMTypes;
 
         public ChoisirMeilleuresCombinaisonsTypes(IChargerPKMTypes chargementPKMTypes, IChoisirPKMTypes choisirPKMTypes,
                 IResultatCombatPKMTypes resultCombatPKMTypes, IGererResultatTiragePKMTypes gererResultatTiragePKMTypes)
@@ -23,39 +23,26 @@ namespace GeneratorPKMTeam.Domain.Handler
             _choisirPKMTypes = choisirPKMTypes;
             _resultCombatPKMTypes = resultCombatPKMTypes;
             _gererResultatTiragePKMTypes = gererResultatTiragePKMTypes;
-            _tiragePKMTypes = new List<TiragePKMTypes>();
         }
 
-        public List<TiragePKMTypes> Choisir()
+        public TiragePKMTypes GenererTirageParfait()
         {
+            var tirageATraiter = new TiragePKMTypes();
             var tousPKMTypes = _chargementPKMTypes.AvoirPKMDatas();
             int comptage = 0;
-            while (ContinuerACalculer())
+            while (comptage < 10)
             {
-                if (comptage >= 100)
-                    throw new CombinaisonParfaitesIntrouvablesException();
                 var PKMTypesChoisis = _choisirPKMTypes.SelectionnerPKMTypes(tousPKMTypes);
                 var evaluation = new EvaluerPKMChoisis(_resultCombatPKMTypes, tousPKMTypes.PKMTypes);
-                var tirageATraiter = evaluation.Evaluer(PKMTypesChoisis);
-                _tiragePKMTypes = _gererResultatTiragePKMTypes.TirerPKMTypes(_tiragePKMTypes, tirageATraiter);
+                tirageATraiter = evaluation.Evaluer(PKMTypesChoisis);
+                bool tirageAccepter = _gererResultatTiragePKMTypes.GarderTirage(tirageATraiter);
+                if (tirageAccepter)
+                    break;
                 comptage += 1;
             }
-            return _tiragePKMTypes;
-        }
-
-        public bool ContinuerACalculer()
-        {
-            if (_tiragePKMTypes.Count < 10)
-                return true;
-            else
-            {
-                foreach (var tirage in _tiragePKMTypes)
-                {
-                    if (tirage.NoteTirage < 90)
-                        return true;
-                }
-                return false;
-            }
+            if (comptage == 10)
+                throw new CombinaisonParfaitesIntrouvablesException();
+            return tirageATraiter;
         }
     }
 }

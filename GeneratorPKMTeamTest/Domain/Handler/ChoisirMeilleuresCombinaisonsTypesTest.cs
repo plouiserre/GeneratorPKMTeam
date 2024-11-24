@@ -34,16 +34,14 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
             var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
             var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
-            var handler = new ChoisirMeilleuresCombinaisonsTypes(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
+            var choisir = new ChoisirMeilleuresCombinaisonsTypes(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
                             gererResultatTiragePKMTypes);
 
-            var typesChoisis = handler.Choisir();
+            var tirageParfaitTrouve = choisir.GenererTirageParfait();
 
-            Assert.Equal(10, typesChoisis.Count);
-            foreach (var tirage in typesChoisis)
-            {
-                Assert.True(tirage.NoteTirage >= 90);
-            }
+
+            Assert.True(tirageParfaitTrouve.NoteTirage >= 90);
+
         }
 
         [Fact]
@@ -52,7 +50,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var PMKPersistence = Substitute.For<IPKMTypePersistence>();
             PMKPersistence.GetPKMDonnees().Returns(_fakeDatas);
             var gererResultatTiragePKMTypes = Substitute.For<IGererResultatTiragePKMTypes>();
-            gererResultatTiragePKMTypes.TirerPKMTypes(Arg.Any<List<TiragePKMTypes>>(), Arg.Any<TiragePKMTypes>()).Returns(new List<TiragePKMTypes>());
+            gererResultatTiragePKMTypes.GarderTirage(Arg.Any<TiragePKMTypes>()).Returns(false);
 
             var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
             var selectPKMTypes = new ChoisirPKMTypes();
@@ -62,10 +60,10 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var handler = new ChoisirMeilleuresCombinaisonsTypes(loadPKMTypes, selectPKMTypes, resultatCombatPKMTypes,
                             gererResultatTiragePKMTypes);
 
-            var result = Assert.Throws<CombinaisonParfaitesIntrouvablesException>(() => handler.Choisir());
+            var result = Assert.Throws<CombinaisonParfaitesIntrouvablesException>(() => handler.GenererTirageParfait());
 
 
-            Assert.Equal("Les 10 combinaisons parfaites n'ont pas été trouvé", result.CustomMessage);
+            Assert.Equal("Aucun tirage de PKM parfait n'a été trouvé", result.CustomMessage);
             Assert.Equal(TypeErreur.NoCombinaisonsParfaitesTrouvees, result.TypeErreur);
         }
     }
