@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using GeneratorPKMTeam.Domain.Models;
 
-namespace GeneratorPKMTeam.Domain.Port.Driving
+namespace GeneratorPKMTeam.Domain.Port.Driven
 {
-    public interface IGeneratePKMTeamHandler
+    public interface IPKMPersistence
     {
-        Dictionary<int, List<PKM>> Generer();
+        public PKMs GetPKMs();
     }
 }

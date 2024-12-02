@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using GeneratorPKMTeam.Domain.Models;
 
-namespace GeneratorPKMTeam.Domain.Port.Driving
+namespace GeneratorPKMTeam.Domain.Handler
 {
-    public interface IGeneratePKMTeamHandler
+    public interface IAssemblerEquipePKM
     {
-        Dictionary<int, List<PKM>> Generer();
+        List<PKM> Assembler(TiragePKMTypes tirage);
     }
 }

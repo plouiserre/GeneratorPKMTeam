@@ -4,6 +4,6 @@ namespace GeneratorPKMTeam.Domain.Handler
 {
     public interface IChoisirMeilleuresCombinaisonsTypes
     {
-        List<TiragePKMTypes> Choisir();
+        TiragePKMTypes GenererTirageParfait();
     }
 }

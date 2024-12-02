@@ -12,7 +12,7 @@ namespace GeneratorPKMTeam.Domain.CustomException
 
         public CombinaisonParfaitesIntrouvablesException()
         {
-            CustomMessage = "Les 10 combinaisons parfaites n'ont pas été trouvé";
+            CustomMessage = "Aucun tirage de PKM parfait n'a été trouvé";
             TypeErreur = TypeErreur.NoCombinaisonsParfaitesTrouvees;
         }
     }
