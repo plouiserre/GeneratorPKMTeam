@@ -49,7 +49,6 @@ namespace GeneratorPKMTeam.Domain
             return resultatCalcul;
         }
 
-        //TODO mettre ailleurs 
         private bool VerifierTypeSimplePKM(IEnumerable<PKM> pkms, PKMType pKMType)
         {
             bool aCeTypeEnPremierType = pkms.Any(o => o.PKMTypes[0] == pKMType.Nom);

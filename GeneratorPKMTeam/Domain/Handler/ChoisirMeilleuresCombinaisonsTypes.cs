@@ -30,7 +30,7 @@ namespace GeneratorPKMTeam.Domain.Handler
             var tirageATraiter = new TiragePKMTypes();
             var tousPKMTypes = _chargementPKMTypes.AvoirPKMDatas();
             int comptage = 0;
-            while (comptage < 10)
+            while (comptage < 20)
             {
                 var PKMTypesChoisis = _choisirPKMTypes.SelectionnerPKMTypes(tousPKMTypes);
                 var evaluation = new EvaluerPKMChoisis(_resultCombatPKMTypes, tousPKMTypes.PKMTypes);
@@ -40,7 +40,7 @@ namespace GeneratorPKMTeam.Domain.Handler
                     break;
                 comptage += 1;
             }
-            if (comptage == 10)
+            if (comptage == 20)
                 throw new CombinaisonParfaitesIntrouvablesException();
             return tirageATraiter;
         }

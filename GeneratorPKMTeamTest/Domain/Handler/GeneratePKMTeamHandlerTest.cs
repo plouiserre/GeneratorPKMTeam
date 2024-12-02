@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GeneratorPKMTeam;
+using GeneratorPKMTeam.Domain;
 using GeneratorPKMTeam.Domain.Handler;
 using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
 using GeneratorPKMTeam.Domain.Models;
@@ -65,9 +66,10 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         private AssemblerEquipePKM InitAssemblerEquipePKM()
         {
             var tousPKMs = DatasHelperTest.RetournersTousPKM();
-            var definirOrdrePKMTypes = new DefinirOrdrePKMType();
             var pkmPersistence = Substitute.For<IPKMPersistence>();
             pkmPersistence.GetPKMs().Returns(new PKMs() { TousPKMs = tousPKMs.ToList() });
+            var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(pkmPersistence);
+            var definirOrdrePKMTypes = new DefinirOrdrePKMType(determinerTousLesTypesExistant, _generation);
             var recuperationPKMs = new RecuperationPKMs(pkmPersistence, _generation);
             var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMTypes, recuperationPKMs);
             return assemblerEquipePKM;

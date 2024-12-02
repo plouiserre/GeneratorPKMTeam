@@ -7,46 +7,95 @@ namespace GeneratorPKMTeam.Domain.Handler
 {
     public class DefinirOrdrePKMType : IDefinirOrdrePKMType
     {
+        private IDeterminerTousLesTypesExistant _determinerTousLesTypesExistant;
+        private int _generation;
+        private Dictionary<string, List<PKMType>> _tousLesTypesPossibles;
+        private List<PKMType> _typesAOrdonnerParPKM;
+
+        public DefinirOrdrePKMType(IDeterminerTousLesTypesExistant determinerTousLesTypesExistant, int generation)
+        {
+            _determinerTousLesTypesExistant = determinerTousLesTypesExistant;
+            _generation = generation;
+        }
+
         public Dictionary<int, List<PKMType>> Generer(List<PKMType> TypesAOrdonnerParPKM)
         {
-            var typesRegrouper = new Dictionary<int, List<PKMType>>();
-            int indexPKMTypes = 0;
-            var indexs = AvoirTousIndexPKMTypes();
-            for (int i = 0; i < 6; i++)
+            Dictionary<int, List<PKMType>> typesPKMSelectionnes = new Dictionary<int, List<PKMType>>();
+            _tousLesTypesPossibles = _determinerTousLesTypesExistant.Calculer(_generation, TypesAOrdonnerParPKM);
+            _typesAOrdonnerParPKM = TypesAOrdonnerParPKM;
+
+            List<PKMType> premierDoubleType = RecupererDoubleTypeEnModeRandom();
+            List<PKMType> secondDoubleType = RecupererDoubleTypeEnModeRandom();
+            List<PKMType> troisiemeDoubleType = RecupererDoubleTypeEnModeRandom();
+            List<PKMType> premierTypeSimple = RecupererSimplePKMType();
+            List<PKMType> secondTypeSimple = RecupererSimplePKMType();
+            List<PKMType> troisiemeTypeSimple = RecupererSimplePKMType();
+
+            typesPKMSelectionnes.Add(1, premierTypeSimple);
+            typesPKMSelectionnes.Add(2, secondTypeSimple);
+            typesPKMSelectionnes.Add(3, premierDoubleType);
+            typesPKMSelectionnes.Add(4, troisiemeTypeSimple);
+            typesPKMSelectionnes.Add(5, secondDoubleType);
+            typesPKMSelectionnes.Add(6, troisiemeDoubleType);
+            return typesPKMSelectionnes;
+        }
+
+
+        private List<PKMType> RecupererDoubleTypeEnModeRandom()
+        {
+            List<PKMType> doublesTypes = new List<PKMType>();
+            var tousLesDoublesTypesPossibles = _tousLesTypesPossibles.Select(o => o.Value).Where(o => o.Count == 2).ToList();
+
+            Random random = new Random();
+            int index = tousLesDoublesTypesPossibles.Count() > 1 ? random.Next(tousLesDoublesTypesPossibles.Count() - 1) : 0;
+            doublesTypes = tousLesDoublesTypesPossibles[index];
+
+            RetirerToutesLesOccurencesDuType(doublesTypes[0]);
+            RetirerToutesLesOccurencesDuType(doublesTypes[1]);
+            return doublesTypes;
+        }
+
+        private List<PKMType> RecupererSimplePKMType()
+        {
+            Random random = new Random();
+            var tousLesSimpleTypesPossibles = _tousLesTypesPossibles.Select(o => o.Value).Where(o => o.Count == 1).ToList();
+            int index = random.Next(tousLesSimpleTypesPossibles.Count - 1);
+            var PKMTypeChoisi = tousLesSimpleTypesPossibles[index];
+            var pkmTypes = new List<PKMType>();
+            pkmTypes.AddRange(PKMTypeChoisi);
+            RetirerToutesLesOccurencesDuType(PKMTypeChoisi[0]);
+            return pkmTypes;
+        }
+
+        private void RetirerToutesLesOccurencesDuType(PKMType pKMType)
+        {
+            var tousTypesPossiblesEncoreIllegibles = new Dictionary<string, List<PKMType>>();
+            foreach (var typesPossible in _tousLesTypesPossibles)
             {
-                if (i != 2 && i != 4 && i != 5)
+                if (PKMTypePresent(typesPossible.Value, pKMType))
                 {
-                    var pkmType = TypesAOrdonnerParPKM[indexs[0]];
-                    typesRegrouper.Add(i, new List<PKMType>() { pkmType });
-                    indexPKMTypes += 1;
-                    indexs.RemoveAt(0);
+                    continue;
                 }
                 else
                 {
-                    var premierPKMType = TypesAOrdonnerParPKM[indexs[0]];
-                    var deuxiemePKMType = TypesAOrdonnerParPKM[indexs[1]];
-                    typesRegrouper.Add(i, new List<PKMType>() { premierPKMType, deuxiemePKMType });
-                    indexPKMTypes += 2;
-                    indexs.RemoveAt(0);
-                    indexs.RemoveAt(0);
+                    tousTypesPossiblesEncoreIllegibles.Add(typesPossible.Key, typesPossible.Value);
                 }
             }
-            return typesRegrouper;
+            _tousLesTypesPossibles = tousTypesPossiblesEncoreIllegibles;
         }
 
-        private List<int> AvoirTousIndexPKMTypes()
+        private bool PKMTypePresent(List<PKMType> types, PKMType pKMType)
         {
-            List<int> indexs = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
-            List<int> newIndexs = new List<int>() { };
-            Random random = new Random();
-            for (int i = 0; i < 9; i++)
+            bool present = false;
+            foreach (var type in types)
             {
-                int index = random.Next(0, indexs.Count);
-                int number = indexs[index];
-                newIndexs.Add(number);
-                indexs.RemoveAt(index);
+                if (type.Nom == pKMType.Nom)
+                {
+                    present = true;
+                    break;
+                }
             }
-            return newIndexs;
+            return present;
         }
     }
 }
