@@ -4,6 +4,9 @@ namespace GeneratorPKMTeam.Domain.CustomException
     {
         NoPKMTypesData,
         NoCombinaisonsParfaitesTrouvees,
-        PKMAvecPKMTypeInexistant
+        PKMAvecPKMTypeInexistant,
+        StarterAbsent,
+        StarterIntrouvable,
+        StarterDejaExistant
     }
 }

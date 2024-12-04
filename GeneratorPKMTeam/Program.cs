@@ -5,9 +5,14 @@ using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
 using GeneratorPKMTeam.Infrastructure.Connector;
 using GeneratorPKMTeam.Infrastructure.Services;
 
+
 int generation = 3;
 var PMKTypePersistence = new PKMTypePersistence();
 var PKMPersistence = new PKMPersistence();
+Console.WriteLine("Merci de choisir votre starter");
+string starterPKMName = Console.ReadLine();
+StarterPKM pKM = new StarterPKM(PKMPersistence);
+pKM.ChoisirStarter(starterPKMName);
 
 var loadPKMTypes = new ChargerPKMTypes(PMKTypePersistence);
 var selectPKMTypes = new ChoisirPKMTypes();
