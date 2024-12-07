@@ -9,13 +9,13 @@ using GeneratorPKMTeam.Infrastructure.Services;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    public class StarterPKM : IStarterPKM
+    public class GererStarterPKM : IGererStarterPKM
     {
         private IPKMPersistence _pkmPersistence;
         private IEnumerable<PKM> _pkms;
         private PKM _pkmChoisi;
 
-        public StarterPKM(IPKMPersistence persistence)
+        public GererStarterPKM(IPKMPersistence persistence)
         {
             _pkmChoisi = new PKM();
             _pkmPersistence = persistence;

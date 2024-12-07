@@ -30,7 +30,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         [Fact]
         public void ChoisirStarterOK()
         {
-            var starterPKM = new StarterPKM(_PKMPersistence);
+            var starterPKM = new GererStarterPKM(_PKMPersistence);
 
             var pkm = starterPKM.ChoisirStarter("Carapuce");
 
@@ -42,7 +42,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         [Fact]
         public void StarterIntrouvable()
         {
-            var starterPKM = new StarterPKM(_PKMPersistence);
+            var starterPKM = new GererStarterPKM(_PKMPersistence);
 
             var result = Assert.Throws<StarterIntrouvableException>(() => starterPKM.ChoisirStarter("Karapuce"));
 
@@ -53,7 +53,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         [Fact]
         public void StarterDejaExistant()
         {
-            var starterPKM = new StarterPKM(_PKMPersistence);
+            var starterPKM = new GererStarterPKM(_PKMPersistence);
 
             var pkm = starterPKM.ChoisirStarter("Carapuce");
             var result = Assert.Throws<StarterDejaExistantException>(() => starterPKM.ChoisirStarter("Carapuce"));
@@ -65,7 +65,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         [Fact]
         public void RecupererStarterDejaChoisi()
         {
-            var starterPKM = new StarterPKM(_PKMPersistence);
+            var starterPKM = new GererStarterPKM(_PKMPersistence);
 
             starterPKM.ChoisirStarter("Bulbizarre");
             var pkm = starterPKM.RecupererStarter();
@@ -79,7 +79,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         [Fact]
         public void StarterAbsent()
         {
-            var starterPKM = new StarterPKM(_PKMPersistence);
+            var starterPKM = new GererStarterPKM(_PKMPersistence);
 
             var result = Assert.Throws<StarterAbsentException>(() => starterPKM.RecupererStarter());
 

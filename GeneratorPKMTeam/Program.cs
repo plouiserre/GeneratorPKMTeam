@@ -11,11 +11,11 @@ var PMKTypePersistence = new PKMTypePersistence();
 var PKMPersistence = new PKMPersistence();
 Console.WriteLine("Merci de choisir votre starter");
 string starterPKMName = Console.ReadLine();
-StarterPKM pKM = new StarterPKM(PKMPersistence);
+GererStarterPKM pKM = new GererStarterPKM(PKMPersistence);
 pKM.ChoisirStarter(starterPKMName);
 
 var loadPKMTypes = new ChargerPKMTypes(PMKTypePersistence);
-var selectPKMTypes = new ChoisirPKMTypes();
+var selectPKMTypes = new ChoisirPKMTypes(pKM);
 var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
 var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
 var resultFightPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);

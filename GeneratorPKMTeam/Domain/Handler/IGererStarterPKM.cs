@@ -6,7 +6,7 @@ using GeneratorPKMTeam.Domain.Models;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    public interface IStarterPKM
+    public interface IGererStarterPKM
     {
         PKM ChoisirStarter(string nomPKM);
         PKM RecupererStarter();
