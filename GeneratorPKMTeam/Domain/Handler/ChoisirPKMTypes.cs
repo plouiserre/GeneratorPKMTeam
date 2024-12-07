@@ -18,13 +18,13 @@ namespace GeneratorPKMTeam.Domain.Handler
         public ChoisirPKMTypes(IGererStarterPKM starterPKM)
         {
             _gererStarterPKM = starterPKM;
-            _PKMTypesStarter = new List<PKMType>();
-            _tousLesTypesPKM = new List<PKMType>();
             _nombrePKMTypeChoisis = 9;
         }
 
         public List<PKMType> SelectionnerPKMTypes(PKMDonnees datas)
         {
+            _PKMTypesStarter = new List<PKMType>();
+            _tousLesTypesPKM = new List<PKMType>();
             _datas = datas.Clone() as PKMDonnees;
             var pkmTypes = new List<PKMType>();
             _starterPKM = _gererStarterPKM.RecupererStarter();
