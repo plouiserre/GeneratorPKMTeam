@@ -6,7 +6,7 @@ using GeneratorPKMTeam.Domain.Handler;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driven;
 
-namespace GeneratorPKMTeam.Domain
+namespace GeneratorPKMTeam.Domain.Handler
 {
     public class DeterminerTousLesTypesExistant : IDeterminerTousLesTypesExistant
     {
