@@ -24,7 +24,7 @@ var choisirMeilleuresCombinaisonsTypes = new ChoisirMeilleuresCombinaisonsTypes(
                 gererResultatTiragePKMTypes);
 var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(PKMPersistence, pKM);
 var definirOrdrePKMType = new DefinirOrdrePKMType(determinerTousLesTypesExistant, pKM, generation);
-var recuperationPKM = new RecuperationPKMs(PKMPersistence, generation);
+var recuperationPKM = new RecuperationPKMs(PKMPersistence, pKM, generation);
 var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMType, recuperationPKM);
 var trouverTypePKMEquipePKM = new TrouverTypePKMEquipePKM(choisirMeilleuresCombinaisonsTypes, assemblerEquipePKM);
 var handler = new GeneratePKMTeamHandler(trouverTypePKMEquipePKM);

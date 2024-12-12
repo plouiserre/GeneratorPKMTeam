@@ -76,7 +76,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             starterPKM.ChoisirStarter("Bulbizarre");
             var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(pkmPersistence, starterPKM);
             var definirOrdrePKMTypes = new DefinirOrdrePKMType(determinerTousLesTypesExistant, starterPKM, _generation);
-            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, _generation);
+            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, starterPKM, _generation);
             var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMTypes, recuperationPKMs);
             return assemblerEquipePKM;
         }
