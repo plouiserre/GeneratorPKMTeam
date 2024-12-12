@@ -2,44 +2,82 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GeneratorPKMTeam.Domain.Models;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
     public class DefinirOrdrePKMType : IDefinirOrdrePKMType
     {
         private IDeterminerTousLesTypesExistant _determinerTousLesTypesExistant;
+        private IGererStarterPKM _gererStarterPKM;
         private int _generation;
         private Dictionary<string, List<PKMType>> _tousLesTypesPossibles;
-        private List<PKMType> _typesAOrdonnerParPKM;
+        private Dictionary<string, int> _occurencesTypes;
+        private bool _starterDoubleType;
+        private Dictionary<int, List<PKMType>> _typesPKMSelectionnes;
 
-        public DefinirOrdrePKMType(IDeterminerTousLesTypesExistant determinerTousLesTypesExistant, int generation)
+        public DefinirOrdrePKMType(IDeterminerTousLesTypesExistant determinerTousLesTypesExistant, IGererStarterPKM gererStarterPKM, int generation)
         {
             _determinerTousLesTypesExistant = determinerTousLesTypesExistant;
             _generation = generation;
+            _gererStarterPKM = gererStarterPKM;
         }
 
         public Dictionary<int, List<PKMType>> Generer(List<PKMType> TypesAOrdonnerParPKM)
         {
-            Dictionary<int, List<PKMType>> typesPKMSelectionnes = new Dictionary<int, List<PKMType>>();
+            _typesPKMSelectionnes = new Dictionary<int, List<PKMType>>();
             _tousLesTypesPossibles = _determinerTousLesTypesExistant.Calculer(_generation, TypesAOrdonnerParPKM);
-            _typesAOrdonnerParPKM = TypesAOrdonnerParPKM;
 
+            List<PKMType> starterType = RecupererTypesStarter();
+            if (!_starterDoubleType)
+                AffectionPKMTypeAvecStarterSimpleType(starterType);
+            else
+                AffectionPKMTypeAvecStarterDoubleType(starterType);
+            return _typesPKMSelectionnes;
+        }
+
+        private List<PKMType> RecupererTypesStarter()
+        {
+            var starterPKM = _gererStarterPKM.RecupererStarter();
+            var pkmTypes = starterPKM.PKMTypes.Select(o => new PKMType() { Nom = o }).ToList();
+            RetirerToutesLesOccurencesDuType(pkmTypes[0]);
+            if (pkmTypes.Count == 2)
+            {
+                _starterDoubleType = true;
+                RetirerToutesLesOccurencesDuType(pkmTypes[1]);
+            }
+            return pkmTypes;
+        }
+
+        private void AffectionPKMTypeAvecStarterSimpleType(List<PKMType> starterType)
+        {
             List<PKMType> premierDoubleType = RecupererDoubleTypeEnModeRandom();
             List<PKMType> secondDoubleType = RecupererDoubleTypeEnModeRandom();
-            List<PKMType> troisiemeDoubleType = RecupererDoubleTypeEnModeRandom();
             List<PKMType> premierTypeSimple = RecupererSimplePKMType();
             List<PKMType> secondTypeSimple = RecupererSimplePKMType();
             List<PKMType> troisiemeTypeSimple = RecupererSimplePKMType();
-
-            typesPKMSelectionnes.Add(1, premierTypeSimple);
-            typesPKMSelectionnes.Add(2, secondTypeSimple);
-            typesPKMSelectionnes.Add(3, premierDoubleType);
-            typesPKMSelectionnes.Add(4, troisiemeTypeSimple);
-            typesPKMSelectionnes.Add(5, secondDoubleType);
-            typesPKMSelectionnes.Add(6, troisiemeDoubleType);
-            return typesPKMSelectionnes;
+            _typesPKMSelectionnes.Add(1, starterType);
+            _typesPKMSelectionnes.Add(2, premierTypeSimple);
+            _typesPKMSelectionnes.Add(3, premierDoubleType);
+            _typesPKMSelectionnes.Add(4, secondTypeSimple);
+            _typesPKMSelectionnes.Add(5, troisiemeTypeSimple);
+            _typesPKMSelectionnes.Add(6, secondDoubleType);
         }
 
+        private void AffectionPKMTypeAvecStarterDoubleType(List<PKMType> starterType)
+        {
+            List<PKMType> premierDoubleType = RecupererDoubleTypeEnModeRandom();
+            List<PKMType> premierTypeSimple = RecupererSimplePKMType();
+            List<PKMType> secondTypeSimple = RecupererSimplePKMType();
+            List<PKMType> troisiemeTypeSimple = RecupererSimplePKMType();
+            List<PKMType> quatriemeTypeSimple = RecupererSimplePKMType();
+            _typesPKMSelectionnes.Add(1, starterType);
+            _typesPKMSelectionnes.Add(2, premierTypeSimple);
+            _typesPKMSelectionnes.Add(3, secondTypeSimple);
+            _typesPKMSelectionnes.Add(4, troisiemeTypeSimple);
+            _typesPKMSelectionnes.Add(5, premierDoubleType);
+            _typesPKMSelectionnes.Add(6, quatriemeTypeSimple);
+        }
 
         private List<PKMType> RecupererDoubleTypeEnModeRandom()
         {

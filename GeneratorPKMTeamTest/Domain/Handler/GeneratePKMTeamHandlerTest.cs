@@ -72,8 +72,10 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var tousPKMs = DatasHelperTest.RetournersTousPKM();
             var pkmPersistence = Substitute.For<IPKMPersistence>();
             pkmPersistence.GetPKMs().Returns(new PKMs() { TousPKMs = tousPKMs.ToList() });
-            var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(pkmPersistence);
-            var definirOrdrePKMTypes = new DefinirOrdrePKMType(determinerTousLesTypesExistant, _generation);
+            var starterPKM = new GererStarterPKM(pkmPersistence);
+            starterPKM.ChoisirStarter("Bulbizarre");
+            var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(pkmPersistence, starterPKM);
+            var definirOrdrePKMTypes = new DefinirOrdrePKMType(determinerTousLesTypesExistant, starterPKM, _generation);
             var recuperationPKMs = new RecuperationPKMs(pkmPersistence, _generation);
             var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMTypes, recuperationPKMs);
             return assemblerEquipePKM;

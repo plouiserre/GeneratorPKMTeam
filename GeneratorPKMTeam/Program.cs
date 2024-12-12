@@ -22,8 +22,8 @@ var resultFightPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, r
 var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
 var choisirMeilleuresCombinaisonsTypes = new ChoisirMeilleuresCombinaisonsTypes(loadPKMTypes, selectPKMTypes, resultFightPKMTypes,
                 gererResultatTiragePKMTypes);
-var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(PKMPersistence);
-var definirOrdrePKMType = new DefinirOrdrePKMType(determinerTousLesTypesExistant, generation);
+var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(PKMPersistence, pKM);
+var definirOrdrePKMType = new DefinirOrdrePKMType(determinerTousLesTypesExistant, pKM, generation);
 var recuperationPKM = new RecuperationPKMs(PKMPersistence, generation);
 var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMType, recuperationPKM);
 var trouverTypePKMEquipePKM = new TrouverTypePKMEquipePKM(choisirMeilleuresCombinaisonsTypes, assemblerEquipePKM);
