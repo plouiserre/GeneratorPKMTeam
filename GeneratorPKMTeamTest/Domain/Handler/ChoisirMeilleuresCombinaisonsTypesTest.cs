@@ -25,11 +25,13 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         [Fact]
         public void ChoixMeilleuresCombinaisonsTypesEstOK()
         {
+            var starterPKM = Substitute.For<IGererStarterPKM>();
+            starterPKM.RecupererStarter().Returns(new PKM() { Nom = "Carapuce", PKMTypes = new List<string>() { "Eau" } });
             var PMKPersistence = Substitute.For<IPKMTypePersistence>();
             PMKPersistence.GetPKMDonnees().Returns(_fakeDatas);
 
             var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
-            var selectPKMTypes = new ChoisirPKMTypes();
+            var selectPKMTypes = new ChoisirPKMTypes(starterPKM);
             var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
             var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
             var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
@@ -47,13 +49,15 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         [Fact]
         public void ChoixMeilleuresCombinaisonsTypesSeTermineJamais()
         {
+            var starterPKM = Substitute.For<IGererStarterPKM>();
+            starterPKM.RecupererStarter().Returns(new PKM() { Nom = "Carapuce", PKMTypes = new List<string>() { "Eau" } });
             var PMKPersistence = Substitute.For<IPKMTypePersistence>();
             PMKPersistence.GetPKMDonnees().Returns(_fakeDatas);
             var gererResultatTiragePKMTypes = Substitute.For<IGererResultatTiragePKMTypes>();
             gererResultatTiragePKMTypes.GarderTirage(Arg.Any<TiragePKMTypes>()).Returns(false);
 
             var loadPKMTypes = new ChargerPKMTypes(PMKPersistence);
-            var selectPKMTypes = new ChoisirPKMTypes();
+            var selectPKMTypes = new ChoisirPKMTypes(starterPKM);
             var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
             var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
             var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);

@@ -14,12 +14,13 @@ namespace GeneratorPKMTeamTest.Domain.Handler
     {
         private Dictionary<int, List<PKMType>> PKMTypesOrdonnees;
 
-        private PKM _eauPKM { get; set; }
-        private PKM _insectePKM { get; set; }
-        private PKM _plantePoisonPKM { get; set; }
-        private PKM _psyPKM { get; set; }
-        private PKM _feuVolPKM { get; set; }
-        private PKM _acierSolPkm { get; set; }
+        private PKM? _eauPKM { get; set; }
+        private PKM? _insectePKM { get; set; }
+        private PKM? _plantePoisonPKM { get; set; }
+        private PKM? _psyPKM { get; set; }
+        private PKM? _feuVolPKM { get; set; }
+        private PKM? _acierSolPkm { get; set; }
+        private PKM? _starterPKM { get; set; }
 
         public RecuperationPKMsTest()
         {
@@ -37,28 +38,34 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             PKMTypesOrdonnees.Add(6, new List<PKMType> { new PKMType() { Nom = "Acier" }, new PKMType() { Nom = "Sol" } });
         }
 
-        [Fact]
-        public void OnRecupereSixPokemonsAvecLesBonsTypesOuIlYaUnBonOuPlusieursChoixAChaqueFoisPourInferieurOuEgalSecondeGeneration()
+        [Theory]
+        [InlineData("Carapuce", new string[] { "Eau" })]
+        [InlineData("Bulbizarre", new string[] { "Plante", "Poison" })]
+        [InlineData("Dracaufeu", new string[] { "Feu", "Vol" })]
+        public void OnRecupereSixPokemonsAvecLesBonsTypesOuIlYaUnBonOuPlusieursChoixAChaqueFoisPourInferieurOuEgalSecondeGeneration(string starterName, string[] pkmTypes)
         {
             int generation = 2;
+            _starterPKM = new PKM() { Nom = starterName, PKMTypes = pkmTypes.ToList() };
 
             var pkmsStore = DatasHelperTest.RetournersPKMsOuChaqueTypeEstPresentUneOuPlusieursFois(2);
             RecupererPKMs(pkmsStore);
 
             var pkmPersistence = MockPKMPersistence(pkmsStore.ToList());
 
-            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, generation);
+            var starterPKM = Substitute.For<IGererStarterPKM>();
+            starterPKM.RecupererStarter().Returns(_starterPKM);
+            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, starterPKM, generation);
 
             var pkms = recuperationPKMs.Recuperer(PKMTypesOrdonnees);
 
             Assert.Equal(6, pkms.Count);
 
-            Assert.Equal(_eauPKM.Nom, RetournerPKMNomAPartirListesPKMsAvecPlusieursChoix(pkms, "Eau", null, 2));
-            Assert.Equal(_insectePKM.Nom, RetournerPKMNomAPartirListesPKMsAvecPlusieursChoix(pkms, "Insecte", null, 2));
-            Assert.Equal(_plantePoisonPKM.Nom, RetournerPKMNomAPartirListesPKMsAvecPlusieursChoix(pkms, "Plante", "Poison", 2));
-            Assert.Equal(_psyPKM.Nom, RetournerPKMNomAPartirListesPKMsAvecPlusieursChoix(pkms, "Psy", null, 2));
-            Assert.Equal(_feuVolPKM.Nom, RetournerPKMNomAPartirListesPKMsAvecPlusieursChoix(pkms, "Feu", "Vol", 2));
-            Assert.Equal(_acierSolPkm.Nom, RetournerPKMNomAPartirListesPKMsAvecPlusieursChoix(pkms, "Acier", "Sol", 2));
+            Assert.Equal(_eauPKM.Nom, RetournerPKMNomAPartirListesPKMsAvecPlusieursChoix(pkms, "Eau", null));
+            Assert.Equal(_insectePKM.Nom, RetournerPKMNomAPartirListesPKMsAvecPlusieursChoix(pkms, "Insecte", null));
+            Assert.Equal(_plantePoisonPKM.Nom, RetournerPKMNomAPartirListesPKMsAvecPlusieursChoix(pkms, "Plante", "Poison"));
+            Assert.Equal(_psyPKM.Nom, RetournerPKMNomAPartirListesPKMsAvecPlusieursChoix(pkms, "Psy", null));
+            Assert.Equal(_feuVolPKM.Nom, RetournerPKMNomAPartirListesPKMsAvecPlusieursChoix(pkms, "Feu", "Vol"));
+            Assert.Equal(_acierSolPkm.Nom, RetournerPKMNomAPartirListesPKMsAvecPlusieursChoix(pkms, "Acier", "Sol"));
 
             foreach (var pkm in pkms)
             {
@@ -67,9 +74,12 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         }
 
 
-        private string RetournerPKMNomAPartirListesPKMsAvecPlusieursChoix(List<PKM> pkms, string premierType, string secondType, int generation)
+        private string RetournerPKMNomAPartirListesPKMsAvecPlusieursChoix(List<PKM> pkms, string premierType, string? secondType)
         {
-            if (secondType == null)
+            bool isStarter = premierType == _starterPKM.PKMTypes[0] && (secondType == null || secondType == _starterPKM.PKMTypes[1]);
+            if (isStarter)
+                return _starterPKM.Nom;
+            else if (secondType == null)
                 return pkms.Where(o => o.PKMTypes[0] == premierType).OrderBy(o => o.Nom).First().Nom;
             else
                 return pkms.Where(o => o.PKMTypes.Count > 1 && o.PKMTypes[0] == premierType &&
@@ -78,12 +88,29 @@ namespace GeneratorPKMTeamTest.Domain.Handler
 
         private void RecupererPKMs(IEnumerable<PKM> pkmsMock)
         {
-            _eauPKM = pkmsMock.FirstOrDefault(o => o.PKMTypes.Count == 1 && o.PKMTypes[0] == "Eau");
-            _insectePKM = pkmsMock.FirstOrDefault(o => o.PKMTypes.Count == 1 && o.PKMTypes[0] == "Insecte");
-            _plantePoisonPKM = pkmsMock.FirstOrDefault(o => o.PKMTypes.Count == 2 && o.PKMTypes[0] == "Plante" && o.PKMTypes[1] == "Poison");
-            _psyPKM = pkmsMock.FirstOrDefault(o => o.PKMTypes.Count == 1 && o.PKMTypes[0] == "Psy");
-            _feuVolPKM = pkmsMock.FirstOrDefault(o => o.PKMTypes.Count == 2 && o.PKMTypes[0] == "Feu" && o.PKMTypes[1] == "Vol");
-            _acierSolPkm = pkmsMock.FirstOrDefault(o => o.PKMTypes.Count == 2 && o.PKMTypes[0] == "Acier" && o.PKMTypes[1] == "Sol");
+            _eauPKM = CestUnStarter(new List<string> { "Eau" }) ? _starterPKM : pkmsMock.FirstOrDefault(o => o.PKMTypes.Count == 1 && o.PKMTypes[0] == "Eau");
+            _insectePKM = CestUnStarter(new List<string> { "Insecte" }) ? _starterPKM : pkmsMock.FirstOrDefault(o => o.PKMTypes.Count == 1 && o.PKMTypes[0] == "Insecte");
+            _plantePoisonPKM = CestUnStarter(new List<string> { "Plante", "Poison" }) ? _starterPKM : pkmsMock.FirstOrDefault(o => o.PKMTypes.Count == 2 && o.PKMTypes[0] == "Plante" && o.PKMTypes[1] == "Poison");
+            _psyPKM = CestUnStarter(new List<string> { "Psy" }) ? _starterPKM : pkmsMock.FirstOrDefault(o => o.PKMTypes.Count == 1 && o.PKMTypes[0] == "Psy");
+            _feuVolPKM = CestUnStarter(new List<string> { "Feu", "Vol" }) ? _starterPKM : pkmsMock.FirstOrDefault(o => o.PKMTypes.Count == 2 && o.PKMTypes[0] == "Feu" && o.PKMTypes[1] == "Vol");
+            _acierSolPkm = CestUnStarter(new List<string> { "Acier", "Sol" }) ? _starterPKM : pkmsMock.FirstOrDefault(o => o.PKMTypes.Count == 2 && o.PKMTypes[0] == "Acier" && o.PKMTypes[1] == "Sol");
+        }
+
+        private bool CestUnStarter(List<string> PKMTypes)
+        {
+            if (PKMTypes.Count != _starterPKM.PKMTypes.Count)
+            {
+                return false;
+            }
+            else
+            {
+                if (_starterPKM.PKMTypes[0] != PKMTypes[0])
+                    return false;
+                else if (_starterPKM.PKMTypes.Count == 2 && _starterPKM.PKMTypes[1] != PKMTypes[1])
+                    return false;
+                else
+                    return true;
+            }
         }
 
         [Fact]
@@ -95,7 +122,9 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             };
             var pkmsStore = DatasHelperTest.RetournersPKMsOuChaqueTypeEstPresentUneOuPlusieursFois(2);
             var pkmPersistence = MockPKMPersistence(pkmsStore.ToList());
-            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, generation);
+            var starterPKM = Substitute.For<IGererStarterPKM>();
+            starterPKM.RecupererStarter().Returns(new PKM() { Nom = "Carapuce", PKMTypes = new List<string>() { "Eau" } });
+            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, starterPKM, generation);
 
             var result = Assert.Throws<PKMAvecTypeInexistantException>(() => recuperationPKMs.Recuperer(PKMTypesOrdonneesErreur));
 
@@ -112,7 +141,9 @@ namespace GeneratorPKMTeamTest.Domain.Handler
                 {1, new List<PKMType>(){new PKMType(){Nom = "Eau"}, new PKMType(){Nom="Feu"}}}
             };
             var pkmPersistence = MockPKMPersistence(pkmsStore.ToList());
-            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, generation);
+            var starterPKM = Substitute.For<IGererStarterPKM>();
+            starterPKM.RecupererStarter().Returns(new PKM() { Nom = "Carapuce", PKMTypes = new List<string>() { "Eau" } });
+            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, starterPKM, generation);
 
             var result = Assert.Throws<PKMAvecTypeInexistantException>(() => recuperationPKMs.Recuperer(PKMTypesOrdonneesErreur));
 

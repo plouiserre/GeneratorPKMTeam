@@ -26,7 +26,6 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         [Fact]
         public void RecupererPlusieursListesPKMsOptimiser()
         {
-
             var trouverTypePKMEquipePKM = InitTrouverTypePKMEquipePKM();
             var genererMeilleuresEquipesPKM = new GeneratePKMTeamHandler(trouverTypePKMEquipePKM);
 
@@ -53,7 +52,12 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var PKMTypePersistence = Substitute.For<IPKMTypePersistence>();
             PKMTypePersistence.GetPKMDonnees().Returns(PKMDonnees);
             var chargementPKMTypes = new ChargerPKMTypes(PKMTypePersistence);
-            var choisirPKMTypes = new ChoisirPKMTypes();
+            var tousPKMs = DatasHelperTest.RetournersTousPKM();
+            var pkmPersistence = Substitute.For<IPKMPersistence>();
+            pkmPersistence.GetPKMs().Returns(new PKMs() { TousPKMs = tousPKMs.ToList() });
+            var starterPKM = new GererStarterPKM(pkmPersistence);
+            starterPKM.ChoisirStarter("Bulbizarre");
+            var choisirPKMTypes = new ChoisirPKMTypes(starterPKM);
             var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
             var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
             var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
@@ -68,9 +72,11 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var tousPKMs = DatasHelperTest.RetournersTousPKM();
             var pkmPersistence = Substitute.For<IPKMPersistence>();
             pkmPersistence.GetPKMs().Returns(new PKMs() { TousPKMs = tousPKMs.ToList() });
-            var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(pkmPersistence);
-            var definirOrdrePKMTypes = new DefinirOrdrePKMType(determinerTousLesTypesExistant, _generation);
-            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, _generation);
+            var starterPKM = new GererStarterPKM(pkmPersistence);
+            starterPKM.ChoisirStarter("Bulbizarre");
+            var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(pkmPersistence, starterPKM);
+            var definirOrdrePKMTypes = new DefinirOrdrePKMType(determinerTousLesTypesExistant, starterPKM, _generation);
+            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, starterPKM, _generation);
             var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMTypes, recuperationPKMs);
             return assemblerEquipePKM;
         }

@@ -5,21 +5,26 @@ using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
 using GeneratorPKMTeam.Infrastructure.Connector;
 using GeneratorPKMTeam.Infrastructure.Services;
 
+
 int generation = 3;
 var PMKTypePersistence = new PKMTypePersistence();
 var PKMPersistence = new PKMPersistence();
+Console.WriteLine("Merci de choisir votre starter");
+string starterPKMName = Console.ReadLine();
+GererStarterPKM pKM = new GererStarterPKM(PKMPersistence);
+pKM.ChoisirStarter(starterPKMName);
 
 var loadPKMTypes = new ChargerPKMTypes(PMKTypePersistence);
-var selectPKMTypes = new ChoisirPKMTypes();
+var selectPKMTypes = new ChoisirPKMTypes(pKM);
 var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
 var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
 var resultFightPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
 var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
 var choisirMeilleuresCombinaisonsTypes = new ChoisirMeilleuresCombinaisonsTypes(loadPKMTypes, selectPKMTypes, resultFightPKMTypes,
                 gererResultatTiragePKMTypes);
-var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(PKMPersistence);
-var definirOrdrePKMType = new DefinirOrdrePKMType(determinerTousLesTypesExistant, generation);
-var recuperationPKM = new RecuperationPKMs(PKMPersistence, generation);
+var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(PKMPersistence, pKM);
+var definirOrdrePKMType = new DefinirOrdrePKMType(determinerTousLesTypesExistant, pKM, generation);
+var recuperationPKM = new RecuperationPKMs(PKMPersistence, pKM, generation);
 var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMType, recuperationPKM);
 var trouverTypePKMEquipePKM = new TrouverTypePKMEquipePKM(choisirMeilleuresCombinaisonsTypes, assemblerEquipePKM);
 var handler = new GeneratePKMTeamHandler(trouverTypePKMEquipePKM);
