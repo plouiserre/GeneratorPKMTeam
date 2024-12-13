@@ -19,16 +19,25 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         }
 
         [Fact]
-        public void DoitRetournerNeufPKMTypes()
+        public void DoitRetournerDeNeufATreizePKMTypes()
         {
             var starterPKM = Substitute.For<IGererStarterPKM>();
             starterPKM.RecupererStarter().Returns(new PKM() { Nom = "Carapuce", PKMTypes = new List<string>() { "Eau" } });
 
             var choisirPKMTypes = new ChoisirPKMTypes(starterPKM);
+            var resultats = new List<List<PKMType>>();
+            for (var i = 0; i < 100; i++)
+            {
+                var resultat = choisirPKMTypes.SelectionnerPKMTypes(_datasFake);
+                resultats.Add(resultat);
+            }
 
-            var result = choisirPKMTypes.SelectionnerPKMTypes(_datasFake);
-
-            Assert.Equal(9, result.Count);
+            Assert.True(resultats.All(o => o.Count >= 9 && o.Count <= 13));
+            Assert.True(resultats.Any(o => o.Count == 9));
+            Assert.True(resultats.Any(o => o.Count == 10));
+            Assert.True(resultats.Any(o => o.Count == 11));
+            Assert.True(resultats.Any(o => o.Count == 12));
+            Assert.True(resultats.Any(o => o.Count == 13));
         }
 
         [Fact]
@@ -82,7 +91,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var choisirPKMTypes = new ChoisirPKMTypes(starterPKM);
             var typeChoisis = choisirPKMTypes.SelectionnerPKMTypes(_datasFake);
 
-            Assert.Equal(9, typeChoisis.Count);
+            Assert.True(typeChoisis.Count >= 9 && typeChoisis.Count <= 13);
             Assert.Equal("Eau", typeChoisis[0].Nom);
             for (int i = 0; i < typeChoisis.Count; i++)
             {
@@ -101,7 +110,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var choisirPKMTypes = new ChoisirPKMTypes(starterPKM);
             var typeChoisis = choisirPKMTypes.SelectionnerPKMTypes(_datasFake);
 
-            Assert.Equal(9, typeChoisis.Count);
+            Assert.True(typeChoisis.Count >= 9 && typeChoisis.Count <= 13);
             Assert.Equal("Plante", typeChoisis[0].Nom);
             Assert.Equal("Poison", typeChoisis[1].Nom);
             for (int i = 0; i < typeChoisis.Count; i++)
