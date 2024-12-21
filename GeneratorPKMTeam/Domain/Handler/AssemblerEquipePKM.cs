@@ -21,10 +21,10 @@ namespace GeneratorPKMTeam.Domain.Handler
 
         public List<PKM> Assembler(TiragePKMTypes tirage)
         {
-            var resultat = new List<PKM>();
-
             try
             {
+                var resultat = new List<PKM>();
+
                 var typeOrdonnees = _definirOrdrePKMType.Generer(tirage.PKMTypes);
 
                 resultat = _recuperationPKMs.Recuperer(typeOrdonnees);

@@ -12,27 +12,24 @@ namespace GeneratorPKMTeam.Domain.Handler
         private IGererStarterPKM _gererStarterPKM;
         private int _generation;
         private Dictionary<string, List<PKMType>> _tousLesTypesPossibles;
-        private Dictionary<string, int> _occurencesTypes;
         private bool _starterDoubleType;
         private Dictionary<int, List<PKMType>> _typesPKMSelectionnes;
+        private int _nbrePKMMax;
 
         public DefinirOrdrePKMType(IDeterminerTousLesTypesExistant determinerTousLesTypesExistant, IGererStarterPKM gererStarterPKM, int generation)
         {
             _determinerTousLesTypesExistant = determinerTousLesTypesExistant;
             _generation = generation;
             _gererStarterPKM = gererStarterPKM;
+            _nbrePKMMax = 6;
         }
 
         public Dictionary<int, List<PKMType>> Generer(List<PKMType> TypesAOrdonnerParPKM)
         {
             _typesPKMSelectionnes = new Dictionary<int, List<PKMType>>();
             _tousLesTypesPossibles = _determinerTousLesTypesExistant.Calculer(_generation, TypesAOrdonnerParPKM);
-
             List<PKMType> starterType = RecupererTypesStarter();
-            if (!_starterDoubleType)
-                AffectionPKMTypeAvecStarterSimpleType(starterType);
-            else
-                AffectionPKMTypeAvecStarterDoubleType(starterType);
+            AffectationPKMType(starterType);
             return _typesPKMSelectionnes;
         }
 
@@ -49,60 +46,94 @@ namespace GeneratorPKMTeam.Domain.Handler
             return pkmTypes;
         }
 
-        private void AffectionPKMTypeAvecStarterSimpleType(List<PKMType> starterType)
+        //TODO faire plus de sous méthode quand ca marchera pour rendre le code plus lisible
+        private void AffectationPKMType(List<PKMType> starterType)
         {
-            List<PKMType> premierDoubleType = RecupererDoubleTypeEnModeRandom();
-            List<PKMType> secondDoubleType = RecupererDoubleTypeEnModeRandom();
-            List<PKMType> premierTypeSimple = RecupererSimplePKMType();
-            List<PKMType> secondTypeSimple = RecupererSimplePKMType();
-            List<PKMType> troisiemeTypeSimple = RecupererSimplePKMType();
-            _typesPKMSelectionnes.Add(1, starterType);
-            _typesPKMSelectionnes.Add(2, premierTypeSimple);
-            _typesPKMSelectionnes.Add(3, premierDoubleType);
-            _typesPKMSelectionnes.Add(4, secondTypeSimple);
-            _typesPKMSelectionnes.Add(5, troisiemeTypeSimple);
-            _typesPKMSelectionnes.Add(6, secondDoubleType);
+            int index = 0;
+            var doubleTypes = RecupererDoublesTypesAvecTypesDifferents(starterType);
+            foreach (var doubleType in doubleTypes)
+            {
+                if (index > 5)
+                    break;
+                _typesPKMSelectionnes.Add(index, doubleType.Value);
+                index += 1;
+            }
+
+            var pkmTypesRestantNecessaires = _nbrePKMMax - index;
+            if (pkmTypesRestantNecessaires > 0)
+            {
+                var simpleTypes = RecupererSimpleTypeNecessaire(pkmTypesRestantNecessaires);
+                foreach (var typesPKM in simpleTypes)
+                {
+                    _typesPKMSelectionnes.Add(index, typesPKM);
+                    RetirerToutesLesOccurencesDuType(typesPKM[0]);
+                }
+            }
         }
 
-        private void AffectionPKMTypeAvecStarterDoubleType(List<PKMType> starterType)
+        //TODO diviser cette méthode en sous méthodes
+        private Dictionary<string, List<PKMType>> RecupererDoublesTypesAvecTypesDifferents(List<PKMType> starterType)
         {
-            List<PKMType> premierDoubleType = RecupererDoubleTypeEnModeRandom();
-            List<PKMType> premierTypeSimple = RecupererSimplePKMType();
-            List<PKMType> secondTypeSimple = RecupererSimplePKMType();
-            List<PKMType> troisiemeTypeSimple = RecupererSimplePKMType();
-            List<PKMType> quatriemeTypeSimple = RecupererSimplePKMType();
-            _typesPKMSelectionnes.Add(1, starterType);
-            _typesPKMSelectionnes.Add(2, premierTypeSimple);
-            _typesPKMSelectionnes.Add(3, secondTypeSimple);
-            _typesPKMSelectionnes.Add(4, troisiemeTypeSimple);
-            _typesPKMSelectionnes.Add(5, premierDoubleType);
-            _typesPKMSelectionnes.Add(6, quatriemeTypeSimple);
+            var doublesTypesDifferents = new Dictionary<string, List<PKMType>>();
+            var doublesTypes = _tousLesTypesPossibles.Where(o => o.Value.Count == 2);
+            var pkmTypesSauvegardes = new List<PKMType>();
+            int index = 0;
+            if (starterType.Count == 2)
+            {
+                string key = starterType[0].Nom + "-" + starterType[1].Nom;
+                doublesTypesDifferents.Add(key, starterType);
+                pkmTypesSauvegardes.AddRange(starterType);
+            }
+            foreach (var types in doublesTypes)
+            {
+
+                if (index == 0 && pkmTypesSauvegardes.Count == 0)
+                {
+                    doublesTypesDifferents.Add(types.Key, types.Value);
+                    pkmTypesSauvegardes.AddRange(types.Value);
+                    RetirerToutesLesOccurencesDuType(types.Value[0]);
+                    RetirerToutesLesOccurencesDuType(types.Value[1]);
+                }
+                else
+                {
+                    bool doublesTypesVierge = true;
+                    foreach (var pkmType in types.Value)
+                    {
+                        bool contientPKMType = pkmTypesSauvegardes.Any(o => o.Nom == pkmType.Nom);
+                        if (contientPKMType)
+                        {
+                            doublesTypesVierge = false;
+                            break;
+                        }
+                    }
+                    if (doublesTypesVierge)
+                    {
+                        doublesTypesDifferents.Add(types.Key, types.Value);
+                        pkmTypesSauvegardes.AddRange(types.Value);
+                        RetirerToutesLesOccurencesDuType(types.Value[0]);
+                        RetirerToutesLesOccurencesDuType(types.Value[1]);
+
+                    }
+                }
+
+                index += 1;
+            }
+            return doublesTypesDifferents;
         }
 
-        private List<PKMType> RecupererDoubleTypeEnModeRandom()
+        private List<List<PKMType>> RecupererSimpleTypeNecessaire(int besoin)
         {
-            List<PKMType> doublesTypes = new List<PKMType>();
-            var tousLesDoublesTypesPossibles = _tousLesTypesPossibles.Select(o => o.Value).Where(o => o.Count == 2).ToList();
-
-            Random random = new Random();
-            int index = tousLesDoublesTypesPossibles.Count() > 1 ? random.Next(tousLesDoublesTypesPossibles.Count() - 1) : 0;
-            doublesTypes = tousLesDoublesTypesPossibles[index];
-
-            RetirerToutesLesOccurencesDuType(doublesTypes[0]);
-            RetirerToutesLesOccurencesDuType(doublesTypes[1]);
-            return doublesTypes;
-        }
-
-        private List<PKMType> RecupererSimplePKMType()
-        {
-            Random random = new Random();
-            var tousLesSimpleTypesPossibles = _tousLesTypesPossibles.Select(o => o.Value).Where(o => o.Count == 1).ToList();
-            int index = random.Next(tousLesSimpleTypesPossibles.Count - 1);
-            var PKMTypeChoisi = tousLesSimpleTypesPossibles[index];
-            var pkmTypes = new List<PKMType>();
-            pkmTypes.AddRange(PKMTypeChoisi);
-            RetirerToutesLesOccurencesDuType(PKMTypeChoisi[0]);
-            return pkmTypes;
+            var resultat = new List<List<PKMType>>();
+            var simpleTypesSelectionnalble = _tousLesTypesPossibles.Select(o => o.Value).Where(o => o.Count == 1).ToList();
+            for (int i = 0; i < besoin; i++)
+            {
+                var random = new Random();
+                int index = random.Next(simpleTypesSelectionnalble.Count);
+                var simpleType = simpleTypesSelectionnalble[index];
+                resultat.Add(simpleType);
+                simpleTypesSelectionnalble.RemoveAt(index);
+            }
+            return resultat;
         }
 
         private void RetirerToutesLesOccurencesDuType(PKMType pKMType)

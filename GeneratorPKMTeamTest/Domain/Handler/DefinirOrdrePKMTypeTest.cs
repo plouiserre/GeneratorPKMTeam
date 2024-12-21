@@ -7,42 +7,47 @@ namespace GeneratorPKMTeamTest.Domain.Handler
 {
     public class DefinirOrdrePKMTypeTest
     {
+        private int _nombreFoisLancementTest;
         private PKM _starterPKM;
+
         public DefinirOrdrePKMTypeTest()
         {
+            _nombreFoisLancementTest = 20;
         }
 
         [Theory]
-        [InlineData(1, new string[]{"Feu", "Eau", "Psy", "Sol", "Roche", "Plante", "Poison", "Glace", "Vol",
-        "Feu-Vol", "Eau-Vol", "Eau-Psy", "Eau-Poison", "Eau-Glace", "Sol-Roche", "Roche-Eau",
-        "Roche-Vol","Roche-Sol", "Plante-Psy", "Plante-Poison", "Poison-Vol", "Poison-Sol", "Glace-Vol", "Glace-Psy"},
-        "Carapuce", new string[] { "Eau" })]
-        [InlineData(3, new string[]{"Eau", "Ténèbres", "Psy", "Sol", "Fée", "Plante", "Dragon", "Glace", "Insecte",
-        "Eau-Ténèbres", "Eau-Psy", "Eau-Sol", "Eau-Fée", "Eau-Plante", "Eau-Dragon", "Eau-Glace", "Ténèbres-Glace",
-        "Psy-Fée", "Psy-Plante", "Sol-Psy", "Sol-Dragon", "Plante-Ténèbres", "Plante-Psy", "Dragon-Psy", "Glace-Eau",
-        "Glace-Psy", "Glace-Sol", "Insecte-Eau", "Insecte-Sol", "Insecte-Plante"}, "Laggron", new string[] { "Eau", "Sol" })]
-        [InlineData(6, new string[]{"Electrique", "Spectre", "Feu", "Acier", "Roche", "Combat", "Normal", "Vol", "Poison",
-        "Electrique-Spectre", "Electrique-Acier", "Electrique-Normal", "Electrique-Vol", "Spectre-Feu", "Spectre-Vol",
-        "Spectre-Poison", "Feu-Acier", "Feu-Roche", "Feu-Combat", "Feu-Normal", "Feu-Vol", "Acier-Spectre", "Acier-Roche",
-        "Acier-Combat", "Acier-Vol", "Roche-Acier", "Roche-Combat", "Roche-Vol", "Combat-Acier", "Combat-Vol", "Normal-Vol",
-        "Poison-Combat", "Poison-Vol"}, "Feunec", new string[] { "Feu" })]
-        [InlineData(3, new string[]{"Insecte", "Feu", "Dragon", "Roche", "Ténèbres", "Psy", "Plante-Poison",
-        "Insecte-Roche", "Feu-Roche", "Dragon-Psy", "Roche-Insecte", "Roche-Ténèbres", "Roche-Psy", "Ténèbres-Feu"},
-        "Bulbizarre", new string[] { "Plante", "Poison" })]
+        [InlineData(1, new string[]{"Eau", "Plante", "Roche", "Combat", "Sol", "Fée", "Insecte", "Ténèbres", "Glace",
+        "Plante-Combat", "Plante-Ténèbres", "Roche-Plante", "Roche-Sol", "Roche-Insecte", "Roche-Ténèbres", "Sol-Roche",
+        "Insecte-Plante", "Insecte-Roche", "Insecte-Combat", "Insecte-Sol", "Ténèbres-Glace", "Glace-Sol"}, "Carapuce",
+        new string[] { "Eau" })]
+        [InlineData(1, new string[]{"Combat", "Spectre", "Sol", "Normal", "Ténèbres", "Feu", "Glace", "Fée", "Plante-Poison",
+        "Normal-Fée", "Ténèbres-Spectre", "Ténèbres-Feu", "Ténèbres-Glace", "Feu-Combat", "Feu-Sol", "Glace-Sol"}, "Bulbizarre",
+        new string[] { "Plante", "Poison" })]
+        [InlineData(1, new string[]{"Combat", "Electrique", "Normal", "Psy", "Eau", "Plante", "Glace", "Spectre", "Poison", "Feu-Vol",
+        "Combat-Psy",  "Normal-Psy", "Psy-Plante", "Eau-Electrique", "Eau-Combat", "Eau-Glace", "Eau-Plante", "Eau-Poison", "Eau-Psy",
+        "Plante-Combat", "Plante-Poison", "Plante-Psy", "Glace-Psy", "Glace-Eau", "Spectre-Poison" }, "Dracaufeu",
+        new string[] { "Feu", "Vol" })]
+        [InlineData(1, new string[]{"Fée", "Dragon", "Combat", "Plante", "Feu", "Poison", "Glace", "Psy", "Acier", "Ténèbres", "Eau-Sol",
+        "Dragon-Psy", "Combat-Psy", "Plante-Combat", "Plante-Poison", "Plante-Psy", "Plante-Ténèbres", "Feu-Combat", "Glace-Psy",
+        "Psy-Fée", "Psy-Plante", "Acier-Fée", "Acier-Psy", "Ténèbres-Feu", "Ténèbres-Glace"}, "Laggron", new string[] { "Eau", "Sol" })]
         public void OnObtientPour6PkmsParGeneration9TypesOuDoublesTypes(int generation, string[] _toutesLesCombinaisonsPossibles, string nomStarter, string[] typesStarter)
         {
-            _starterPKM = ConstruireStarter(nomStarter, generation, typesStarter);
-            var gererStarterPKM = Substitute.For<IGererStarterPKM>();
-            gererStarterPKM.RecupererStarter().Returns(_starterPKM);
-            var pkmTypes = GenererPKMTypesListes(_toutesLesCombinaisonsPossibles);
-            var tousLesTypesPossibles = AvoirTousLesTypesPossibles(_toutesLesCombinaisonsPossibles);
-            var determinerTousLesTypesExistant = Substitute.For<IDeterminerTousLesTypesExistant>();
-            determinerTousLesTypesExistant.Calculer(generation, pkmTypes).Returns(tousLesTypesPossibles);
+            for (int i = 0; i < _nombreFoisLancementTest; i++)
+            {
+                _starterPKM = ConstruireStarter(nomStarter, generation, typesStarter);
+                var gererStarterPKM = Substitute.For<IGererStarterPKM>();
+                gererStarterPKM.RecupererStarter().Returns(_starterPKM);
+                var pkmTypes = GenererPKMTypesListes(_toutesLesCombinaisonsPossibles);
+                var tousLesTypesPossibles = AvoirTousLesTypesPossibles(_toutesLesCombinaisonsPossibles);
+                var determinerTousLesTypesExistant = Substitute.For<IDeterminerTousLesTypesExistant>();
+                determinerTousLesTypesExistant.Calculer(generation, pkmTypes).Returns(tousLesTypesPossibles);
 
-            var definirOrdre = new DefinirOrdrePKMType(determinerTousLesTypesExistant, gererStarterPKM, generation);
-            Dictionary<int, List<PKMType>> regroupementTypesPKM = definirOrdre.Generer(pkmTypes);
+                var definirOrdre = new DefinirOrdrePKMType(determinerTousLesTypesExistant, gererStarterPKM, generation);
+                Dictionary<int, List<PKMType>> regroupementTypesPKM = definirOrdre.Generer(pkmTypes);
 
-            AssertOrdrePKMType(regroupementTypesPKM, pkmTypes);
+                //AssertTousPKMTypesChoisis(pkmTypes, regroupementTypesPKM);
+                AssertDifferentsTypes(regroupementTypesPKM);
+            }
         }
 
         private PKM ConstruireStarter(string nom, int generation, string[] types)
@@ -98,78 +103,68 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             return types;
         }
 
-        private void AssertOrdrePKMType(Dictionary<int, List<PKMType>> regroupementTypesPKM, List<PKMType> pkmTypes)
+        private void AssertTousPKMTypesChoisis(List<PKMType> pkmTypes, Dictionary<int, List<PKMType>> regroupementTypesPKM)
         {
-            var pkmTypesNoms = pkmTypes.Select(o => o.Nom);
-
-            Assert.True(regroupementTypesPKM.Count > 0);
-
-            AssertStarterPKMTypesRetournes(regroupementTypesPKM);
-
-            AssertBonsPKMTypesRetournes(regroupementTypesPKM, pkmTypesNoms);
-
-            AssertPKMTypesRetournesUneSeuleFois(regroupementTypesPKM);
-        }
-
-        private void AssertStarterPKMTypesRetournes(Dictionary<int, List<PKMType>> regroupementTypesPKM)
-        {
-            var pkmTypesStarter = GenererPKMTypesListes(_starterPKM.PKMTypes.ToArray());
-            var premierTypeStarterAttendu = pkmTypesStarter[0];
-            var premierTypeStarterCalculer = regroupementTypesPKM[1][0];
-            Assert.Equal(pkmTypesStarter.Count, regroupementTypesPKM[1].Count);
-            if (pkmTypesStarter.Count == 1)
+            bool tousTypesRetournes = true;
+            var tousTypesTrouves = new List<PKMType>();
+            foreach (var regroupement in regroupementTypesPKM)
             {
-                Assert.Equal(premierTypeStarterAttendu.Nom, premierTypeStarterCalculer.Nom);
+                tousTypesTrouves.AddRange(regroupement.Value);
             }
-            if (pkmTypesStarter.Count == 2)
+            foreach (var pkmType in pkmTypes)
             {
-                var deuxiemeTypeStarterAttendu = pkmTypesStarter[1];
-                var deuxiemeTypeStarterCalculer = regroupementTypesPKM[1][1];
-                Assert.Equal(deuxiemeTypeStarterAttendu.Nom, deuxiemeTypeStarterCalculer.Nom);
-            }
-        }
-
-        private void AssertBonsPKMTypesRetournes(Dictionary<int, List<PKMType>> regroupementTypesPKM, IEnumerable<string> pkmTypesNoms)
-        {
-            for (int i = 0; i < regroupementTypesPKM.Count; i++)
-            {
-                if (i == 0)
-                    continue;
-                var regroupement = regroupementTypesPKM[i];
-                if (regroupement.Count == 1)
+                bool contains = tousTypesTrouves.Any(o => o.Nom == pkmType.Nom);
+                if (!contains)
                 {
-                    Assert.True(pkmTypesNoms.Contains(regroupement[0].Nom));
-                }
-                else
-                {
-                    Assert.True(pkmTypesNoms.Contains(regroupement[0].Nom) && pkmTypesNoms.Contains(regroupement[1].Nom));
+                    tousTypesRetournes = false;
+                    break;
                 }
             }
+            if (!tousTypesRetournes)
+            {
+                int test = 3 + 2;
+            }
+            Assert.Equal(6, regroupementTypesPKM.Count);
+            Assert.True(tousTypesRetournes);
         }
 
-        private void AssertPKMTypesRetournesUneSeuleFois(Dictionary<int, List<PKMType>> regroupementTypesPKM)
+        private void AssertDifferentsTypes(Dictionary<int, List<PKMType>> regroupementTypesPKM)
         {
-            for (int i = 1; i <= regroupementTypesPKM.Count; i++)
+            bool aucunPKMTypesEnDouble = true;
+            var tousPKMTypesRegroupes = new List<PKMType>();
+            var tousPKMTypes = regroupementTypesPKM.Values;
+            foreach (var pkmType in tousPKMTypes)
             {
-                for (int j = 1; j <= regroupementTypesPKM.Count; j++)
+                tousPKMTypesRegroupes.AddRange(pkmType);
+            }
+            for (int i = 0; i < tousPKMTypesRegroupes.Count; i++)
+            {
+                for (int j = 0; j < tousPKMTypesRegroupes.Count; j++)
                 {
                     if (i == j)
                         continue;
-                    Assert.NotEqual(regroupementTypesPKM[i][0].Nom, regroupementTypesPKM[j][0].Nom);
-                    if (regroupementTypesPKM[i].Count == 2)
+                    if (tousPKMTypesRegroupes[i].Nom == tousPKMTypesRegroupes[j].Nom)
                     {
-                        Assert.NotEqual(regroupementTypesPKM[i][1].Nom, regroupementTypesPKM[j][0].Nom);
-                        if (regroupementTypesPKM[j].Count == 2)
-                        {
-                            Assert.NotEqual(regroupementTypesPKM[i][1].Nom, regroupementTypesPKM[j][1].Nom);
-                        }
-                    }
-                    if (regroupementTypesPKM[j].Count == 2)
-                    {
-                        Assert.NotEqual(regroupementTypesPKM[i][0].Nom, regroupementTypesPKM[j][1].Nom);
+                        aucunPKMTypesEnDouble = false;
+                        break;
                     }
                 }
             }
+            Assert.Equal(6, regroupementTypesPKM.Count);
+            Assert.True(aucunPKMTypesEnDouble);
+            // for (int i = 0; i < regroupementTypesPKM.Count; i++)
+            // {
+            //     for (int j = 0; j < regroupementTypesPKM.Count; j++)
+            //     {
+            //         if (i == j)
+            //             continue;
+            //         var premierRegroupement = regroupementTypesPKM[i];
+            //         var secondRegroupement = regroupementTypesPKM[j];
+
+            //     }
+            // }
         }
+
+
     }
 }

@@ -68,7 +68,7 @@ namespace GeneratorPKMTeam.Domain.Handler
 
         private bool VerifierTypeSimplePKM(IEnumerable<PKM> pkms, PKMType pKMType)
         {
-            bool aCeTypeEnPremierType = pkms.Any(o => o.PKMTypes[0] == pKMType.Nom);
+            bool aCeTypeEnPremierType = pkms.Any(o => o.PKMTypes[0] == pKMType.Nom && o.PKMTypes.Count == 1);
             return aCeTypeEnPremierType;
         }
 

@@ -32,12 +32,11 @@ namespace GeneratorPKMTeamTest.Domain.Handler
                 resultats.Add(resultat);
             }
 
-            Assert.True(resultats.All(o => o.Count >= 9 && o.Count <= 13));
+            Assert.True(resultats.All(o => o.Count >= 9 && o.Count <= 12));
             Assert.True(resultats.Any(o => o.Count == 9));
             Assert.True(resultats.Any(o => o.Count == 10));
             Assert.True(resultats.Any(o => o.Count == 11));
             Assert.True(resultats.Any(o => o.Count == 12));
-            Assert.True(resultats.Any(o => o.Count == 13));
         }
 
         [Fact]
