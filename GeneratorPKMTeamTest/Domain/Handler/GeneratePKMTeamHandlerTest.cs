@@ -1,18 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using GeneratorPKMTeam;
-using GeneratorPKMTeam.Domain;
 using GeneratorPKMTeam.Domain.Handler;
+using GeneratorPKMTeam.Domain.Handler.DefinirOrdrePKMType;
 using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driven;
-using GeneratorPKMTeam.Infrastructure.Services;
 using GeneratorPKMTeamTest.Utils.Helper;
 using NSubstitute;
 
-namespace GeneratorPKMTeamTest.Domain.Handler
+namespace GeneratorPKMTeamTest.Domain.Handler.DefinirOrdrePKMTypeTest
 {
     public class GeneratePKMTeamHandlerTest
     {

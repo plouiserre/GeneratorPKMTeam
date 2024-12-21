@@ -1,9 +1,10 @@
 using GeneratorPKMTeam;
 using GeneratorPKMTeam.Domain.Handler;
+using GeneratorPKMTeam.Domain.Handler.DefinirOrdrePKMType;
 using GeneratorPKMTeam.Domain.Models;
 using NSubstitute;
 
-namespace GeneratorPKMTeamTest.Domain.Handler
+namespace GeneratorPKMTeamTest.Domain.Handler.DefinirOrdrePKMTypeTest
 {
     public class DefinirOrdrePKMTypeTest
     {

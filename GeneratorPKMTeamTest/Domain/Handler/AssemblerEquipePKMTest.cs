@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using GeneratorPKMTeam;
 using GeneratorPKMTeam.Domain.CustomException;
 using GeneratorPKMTeam.Domain.Handler;
+using GeneratorPKMTeam.Domain.Handler.DefinirOrdrePKMType;
 using GeneratorPKMTeam.Domain.Models;
-using GeneratorPKMTeam.Domain.Port.Driven;
 using NSubstitute;
 using NSubstitute.ExceptionExtensions;
 

@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
+using GeneratorPKMTeam.Domain.Handler.DefinirOrdrePKMType;
 using GeneratorPKMTeam.Domain.Models;
-using GeneratorPKMTeam.Domain.Port.Driven;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {

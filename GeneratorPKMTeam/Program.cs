@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using GeneratorPKMTeam.Domain;
 using GeneratorPKMTeam.Domain.Handler;
+using GeneratorPKMTeam.Domain.Handler.DefinirOrdrePKMType;
 using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
 using GeneratorPKMTeam.Infrastructure.Connector;
 using GeneratorPKMTeam.Infrastructure.Services;
