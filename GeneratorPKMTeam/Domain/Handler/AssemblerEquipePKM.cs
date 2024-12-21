@@ -1,4 +1,4 @@
-using GeneratorPKMTeam.Domain.Handler.DefinirOrdrePKMType;
+using GeneratorPKMTeam.Domain.Handler.OrdrePKMType;
 using GeneratorPKMTeam.Domain.Models;
 
 namespace GeneratorPKMTeam.Domain.Handler

@@ -1,7 +1,7 @@
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driven;
 
-namespace GeneratorPKMTeam.Domain.Handler.DefinirOrdrePKMType
+namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
 {
     public class DeterminerTousLesTypesExistant : IDeterminerTousLesTypesExistant
     {

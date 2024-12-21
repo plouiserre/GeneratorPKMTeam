@@ -1,6 +1,6 @@
 using GeneratorPKMTeam;
 using GeneratorPKMTeam.Domain.Handler;
-using GeneratorPKMTeam.Domain.Handler.DefinirOrdrePKMType;
+using GeneratorPKMTeam.Domain.Handler.OrdrePKMType;
 using GeneratorPKMTeam.Domain.Models;
 using NSubstitute;
 

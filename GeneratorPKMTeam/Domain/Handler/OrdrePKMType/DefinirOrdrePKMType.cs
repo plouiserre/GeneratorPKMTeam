@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GeneratorPKMTeam.Domain.Models;
 
-namespace GeneratorPKMTeam.Domain.Handler.DefinirOrdrePKMType
+namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
 {
     public class DefinirOrdrePKMType : IDefinirOrdrePKMType
     {

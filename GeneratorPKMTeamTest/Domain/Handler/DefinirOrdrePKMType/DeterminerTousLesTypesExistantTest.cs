@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GeneratorPKMTeam.Domain;
 using GeneratorPKMTeam.Domain.Handler;
-using GeneratorPKMTeam.Domain.Handler.DefinirOrdrePKMType;
+using GeneratorPKMTeam.Domain.Handler.OrdrePKMType;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driven;
 using GeneratorPKMTeam.Infrastructure.Services;
