@@ -2,6 +2,7 @@ using GeneratorPKMTeam;
 using GeneratorPKMTeam.Domain.CustomException;
 using GeneratorPKMTeam.Domain.Handler;
 using GeneratorPKMTeam.Domain.Handler.OrdrePKMType;
+using GeneratorPKMTeam.Domain.Handler.SelectionPKM;
 using GeneratorPKMTeam.Domain.Models;
 using NSubstitute;
 using NSubstitute.ExceptionExtensions;

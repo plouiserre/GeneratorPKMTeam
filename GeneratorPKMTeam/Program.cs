@@ -3,6 +3,7 @@ using GeneratorPKMTeam.Domain;
 using GeneratorPKMTeam.Domain.Handler;
 using GeneratorPKMTeam.Domain.Handler.OrdrePKMType;
 using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
+using GeneratorPKMTeam.Domain.Handler.SelectionPKM;
 using GeneratorPKMTeam.Infrastructure.Connector;
 using GeneratorPKMTeam.Infrastructure.Services;
 

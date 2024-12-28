@@ -7,8 +7,9 @@ using GeneratorPKMTeamTest.Utils.Personas;
 using NSubstitute;
 using GeneratorPKMTeam.Infrastructure.Services;
 using GeneratorPKMTeam.Domain.Port.Driven;
+using GeneratorPKMTeam.Domain.Handler.SelectionPKM;
 
-namespace GeneratorPKMTeamTest.Domain.Handler
+namespace GeneratorPKMTeamTest.Domain.Handler.SelectionPKM
 {
     public class RecuperationPKMsTest
     {

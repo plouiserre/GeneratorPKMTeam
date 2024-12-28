@@ -2,6 +2,7 @@ using GeneratorPKMTeam;
 using GeneratorPKMTeam.Domain.Handler;
 using GeneratorPKMTeam.Domain.Handler.OrdrePKMType;
 using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
+using GeneratorPKMTeam.Domain.Handler.SelectionPKM;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driven;
 using GeneratorPKMTeamTest.Utils.Helper;

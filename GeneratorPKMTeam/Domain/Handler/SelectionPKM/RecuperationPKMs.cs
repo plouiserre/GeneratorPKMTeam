@@ -6,7 +6,7 @@ using GeneratorPKMTeam.Domain.CustomException;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driven;
 
-namespace GeneratorPKMTeam.Domain.Handler
+namespace GeneratorPKMTeam.Domain.Handler.SelectionPKM
 {
     public class RecuperationPKMs : IRecuperationPKMs
     {
