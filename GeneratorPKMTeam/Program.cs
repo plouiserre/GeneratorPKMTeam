@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using GeneratorPKMTeam.Domain;
 using GeneratorPKMTeam.Domain.Handler;
+using GeneratorPKMTeam.Domain.Handler.OrdrePKMType;
 using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
 using GeneratorPKMTeam.Infrastructure.Connector;
 using GeneratorPKMTeam.Infrastructure.Services;
@@ -23,7 +24,8 @@ var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
 var choisirMeilleuresCombinaisonsTypes = new ChoisirMeilleuresCombinaisonsTypes(loadPKMTypes, selectPKMTypes, resultFightPKMTypes,
                 gererResultatTiragePKMTypes);
 var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(PKMPersistence, pKM);
-var definirOrdrePKMType = new DefinirOrdrePKMType(determinerTousLesTypesExistant, pKM, generation);
+var gererRecuperationPKMType = new GererRecuperationPKMType();
+var definirOrdrePKMType = new DefinirOrdrePKMType(determinerTousLesTypesExistant, pKM, gererRecuperationPKMType, generation);
 var recuperationPKM = new RecuperationPKMs(PKMPersistence, pKM, generation);
 var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMType, recuperationPKM);
 var trouverTypePKMEquipePKM = new TrouverTypePKMEquipePKM(choisirMeilleuresCombinaisonsTypes, assemblerEquipePKM);

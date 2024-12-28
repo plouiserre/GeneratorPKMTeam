@@ -1,7 +1,7 @@
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driven;
 
-namespace GeneratorPKMTeam.Domain.Handler
+namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
 {
     public class DeterminerTousLesTypesExistant : IDeterminerTousLesTypesExistant
     {
@@ -68,7 +68,7 @@ namespace GeneratorPKMTeam.Domain.Handler
 
         private bool VerifierTypeSimplePKM(IEnumerable<PKM> pkms, PKMType pKMType)
         {
-            bool aCeTypeEnPremierType = pkms.Any(o => o.PKMTypes[0] == pKMType.Nom);
+            bool aCeTypeEnPremierType = pkms.Any(o => o.PKMTypes[0] == pKMType.Nom && o.PKMTypes.Count == 1);
             return aCeTypeEnPremierType;
         }
 

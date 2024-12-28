@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
+using GeneratorPKMTeam.Domain.Handler.OrdrePKMType;
 using GeneratorPKMTeam.Domain.Models;
-using GeneratorPKMTeam.Domain.Port.Driven;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
@@ -21,10 +16,10 @@ namespace GeneratorPKMTeam.Domain.Handler
 
         public List<PKM> Assembler(TiragePKMTypes tirage)
         {
-            var resultat = new List<PKM>();
-
             try
             {
+                var resultat = new List<PKM>();
+
                 var typeOrdonnees = _definirOrdrePKMType.Generer(tirage.PKMTypes);
 
                 resultat = _recuperationPKMs.Recuperer(typeOrdonnees);

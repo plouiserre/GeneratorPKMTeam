@@ -14,11 +14,14 @@ namespace GeneratorPKMTeam.Domain.Handler
         private List<PKMType> _tousLesTypesPKM;
         private List<PKMType> _PKMTypesStarter;
         private int _nombrePKMTypeChoisis;
+        private int _tirageMiniPKMType;
+        private int _tirageMaxPKMType;
 
         public ChoisirPKMTypes(IGererStarterPKM starterPKM)
         {
             _gererStarterPKM = starterPKM;
-            _nombrePKMTypeChoisis = 9;
+            _tirageMiniPKMType = 9;
+            _tirageMaxPKMType = 12;
         }
 
         public List<PKMType> SelectionnerPKMTypes(PKMDonnees datas)
@@ -26,6 +29,7 @@ namespace GeneratorPKMTeam.Domain.Handler
             _PKMTypesStarter = new List<PKMType>();
             _tousLesTypesPKM = new List<PKMType>();
             _datas = datas.Clone() as PKMDonnees;
+            RandomNombrePKMTypes();
             var pkmTypes = new List<PKMType>();
             _starterPKM = _gererStarterPKM.RecupererStarter();
             DeterminerPKMTypesPossibles();
@@ -38,6 +42,12 @@ namespace GeneratorPKMTeam.Domain.Handler
                 _tousLesTypesPKM.Remove(_tousLesTypesPKM[newIndex]);
             }
             return pkmTypes;
+        }
+
+        private void RandomNombrePKMTypes()
+        {
+            var random = new Random();
+            _nombrePKMTypeChoisis = random.Next(_tirageMiniPKMType, _tirageMaxPKMType + 1);
         }
 
         private int RandomIndex(int maxIdPossible)

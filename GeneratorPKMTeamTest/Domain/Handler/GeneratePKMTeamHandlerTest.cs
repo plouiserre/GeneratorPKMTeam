@@ -1,18 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using GeneratorPKMTeam;
-using GeneratorPKMTeam.Domain;
 using GeneratorPKMTeam.Domain.Handler;
+using GeneratorPKMTeam.Domain.Handler.OrdrePKMType;
 using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driven;
-using GeneratorPKMTeam.Infrastructure.Services;
 using GeneratorPKMTeamTest.Utils.Helper;
 using NSubstitute;
 
-namespace GeneratorPKMTeamTest.Domain.Handler
+namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
 {
     public class GeneratePKMTeamHandlerTest
     {
@@ -75,7 +70,8 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var starterPKM = new GererStarterPKM(pkmPersistence);
             starterPKM.ChoisirStarter("Bulbizarre");
             var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(pkmPersistence, starterPKM);
-            var definirOrdrePKMTypes = new DefinirOrdrePKMType(determinerTousLesTypesExistant, starterPKM, _generation);
+            var gererRecuperationPKMType = new GererRecuperationPKMType();
+            var definirOrdrePKMTypes = new DefinirOrdrePKMType(determinerTousLesTypesExistant, starterPKM, gererRecuperationPKMType, _generation);
             var recuperationPKMs = new RecuperationPKMs(pkmPersistence, starterPKM, _generation);
             var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMTypes, recuperationPKMs);
             return assemblerEquipePKM;

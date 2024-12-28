@@ -4,13 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using GeneratorPKMTeam.Domain;
 using GeneratorPKMTeam.Domain.Handler;
+using GeneratorPKMTeam.Domain.Handler.OrdrePKMType;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driven;
 using GeneratorPKMTeam.Infrastructure.Services;
 using GeneratorPKMTeamTest.Utils.Helper;
 using NSubstitute;
 
-namespace GeneratorPKMTeamTest.Domain.Handler
+namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
 {
     public class DeterminerTousLesTypesExistantTest
     {
@@ -28,15 +29,13 @@ namespace GeneratorPKMTeamTest.Domain.Handler
 
             var resultat = determinerTypesExistant.Calculer(1, pkmTypes);
 
-            Assert.Equal(18, resultat.Count);
+            Assert.Equal(16, resultat.Count);
             Assert.Equal("Feu", resultat["Feu"].First().Nom);
             Assert.Equal("Eau", resultat["Eau"].First().Nom);
             Assert.Equal("Psy", resultat["Psy"].First().Nom);
             Assert.Equal("Sol", resultat["Sol"].First().Nom);
-            Assert.Equal("Roche", resultat["Roche"].First().Nom);
             Assert.Equal("Plante", resultat["Plante"].First().Nom);
             Assert.Equal("Poison", resultat["Poison"].First().Nom);
-            Assert.Equal("Glace", resultat["Glace"].First().Nom);
             Assert.Equal("Feu", resultat["Feu-Vol"][0].Nom);
             Assert.Equal("Vol", resultat["Feu-Vol"][1].Nom);
             Assert.Equal("Plante", resultat["Plante-Psy"][0].Nom);
@@ -159,6 +158,64 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             Assert.Equal("Combat", resultat["Poison-Combat"][1].Nom);
             Assert.Equal("Poison", resultat["Poison-Vol"][0].Nom);
             Assert.Equal("Vol", resultat["Poison-Vol"][1].Nom);
+        }
+
+        [Fact]
+        public void CalculerSixTypesPKMPourBugElectrik()
+        {
+            var tousPKMs = DatasHelperTest.RetournersTousPKM();
+            var pKMPersistence = Substitute.For<IPKMPersistence>();
+            pKMPersistence.GetPKMs().Returns(new PKMs() { TousPKMs = tousPKMs.ToList() });
+            var pkmTypes = DatasHelperTest.RetournerDonneesPKMTypes(new List<string>() { "Feu", "Vol", "Combat", "Electrique", "Normal", "Psy", "Eau", "Plante", "Glace", "Spectre", "Poison" });
+            var starterPKM = Substitute.For<IGererStarterPKM>();
+            starterPKM.RecupererStarter().Returns(new PKM() { Nom = "Dracaufeu", Generation = 1, PKMTypes = new List<string>() { "Feu", "Vol" } });
+
+            var determinerTypesExistant = new DeterminerTousLesTypesExistant(pKMPersistence, starterPKM);
+
+            var resultat = determinerTypesExistant.Calculer(3, pkmTypes);
+
+            Assert.Equal(25, resultat.Count);
+            Assert.Equal("Combat", resultat["Combat"].First().Nom);
+            Assert.Equal("Electrique", resultat["Electrique"].First().Nom);
+            Assert.Equal("Normal", resultat["Normal"].First().Nom);
+            Assert.Equal("Psy", resultat["Psy"].First().Nom);
+            Assert.Equal("Eau", resultat["Eau"].First().Nom);
+            Assert.Equal("Plante", resultat["Plante"].First().Nom);
+            Assert.Equal("Glace", resultat["Glace"].First().Nom);
+            Assert.Equal("Spectre", resultat["Spectre"].First().Nom);
+            Assert.Equal("Poison", resultat["Poison"].First().Nom);
+            Assert.Equal("Feu", resultat["Feu-Vol"][0].Nom);
+            Assert.Equal("Vol", resultat["Feu-Vol"][1].Nom);
+            Assert.Equal("Combat", resultat["Combat-Psy"][0].Nom);
+            Assert.Equal("Psy", resultat["Combat-Psy"][1].Nom);
+            Assert.Equal("Normal", resultat["Normal-Psy"][0].Nom);
+            Assert.Equal("Psy", resultat["Normal-Psy"][1].Nom);
+            Assert.Equal("Psy", resultat["Psy-Plante"][0].Nom);
+            Assert.Equal("Plante", resultat["Psy-Plante"][1].Nom);
+            Assert.Equal("Eau", resultat["Eau-Electrique"][0].Nom);
+            Assert.Equal("Electrique", resultat["Eau-Electrique"][1].Nom);
+            Assert.Equal("Eau", resultat["Eau-Combat"][0].Nom);
+            Assert.Equal("Combat", resultat["Eau-Combat"][1].Nom);
+            Assert.Equal("Eau", resultat["Eau-Glace"][0].Nom);
+            Assert.Equal("Glace", resultat["Eau-Glace"][1].Nom);
+            Assert.Equal("Eau", resultat["Eau-Plante"][0].Nom);
+            Assert.Equal("Plante", resultat["Eau-Plante"][1].Nom);
+            Assert.Equal("Eau", resultat["Eau-Poison"][0].Nom);
+            Assert.Equal("Poison", resultat["Eau-Poison"][1].Nom);
+            Assert.Equal("Eau", resultat["Eau-Psy"][0].Nom);
+            Assert.Equal("Psy", resultat["Eau-Psy"][1].Nom);
+            Assert.Equal("Plante", resultat["Plante-Combat"][0].Nom);
+            Assert.Equal("Combat", resultat["Plante-Combat"][1].Nom);
+            Assert.Equal("Plante", resultat["Plante-Poison"][0].Nom);
+            Assert.Equal("Poison", resultat["Plante-Poison"][1].Nom);
+            Assert.Equal("Plante", resultat["Plante-Psy"][0].Nom);
+            Assert.Equal("Psy", resultat["Plante-Psy"][1].Nom);
+            Assert.Equal("Glace", resultat["Glace-Psy"][0].Nom);
+            Assert.Equal("Psy", resultat["Glace-Psy"][1].Nom);
+            Assert.Equal("Glace", resultat["Glace-Eau"][0].Nom);
+            Assert.Equal("Eau", resultat["Glace-Eau"][1].Nom);
+            Assert.Equal("Spectre", resultat["Spectre-Poison"][0].Nom);
+            Assert.Equal("Poison", resultat["Spectre-Poison"][1].Nom);
         }
     }
 }
