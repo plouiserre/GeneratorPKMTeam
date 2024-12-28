@@ -9,7 +9,6 @@ namespace GeneratorPKMTeam.Domain.Handler
     public class GeneratePKMTeamHandler : IGeneratePKMTeamHandler
     {
         private ITrouverTypePKMEquipePKM _trouverTypePKMEquipePKM;
-        public List<TiragePKMTypes> TiragePKMTypes;
 
         public GeneratePKMTeamHandler(ITrouverTypePKMEquipePKM trouverTypePKMEquipePKM)
         {
