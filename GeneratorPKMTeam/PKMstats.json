@@ -1,4 +1,13 @@
-[
+{
+  "ordreImportanceStats":[
+    {"1":"Sp. Attaque"},
+    {"2":"Sp. Defense"},
+    {"3":"Attaque"},
+    {"4":"PV"},
+    {"5":"Sp. Defense"},
+    {"6":"Attaque"}
+  ],
+  "pkmStats":[
     {
       "id": 1,
       "stats": {
@@ -8899,3 +8908,4 @@
       }
     }
   ]
+}
