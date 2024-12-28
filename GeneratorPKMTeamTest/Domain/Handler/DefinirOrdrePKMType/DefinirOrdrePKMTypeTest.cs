@@ -4,7 +4,7 @@ using GeneratorPKMTeam.Domain.Handler.OrdrePKMType;
 using GeneratorPKMTeam.Domain.Models;
 using NSubstitute;
 
-namespace GeneratorPKMTeamTest.Domain.Handler.DefinirOrdrePKMTypeTest
+namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
 {
     public class DefinirOrdrePKMTypeTest
     {
@@ -43,7 +43,8 @@ namespace GeneratorPKMTeamTest.Domain.Handler.DefinirOrdrePKMTypeTest
                 var determinerTousLesTypesExistant = Substitute.For<IDeterminerTousLesTypesExistant>();
                 determinerTousLesTypesExistant.Calculer(generation, pkmTypes).Returns(tousLesTypesPossibles);
 
-                var definirOrdre = new DefinirOrdrePKMType(determinerTousLesTypesExistant, gererStarterPKM, generation);
+                var gererRecuperationPKMType = new GererRecuperationPKMType();
+                var definirOrdre = new DefinirOrdrePKMType(determinerTousLesTypesExistant, gererStarterPKM, gererRecuperationPKMType, generation);
                 Dictionary<int, List<PKMType>> regroupementTypesPKM = definirOrdre.Generer(pkmTypes);
 
                 //AssertTousPKMTypesChoisis(pkmTypes, regroupementTypesPKM);

@@ -11,7 +11,7 @@ using GeneratorPKMTeam.Infrastructure.Services;
 using GeneratorPKMTeamTest.Utils.Helper;
 using NSubstitute;
 
-namespace GeneratorPKMTeamTest.Domain.Handler.DefinirOrdrePKMTypeTest
+namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
 {
     public class DeterminerTousLesTypesExistantTest
     {

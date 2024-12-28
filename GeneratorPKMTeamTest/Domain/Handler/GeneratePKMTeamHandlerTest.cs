@@ -7,7 +7,7 @@ using GeneratorPKMTeam.Domain.Port.Driven;
 using GeneratorPKMTeamTest.Utils.Helper;
 using NSubstitute;
 
-namespace GeneratorPKMTeamTest.Domain.Handler.DefinirOrdrePKMTypeTest
+namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
 {
     public class GeneratePKMTeamHandlerTest
     {
@@ -70,7 +70,8 @@ namespace GeneratorPKMTeamTest.Domain.Handler.DefinirOrdrePKMTypeTest
             var starterPKM = new GererStarterPKM(pkmPersistence);
             starterPKM.ChoisirStarter("Bulbizarre");
             var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(pkmPersistence, starterPKM);
-            var definirOrdrePKMTypes = new DefinirOrdrePKMType(determinerTousLesTypesExistant, starterPKM, _generation);
+            var gererRecuperationPKMType = new GererRecuperationPKMType();
+            var definirOrdrePKMTypes = new DefinirOrdrePKMType(determinerTousLesTypesExistant, starterPKM, gererRecuperationPKMType, _generation);
             var recuperationPKMs = new RecuperationPKMs(pkmPersistence, starterPKM, _generation);
             var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMTypes, recuperationPKMs);
             return assemblerEquipePKM;

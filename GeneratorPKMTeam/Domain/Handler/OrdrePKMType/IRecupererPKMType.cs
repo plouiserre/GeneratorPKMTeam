@@ -7,6 +7,6 @@ namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
 {
     public interface IRecupererPKMType
     {
-        Dictionary<string, List<PKMType>> RecupererPKMTypes(List<PKMType> starterType);
+        Dictionary<string, List<PKMType>> RecupererPKMTypes(List<PKMType> starterType, Dictionary<string, List<PKMType>> tousLesTypesPossibles);
     }
 }
