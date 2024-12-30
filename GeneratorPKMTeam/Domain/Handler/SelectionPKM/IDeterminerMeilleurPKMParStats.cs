@@ -8,6 +8,6 @@ namespace GeneratorPKMTeam.Domain.Handler.SelectionPKM
 {
     public interface IDeterminerMeilleurPKMParStats
     {
-        public PKM Calculer(List<PKM> pkmsAComparer);
+        public List<PKM> Calculer(List<PKM> pkmsAComparer);
     }
 }

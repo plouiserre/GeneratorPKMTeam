@@ -7,6 +7,6 @@ namespace GeneratorPKMTeam.Domain.Models
 {
     public class ConfigurationStats
     {
-        public Dictionary<int, string> StatsParImportance { get; set; }
+        public Dictionary<int, PKMStatsLabel> StatsParImportance { get; set; }
     }
 }

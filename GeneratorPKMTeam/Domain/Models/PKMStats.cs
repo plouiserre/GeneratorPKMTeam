@@ -5,6 +5,17 @@ using System.Threading.Tasks;
 
 namespace GeneratorPKMTeam.Domain.Models
 {
+
+
+    public enum PKMStatsLabel
+    {
+        SPAttaque,
+        Attaque,
+        PV,
+        Vitesse,
+        SPDefense,
+        Defense
+    }
     public class PKMStats
     {
         public int PV { get; set; }
