@@ -32,21 +32,24 @@ var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMType, recuperatio
 var trouverTypePKMEquipePKM = new TrouverTypePKMEquipePKM(choisirMeilleuresCombinaisonsTypes, assemblerEquipePKM);
 var handler = new GeneratePKMTeamHandler(trouverTypePKMEquipePKM);
 
-var pkmsTeams = handler.Generer();
+var test = new PKMStatsJson();
+test.GetPKMStatsDatas();
+
+// var pkmsTeams = handler.Generer();
 
 
-foreach (var pkmsTeam in pkmsTeams)
-{
-    int numeroTirage = pkmsTeam.Key + 1;
-    Console.WriteLine("-------Tirage n°" + numeroTirage + "-------");
-    foreach (var pkm in pkmsTeam.Value)
-    {
-        if (pkm.PKMTypes.Count == 1)
-            Console.WriteLine(pkm.Nom + " de type " + pkm.PKMTypes[0]);
-        else
-            Console.WriteLine(pkm.Nom + " de type " + pkm.PKMTypes[0] + " et de type " + pkm.PKMTypes[1]);
-    }
-    Console.WriteLine("-------FIN Tirage n°" + numeroTirage + "-------");
-}
+// foreach (var pkmsTeam in pkmsTeams)
+// {
+//     int numeroTirage = pkmsTeam.Key + 1;
+//     Console.WriteLine("-------Tirage n°" + numeroTirage + "-------");
+//     foreach (var pkm in pkmsTeam.Value)
+//     {
+//         if (pkm.PKMTypes.Count == 1)
+//             Console.WriteLine(pkm.Nom + " de type " + pkm.PKMTypes[0]);
+//         else
+//             Console.WriteLine(pkm.Nom + " de type " + pkm.PKMTypes[0] + " et de type " + pkm.PKMTypes[1]);
+//     }
+//     Console.WriteLine("-------FIN Tirage n°" + numeroTirage + "-------");
+// }
 
-Console.Read();
+// Console.Read();
