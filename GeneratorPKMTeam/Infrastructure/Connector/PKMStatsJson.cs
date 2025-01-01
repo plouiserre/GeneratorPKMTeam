@@ -9,10 +9,11 @@ namespace GeneratorPKMTeam.Infrastructure.Connector
 {
     public class PKMStatsJson
     {
-        public void GetPKMStatsDatas()
+        public PKMDataStatsInf GetPKMStatsDatas()
         {
             string data = File.ReadAllText(@"PKMStats.json");
             var json = JsonSerializer.Deserialize<PKMDataStatsInf>(data);
+            return json;
         }
     }
 }

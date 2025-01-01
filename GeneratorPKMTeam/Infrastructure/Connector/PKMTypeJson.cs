@@ -9,12 +9,11 @@ namespace GeneratorPKMTeam.Infrastructure.Connector
 {
     public class PKMTypeJson
     {
-        public PKMDonnees GetPKMDatas()
+        public PKMDonneesInf GetPKMDatas()
         {
             string data = File.ReadAllText(@"PKMType.json");
             var json = JsonSerializer.Deserialize<PKMDonneesInf>(data);
-            var result = PKMDonneesMapper.ToDomain(json);
-            return result;
+            return json;
         }
     }
 }

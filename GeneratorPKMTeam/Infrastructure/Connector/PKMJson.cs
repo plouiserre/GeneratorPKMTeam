@@ -8,12 +8,11 @@ namespace GeneratorPKMTeam.Infrastructure.Connector
 {
     public class PKMJson
     {
-        public PKMs RecupererListePKMs()
+        public PKMsInf RecupererListePKMs()
         {
             string data = File.ReadAllText(@"PKMs.json");
             var json = JsonSerializer.Deserialize<PKMsInf>(data);
-            var result = PKMMapper.ToDomain(json);
-            return result;
+            return json;
         }
     }
 }
