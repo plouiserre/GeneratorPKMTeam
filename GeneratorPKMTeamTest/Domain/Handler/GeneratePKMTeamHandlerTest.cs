@@ -65,15 +65,26 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
 
         private AssemblerEquipePKM InitAssemblerEquipePKM()
         {
+            var mockStats = new Dictionary<int, PKMStatsLabel>(){
+                {6,PKMStatsLabel.SPAttaque},
+                {5,PKMStatsLabel.Attaque},
+                {4,PKMStatsLabel.PV},
+                {3,PKMStatsLabel.Vitesse},
+                {2,PKMStatsLabel.SPDefense},
+                {1,PKMStatsLabel.Defense}
+            };
             var tousPKMs = DatasHelperTest.RetournersTousPKM();
             var pkmPersistence = Substitute.For<IPKMPersistence>();
             pkmPersistence.GetPKMs().Returns(new PKMs() { TousPKMs = tousPKMs.ToList() });
+            var PKMStatsPersistence = Substitute.For<IPKMStatsPersistence>();
+            PKMStatsPersistence.AvoirConfigurationStats().Returns(new ConfigurationStats() { StatsParImportance = mockStats });
             var starterPKM = new GererStarterPKM(pkmPersistence);
             starterPKM.ChoisirStarter("Bulbizarre");
             var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(pkmPersistence, starterPKM);
             var gererRecuperationPKMType = new GererRecuperationPKMType();
             var definirOrdrePKMTypes = new DefinirOrdrePKMType(determinerTousLesTypesExistant, starterPKM, gererRecuperationPKMType, _generation);
-            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, starterPKM, _generation);
+            var determinerMeilleurPKMParStats = new DeterminerMeilleurPKMParStats(PKMStatsPersistence);
+            var recuperationPKMs = new RecuperationPKMs(pkmPersistence, starterPKM, determinerMeilleurPKMParStats, _generation);
             var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMTypes, recuperationPKMs);
             return assemblerEquipePKM;
         }

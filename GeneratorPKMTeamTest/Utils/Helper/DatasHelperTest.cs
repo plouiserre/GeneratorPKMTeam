@@ -8,6 +8,7 @@ using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Infrastructure.Mapper;
 using GeneratorPKMTeam.Infrastructure.Models.PKMDonnees;
 using GeneratorPKMTeam.Infrastructure.Models.PKMs;
+using GeneratorPKMTeam.Infrastructure.Models.PKMStats;
 
 namespace GeneratorPKMTeamTest.Utils.Helper
 {
@@ -109,9 +110,11 @@ namespace GeneratorPKMTeamTest.Utils.Helper
 
         private static void LoadData()
         {
-            string data = File.ReadAllText(@"../../../PKMs.json");
-            var json = JsonSerializer.Deserialize<PKMsInf>(data);
-            PKMs = PKMMapper.ToDomain(json);
+            string pkmData = File.ReadAllText(@"../../../PKMs.json");
+            var pkmJson = JsonSerializer.Deserialize<PKMsInf>(pkmData);
+            string pkmStatsData = File.ReadAllText(@"../../../PKMStats.json");
+            var pkmStatJson = JsonSerializer.Deserialize<PKMDataStatsInf>(pkmStatsData);
+            PKMs = PKMMapper.ToDomain(pkmJson, pkmStatJson);
         }
 
         //méthode temporaire

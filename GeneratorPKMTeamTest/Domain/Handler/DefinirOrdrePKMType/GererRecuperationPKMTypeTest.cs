@@ -52,7 +52,11 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
             }
         }
 
-
+        [Fact]
+        public void AucunDunTypeSimplePrecedemmentRecupererApresDecoupageDoitEtreDecoupe()
+        {
+            Assert.Equal(1, 2);
+        }
 
 
         private Dictionary<string, List<PKMType>> ConstruireTousLesTypesPossibles(string tousLesTypesPossibles)

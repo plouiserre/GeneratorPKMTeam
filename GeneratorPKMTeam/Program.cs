@@ -11,6 +11,7 @@ using GeneratorPKMTeam.Infrastructure.Services;
 int generation = 3;
 var PMKTypePersistence = new PKMTypePersistence();
 var PKMPersistence = new PKMPersistence();
+var PKMStatsPersistence = new PKMStatsPersistence();
 Console.WriteLine("Merci de choisir votre starter");
 string starterPKMName = Console.ReadLine();
 GererStarterPKM pKM = new GererStarterPKM(PKMPersistence);
@@ -27,7 +28,8 @@ var choisirMeilleuresCombinaisonsTypes = new ChoisirMeilleuresCombinaisonsTypes(
 var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(PKMPersistence, pKM);
 var gererRecuperationPKMType = new GererRecuperationPKMType();
 var definirOrdrePKMType = new DefinirOrdrePKMType(determinerTousLesTypesExistant, pKM, gererRecuperationPKMType, generation);
-var recuperationPKM = new RecuperationPKMs(PKMPersistence, pKM, generation);
+var determinerMeilleurPKMParStats = new DeterminerMeilleurPKMParStats(PKMStatsPersistence);
+var recuperationPKM = new RecuperationPKMs(PKMPersistence, pKM, determinerMeilleurPKMParStats, generation);
 var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMType, recuperationPKM);
 var trouverTypePKMEquipePKM = new TrouverTypePKMEquipePKM(choisirMeilleuresCombinaisonsTypes, assemblerEquipePKM);
 var handler = new GeneratePKMTeamHandler(trouverTypePKMEquipePKM);
