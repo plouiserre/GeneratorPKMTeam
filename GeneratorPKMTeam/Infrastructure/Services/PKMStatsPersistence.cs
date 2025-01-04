@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driven;
 using GeneratorPKMTeam.Infrastructure.Connector;
@@ -5,16 +9,14 @@ using GeneratorPKMTeam.Infrastructure.Mapper;
 
 namespace GeneratorPKMTeam.Infrastructure.Services
 {
-    public class PKMPersistence : IPKMPersistence
+    public class PKMStatsPersistence : IPKMStatsPersistence
     {
-        public PKMs GetPKMs()
+        public ConfigurationStats AvoirConfigurationStats()
         {
-            var pkmConnector = new PKMJson();
-            var pkmsJson = pkmConnector.RecupererListePKMs();
             var pkmStatConnector = new PKMStatsJson();
             var pkmStatJson = pkmStatConnector.GetPKMStatsDatas();
-            var pkms = PKMMapper.ToDomain(pkmsJson, pkmStatJson);
-            return pkms;
+            var configurationJson = pkmStatJson.ordreImportanceStats;
+            return ConfigurationStatsMapper.ToDomain(configurationJson);
         }
     }
 }

@@ -43,7 +43,9 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
                 var determinerTousLesTypesExistant = Substitute.For<IDeterminerTousLesTypesExistant>();
                 determinerTousLesTypesExistant.Calculer(generation, pkmTypes).Returns(tousLesTypesPossibles);
 
-                var gererRecuperationPKMType = new GererRecuperationPKMType();
+                var recupererPKMTypeDouble = new RecupererPKMTypeDouble();
+                var recupererPKMTypeSimple = new RecupererPKMTypeSimple();
+                var gererRecuperationPKMType = new GererRecuperationPKMType(recupererPKMTypeDouble, recupererPKMTypeSimple);
                 var definirOrdre = new DefinirOrdrePKMType(determinerTousLesTypesExistant, gererStarterPKM, gererRecuperationPKMType, generation);
                 Dictionary<int, List<PKMType>> regroupementTypesPKM = definirOrdre.Generer(pkmTypes);
 

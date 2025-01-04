@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
 {
-    public class RecupererPKMTypeDouble : RecupererPKMTypeBase, IRecupererPKMType
+    public class RecupererPKMTypeDouble : RecupererPKMTypeBase, IRecupererPKMType, IRecupererPKMTypeDouble
     {
         private List<PKMType> _starterType;
         private List<PKMType> _pkmTypesSauvegardes;

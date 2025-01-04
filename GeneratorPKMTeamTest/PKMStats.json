@@ -1,0 +1,8911 @@
+{
+  "ordreImportanceStats":{
+    "6":"SpAttaque",
+    "5":"Attaque",
+    "4":"PV",
+    "3":"Vitesse",
+    "2":"SpDefense",
+    "1":"Defense"
+  },
+  "pkmStats":[
+    {
+      "id": 1,
+      "stats": {
+        "PV": 45,
+        "Attaque": 49,
+        "Defense": 49,
+        "SpAttaque": 65,
+        "SpDefense": 65,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 2,
+      "stats": {
+        "PV": 60,
+        "Attaque": 62,
+        "Defense": 63,
+        "SpAttaque": 80,
+        "SpDefense": 80,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 3,
+      "stats": {
+        "PV": 80,
+        "Attaque": 82,
+        "Defense": 83,
+        "SpAttaque": 100,
+        "SpDefense": 100,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 4,
+      "stats": {
+        "PV": 39,
+        "Attaque": 52,
+        "Defense": 43,
+        "SpAttaque": 60,
+        "SpDefense": 50,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 5,
+      "stats": {
+        "PV": 58,
+        "Attaque": 64,
+        "Defense": 58,
+        "SpAttaque": 80,
+        "SpDefense": 65,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 6,
+      "stats": {
+        "PV": 78,
+        "Attaque": 84,
+        "Defense": 78,
+        "SpAttaque": 109,
+        "SpDefense": 85,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 7,
+      "stats": {
+        "PV": 44,
+        "Attaque": 48,
+        "Defense": 65,
+        "SpAttaque": 50,
+        "SpDefense": 64,
+        "Vitesse": 43
+      }
+    },
+    {
+      "id": 8,
+      "stats": {
+        "PV": 59,
+        "Attaque": 63,
+        "Defense": 80,
+        "SpAttaque": 65,
+        "SpDefense": 80,
+        "Vitesse": 58
+      }
+    },
+    {
+      "id": 9,
+      "stats": {
+        "PV": 79,
+        "Attaque": 83,
+        "Defense": 100,
+        "SpAttaque": 85,
+        "SpDefense": 105,
+        "Vitesse": 78
+      }
+    },
+    {
+      "id": 10,
+      "stats": {
+        "PV": 45,
+        "Attaque": 30,
+        "Defense": 35,
+        "SpAttaque": 20,
+        "SpDefense": 20,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 11,
+      "stats": {
+        "PV": 50,
+        "Attaque": 20,
+        "Defense": 55,
+        "SpAttaque": 25,
+        "SpDefense": 25,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 12,
+      "stats": {
+        "PV": 60,
+        "Attaque": 45,
+        "Defense": 50,
+        "SpAttaque": 90,
+        "SpDefense": 80,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 13,
+      "stats": {
+        "PV": 40,
+        "Attaque": 35,
+        "Defense": 30,
+        "SpAttaque": 20,
+        "SpDefense": 20,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 14,
+      "stats": {
+        "PV": 45,
+        "Attaque": 25,
+        "Defense": 50,
+        "SpAttaque": 25,
+        "SpDefense": 25,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 15,
+      "stats": {
+        "PV": 65,
+        "Attaque": 90,
+        "Defense": 40,
+        "SpAttaque": 45,
+        "SpDefense": 80,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 16,
+      "stats": {
+        "PV": 40,
+        "Attaque": 45,
+        "Defense": 40,
+        "SpAttaque": 35,
+        "SpDefense": 35,
+        "Vitesse": 56
+      }
+    },
+    {
+      "id": 17,
+      "stats": {
+        "PV": 63,
+        "Attaque": 60,
+        "Defense": 55,
+        "SpAttaque": 50,
+        "SpDefense": 50,
+        "Vitesse": 71
+      }
+    },
+    {
+      "id": 18,
+      "stats": {
+        "PV": 83,
+        "Attaque": 80,
+        "Defense": 75,
+        "SpAttaque": 70,
+        "SpDefense": 70,
+        "Vitesse": 101
+      }
+    },
+    {
+      "id": 19,
+      "stats": {
+        "PV": 30,
+        "Attaque": 56,
+        "Defense": 35,
+        "SpAttaque": 25,
+        "SpDefense": 35,
+        "Vitesse": 72
+      }
+    },
+    {
+      "id": 20,
+      "stats": {
+        "PV": 55,
+        "Attaque": 81,
+        "Defense": 60,
+        "SpAttaque": 50,
+        "SpDefense": 70,
+        "Vitesse": 97
+      }
+    },
+    {
+      "id": 21,
+      "stats": {
+        "PV": 40,
+        "Attaque": 60,
+        "Defense": 30,
+        "SpAttaque": 31,
+        "SpDefense": 31,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 22,
+      "stats": {
+        "PV": 65,
+        "Attaque": 90,
+        "Defense": 65,
+        "SpAttaque": 61,
+        "SpDefense": 61,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 23,
+      "stats": {
+        "PV": 35,
+        "Attaque": 60,
+        "Defense": 44,
+        "SpAttaque": 40,
+        "SpDefense": 54,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 24,
+      "stats": {
+        "PV": 60,
+        "Attaque": 95,
+        "Defense": 69,
+        "SpAttaque": 65,
+        "SpDefense": 79,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 25,
+      "stats": {
+        "PV": 35,
+        "Attaque": 55,
+        "Defense": 40,
+        "SpAttaque": 50,
+        "SpDefense": 50,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 26,
+      "stats": {
+        "PV": 60,
+        "Attaque": 90,
+        "Defense": 55,
+        "SpAttaque": 90,
+        "SpDefense": 80,
+        "Vitesse": 110
+      }
+    },
+    {
+      "id": 27,
+      "stats": {
+        "PV": 50,
+        "Attaque": 75,
+        "Defense": 85,
+        "SpAttaque": 20,
+        "SpDefense": 30,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 28,
+      "stats": {
+        "PV": 75,
+        "Attaque": 100,
+        "Defense": 110,
+        "SpAttaque": 45,
+        "SpDefense": 55,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 29,
+      "stats": {
+        "PV": 55,
+        "Attaque": 47,
+        "Defense": 52,
+        "SpAttaque": 40,
+        "SpDefense": 40,
+        "Vitesse": 41
+      }
+    },
+    {
+      "id": 30,
+      "stats": {
+        "PV": 70,
+        "Attaque": 62,
+        "Defense": 67,
+        "SpAttaque": 55,
+        "SpDefense": 55,
+        "Vitesse": 56
+      }
+    },
+    {
+      "id": 31,
+      "stats": {
+        "PV": 90,
+        "Attaque": 92,
+        "Defense": 87,
+        "SpAttaque": 75,
+        "SpDefense": 85,
+        "Vitesse": 76
+      }
+    },
+    {
+      "id": 32,
+      "stats": {
+        "PV": 46,
+        "Attaque": 57,
+        "Defense": 40,
+        "SpAttaque": 40,
+        "SpDefense": 40,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 33,
+      "stats": {
+        "PV": 61,
+        "Attaque": 72,
+        "Defense": 57,
+        "SpAttaque": 55,
+        "SpDefense": 55,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 34,
+      "stats": {
+        "PV": 81,
+        "Attaque": 102,
+        "Defense": 77,
+        "SpAttaque": 85,
+        "SpDefense": 75,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 35,
+      "stats": {
+        "PV": 70,
+        "Attaque": 45,
+        "Defense": 48,
+        "SpAttaque": 60,
+        "SpDefense": 65,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 36,
+      "stats": {
+        "PV": 95,
+        "Attaque": 70,
+        "Defense": 73,
+        "SpAttaque": 95,
+        "SpDefense": 90,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 37,
+      "stats": {
+        "PV": 38,
+        "Attaque": 41,
+        "Defense": 40,
+        "SpAttaque": 50,
+        "SpDefense": 65,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 38,
+      "stats": {
+        "PV": 73,
+        "Attaque": 76,
+        "Defense": 75,
+        "SpAttaque": 81,
+        "SpDefense": 100,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 39,
+      "stats": {
+        "PV": 115,
+        "Attaque": 45,
+        "Defense": 20,
+        "SpAttaque": 45,
+        "SpDefense": 25,
+        "Vitesse": 20
+      }
+    },
+    {
+      "id": 40,
+      "stats": {
+        "PV": 140,
+        "Attaque": 70,
+        "Defense": 45,
+        "SpAttaque": 85,
+        "SpDefense": 50,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 41,
+      "stats": {
+        "PV": 40,
+        "Attaque": 45,
+        "Defense": 35,
+        "SpAttaque": 30,
+        "SpDefense": 40,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 42,
+      "stats": {
+        "PV": 75,
+        "Attaque": 80,
+        "Defense": 70,
+        "SpAttaque": 65,
+        "SpDefense": 75,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 43,
+      "stats": {
+        "PV": 45,
+        "Attaque": 50,
+        "Defense": 55,
+        "SpAttaque": 75,
+        "SpDefense": 65,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 44,
+      "stats": {
+        "PV": 60,
+        "Attaque": 65,
+        "Defense": 70,
+        "SpAttaque": 85,
+        "SpDefense": 75,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 45,
+      "stats": {
+        "PV": 75,
+        "Attaque": 80,
+        "Defense": 85,
+        "SpAttaque": 110,
+        "SpDefense": 90,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 46,
+      "stats": {
+        "PV": 35,
+        "Attaque": 70,
+        "Defense": 55,
+        "SpAttaque": 45,
+        "SpDefense": 55,
+        "Vitesse": 25
+      }
+    },
+    {
+      "id": 47,
+      "stats": {
+        "PV": 60,
+        "Attaque": 95,
+        "Defense": 80,
+        "SpAttaque": 60,
+        "SpDefense": 80,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 48,
+      "stats": {
+        "PV": 60,
+        "Attaque": 55,
+        "Defense": 50,
+        "SpAttaque": 40,
+        "SpDefense": 55,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 49,
+      "stats": {
+        "PV": 70,
+        "Attaque": 65,
+        "Defense": 60,
+        "SpAttaque": 90,
+        "SpDefense": 75,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 50,
+      "stats": {
+        "PV": 10,
+        "Attaque": 55,
+        "Defense": 25,
+        "SpAttaque": 35,
+        "SpDefense": 45,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 51,
+      "stats": {
+        "PV": 35,
+        "Attaque": 100,
+        "Defense": 50,
+        "SpAttaque": 50,
+        "SpDefense": 70,
+        "Vitesse": 120
+      }
+    },
+    {
+      "id": 52,
+      "stats": {
+        "PV": 40,
+        "Attaque": 45,
+        "Defense": 35,
+        "SpAttaque": 40,
+        "SpDefense": 40,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 53,
+      "stats": {
+        "PV": 65,
+        "Attaque": 70,
+        "Defense": 60,
+        "SpAttaque": 65,
+        "SpDefense": 65,
+        "Vitesse": 115
+      }
+    },
+    {
+      "id": 54,
+      "stats": {
+        "PV": 50,
+        "Attaque": 52,
+        "Defense": 48,
+        "SpAttaque": 65,
+        "SpDefense": 50,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 55,
+      "stats": {
+        "PV": 80,
+        "Attaque": 82,
+        "Defense": 78,
+        "SpAttaque": 95,
+        "SpDefense": 80,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 56,
+      "stats": {
+        "PV": 40,
+        "Attaque": 80,
+        "Defense": 35,
+        "SpAttaque": 35,
+        "SpDefense": 45,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 57,
+      "stats": {
+        "PV": 65,
+        "Attaque": 105,
+        "Defense": 60,
+        "SpAttaque": 60,
+        "SpDefense": 70,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 58,
+      "stats": {
+        "PV": 55,
+        "Attaque": 70,
+        "Defense": 45,
+        "SpAttaque": 70,
+        "SpDefense": 50,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 59,
+      "stats": {
+        "PV": 90,
+        "Attaque": 110,
+        "Defense": 80,
+        "SpAttaque": 100,
+        "SpDefense": 80,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 60,
+      "stats": {
+        "PV": 40,
+        "Attaque": 50,
+        "Defense": 40,
+        "SpAttaque": 40,
+        "SpDefense": 40,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 61,
+      "stats": {
+        "PV": 65,
+        "Attaque": 65,
+        "Defense": 65,
+        "SpAttaque": 50,
+        "SpDefense": 50,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 62,
+      "stats": {
+        "PV": 90,
+        "Attaque": 95,
+        "Defense": 95,
+        "SpAttaque": 70,
+        "SpDefense": 90,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 63,
+      "stats": {
+        "PV": 25,
+        "Attaque": 20,
+        "Defense": 15,
+        "SpAttaque": 105,
+        "SpDefense": 55,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 64,
+      "stats": {
+        "PV": 40,
+        "Attaque": 35,
+        "Defense": 30,
+        "SpAttaque": 120,
+        "SpDefense": 70,
+        "Vitesse": 105
+      }
+    },
+    {
+      "id": 65,
+      "stats": {
+        "PV": 55,
+        "Attaque": 50,
+        "Defense": 45,
+        "SpAttaque": 135,
+        "SpDefense": 95,
+        "Vitesse": 120
+      }
+    },
+    {
+      "id": 66,
+      "stats": {
+        "PV": 70,
+        "Attaque": 80,
+        "Defense": 50,
+        "SpAttaque": 35,
+        "SpDefense": 35,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 67,
+      "stats": {
+        "PV": 80,
+        "Attaque": 100,
+        "Defense": 70,
+        "SpAttaque": 50,
+        "SpDefense": 60,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 68,
+      "stats": {
+        "PV": 90,
+        "Attaque": 130,
+        "Defense": 80,
+        "SpAttaque": 65,
+        "SpDefense": 85,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 69,
+      "stats": {
+        "PV": 50,
+        "Attaque": 75,
+        "Defense": 35,
+        "SpAttaque": 70,
+        "SpDefense": 30,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 70,
+      "stats": {
+        "PV": 65,
+        "Attaque": 90,
+        "Defense": 50,
+        "SpAttaque": 85,
+        "SpDefense": 45,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 71,
+      "stats": {
+        "PV": 80,
+        "Attaque": 105,
+        "Defense": 65,
+        "SpAttaque": 100,
+        "SpDefense": 70,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 72,
+      "stats": {
+        "PV": 40,
+        "Attaque": 40,
+        "Defense": 35,
+        "SpAttaque": 50,
+        "SpDefense": 100,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 73,
+      "stats": {
+        "PV": 80,
+        "Attaque": 70,
+        "Defense": 65,
+        "SpAttaque": 80,
+        "SpDefense": 120,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 74,
+      "stats": {
+        "PV": 40,
+        "Attaque": 80,
+        "Defense": 100,
+        "SpAttaque": 30,
+        "SpDefense": 30,
+        "Vitesse": 20
+      }
+    },
+    {
+      "id": 75,
+      "stats": {
+        "PV": 55,
+        "Attaque": 95,
+        "Defense": 115,
+        "SpAttaque": 45,
+        "SpDefense": 45,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 76,
+      "stats": {
+        "PV": 80,
+        "Attaque": 120,
+        "Defense": 130,
+        "SpAttaque": 55,
+        "SpDefense": 65,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 77,
+      "stats": {
+        "PV": 50,
+        "Attaque": 85,
+        "Defense": 55,
+        "SpAttaque": 65,
+        "SpDefense": 65,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 78,
+      "stats": {
+        "PV": 65,
+        "Attaque": 100,
+        "Defense": 70,
+        "SpAttaque": 80,
+        "SpDefense": 80,
+        "Vitesse": 105
+      }
+    },
+    {
+      "id": 79,
+      "stats": {
+        "PV": 90,
+        "Attaque": 65,
+        "Defense": 65,
+        "SpAttaque": 40,
+        "SpDefense": 40,
+        "Vitesse": 15
+      }
+    },
+    {
+      "id": 80,
+      "stats": {
+        "PV": 95,
+        "Attaque": 75,
+        "Defense": 110,
+        "SpAttaque": 100,
+        "SpDefense": 80,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 81,
+      "stats": {
+        "PV": 25,
+        "Attaque": 35,
+        "Defense": 70,
+        "SpAttaque": 95,
+        "SpDefense": 55,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 82,
+      "stats": {
+        "PV": 50,
+        "Attaque": 60,
+        "Defense": 95,
+        "SpAttaque": 120,
+        "SpDefense": 70,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 83,
+      "stats": {
+        "PV": 52,
+        "Attaque": 90,
+        "Defense": 55,
+        "SpAttaque": 58,
+        "SpDefense": 62,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 84,
+      "stats": {
+        "PV": 35,
+        "Attaque": 85,
+        "Defense": 45,
+        "SpAttaque": 35,
+        "SpDefense": 35,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 85,
+      "stats": {
+        "PV": 60,
+        "Attaque": 110,
+        "Defense": 70,
+        "SpAttaque": 60,
+        "SpDefense": 60,
+        "Vitesse": 110
+      }
+    },
+    {
+      "id": 86,
+      "stats": {
+        "PV": 65,
+        "Attaque": 45,
+        "Defense": 55,
+        "SpAttaque": 45,
+        "SpDefense": 70,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 87,
+      "stats": {
+        "PV": 90,
+        "Attaque": 70,
+        "Defense": 80,
+        "SpAttaque": 70,
+        "SpDefense": 95,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 88,
+      "stats": {
+        "PV": 80,
+        "Attaque": 80,
+        "Defense": 50,
+        "SpAttaque": 40,
+        "SpDefense": 50,
+        "Vitesse": 25
+      }
+    },
+    {
+      "id": 89,
+      "stats": {
+        "PV": 105,
+        "Attaque": 105,
+        "Defense": 75,
+        "SpAttaque": 65,
+        "SpDefense": 100,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 90,
+      "stats": {
+        "PV": 30,
+        "Attaque": 65,
+        "Defense": 100,
+        "SpAttaque": 45,
+        "SpDefense": 25,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 91,
+      "stats": {
+        "PV": 50,
+        "Attaque": 95,
+        "Defense": 180,
+        "SpAttaque": 85,
+        "SpDefense": 45,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 92,
+      "stats": {
+        "PV": 30,
+        "Attaque": 35,
+        "Defense": 30,
+        "SpAttaque": 100,
+        "SpDefense": 35,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 93,
+      "stats": {
+        "PV": 45,
+        "Attaque": 50,
+        "Defense": 45,
+        "SpAttaque": 115,
+        "SpDefense": 55,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 94,
+      "stats": {
+        "PV": 60,
+        "Attaque": 65,
+        "Defense": 60,
+        "SpAttaque": 130,
+        "SpDefense": 75,
+        "Vitesse": 110
+      }
+    },
+    {
+      "id": 95,
+      "stats": {
+        "PV": 35,
+        "Attaque": 45,
+        "Defense": 160,
+        "SpAttaque": 30,
+        "SpDefense": 45,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 96,
+      "stats": {
+        "PV": 60,
+        "Attaque": 48,
+        "Defense": 45,
+        "SpAttaque": 43,
+        "SpDefense": 90,
+        "Vitesse": 42
+      }
+    },
+    {
+      "id": 97,
+      "stats": {
+        "PV": 85,
+        "Attaque": 73,
+        "Defense": 70,
+        "SpAttaque": 73,
+        "SpDefense": 115,
+        "Vitesse": 67
+      }
+    },
+    {
+      "id": 98,
+      "stats": {
+        "PV": 30,
+        "Attaque": 105,
+        "Defense": 90,
+        "SpAttaque": 25,
+        "SpDefense": 25,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 99,
+      "stats": {
+        "PV": 55,
+        "Attaque": 130,
+        "Defense": 115,
+        "SpAttaque": 50,
+        "SpDefense": 50,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 100,
+      "stats": {
+        "PV": 40,
+        "Attaque": 30,
+        "Defense": 50,
+        "SpAttaque": 55,
+        "SpDefense": 55,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 101,
+      "stats": {
+        "PV": 60,
+        "Attaque": 50,
+        "Defense": 70,
+        "SpAttaque": 80,
+        "SpDefense": 80,
+        "Vitesse": 150
+      }
+    },
+    {
+      "id": 102,
+      "stats": {
+        "PV": 60,
+        "Attaque": 40,
+        "Defense": 80,
+        "SpAttaque": 60,
+        "SpDefense": 45,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 103,
+      "stats": {
+        "PV": 95,
+        "Attaque": 95,
+        "Defense": 85,
+        "SpAttaque": 125,
+        "SpDefense": 75,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 104,
+      "stats": {
+        "PV": 50,
+        "Attaque": 50,
+        "Defense": 95,
+        "SpAttaque": 40,
+        "SpDefense": 50,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 105,
+      "stats": {
+        "PV": 60,
+        "Attaque": 80,
+        "Defense": 110,
+        "SpAttaque": 50,
+        "SpDefense": 80,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 106,
+      "stats": {
+        "PV": 50,
+        "Attaque": 120,
+        "Defense": 53,
+        "SpAttaque": 35,
+        "SpDefense": 110,
+        "Vitesse": 87
+      }
+    },
+    {
+      "id": 107,
+      "stats": {
+        "PV": 50,
+        "Attaque": 105,
+        "Defense": 79,
+        "SpAttaque": 35,
+        "SpDefense": 110,
+        "Vitesse": 76
+      }
+    },
+    {
+      "id": 108,
+      "stats": {
+        "PV": 90,
+        "Attaque": 55,
+        "Defense": 75,
+        "SpAttaque": 60,
+        "SpDefense": 75,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 109,
+      "stats": {
+        "PV": 40,
+        "Attaque": 65,
+        "Defense": 95,
+        "SpAttaque": 60,
+        "SpDefense": 45,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 110,
+      "stats": {
+        "PV": 65,
+        "Attaque": 90,
+        "Defense": 120,
+        "SpAttaque": 85,
+        "SpDefense": 70,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 111,
+      "stats": {
+        "PV": 80,
+        "Attaque": 85,
+        "Defense": 95,
+        "SpAttaque": 30,
+        "SpDefense": 30,
+        "Vitesse": 25
+      }
+    },
+    {
+      "id": 112,
+      "stats": {
+        "PV": 105,
+        "Attaque": 130,
+        "Defense": 120,
+        "SpAttaque": 45,
+        "SpDefense": 45,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 113,
+      "stats": {
+        "PV": 250,
+        "Attaque": 5,
+        "Defense": 5,
+        "SpAttaque": 35,
+        "SpDefense": 105,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 114,
+      "stats": {
+        "PV": 65,
+        "Attaque": 55,
+        "Defense": 115,
+        "SpAttaque": 100,
+        "SpDefense": 40,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 115,
+      "stats": {
+        "PV": 105,
+        "Attaque": 95,
+        "Defense": 80,
+        "SpAttaque": 40,
+        "SpDefense": 80,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 116,
+      "stats": {
+        "PV": 30,
+        "Attaque": 40,
+        "Defense": 70,
+        "SpAttaque": 70,
+        "SpDefense": 25,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 117,
+      "stats": {
+        "PV": 55,
+        "Attaque": 65,
+        "Defense": 95,
+        "SpAttaque": 95,
+        "SpDefense": 45,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 118,
+      "stats": {
+        "PV": 45,
+        "Attaque": 67,
+        "Defense": 60,
+        "SpAttaque": 35,
+        "SpDefense": 50,
+        "Vitesse": 63
+      }
+    },
+    {
+      "id": 119,
+      "stats": {
+        "PV": 80,
+        "Attaque": 92,
+        "Defense": 65,
+        "SpAttaque": 65,
+        "SpDefense": 80,
+        "Vitesse": 68
+      }
+    },
+    {
+      "id": 120,
+      "stats": {
+        "PV": 30,
+        "Attaque": 45,
+        "Defense": 55,
+        "SpAttaque": 70,
+        "SpDefense": 55,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 121,
+      "stats": {
+        "PV": 60,
+        "Attaque": 75,
+        "Defense": 85,
+        "SpAttaque": 100,
+        "SpDefense": 85,
+        "Vitesse": 115
+      }
+    },
+    {
+      "id": 122,
+      "stats": {
+        "PV": 40,
+        "Attaque": 45,
+        "Defense": 65,
+        "SpAttaque": 100,
+        "SpDefense": 120,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 123,
+      "stats": {
+        "PV": 70,
+        "Attaque": 110,
+        "Defense": 80,
+        "SpAttaque": 55,
+        "SpDefense": 80,
+        "Vitesse": 105
+      }
+    },
+    {
+      "id": 124,
+      "stats": {
+        "PV": 65,
+        "Attaque": 50,
+        "Defense": 35,
+        "SpAttaque": 115,
+        "SpDefense": 95,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 125,
+      "stats": {
+        "PV": 65,
+        "Attaque": 83,
+        "Defense": 57,
+        "SpAttaque": 95,
+        "SpDefense": 85,
+        "Vitesse": 105
+      }
+    },
+    {
+      "id": 126,
+      "stats": {
+        "PV": 65,
+        "Attaque": 95,
+        "Defense": 57,
+        "SpAttaque": 100,
+        "SpDefense": 85,
+        "Vitesse": 93
+      }
+    },
+    {
+      "id": 127,
+      "stats": {
+        "PV": 65,
+        "Attaque": 125,
+        "Defense": 100,
+        "SpAttaque": 55,
+        "SpDefense": 70,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 128,
+      "stats": {
+        "PV": 75,
+        "Attaque": 100,
+        "Defense": 95,
+        "SpAttaque": 40,
+        "SpDefense": 70,
+        "Vitesse": 110
+      }
+    },
+    {
+      "id": 129,
+      "stats": {
+        "PV": 20,
+        "Attaque": 10,
+        "Defense": 55,
+        "SpAttaque": 15,
+        "SpDefense": 20,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 130,
+      "stats": {
+        "PV": 95,
+        "Attaque": 125,
+        "Defense": 79,
+        "SpAttaque": 60,
+        "SpDefense": 100,
+        "Vitesse": 81
+      }
+    },
+    {
+      "id": 131,
+      "stats": {
+        "PV": 130,
+        "Attaque": 85,
+        "Defense": 80,
+        "SpAttaque": 85,
+        "SpDefense": 95,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 132,
+      "stats": {
+        "PV": 48,
+        "Attaque": 48,
+        "Defense": 48,
+        "SpAttaque": 48,
+        "SpDefense": 48,
+        "Vitesse": 48
+      }
+    },
+    {
+      "id": 133,
+      "stats": {
+        "PV": 55,
+        "Attaque": 55,
+        "Defense": 50,
+        "SpAttaque": 45,
+        "SpDefense": 65,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 134,
+      "stats": {
+        "PV": 130,
+        "Attaque": 65,
+        "Defense": 60,
+        "SpAttaque": 110,
+        "SpDefense": 95,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 135,
+      "stats": {
+        "PV": 65,
+        "Attaque": 65,
+        "Defense": 60,
+        "SpAttaque": 110,
+        "SpDefense": 95,
+        "Vitesse": 130
+      }
+    },
+    {
+      "id": 136,
+      "stats": {
+        "PV": 65,
+        "Attaque": 130,
+        "Defense": 60,
+        "SpAttaque": 95,
+        "SpDefense": 110,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 137,
+      "stats": {
+        "PV": 65,
+        "Attaque": 60,
+        "Defense": 70,
+        "SpAttaque": 85,
+        "SpDefense": 75,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 138,
+      "stats": {
+        "PV": 35,
+        "Attaque": 40,
+        "Defense": 100,
+        "SpAttaque": 90,
+        "SpDefense": 55,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 139,
+      "stats": {
+        "PV": 70,
+        "Attaque": 60,
+        "Defense": 125,
+        "SpAttaque": 115,
+        "SpDefense": 70,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 140,
+      "stats": {
+        "PV": 30,
+        "Attaque": 80,
+        "Defense": 90,
+        "SpAttaque": 55,
+        "SpDefense": 45,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 141,
+      "stats": {
+        "PV": 60,
+        "Attaque": 115,
+        "Defense": 105,
+        "SpAttaque": 65,
+        "SpDefense": 70,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 142,
+      "stats": {
+        "PV": 80,
+        "Attaque": 105,
+        "Defense": 65,
+        "SpAttaque": 60,
+        "SpDefense": 75,
+        "Vitesse": 130
+      }
+    },
+    {
+      "id": 143,
+      "stats": {
+        "PV": 160,
+        "Attaque": 110,
+        "Defense": 65,
+        "SpAttaque": 65,
+        "SpDefense": 110,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 144,
+      "stats": {
+        "PV": 90,
+        "Attaque": 85,
+        "Defense": 100,
+        "SpAttaque": 95,
+        "SpDefense": 125,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 145,
+      "stats": {
+        "PV": 90,
+        "Attaque": 90,
+        "Defense": 85,
+        "SpAttaque": 125,
+        "SpDefense": 90,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 146,
+      "stats": {
+        "PV": 90,
+        "Attaque": 100,
+        "Defense": 90,
+        "SpAttaque": 125,
+        "SpDefense": 85,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 147,
+      "stats": {
+        "PV": 41,
+        "Attaque": 64,
+        "Defense": 45,
+        "SpAttaque": 50,
+        "SpDefense": 50,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 148,
+      "stats": {
+        "PV": 61,
+        "Attaque": 84,
+        "Defense": 65,
+        "SpAttaque": 70,
+        "SpDefense": 70,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 149,
+      "stats": {
+        "PV": 91,
+        "Attaque": 134,
+        "Defense": 95,
+        "SpAttaque": 100,
+        "SpDefense": 100,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 150,
+      "stats": {
+        "PV": 106,
+        "Attaque": 110,
+        "Defense": 90,
+        "SpAttaque": 154,
+        "SpDefense": 90,
+        "Vitesse": 130
+      }
+    },
+    {
+      "id": 151,
+      "stats": {
+        "PV": 100,
+        "Attaque": 100,
+        "Defense": 100,
+        "SpAttaque": 100,
+        "SpDefense": 100,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 152,
+      "stats": {
+        "PV": 45,
+        "Attaque": 49,
+        "Defense": 65,
+        "SpAttaque": 49,
+        "SpDefense": 65,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 153,
+      "stats": {
+        "PV": 60,
+        "Attaque": 62,
+        "Defense": 80,
+        "SpAttaque": 63,
+        "SpDefense": 80,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 154,
+      "stats": {
+        "PV": 80,
+        "Attaque": 82,
+        "Defense": 100,
+        "SpAttaque": 83,
+        "SpDefense": 100,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 155,
+      "stats": {
+        "PV": 39,
+        "Attaque": 52,
+        "Defense": 43,
+        "SpAttaque": 60,
+        "SpDefense": 50,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 156,
+      "stats": {
+        "PV": 58,
+        "Attaque": 64,
+        "Defense": 58,
+        "SpAttaque": 80,
+        "SpDefense": 65,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 157,
+      "stats": {
+        "PV": 78,
+        "Attaque": 84,
+        "Defense": 78,
+        "SpAttaque": 109,
+        "SpDefense": 85,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 158,
+      "stats": {
+        "PV": 50,
+        "Attaque": 65,
+        "Defense": 64,
+        "SpAttaque": 44,
+        "SpDefense": 48,
+        "Vitesse": 43
+      }
+    },
+    {
+      "id": 159,
+      "stats": {
+        "PV": 65,
+        "Attaque": 80,
+        "Defense": 80,
+        "SpAttaque": 59,
+        "SpDefense": 63,
+        "Vitesse": 58
+      }
+    },
+    {
+      "id": 160,
+      "stats": {
+        "PV": 85,
+        "Attaque": 105,
+        "Defense": 100,
+        "SpAttaque": 79,
+        "SpDefense": 83,
+        "Vitesse": 78
+      }
+    },
+    {
+      "id": 161,
+      "stats": {
+        "PV": 35,
+        "Attaque": 46,
+        "Defense": 34,
+        "SpAttaque": 35,
+        "SpDefense": 45,
+        "Vitesse": 20
+      }
+    },
+    {
+      "id": 162,
+      "stats": {
+        "PV": 85,
+        "Attaque": 76,
+        "Defense": 64,
+        "SpAttaque": 45,
+        "SpDefense": 55,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 163,
+      "stats": {
+        "PV": 60,
+        "Attaque": 30,
+        "Defense": 30,
+        "SpAttaque": 36,
+        "SpDefense": 56,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 164,
+      "stats": {
+        "PV": 100,
+        "Attaque": 50,
+        "Defense": 50,
+        "SpAttaque": 86,
+        "SpDefense": 96,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 165,
+      "stats": {
+        "PV": 40,
+        "Attaque": 20,
+        "Defense": 30,
+        "SpAttaque": 40,
+        "SpDefense": 80,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 166,
+      "stats": {
+        "PV": 55,
+        "Attaque": 35,
+        "Defense": 50,
+        "SpAttaque": 55,
+        "SpDefense": 110,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 167,
+      "stats": {
+        "PV": 40,
+        "Attaque": 60,
+        "Defense": 40,
+        "SpAttaque": 40,
+        "SpDefense": 40,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 168,
+      "stats": {
+        "PV": 70,
+        "Attaque": 90,
+        "Defense": 70,
+        "SpAttaque": 60,
+        "SpDefense": 70,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 169,
+      "stats": {
+        "PV": 85,
+        "Attaque": 90,
+        "Defense": 80,
+        "SpAttaque": 70,
+        "SpDefense": 80,
+        "Vitesse": 130
+      }
+    },
+    {
+      "id": 170,
+      "stats": {
+        "PV": 75,
+        "Attaque": 38,
+        "Defense": 38,
+        "SpAttaque": 56,
+        "SpDefense": 56,
+        "Vitesse": 67
+      }
+    },
+    {
+      "id": 171,
+      "stats": {
+        "PV": 125,
+        "Attaque": 58,
+        "Defense": 58,
+        "SpAttaque": 76,
+        "SpDefense": 76,
+        "Vitesse": 67
+      }
+    },
+    {
+      "id": 172,
+      "stats": {
+        "PV": 20,
+        "Attaque": 40,
+        "Defense": 15,
+        "SpAttaque": 35,
+        "SpDefense": 35,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 173,
+      "stats": {
+        "PV": 50,
+        "Attaque": 25,
+        "Defense": 28,
+        "SpAttaque": 45,
+        "SpDefense": 55,
+        "Vitesse": 15
+      }
+    },
+    {
+      "id": 174,
+      "stats": {
+        "PV": 90,
+        "Attaque": 30,
+        "Defense": 15,
+        "SpAttaque": 40,
+        "SpDefense": 20,
+        "Vitesse": 15
+      }
+    },
+    {
+      "id": 175,
+      "stats": {
+        "PV": 35,
+        "Attaque": 20,
+        "Defense": 65,
+        "SpAttaque": 40,
+        "SpDefense": 65,
+        "Vitesse": 20
+      }
+    },
+    {
+      "id": 176,
+      "stats": {
+        "PV": 55,
+        "Attaque": 40,
+        "Defense": 85,
+        "SpAttaque": 80,
+        "SpDefense": 105,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 177,
+      "stats": {
+        "PV": 40,
+        "Attaque": 50,
+        "Defense": 45,
+        "SpAttaque": 70,
+        "SpDefense": 45,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 178,
+      "stats": {
+        "PV": 65,
+        "Attaque": 75,
+        "Defense": 70,
+        "SpAttaque": 95,
+        "SpDefense": 70,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 179,
+      "stats": {
+        "PV": 55,
+        "Attaque": 40,
+        "Defense": 40,
+        "SpAttaque": 65,
+        "SpDefense": 45,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 180,
+      "stats": {
+        "PV": 70,
+        "Attaque": 55,
+        "Defense": 55,
+        "SpAttaque": 80,
+        "SpDefense": 60,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 181,
+      "stats": {
+        "PV": 90,
+        "Attaque": 75,
+        "Defense": 85,
+        "SpAttaque": 115,
+        "SpDefense": 90,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 182,
+      "stats": {
+        "PV": 75,
+        "Attaque": 80,
+        "Defense": 95,
+        "SpAttaque": 90,
+        "SpDefense": 100,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 183,
+      "stats": {
+        "PV": 70,
+        "Attaque": 20,
+        "Defense": 50,
+        "SpAttaque": 20,
+        "SpDefense": 50,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 184,
+      "stats": {
+        "PV": 100,
+        "Attaque": 50,
+        "Defense": 80,
+        "SpAttaque": 60,
+        "SpDefense": 80,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 185,
+      "stats": {
+        "PV": 70,
+        "Attaque": 100,
+        "Defense": 115,
+        "SpAttaque": 30,
+        "SpDefense": 65,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 186,
+      "stats": {
+        "PV": 90,
+        "Attaque": 75,
+        "Defense": 75,
+        "SpAttaque": 90,
+        "SpDefense": 100,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 187,
+      "stats": {
+        "PV": 35,
+        "Attaque": 35,
+        "Defense": 40,
+        "SpAttaque": 35,
+        "SpDefense": 55,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 188,
+      "stats": {
+        "PV": 55,
+        "Attaque": 45,
+        "Defense": 50,
+        "SpAttaque": 45,
+        "SpDefense": 65,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 189,
+      "stats": {
+        "PV": 75,
+        "Attaque": 55,
+        "Defense": 70,
+        "SpAttaque": 55,
+        "SpDefense": 95,
+        "Vitesse": 110
+      }
+    },
+    {
+      "id": 190,
+      "stats": {
+        "PV": 55,
+        "Attaque": 70,
+        "Defense": 55,
+        "SpAttaque": 40,
+        "SpDefense": 55,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 191,
+      "stats": {
+        "PV": 30,
+        "Attaque": 30,
+        "Defense": 30,
+        "SpAttaque": 30,
+        "SpDefense": 30,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 192,
+      "stats": {
+        "PV": 75,
+        "Attaque": 75,
+        "Defense": 55,
+        "SpAttaque": 105,
+        "SpDefense": 85,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 193,
+      "stats": {
+        "PV": 65,
+        "Attaque": 65,
+        "Defense": 45,
+        "SpAttaque": 75,
+        "SpDefense": 45,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 194,
+      "stats": {
+        "PV": 55,
+        "Attaque": 45,
+        "Defense": 45,
+        "SpAttaque": 25,
+        "SpDefense": 25,
+        "Vitesse": 15
+      }
+    },
+    {
+      "id": 195,
+      "stats": {
+        "PV": 95,
+        "Attaque": 85,
+        "Defense": 85,
+        "SpAttaque": 65,
+        "SpDefense": 65,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 196,
+      "stats": {
+        "PV": 65,
+        "Attaque": 65,
+        "Defense": 60,
+        "SpAttaque": 130,
+        "SpDefense": 95,
+        "Vitesse": 110
+      }
+    },
+    {
+      "id": 197,
+      "stats": {
+        "PV": 95,
+        "Attaque": 65,
+        "Defense": 110,
+        "SpAttaque": 60,
+        "SpDefense": 130,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 198,
+      "stats": {
+        "PV": 60,
+        "Attaque": 85,
+        "Defense": 42,
+        "SpAttaque": 85,
+        "SpDefense": 42,
+        "Vitesse": 91
+      }
+    },
+    {
+      "id": 199,
+      "stats": {
+        "PV": 95,
+        "Attaque": 75,
+        "Defense": 80,
+        "SpAttaque": 100,
+        "SpDefense": 110,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 200,
+      "stats": {
+        "PV": 60,
+        "Attaque": 60,
+        "Defense": 60,
+        "SpAttaque": 85,
+        "SpDefense": 85,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 201,
+      "stats": {
+        "PV": 48,
+        "Attaque": 72,
+        "Defense": 48,
+        "SpAttaque": 72,
+        "SpDefense": 48,
+        "Vitesse": 48
+      }
+    },
+    {
+      "id": 202,
+      "stats": {
+        "PV": 190,
+        "Attaque": 33,
+        "Defense": 58,
+        "SpAttaque": 33,
+        "SpDefense": 58,
+        "Vitesse": 33
+      }
+    },
+    {
+      "id": 203,
+      "stats": {
+        "PV": 70,
+        "Attaque": 80,
+        "Defense": 65,
+        "SpAttaque": 90,
+        "SpDefense": 65,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 204,
+      "stats": {
+        "PV": 50,
+        "Attaque": 65,
+        "Defense": 90,
+        "SpAttaque": 35,
+        "SpDefense": 35,
+        "Vitesse": 15
+      }
+    },
+    {
+      "id": 205,
+      "stats": {
+        "PV": 75,
+        "Attaque": 90,
+        "Defense": 140,
+        "SpAttaque": 60,
+        "SpDefense": 60,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 206,
+      "stats": {
+        "PV": 100,
+        "Attaque": 70,
+        "Defense": 70,
+        "SpAttaque": 65,
+        "SpDefense": 65,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 207,
+      "stats": {
+        "PV": 65,
+        "Attaque": 75,
+        "Defense": 105,
+        "SpAttaque": 35,
+        "SpDefense": 65,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 208,
+      "stats": {
+        "PV": 75,
+        "Attaque": 85,
+        "Defense": 200,
+        "SpAttaque": 55,
+        "SpDefense": 65,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 209,
+      "stats": {
+        "PV": 60,
+        "Attaque": 80,
+        "Defense": 50,
+        "SpAttaque": 40,
+        "SpDefense": 40,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 210,
+      "stats": {
+        "PV": 90,
+        "Attaque": 120,
+        "Defense": 75,
+        "SpAttaque": 60,
+        "SpDefense": 60,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 211,
+      "stats": {
+        "PV": 65,
+        "Attaque": 95,
+        "Defense": 85,
+        "SpAttaque": 55,
+        "SpDefense": 55,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 212,
+      "stats": {
+        "PV": 70,
+        "Attaque": 130,
+        "Defense": 100,
+        "SpAttaque": 55,
+        "SpDefense": 80,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 213,
+      "stats": {
+        "PV": 20,
+        "Attaque": 10,
+        "Defense": 230,
+        "SpAttaque": 10,
+        "SpDefense": 230,
+        "Vitesse": 5
+      }
+    },
+    {
+      "id": 214,
+      "stats": {
+        "PV": 80,
+        "Attaque": 125,
+        "Defense": 75,
+        "SpAttaque": 40,
+        "SpDefense": 95,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 215,
+      "stats": {
+        "PV": 55,
+        "Attaque": 95,
+        "Defense": 55,
+        "SpAttaque": 35,
+        "SpDefense": 75,
+        "Vitesse": 115
+      }
+    },
+    {
+      "id": 216,
+      "stats": {
+        "PV": 60,
+        "Attaque": 80,
+        "Defense": 50,
+        "SpAttaque": 50,
+        "SpDefense": 50,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 217,
+      "stats": {
+        "PV": 90,
+        "Attaque": 130,
+        "Defense": 75,
+        "SpAttaque": 75,
+        "SpDefense": 75,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 218,
+      "stats": {
+        "PV": 40,
+        "Attaque": 40,
+        "Defense": 40,
+        "SpAttaque": 70,
+        "SpDefense": 40,
+        "Vitesse": 20
+      }
+    },
+    {
+      "id": 219,
+      "stats": {
+        "PV": 60,
+        "Attaque": 50,
+        "Defense": 120,
+        "SpAttaque": 90,
+        "SpDefense": 80,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 220,
+      "stats": {
+        "PV": 50,
+        "Attaque": 50,
+        "Defense": 40,
+        "SpAttaque": 30,
+        "SpDefense": 30,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 221,
+      "stats": {
+        "PV": 100,
+        "Attaque": 100,
+        "Defense": 80,
+        "SpAttaque": 60,
+        "SpDefense": 60,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 222,
+      "stats": {
+        "PV": 65,
+        "Attaque": 55,
+        "Defense": 95,
+        "SpAttaque": 65,
+        "SpDefense": 95,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 223,
+      "stats": {
+        "PV": 35,
+        "Attaque": 65,
+        "Defense": 35,
+        "SpAttaque": 65,
+        "SpDefense": 35,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 224,
+      "stats": {
+        "PV": 75,
+        "Attaque": 105,
+        "Defense": 75,
+        "SpAttaque": 105,
+        "SpDefense": 75,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 225,
+      "stats": {
+        "PV": 45,
+        "Attaque": 55,
+        "Defense": 45,
+        "SpAttaque": 65,
+        "SpDefense": 45,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 226,
+      "stats": {
+        "PV": 85,
+        "Attaque": 40,
+        "Defense": 70,
+        "SpAttaque": 80,
+        "SpDefense": 140,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 227,
+      "stats": {
+        "PV": 65,
+        "Attaque": 80,
+        "Defense": 140,
+        "SpAttaque": 40,
+        "SpDefense": 70,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 228,
+      "stats": {
+        "PV": 45,
+        "Attaque": 60,
+        "Defense": 30,
+        "SpAttaque": 80,
+        "SpDefense": 50,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 229,
+      "stats": {
+        "PV": 75,
+        "Attaque": 90,
+        "Defense": 50,
+        "SpAttaque": 110,
+        "SpDefense": 80,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 230,
+      "stats": {
+        "PV": 75,
+        "Attaque": 95,
+        "Defense": 95,
+        "SpAttaque": 95,
+        "SpDefense": 95,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 231,
+      "stats": {
+        "PV": 90,
+        "Attaque": 60,
+        "Defense": 60,
+        "SpAttaque": 40,
+        "SpDefense": 40,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 232,
+      "stats": {
+        "PV": 90,
+        "Attaque": 120,
+        "Defense": 120,
+        "SpAttaque": 60,
+        "SpDefense": 60,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 233,
+      "stats": {
+        "PV": 85,
+        "Attaque": 80,
+        "Defense": 90,
+        "SpAttaque": 105,
+        "SpDefense": 95,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 234,
+      "stats": {
+        "PV": 73,
+        "Attaque": 95,
+        "Defense": 62,
+        "SpAttaque": 85,
+        "SpDefense": 65,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 235,
+      "stats": {
+        "PV": 55,
+        "Attaque": 20,
+        "Defense": 35,
+        "SpAttaque": 20,
+        "SpDefense": 45,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 236,
+      "stats": {
+        "PV": 35,
+        "Attaque": 35,
+        "Defense": 35,
+        "SpAttaque": 35,
+        "SpDefense": 35,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 237,
+      "stats": {
+        "PV": 50,
+        "Attaque": 95,
+        "Defense": 95,
+        "SpAttaque": 35,
+        "SpDefense": 110,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 238,
+      "stats": {
+        "PV": 45,
+        "Attaque": 30,
+        "Defense": 15,
+        "SpAttaque": 85,
+        "SpDefense": 65,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 239,
+      "stats": {
+        "PV": 45,
+        "Attaque": 63,
+        "Defense": 37,
+        "SpAttaque": 65,
+        "SpDefense": 55,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 240,
+      "stats": {
+        "PV": 45,
+        "Attaque": 75,
+        "Defense": 37,
+        "SpAttaque": 70,
+        "SpDefense": 55,
+        "Vitesse": 83
+      }
+    },
+    {
+      "id": 241,
+      "stats": {
+        "PV": 95,
+        "Attaque": 80,
+        "Defense": 105,
+        "SpAttaque": 40,
+        "SpDefense": 70,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 242,
+      "stats": {
+        "PV": 255,
+        "Attaque": 10,
+        "Defense": 10,
+        "SpAttaque": 75,
+        "SpDefense": 135,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 243,
+      "stats": {
+        "PV": 90,
+        "Attaque": 85,
+        "Defense": 75,
+        "SpAttaque": 115,
+        "SpDefense": 100,
+        "Vitesse": 115
+      }
+    },
+    {
+      "id": 244,
+      "stats": {
+        "PV": 115,
+        "Attaque": 115,
+        "Defense": 85,
+        "SpAttaque": 90,
+        "SpDefense": 75,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 245,
+      "stats": {
+        "PV": 100,
+        "Attaque": 75,
+        "Defense": 115,
+        "SpAttaque": 90,
+        "SpDefense": 115,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 246,
+      "stats": {
+        "PV": 50,
+        "Attaque": 64,
+        "Defense": 50,
+        "SpAttaque": 45,
+        "SpDefense": 50,
+        "Vitesse": 41
+      }
+    },
+    {
+      "id": 247,
+      "stats": {
+        "PV": 70,
+        "Attaque": 84,
+        "Defense": 70,
+        "SpAttaque": 65,
+        "SpDefense": 70,
+        "Vitesse": 51
+      }
+    },
+    {
+      "id": 248,
+      "stats": {
+        "PV": 100,
+        "Attaque": 134,
+        "Defense": 110,
+        "SpAttaque": 95,
+        "SpDefense": 100,
+        "Vitesse": 61
+      }
+    },
+    {
+      "id": 249,
+      "stats": {
+        "PV": 106,
+        "Attaque": 90,
+        "Defense": 130,
+        "SpAttaque": 90,
+        "SpDefense": 154,
+        "Vitesse": 110
+      }
+    },
+    {
+      "id": 250,
+      "stats": {
+        "PV": 106,
+        "Attaque": 130,
+        "Defense": 90,
+        "SpAttaque": 110,
+        "SpDefense": 154,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 251,
+      "stats": {
+        "PV": 100,
+        "Attaque": 100,
+        "Defense": 100,
+        "SpAttaque": 100,
+        "SpDefense": 100,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 252,
+      "stats": {
+        "PV": 40,
+        "Attaque": 45,
+        "Defense": 35,
+        "SpAttaque": 65,
+        "SpDefense": 55,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 253,
+      "stats": {
+        "PV": 50,
+        "Attaque": 65,
+        "Defense": 45,
+        "SpAttaque": 85,
+        "SpDefense": 65,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 254,
+      "stats": {
+        "PV": 70,
+        "Attaque": 85,
+        "Defense": 65,
+        "SpAttaque": 105,
+        "SpDefense": 85,
+        "Vitesse": 120
+      }
+    },
+    {
+      "id": 255,
+      "stats": {
+        "PV": 45,
+        "Attaque": 60,
+        "Defense": 40,
+        "SpAttaque": 70,
+        "SpDefense": 50,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 256,
+      "stats": {
+        "PV": 60,
+        "Attaque": 85,
+        "Defense": 60,
+        "SpAttaque": 85,
+        "SpDefense": 60,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 257,
+      "stats": {
+        "PV": 80,
+        "Attaque": 120,
+        "Defense": 70,
+        "SpAttaque": 110,
+        "SpDefense": 70,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 258,
+      "stats": {
+        "PV": 50,
+        "Attaque": 70,
+        "Defense": 50,
+        "SpAttaque": 50,
+        "SpDefense": 50,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 259,
+      "stats": {
+        "PV": 70,
+        "Attaque": 85,
+        "Defense": 70,
+        "SpAttaque": 60,
+        "SpDefense": 70,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 260,
+      "stats": {
+        "PV": 100,
+        "Attaque": 110,
+        "Defense": 90,
+        "SpAttaque": 85,
+        "SpDefense": 90,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 261,
+      "stats": {
+        "PV": 35,
+        "Attaque": 55,
+        "Defense": 35,
+        "SpAttaque": 30,
+        "SpDefense": 30,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 262,
+      "stats": {
+        "PV": 70,
+        "Attaque": 90,
+        "Defense": 70,
+        "SpAttaque": 60,
+        "SpDefense": 60,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 263,
+      "stats": {
+        "PV": 38,
+        "Attaque": 30,
+        "Defense": 41,
+        "SpAttaque": 30,
+        "SpDefense": 41,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 264,
+      "stats": {
+        "PV": 78,
+        "Attaque": 70,
+        "Defense": 61,
+        "SpAttaque": 50,
+        "SpDefense": 61,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 265,
+      "stats": {
+        "PV": 45,
+        "Attaque": 45,
+        "Defense": 35,
+        "SpAttaque": 20,
+        "SpDefense": 30,
+        "Vitesse": 20
+      }
+    },
+    {
+      "id": 266,
+      "stats": {
+        "PV": 50,
+        "Attaque": 35,
+        "Defense": 55,
+        "SpAttaque": 25,
+        "SpDefense": 25,
+        "Vitesse": 15
+      }
+    },
+    {
+      "id": 267,
+      "stats": {
+        "PV": 60,
+        "Attaque": 70,
+        "Defense": 50,
+        "SpAttaque": 100,
+        "SpDefense": 50,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 268,
+      "stats": {
+        "PV": 50,
+        "Attaque": 35,
+        "Defense": 55,
+        "SpAttaque": 25,
+        "SpDefense": 25,
+        "Vitesse": 15
+      }
+    },
+    {
+      "id": 269,
+      "stats": {
+        "PV": 60,
+        "Attaque": 50,
+        "Defense": 70,
+        "SpAttaque": 50,
+        "SpDefense": 90,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 270,
+      "stats": {
+        "PV": 40,
+        "Attaque": 30,
+        "Defense": 30,
+        "SpAttaque": 40,
+        "SpDefense": 50,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 271,
+      "stats": {
+        "PV": 60,
+        "Attaque": 50,
+        "Defense": 50,
+        "SpAttaque": 60,
+        "SpDefense": 70,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 272,
+      "stats": {
+        "PV": 80,
+        "Attaque": 70,
+        "Defense": 70,
+        "SpAttaque": 90,
+        "SpDefense": 100,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 273,
+      "stats": {
+        "PV": 40,
+        "Attaque": 40,
+        "Defense": 50,
+        "SpAttaque": 30,
+        "SpDefense": 30,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 274,
+      "stats": {
+        "PV": 70,
+        "Attaque": 70,
+        "Defense": 40,
+        "SpAttaque": 60,
+        "SpDefense": 40,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 275,
+      "stats": {
+        "PV": 90,
+        "Attaque": 100,
+        "Defense": 60,
+        "SpAttaque": 90,
+        "SpDefense": 60,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 276,
+      "stats": {
+        "PV": 40,
+        "Attaque": 55,
+        "Defense": 30,
+        "SpAttaque": 30,
+        "SpDefense": 30,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 277,
+      "stats": {
+        "PV": 60,
+        "Attaque": 85,
+        "Defense": 60,
+        "SpAttaque": 75,
+        "SpDefense": 50,
+        "Vitesse": 125
+      }
+    },
+    {
+      "id": 278,
+      "stats": {
+        "PV": 40,
+        "Attaque": 30,
+        "Defense": 30,
+        "SpAttaque": 55,
+        "SpDefense": 30,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 279,
+      "stats": {
+        "PV": 60,
+        "Attaque": 50,
+        "Defense": 100,
+        "SpAttaque": 95,
+        "SpDefense": 70,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 280,
+      "stats": {
+        "PV": 28,
+        "Attaque": 25,
+        "Defense": 25,
+        "SpAttaque": 45,
+        "SpDefense": 35,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 281,
+      "stats": {
+        "PV": 38,
+        "Attaque": 35,
+        "Defense": 35,
+        "SpAttaque": 65,
+        "SpDefense": 55,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 282,
+      "stats": {
+        "PV": 68,
+        "Attaque": 65,
+        "Defense": 65,
+        "SpAttaque": 125,
+        "SpDefense": 115,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 283,
+      "stats": {
+        "PV": 40,
+        "Attaque": 30,
+        "Defense": 32,
+        "SpAttaque": 50,
+        "SpDefense": 52,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 284,
+      "stats": {
+        "PV": 70,
+        "Attaque": 60,
+        "Defense": 62,
+        "SpAttaque": 100,
+        "SpDefense": 82,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 285,
+      "stats": {
+        "PV": 60,
+        "Attaque": 40,
+        "Defense": 60,
+        "SpAttaque": 40,
+        "SpDefense": 60,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 286,
+      "stats": {
+        "PV": 60,
+        "Attaque": 130,
+        "Defense": 80,
+        "SpAttaque": 60,
+        "SpDefense": 60,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 287,
+      "stats": {
+        "PV": 60,
+        "Attaque": 60,
+        "Defense": 60,
+        "SpAttaque": 35,
+        "SpDefense": 35,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 288,
+      "stats": {
+        "PV": 80,
+        "Attaque": 80,
+        "Defense": 80,
+        "SpAttaque": 55,
+        "SpDefense": 55,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 289,
+      "stats": {
+        "PV": 150,
+        "Attaque": 160,
+        "Defense": 100,
+        "SpAttaque": 95,
+        "SpDefense": 65,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 290,
+      "stats": {
+        "PV": 31,
+        "Attaque": 45,
+        "Defense": 90,
+        "SpAttaque": 30,
+        "SpDefense": 30,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 291,
+      "stats": {
+        "PV": 61,
+        "Attaque": 90,
+        "Defense": 45,
+        "SpAttaque": 50,
+        "SpDefense": 50,
+        "Vitesse": 160
+      }
+    },
+    {
+      "id": 292,
+      "stats": {
+        "PV": 1,
+        "Attaque": 90,
+        "Defense": 45,
+        "SpAttaque": 30,
+        "SpDefense": 30,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 293,
+      "stats": {
+        "PV": 64,
+        "Attaque": 51,
+        "Defense": 23,
+        "SpAttaque": 51,
+        "SpDefense": 23,
+        "Vitesse": 28
+      }
+    },
+    {
+      "id": 294,
+      "stats": {
+        "PV": 84,
+        "Attaque": 71,
+        "Defense": 43,
+        "SpAttaque": 71,
+        "SpDefense": 43,
+        "Vitesse": 48
+      }
+    },
+    {
+      "id": 295,
+      "stats": {
+        "PV": 104,
+        "Attaque": 91,
+        "Defense": 63,
+        "SpAttaque": 91,
+        "SpDefense": 73,
+        "Vitesse": 68
+      }
+    },
+    {
+      "id": 296,
+      "stats": {
+        "PV": 72,
+        "Attaque": 60,
+        "Defense": 30,
+        "SpAttaque": 20,
+        "SpDefense": 30,
+        "Vitesse": 25
+      }
+    },
+    {
+      "id": 297,
+      "stats": {
+        "PV": 144,
+        "Attaque": 120,
+        "Defense": 60,
+        "SpAttaque": 40,
+        "SpDefense": 60,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 298,
+      "stats": {
+        "PV": 50,
+        "Attaque": 20,
+        "Defense": 40,
+        "SpAttaque": 20,
+        "SpDefense": 40,
+        "Vitesse": 20
+      }
+    },
+    {
+      "id": 299,
+      "stats": {
+        "PV": 30,
+        "Attaque": 45,
+        "Defense": 135,
+        "SpAttaque": 45,
+        "SpDefense": 90,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 300,
+      "stats": {
+        "PV": 50,
+        "Attaque": 45,
+        "Defense": 45,
+        "SpAttaque": 35,
+        "SpDefense": 35,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 301,
+      "stats": {
+        "PV": 70,
+        "Attaque": 65,
+        "Defense": 65,
+        "SpAttaque": 55,
+        "SpDefense": 55,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 302,
+      "stats": {
+        "PV": 50,
+        "Attaque": 75,
+        "Defense": 75,
+        "SpAttaque": 65,
+        "SpDefense": 65,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 303,
+      "stats": {
+        "PV": 50,
+        "Attaque": 85,
+        "Defense": 85,
+        "SpAttaque": 55,
+        "SpDefense": 55,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 304,
+      "stats": {
+        "PV": 50,
+        "Attaque": 70,
+        "Defense": 100,
+        "SpAttaque": 40,
+        "SpDefense": 40,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 305,
+      "stats": {
+        "PV": 60,
+        "Attaque": 90,
+        "Defense": 140,
+        "SpAttaque": 50,
+        "SpDefense": 50,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 306,
+      "stats": {
+        "PV": 70,
+        "Attaque": 110,
+        "Defense": 180,
+        "SpAttaque": 60,
+        "SpDefense": 60,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 307,
+      "stats": {
+        "PV": 30,
+        "Attaque": 40,
+        "Defense": 55,
+        "SpAttaque": 40,
+        "SpDefense": 55,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 308,
+      "stats": {
+        "PV": 60,
+        "Attaque": 60,
+        "Defense": 75,
+        "SpAttaque": 60,
+        "SpDefense": 75,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 309,
+      "stats": {
+        "PV": 40,
+        "Attaque": 45,
+        "Defense": 40,
+        "SpAttaque": 65,
+        "SpDefense": 40,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 310,
+      "stats": {
+        "PV": 70,
+        "Attaque": 75,
+        "Defense": 60,
+        "SpAttaque": 105,
+        "SpDefense": 60,
+        "Vitesse": 105
+      }
+    },
+    {
+      "id": 311,
+      "stats": {
+        "PV": 60,
+        "Attaque": 50,
+        "Defense": 40,
+        "SpAttaque": 85,
+        "SpDefense": 75,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 312,
+      "stats": {
+        "PV": 60,
+        "Attaque": 40,
+        "Defense": 50,
+        "SpAttaque": 75,
+        "SpDefense": 85,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 313,
+      "stats": {
+        "PV": 65,
+        "Attaque": 73,
+        "Defense": 75,
+        "SpAttaque": 47,
+        "SpDefense": 85,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 314,
+      "stats": {
+        "PV": 65,
+        "Attaque": 47,
+        "Defense": 75,
+        "SpAttaque": 73,
+        "SpDefense": 85,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 315,
+      "stats": {
+        "PV": 50,
+        "Attaque": 60,
+        "Defense": 45,
+        "SpAttaque": 100,
+        "SpDefense": 80,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 316,
+      "stats": {
+        "PV": 70,
+        "Attaque": 43,
+        "Defense": 53,
+        "SpAttaque": 43,
+        "SpDefense": 53,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 317,
+      "stats": {
+        "PV": 100,
+        "Attaque": 73,
+        "Defense": 83,
+        "SpAttaque": 73,
+        "SpDefense": 83,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 318,
+      "stats": {
+        "PV": 45,
+        "Attaque": 90,
+        "Defense": 20,
+        "SpAttaque": 65,
+        "SpDefense": 20,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 319,
+      "stats": {
+        "PV": 70,
+        "Attaque": 120,
+        "Defense": 40,
+        "SpAttaque": 95,
+        "SpDefense": 40,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 320,
+      "stats": {
+        "PV": 130,
+        "Attaque": 70,
+        "Defense": 35,
+        "SpAttaque": 70,
+        "SpDefense": 35,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 321,
+      "stats": {
+        "PV": 170,
+        "Attaque": 90,
+        "Defense": 45,
+        "SpAttaque": 90,
+        "SpDefense": 45,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 322,
+      "stats": {
+        "PV": 60,
+        "Attaque": 60,
+        "Defense": 40,
+        "SpAttaque": 65,
+        "SpDefense": 45,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 323,
+      "stats": {
+        "PV": 70,
+        "Attaque": 100,
+        "Defense": 70,
+        "SpAttaque": 105,
+        "SpDefense": 75,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 324,
+      "stats": {
+        "PV": 70,
+        "Attaque": 85,
+        "Defense": 140,
+        "SpAttaque": 85,
+        "SpDefense": 70,
+        "Vitesse": 20
+      }
+    },
+    {
+      "id": 325,
+      "stats": {
+        "PV": 60,
+        "Attaque": 25,
+        "Defense": 35,
+        "SpAttaque": 70,
+        "SpDefense": 80,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 326,
+      "stats": {
+        "PV": 80,
+        "Attaque": 45,
+        "Defense": 65,
+        "SpAttaque": 90,
+        "SpDefense": 110,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 327,
+      "stats": {
+        "PV": 60,
+        "Attaque": 60,
+        "Defense": 60,
+        "SpAttaque": 60,
+        "SpDefense": 60,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 328,
+      "stats": {
+        "PV": 45,
+        "Attaque": 100,
+        "Defense": 45,
+        "SpAttaque": 45,
+        "SpDefense": 45,
+        "Vitesse": 10
+      }
+    },
+    {
+      "id": 329,
+      "stats": {
+        "PV": 50,
+        "Attaque": 70,
+        "Defense": 50,
+        "SpAttaque": 50,
+        "SpDefense": 50,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 330,
+      "stats": {
+        "PV": 80,
+        "Attaque": 100,
+        "Defense": 80,
+        "SpAttaque": 80,
+        "SpDefense": 80,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 331,
+      "stats": {
+        "PV": 50,
+        "Attaque": 85,
+        "Defense": 40,
+        "SpAttaque": 85,
+        "SpDefense": 40,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 332,
+      "stats": {
+        "PV": 70,
+        "Attaque": 115,
+        "Defense": 60,
+        "SpAttaque": 115,
+        "SpDefense": 60,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 333,
+      "stats": {
+        "PV": 45,
+        "Attaque": 40,
+        "Defense": 60,
+        "SpAttaque": 40,
+        "SpDefense": 75,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 334,
+      "stats": {
+        "PV": 75,
+        "Attaque": 70,
+        "Defense": 90,
+        "SpAttaque": 70,
+        "SpDefense": 105,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 335,
+      "stats": {
+        "PV": 73,
+        "Attaque": 115,
+        "Defense": 60,
+        "SpAttaque": 60,
+        "SpDefense": 60,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 336,
+      "stats": {
+        "PV": 73,
+        "Attaque": 100,
+        "Defense": 60,
+        "SpAttaque": 100,
+        "SpDefense": 60,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 337,
+      "stats": {
+        "PV": 90,
+        "Attaque": 55,
+        "Defense": 65,
+        "SpAttaque": 95,
+        "SpDefense": 85,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 338,
+      "stats": {
+        "PV": 90,
+        "Attaque": 95,
+        "Defense": 85,
+        "SpAttaque": 55,
+        "SpDefense": 65,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 339,
+      "stats": {
+        "PV": 50,
+        "Attaque": 48,
+        "Defense": 43,
+        "SpAttaque": 46,
+        "SpDefense": 41,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 340,
+      "stats": {
+        "PV": 110,
+        "Attaque": 78,
+        "Defense": 73,
+        "SpAttaque": 76,
+        "SpDefense": 71,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 341,
+      "stats": {
+        "PV": 43,
+        "Attaque": 80,
+        "Defense": 65,
+        "SpAttaque": 50,
+        "SpDefense": 35,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 342,
+      "stats": {
+        "PV": 63,
+        "Attaque": 120,
+        "Defense": 85,
+        "SpAttaque": 90,
+        "SpDefense": 55,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 343,
+      "stats": {
+        "PV": 40,
+        "Attaque": 40,
+        "Defense": 55,
+        "SpAttaque": 40,
+        "SpDefense": 70,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 344,
+      "stats": {
+        "PV": 60,
+        "Attaque": 70,
+        "Defense": 105,
+        "SpAttaque": 70,
+        "SpDefense": 120,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 345,
+      "stats": {
+        "PV": 66,
+        "Attaque": 41,
+        "Defense": 77,
+        "SpAttaque": 61,
+        "SpDefense": 87,
+        "Vitesse": 23
+      }
+    },
+    {
+      "id": 346,
+      "stats": {
+        "PV": 86,
+        "Attaque": 81,
+        "Defense": 97,
+        "SpAttaque": 81,
+        "SpDefense": 107,
+        "Vitesse": 43
+      }
+    },
+    {
+      "id": 347,
+      "stats": {
+        "PV": 45,
+        "Attaque": 95,
+        "Defense": 50,
+        "SpAttaque": 40,
+        "SpDefense": 50,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 348,
+      "stats": {
+        "PV": 75,
+        "Attaque": 125,
+        "Defense": 100,
+        "SpAttaque": 70,
+        "SpDefense": 80,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 349,
+      "stats": {
+        "PV": 20,
+        "Attaque": 15,
+        "Defense": 20,
+        "SpAttaque": 10,
+        "SpDefense": 55,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 350,
+      "stats": {
+        "PV": 95,
+        "Attaque": 60,
+        "Defense": 79,
+        "SpAttaque": 100,
+        "SpDefense": 125,
+        "Vitesse": 81
+      }
+    },
+    {
+      "id": 351,
+      "stats": {
+        "PV": 70,
+        "Attaque": 70,
+        "Defense": 70,
+        "SpAttaque": 70,
+        "SpDefense": 70,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 352,
+      "stats": {
+        "PV": 60,
+        "Attaque": 90,
+        "Defense": 70,
+        "SpAttaque": 60,
+        "SpDefense": 120,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 353,
+      "stats": {
+        "PV": 44,
+        "Attaque": 75,
+        "Defense": 35,
+        "SpAttaque": 63,
+        "SpDefense": 33,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 354,
+      "stats": {
+        "PV": 64,
+        "Attaque": 115,
+        "Defense": 65,
+        "SpAttaque": 83,
+        "SpDefense": 63,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 355,
+      "stats": {
+        "PV": 20,
+        "Attaque": 40,
+        "Defense": 90,
+        "SpAttaque": 30,
+        "SpDefense": 90,
+        "Vitesse": 25
+      }
+    },
+    {
+      "id": 356,
+      "stats": {
+        "PV": 40,
+        "Attaque": 70,
+        "Defense": 130,
+        "SpAttaque": 60,
+        "SpDefense": 130,
+        "Vitesse": 25
+      }
+    },
+    {
+      "id": 357,
+      "stats": {
+        "PV": 99,
+        "Attaque": 68,
+        "Defense": 83,
+        "SpAttaque": 72,
+        "SpDefense": 87,
+        "Vitesse": 51
+      }
+    },
+    {
+      "id": 358,
+      "stats": {
+        "PV": 75,
+        "Attaque": 50,
+        "Defense": 80,
+        "SpAttaque": 95,
+        "SpDefense": 90,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 359,
+      "stats": {
+        "PV": 65,
+        "Attaque": 130,
+        "Defense": 60,
+        "SpAttaque": 75,
+        "SpDefense": 60,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 360,
+      "stats": {
+        "PV": 95,
+        "Attaque": 23,
+        "Defense": 48,
+        "SpAttaque": 23,
+        "SpDefense": 48,
+        "Vitesse": 23
+      }
+    },
+    {
+      "id": 361,
+      "stats": {
+        "PV": 50,
+        "Attaque": 50,
+        "Defense": 50,
+        "SpAttaque": 50,
+        "SpDefense": 50,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 362,
+      "stats": {
+        "PV": 80,
+        "Attaque": 80,
+        "Defense": 80,
+        "SpAttaque": 80,
+        "SpDefense": 80,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 363,
+      "stats": {
+        "PV": 70,
+        "Attaque": 40,
+        "Defense": 50,
+        "SpAttaque": 55,
+        "SpDefense": 50,
+        "Vitesse": 25
+      }
+    },
+    {
+      "id": 364,
+      "stats": {
+        "PV": 90,
+        "Attaque": 60,
+        "Defense": 70,
+        "SpAttaque": 75,
+        "SpDefense": 70,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 365,
+      "stats": {
+        "PV": 110,
+        "Attaque": 80,
+        "Defense": 90,
+        "SpAttaque": 95,
+        "SpDefense": 90,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 366,
+      "stats": {
+        "PV": 35,
+        "Attaque": 64,
+        "Defense": 85,
+        "SpAttaque": 74,
+        "SpDefense": 55,
+        "Vitesse": 32
+      }
+    },
+    {
+      "id": 367,
+      "stats": {
+        "PV": 55,
+        "Attaque": 104,
+        "Defense": 105,
+        "SpAttaque": 94,
+        "SpDefense": 75,
+        "Vitesse": 52
+      }
+    },
+    {
+      "id": 368,
+      "stats": {
+        "PV": 55,
+        "Attaque": 84,
+        "Defense": 105,
+        "SpAttaque": 114,
+        "SpDefense": 75,
+        "Vitesse": 52
+      }
+    },
+    {
+      "id": 369,
+      "stats": {
+        "PV": 100,
+        "Attaque": 90,
+        "Defense": 130,
+        "SpAttaque": 45,
+        "SpDefense": 65,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 370,
+      "stats": {
+        "PV": 43,
+        "Attaque": 30,
+        "Defense": 55,
+        "SpAttaque": 40,
+        "SpDefense": 65,
+        "Vitesse": 97
+      }
+    },
+    {
+      "id": 371,
+      "stats": {
+        "PV": 45,
+        "Attaque": 75,
+        "Defense": 60,
+        "SpAttaque": 40,
+        "SpDefense": 30,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 372,
+      "stats": {
+        "PV": 65,
+        "Attaque": 95,
+        "Defense": 100,
+        "SpAttaque": 60,
+        "SpDefense": 50,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 373,
+      "stats": {
+        "PV": 95,
+        "Attaque": 135,
+        "Defense": 80,
+        "SpAttaque": 110,
+        "SpDefense": 80,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 374,
+      "stats": {
+        "PV": 40,
+        "Attaque": 55,
+        "Defense": 80,
+        "SpAttaque": 35,
+        "SpDefense": 60,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 375,
+      "stats": {
+        "PV": 60,
+        "Attaque": 75,
+        "Defense": 100,
+        "SpAttaque": 55,
+        "SpDefense": 80,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 376,
+      "stats": {
+        "PV": 80,
+        "Attaque": 135,
+        "Defense": 130,
+        "SpAttaque": 95,
+        "SpDefense": 90,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 377,
+      "stats": {
+        "PV": 80,
+        "Attaque": 100,
+        "Defense": 200,
+        "SpAttaque": 50,
+        "SpDefense": 100,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 378,
+      "stats": {
+        "PV": 80,
+        "Attaque": 50,
+        "Defense": 100,
+        "SpAttaque": 100,
+        "SpDefense": 200,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 379,
+      "stats": {
+        "PV": 80,
+        "Attaque": 75,
+        "Defense": 150,
+        "SpAttaque": 75,
+        "SpDefense": 150,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 380,
+      "stats": {
+        "PV": 80,
+        "Attaque": 80,
+        "Defense": 90,
+        "SpAttaque": 110,
+        "SpDefense": 130,
+        "Vitesse": 110
+      }
+    },
+    {
+      "id": 381,
+      "stats": {
+        "PV": 80,
+        "Attaque": 90,
+        "Defense": 80,
+        "SpAttaque": 130,
+        "SpDefense": 110,
+        "Vitesse": 110
+      }
+    },
+    {
+      "id": 382,
+      "stats": {
+        "PV": 100,
+        "Attaque": 100,
+        "Defense": 90,
+        "SpAttaque": 150,
+        "SpDefense": 140,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 383,
+      "stats": {
+        "PV": 100,
+        "Attaque": 150,
+        "Defense": 140,
+        "SpAttaque": 100,
+        "SpDefense": 90,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 384,
+      "stats": {
+        "PV": 105,
+        "Attaque": 150,
+        "Defense": 90,
+        "SpAttaque": 150,
+        "SpDefense": 90,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 385,
+      "stats": {
+        "PV": 100,
+        "Attaque": 100,
+        "Defense": 100,
+        "SpAttaque": 100,
+        "SpDefense": 100,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 386,
+      "stats": {
+        "PV": 50,
+        "Attaque": 150,
+        "Defense": 50,
+        "SpAttaque": 150,
+        "SpDefense": 50,
+        "Vitesse": 150
+      }
+    },
+    {
+      "id": 387,
+      "stats": {
+        "PV": 55,
+        "Attaque": 68,
+        "Defense": 64,
+        "SpAttaque": 45,
+        "SpDefense": 55,
+        "Vitesse": 31
+      }
+    },
+    {
+      "id": 388,
+      "stats": {
+        "PV": 75,
+        "Attaque": 89,
+        "Defense": 85,
+        "SpAttaque": 55,
+        "SpDefense": 65,
+        "Vitesse": 36
+      }
+    },
+    {
+      "id": 389,
+      "stats": {
+        "PV": 95,
+        "Attaque": 109,
+        "Defense": 105,
+        "SpAttaque": 75,
+        "SpDefense": 85,
+        "Vitesse": 56
+      }
+    },
+    {
+      "id": 390,
+      "stats": {
+        "PV": 44,
+        "Attaque": 58,
+        "Defense": 44,
+        "SpAttaque": 58,
+        "SpDefense": 44,
+        "Vitesse": 61
+      }
+    },
+    {
+      "id": 391,
+      "stats": {
+        "PV": 64,
+        "Attaque": 78,
+        "Defense": 52,
+        "SpAttaque": 78,
+        "SpDefense": 52,
+        "Vitesse": 81
+      }
+    },
+    {
+      "id": 392,
+      "stats": {
+        "PV": 76,
+        "Attaque": 104,
+        "Defense": 71,
+        "SpAttaque": 104,
+        "SpDefense": 71,
+        "Vitesse": 108
+      }
+    },
+    {
+      "id": 393,
+      "stats": {
+        "PV": 53,
+        "Attaque": 51,
+        "Defense": 53,
+        "SpAttaque": 61,
+        "SpDefense": 56,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 394,
+      "stats": {
+        "PV": 64,
+        "Attaque": 66,
+        "Defense": 68,
+        "SpAttaque": 81,
+        "SpDefense": 76,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 395,
+      "stats": {
+        "PV": 84,
+        "Attaque": 86,
+        "Defense": 88,
+        "SpAttaque": 111,
+        "SpDefense": 101,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 396,
+      "stats": {
+        "PV": 40,
+        "Attaque": 55,
+        "Defense": 30,
+        "SpAttaque": 30,
+        "SpDefense": 30,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 397,
+      "stats": {
+        "PV": 55,
+        "Attaque": 75,
+        "Defense": 50,
+        "SpAttaque": 40,
+        "SpDefense": 40,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 398,
+      "stats": {
+        "PV": 85,
+        "Attaque": 120,
+        "Defense": 70,
+        "SpAttaque": 50,
+        "SpDefense": 60,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 399,
+      "stats": {
+        "PV": 59,
+        "Attaque": 45,
+        "Defense": 40,
+        "SpAttaque": 35,
+        "SpDefense": 40,
+        "Vitesse": 31
+      }
+    },
+    {
+      "id": 400,
+      "stats": {
+        "PV": 79,
+        "Attaque": 85,
+        "Defense": 60,
+        "SpAttaque": 55,
+        "SpDefense": 60,
+        "Vitesse": 71
+      }
+    },
+    {
+      "id": 401,
+      "stats": {
+        "PV": 37,
+        "Attaque": 25,
+        "Defense": 41,
+        "SpAttaque": 25,
+        "SpDefense": 41,
+        "Vitesse": 25
+      }
+    },
+    {
+      "id": 402,
+      "stats": {
+        "PV": 77,
+        "Attaque": 85,
+        "Defense": 51,
+        "SpAttaque": 55,
+        "SpDefense": 51,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 403,
+      "stats": {
+        "PV": 45,
+        "Attaque": 65,
+        "Defense": 34,
+        "SpAttaque": 40,
+        "SpDefense": 34,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 404,
+      "stats": {
+        "PV": 60,
+        "Attaque": 85,
+        "Defense": 49,
+        "SpAttaque": 60,
+        "SpDefense": 49,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 405,
+      "stats": {
+        "PV": 80,
+        "Attaque": 120,
+        "Defense": 79,
+        "SpAttaque": 95,
+        "SpDefense": 79,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 406,
+      "stats": {
+        "PV": 40,
+        "Attaque": 30,
+        "Defense": 35,
+        "SpAttaque": 50,
+        "SpDefense": 70,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 407,
+      "stats": {
+        "PV": 60,
+        "Attaque": 70,
+        "Defense": 65,
+        "SpAttaque": 125,
+        "SpDefense": 105,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 408,
+      "stats": {
+        "PV": 67,
+        "Attaque": 125,
+        "Defense": 40,
+        "SpAttaque": 30,
+        "SpDefense": 30,
+        "Vitesse": 58
+      }
+    },
+    {
+      "id": 409,
+      "stats": {
+        "PV": 97,
+        "Attaque": 165,
+        "Defense": 60,
+        "SpAttaque": 65,
+        "SpDefense": 50,
+        "Vitesse": 58
+      }
+    },
+    {
+      "id": 410,
+      "stats": {
+        "PV": 30,
+        "Attaque": 42,
+        "Defense": 118,
+        "SpAttaque": 42,
+        "SpDefense": 88,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 411,
+      "stats": {
+        "PV": 60,
+        "Attaque": 52,
+        "Defense": 168,
+        "SpAttaque": 47,
+        "SpDefense": 138,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 412,
+      "stats": {
+        "PV": 40,
+        "Attaque": 29,
+        "Defense": 45,
+        "SpAttaque": 29,
+        "SpDefense": 45,
+        "Vitesse": 36
+      }
+    },
+    {
+      "id": 413,
+      "stats": {
+        "PV": 60,
+        "Attaque": 59,
+        "Defense": 85,
+        "SpAttaque": 79,
+        "SpDefense": 105,
+        "Vitesse": 36
+      }
+    },
+    {
+      "id": 414,
+      "stats": {
+        "PV": 70,
+        "Attaque": 94,
+        "Defense": 50,
+        "SpAttaque": 94,
+        "SpDefense": 50,
+        "Vitesse": 66
+      }
+    },
+    {
+      "id": 415,
+      "stats": {
+        "PV": 30,
+        "Attaque": 30,
+        "Defense": 42,
+        "SpAttaque": 30,
+        "SpDefense": 42,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 416,
+      "stats": {
+        "PV": 70,
+        "Attaque": 80,
+        "Defense": 102,
+        "SpAttaque": 80,
+        "SpDefense": 102,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 417,
+      "stats": {
+        "PV": 60,
+        "Attaque": 45,
+        "Defense": 70,
+        "SpAttaque": 45,
+        "SpDefense": 90,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 418,
+      "stats": {
+        "PV": 55,
+        "Attaque": 65,
+        "Defense": 35,
+        "SpAttaque": 60,
+        "SpDefense": 30,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 419,
+      "stats": {
+        "PV": 85,
+        "Attaque": 105,
+        "Defense": 55,
+        "SpAttaque": 85,
+        "SpDefense": 50,
+        "Vitesse": 115
+      }
+    },
+    {
+      "id": 420,
+      "stats": {
+        "PV": 45,
+        "Attaque": 35,
+        "Defense": 45,
+        "SpAttaque": 62,
+        "SpDefense": 53,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 421,
+      "stats": {
+        "PV": 70,
+        "Attaque": 60,
+        "Defense": 70,
+        "SpAttaque": 87,
+        "SpDefense": 78,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 422,
+      "stats": {
+        "PV": 76,
+        "Attaque": 48,
+        "Defense": 48,
+        "SpAttaque": 57,
+        "SpDefense": 62,
+        "Vitesse": 34
+      }
+    },
+    {
+      "id": 423,
+      "stats": {
+        "PV": 111,
+        "Attaque": 83,
+        "Defense": 68,
+        "SpAttaque": 92,
+        "SpDefense": 82,
+        "Vitesse": 39
+      }
+    },
+    {
+      "id": 424,
+      "stats": {
+        "PV": 75,
+        "Attaque": 100,
+        "Defense": 66,
+        "SpAttaque": 60,
+        "SpDefense": 66,
+        "Vitesse": 115
+      }
+    },
+    {
+      "id": 425,
+      "stats": {
+        "PV": 90,
+        "Attaque": 50,
+        "Defense": 34,
+        "SpAttaque": 60,
+        "SpDefense": 44,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 426,
+      "stats": {
+        "PV": 150,
+        "Attaque": 80,
+        "Defense": 44,
+        "SpAttaque": 90,
+        "SpDefense": 54,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 427,
+      "stats": {
+        "PV": 55,
+        "Attaque": 66,
+        "Defense": 44,
+        "SpAttaque": 44,
+        "SpDefense": 56,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 428,
+      "stats": {
+        "PV": 65,
+        "Attaque": 76,
+        "Defense": 84,
+        "SpAttaque": 54,
+        "SpDefense": 96,
+        "Vitesse": 105
+      }
+    },
+    {
+      "id": 429,
+      "stats": {
+        "PV": 60,
+        "Attaque": 60,
+        "Defense": 60,
+        "SpAttaque": 105,
+        "SpDefense": 105,
+        "Vitesse": 105
+      }
+    },
+    {
+      "id": 430,
+      "stats": {
+        "PV": 100,
+        "Attaque": 125,
+        "Defense": 52,
+        "SpAttaque": 105,
+        "SpDefense": 52,
+        "Vitesse": 71
+      }
+    },
+    {
+      "id": 431,
+      "stats": {
+        "PV": 49,
+        "Attaque": 55,
+        "Defense": 42,
+        "SpAttaque": 42,
+        "SpDefense": 37,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 432,
+      "stats": {
+        "PV": 71,
+        "Attaque": 82,
+        "Defense": 64,
+        "SpAttaque": 64,
+        "SpDefense": 59,
+        "Vitesse": 112
+      }
+    },
+    {
+      "id": 433,
+      "stats": {
+        "PV": 45,
+        "Attaque": 30,
+        "Defense": 50,
+        "SpAttaque": 65,
+        "SpDefense": 50,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 434,
+      "stats": {
+        "PV": 63,
+        "Attaque": 63,
+        "Defense": 47,
+        "SpAttaque": 41,
+        "SpDefense": 41,
+        "Vitesse": 74
+      }
+    },
+    {
+      "id": 435,
+      "stats": {
+        "PV": 103,
+        "Attaque": 93,
+        "Defense": 67,
+        "SpAttaque": 71,
+        "SpDefense": 61,
+        "Vitesse": 84
+      }
+    },
+    {
+      "id": 436,
+      "stats": {
+        "PV": 57,
+        "Attaque": 24,
+        "Defense": 86,
+        "SpAttaque": 24,
+        "SpDefense": 86,
+        "Vitesse": 23
+      }
+    },
+    {
+      "id": 437,
+      "stats": {
+        "PV": 67,
+        "Attaque": 89,
+        "Defense": 116,
+        "SpAttaque": 79,
+        "SpDefense": 116,
+        "Vitesse": 33
+      }
+    },
+    {
+      "id": 438,
+      "stats": {
+        "PV": 50,
+        "Attaque": 80,
+        "Defense": 95,
+        "SpAttaque": 10,
+        "SpDefense": 45,
+        "Vitesse": 10
+      }
+    },
+    {
+      "id": 439,
+      "stats": {
+        "PV": 20,
+        "Attaque": 25,
+        "Defense": 45,
+        "SpAttaque": 70,
+        "SpDefense": 90,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 440,
+      "stats": {
+        "PV": 100,
+        "Attaque": 5,
+        "Defense": 5,
+        "SpAttaque": 15,
+        "SpDefense": 65,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 441,
+      "stats": {
+        "PV": 76,
+        "Attaque": 65,
+        "Defense": 45,
+        "SpAttaque": 92,
+        "SpDefense": 42,
+        "Vitesse": 91
+      }
+    },
+    {
+      "id": 442,
+      "stats": {
+        "PV": 50,
+        "Attaque": 92,
+        "Defense": 108,
+        "SpAttaque": 92,
+        "SpDefense": 108,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 443,
+      "stats": {
+        "PV": 58,
+        "Attaque": 70,
+        "Defense": 45,
+        "SpAttaque": 40,
+        "SpDefense": 45,
+        "Vitesse": 42
+      }
+    },
+    {
+      "id": 444,
+      "stats": {
+        "PV": 68,
+        "Attaque": 90,
+        "Defense": 65,
+        "SpAttaque": 50,
+        "SpDefense": 55,
+        "Vitesse": 82
+      }
+    },
+    {
+      "id": 445,
+      "stats": {
+        "PV": 108,
+        "Attaque": 130,
+        "Defense": 95,
+        "SpAttaque": 80,
+        "SpDefense": 85,
+        "Vitesse": 102
+      }
+    },
+    {
+      "id": 446,
+      "stats": {
+        "PV": 135,
+        "Attaque": 85,
+        "Defense": 40,
+        "SpAttaque": 40,
+        "SpDefense": 85,
+        "Vitesse": 5
+      }
+    },
+    {
+      "id": 447,
+      "stats": {
+        "PV": 40,
+        "Attaque": 70,
+        "Defense": 40,
+        "SpAttaque": 35,
+        "SpDefense": 40,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 448,
+      "stats": {
+        "PV": 70,
+        "Attaque": 110,
+        "Defense": 70,
+        "SpAttaque": 115,
+        "SpDefense": 70,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 449,
+      "stats": {
+        "PV": 68,
+        "Attaque": 72,
+        "Defense": 78,
+        "SpAttaque": 38,
+        "SpDefense": 42,
+        "Vitesse": 32
+      }
+    },
+    {
+      "id": 450,
+      "stats": {
+        "PV": 108,
+        "Attaque": 112,
+        "Defense": 118,
+        "SpAttaque": 68,
+        "SpDefense": 72,
+        "Vitesse": 47
+      }
+    },
+    {
+      "id": 451,
+      "stats": {
+        "PV": 40,
+        "Attaque": 50,
+        "Defense": 90,
+        "SpAttaque": 30,
+        "SpDefense": 55,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 452,
+      "stats": {
+        "PV": 70,
+        "Attaque": 90,
+        "Defense": 110,
+        "SpAttaque": 60,
+        "SpDefense": 75,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 453,
+      "stats": {
+        "PV": 48,
+        "Attaque": 61,
+        "Defense": 40,
+        "SpAttaque": 61,
+        "SpDefense": 40,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 454,
+      "stats": {
+        "PV": 83,
+        "Attaque": 106,
+        "Defense": 65,
+        "SpAttaque": 86,
+        "SpDefense": 65,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 455,
+      "stats": {
+        "PV": 74,
+        "Attaque": 100,
+        "Defense": 72,
+        "SpAttaque": 90,
+        "SpDefense": 72,
+        "Vitesse": 46
+      }
+    },
+    {
+      "id": 456,
+      "stats": {
+        "PV": 49,
+        "Attaque": 49,
+        "Defense": 56,
+        "SpAttaque": 49,
+        "SpDefense": 61,
+        "Vitesse": 66
+      }
+    },
+    {
+      "id": 457,
+      "stats": {
+        "PV": 69,
+        "Attaque": 69,
+        "Defense": 76,
+        "SpAttaque": 69,
+        "SpDefense": 86,
+        "Vitesse": 91
+      }
+    },
+    {
+      "id": 458,
+      "stats": {
+        "PV": 45,
+        "Attaque": 20,
+        "Defense": 50,
+        "SpAttaque": 60,
+        "SpDefense": 120,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 459,
+      "stats": {
+        "PV": 60,
+        "Attaque": 62,
+        "Defense": 50,
+        "SpAttaque": 62,
+        "SpDefense": 60,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 460,
+      "stats": {
+        "PV": 90,
+        "Attaque": 92,
+        "Defense": 75,
+        "SpAttaque": 92,
+        "SpDefense": 85,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 461,
+      "stats": {
+        "PV": 70,
+        "Attaque": 120,
+        "Defense": 65,
+        "SpAttaque": 45,
+        "SpDefense": 85,
+        "Vitesse": 125
+      }
+    },
+    {
+      "id": 462,
+      "stats": {
+        "PV": 70,
+        "Attaque": 70,
+        "Defense": 115,
+        "SpAttaque": 130,
+        "SpDefense": 90,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 463,
+      "stats": {
+        "PV": 110,
+        "Attaque": 85,
+        "Defense": 95,
+        "SpAttaque": 80,
+        "SpDefense": 95,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 464,
+      "stats": {
+        "PV": 115,
+        "Attaque": 140,
+        "Defense": 130,
+        "SpAttaque": 55,
+        "SpDefense": 55,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 465,
+      "stats": {
+        "PV": 100,
+        "Attaque": 100,
+        "Defense": 125,
+        "SpAttaque": 110,
+        "SpDefense": 50,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 466,
+      "stats": {
+        "PV": 75,
+        "Attaque": 123,
+        "Defense": 67,
+        "SpAttaque": 95,
+        "SpDefense": 85,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 467,
+      "stats": {
+        "PV": 75,
+        "Attaque": 95,
+        "Defense": 67,
+        "SpAttaque": 125,
+        "SpDefense": 95,
+        "Vitesse": 83
+      }
+    },
+    {
+      "id": 468,
+      "stats": {
+        "PV": 85,
+        "Attaque": 50,
+        "Defense": 95,
+        "SpAttaque": 120,
+        "SpDefense": 115,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 469,
+      "stats": {
+        "PV": 86,
+        "Attaque": 76,
+        "Defense": 86,
+        "SpAttaque": 116,
+        "SpDefense": 56,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 470,
+      "stats": {
+        "PV": 65,
+        "Attaque": 110,
+        "Defense": 130,
+        "SpAttaque": 60,
+        "SpDefense": 65,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 471,
+      "stats": {
+        "PV": 65,
+        "Attaque": 60,
+        "Defense": 110,
+        "SpAttaque": 130,
+        "SpDefense": 95,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 472,
+      "stats": {
+        "PV": 75,
+        "Attaque": 95,
+        "Defense": 125,
+        "SpAttaque": 45,
+        "SpDefense": 75,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 473,
+      "stats": {
+        "PV": 110,
+        "Attaque": 130,
+        "Defense": 80,
+        "SpAttaque": 70,
+        "SpDefense": 60,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 474,
+      "stats": {
+        "PV": 85,
+        "Attaque": 80,
+        "Defense": 70,
+        "SpAttaque": 135,
+        "SpDefense": 75,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 475,
+      "stats": {
+        "PV": 68,
+        "Attaque": 125,
+        "Defense": 65,
+        "SpAttaque": 65,
+        "SpDefense": 115,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 476,
+      "stats": {
+        "PV": 60,
+        "Attaque": 55,
+        "Defense": 145,
+        "SpAttaque": 75,
+        "SpDefense": 150,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 477,
+      "stats": {
+        "PV": 45,
+        "Attaque": 100,
+        "Defense": 135,
+        "SpAttaque": 65,
+        "SpDefense": 135,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 478,
+      "stats": {
+        "PV": 70,
+        "Attaque": 80,
+        "Defense": 70,
+        "SpAttaque": 80,
+        "SpDefense": 70,
+        "Vitesse": 110
+      }
+    },
+    {
+      "id": 479,
+      "stats": {
+        "PV": 50,
+        "Attaque": 50,
+        "Defense": 77,
+        "SpAttaque": 95,
+        "SpDefense": 77,
+        "Vitesse": 91
+      }
+    },
+    {
+      "id": 480,
+      "stats": {
+        "PV": 75,
+        "Attaque": 75,
+        "Defense": 130,
+        "SpAttaque": 75,
+        "SpDefense": 130,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 481,
+      "stats": {
+        "PV": 80,
+        "Attaque": 105,
+        "Defense": 105,
+        "SpAttaque": 105,
+        "SpDefense": 105,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 482,
+      "stats": {
+        "PV": 75,
+        "Attaque": 125,
+        "Defense": 70,
+        "SpAttaque": 125,
+        "SpDefense": 70,
+        "Vitesse": 115
+      }
+    },
+    {
+      "id": 483,
+      "stats": {
+        "PV": 100,
+        "Attaque": 120,
+        "Defense": 120,
+        "SpAttaque": 150,
+        "SpDefense": 100,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 484,
+      "stats": {
+        "PV": 90,
+        "Attaque": 120,
+        "Defense": 100,
+        "SpAttaque": 150,
+        "SpDefense": 120,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 485,
+      "stats": {
+        "PV": 91,
+        "Attaque": 90,
+        "Defense": 106,
+        "SpAttaque": 130,
+        "SpDefense": 106,
+        "Vitesse": 77
+      }
+    },
+    {
+      "id": 486,
+      "stats": {
+        "PV": 110,
+        "Attaque": 160,
+        "Defense": 110,
+        "SpAttaque": 80,
+        "SpDefense": 110,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 487,
+      "stats": {
+        "PV": 150,
+        "Attaque": 100,
+        "Defense": 120,
+        "SpAttaque": 100,
+        "SpDefense": 120,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 488,
+      "stats": {
+        "PV": 120,
+        "Attaque": 70,
+        "Defense": 120,
+        "SpAttaque": 75,
+        "SpDefense": 130,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 489,
+      "stats": {
+        "PV": 80,
+        "Attaque": 80,
+        "Defense": 80,
+        "SpAttaque": 80,
+        "SpDefense": 80,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 490,
+      "stats": {
+        "PV": 100,
+        "Attaque": 100,
+        "Defense": 100,
+        "SpAttaque": 100,
+        "SpDefense": 100,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 491,
+      "stats": {
+        "PV": 70,
+        "Attaque": 90,
+        "Defense": 90,
+        "SpAttaque": 135,
+        "SpDefense": 90,
+        "Vitesse": 125
+      }
+    },
+    {
+      "id": 492,
+      "stats": {
+        "PV": 100,
+        "Attaque": 100,
+        "Defense": 100,
+        "SpAttaque": 100,
+        "SpDefense": 100,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 493,
+      "stats": {
+        "PV": 120,
+        "Attaque": 120,
+        "Defense": 120,
+        "SpAttaque": 120,
+        "SpDefense": 120,
+        "Vitesse": 120
+      }
+    },
+    {
+      "id": 494,
+      "stats": {
+        "PV": 100,
+        "Attaque": 100,
+        "Defense": 100,
+        "SpAttaque": 100,
+        "SpDefense": 100,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 495,
+      "stats": {
+        "PV": 45,
+        "Attaque": 45,
+        "Defense": 55,
+        "SpAttaque": 45,
+        "SpDefense": 55,
+        "Vitesse": 63
+      }
+    },
+    {
+      "id": 496,
+      "stats": {
+        "PV": 60,
+        "Attaque": 60,
+        "Defense": 75,
+        "SpAttaque": 60,
+        "SpDefense": 75,
+        "Vitesse": 83
+      }
+    },
+    {
+      "id": 497,
+      "stats": {
+        "PV": 75,
+        "Attaque": 75,
+        "Defense": 95,
+        "SpAttaque": 75,
+        "SpDefense": 95,
+        "Vitesse": 113
+      }
+    },
+    {
+      "id": 498,
+      "stats": {
+        "PV": 65,
+        "Attaque": 63,
+        "Defense": 45,
+        "SpAttaque": 45,
+        "SpDefense": 45,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 499,
+      "stats": {
+        "PV": 90,
+        "Attaque": 93,
+        "Defense": 55,
+        "SpAttaque": 70,
+        "SpDefense": 55,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 500,
+      "stats": {
+        "PV": 110,
+        "Attaque": 123,
+        "Defense": 65,
+        "SpAttaque": 100,
+        "SpDefense": 65,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 501,
+      "stats": {
+        "PV": 55,
+        "Attaque": 55,
+        "Defense": 45,
+        "SpAttaque": 63,
+        "SpDefense": 45,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 502,
+      "stats": {
+        "PV": 75,
+        "Attaque": 75,
+        "Defense": 60,
+        "SpAttaque": 83,
+        "SpDefense": 60,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 503,
+      "stats": {
+        "PV": 95,
+        "Attaque": 100,
+        "Defense": 85,
+        "SpAttaque": 108,
+        "SpDefense": 70,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 504,
+      "stats": {
+        "PV": 45,
+        "Attaque": 55,
+        "Defense": 39,
+        "SpAttaque": 35,
+        "SpDefense": 39,
+        "Vitesse": 42
+      }
+    },
+    {
+      "id": 505,
+      "stats": {
+        "PV": 60,
+        "Attaque": 85,
+        "Defense": 69,
+        "SpAttaque": 60,
+        "SpDefense": 69,
+        "Vitesse": 77
+      }
+    },
+    {
+      "id": 506,
+      "stats": {
+        "PV": 45,
+        "Attaque": 60,
+        "Defense": 45,
+        "SpAttaque": 25,
+        "SpDefense": 45,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 507,
+      "stats": {
+        "PV": 65,
+        "Attaque": 80,
+        "Defense": 65,
+        "SpAttaque": 35,
+        "SpDefense": 65,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 508,
+      "stats": {
+        "PV": 85,
+        "Attaque": 110,
+        "Defense": 90,
+        "SpAttaque": 45,
+        "SpDefense": 90,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 509,
+      "stats": {
+        "PV": 41,
+        "Attaque": 50,
+        "Defense": 37,
+        "SpAttaque": 50,
+        "SpDefense": 37,
+        "Vitesse": 66
+      }
+    },
+    {
+      "id": 510,
+      "stats": {
+        "PV": 64,
+        "Attaque": 88,
+        "Defense": 50,
+        "SpAttaque": 88,
+        "SpDefense": 50,
+        "Vitesse": 106
+      }
+    },
+    {
+      "id": 511,
+      "stats": {
+        "PV": 50,
+        "Attaque": 53,
+        "Defense": 48,
+        "SpAttaque": 53,
+        "SpDefense": 48,
+        "Vitesse": 64
+      }
+    },
+    {
+      "id": 512,
+      "stats": {
+        "PV": 75,
+        "Attaque": 98,
+        "Defense": 63,
+        "SpAttaque": 98,
+        "SpDefense": 63,
+        "Vitesse": 101
+      }
+    },
+    {
+      "id": 513,
+      "stats": {
+        "PV": 50,
+        "Attaque": 53,
+        "Defense": 48,
+        "SpAttaque": 53,
+        "SpDefense": 48,
+        "Vitesse": 64
+      }
+    },
+    {
+      "id": 514,
+      "stats": {
+        "PV": 75,
+        "Attaque": 98,
+        "Defense": 63,
+        "SpAttaque": 98,
+        "SpDefense": 63,
+        "Vitesse": 101
+      }
+    },
+    {
+      "id": 515,
+      "stats": {
+        "PV": 50,
+        "Attaque": 53,
+        "Defense": 48,
+        "SpAttaque": 53,
+        "SpDefense": 48,
+        "Vitesse": 64
+      }
+    },
+    {
+      "id": 516,
+      "stats": {
+        "PV": 75,
+        "Attaque": 98,
+        "Defense": 63,
+        "SpAttaque": 98,
+        "SpDefense": 63,
+        "Vitesse": 101
+      }
+    },
+    {
+      "id": 517,
+      "stats": {
+        "PV": 76,
+        "Attaque": 25,
+        "Defense": 45,
+        "SpAttaque": 67,
+        "SpDefense": 55,
+        "Vitesse": 24
+      }
+    },
+    {
+      "id": 518,
+      "stats": {
+        "PV": 116,
+        "Attaque": 55,
+        "Defense": 85,
+        "SpAttaque": 107,
+        "SpDefense": 95,
+        "Vitesse": 29
+      }
+    },
+    {
+      "id": 519,
+      "stats": {
+        "PV": 50,
+        "Attaque": 55,
+        "Defense": 50,
+        "SpAttaque": 36,
+        "SpDefense": 30,
+        "Vitesse": 43
+      }
+    },
+    {
+      "id": 520,
+      "stats": {
+        "PV": 62,
+        "Attaque": 77,
+        "Defense": 62,
+        "SpAttaque": 50,
+        "SpDefense": 42,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 521,
+      "stats": {
+        "PV": 80,
+        "Attaque": 115,
+        "Defense": 80,
+        "SpAttaque": 65,
+        "SpDefense": 55,
+        "Vitesse": 93
+      }
+    },
+    {
+      "id": 522,
+      "stats": {
+        "PV": 45,
+        "Attaque": 60,
+        "Defense": 32,
+        "SpAttaque": 50,
+        "SpDefense": 32,
+        "Vitesse": 76
+      }
+    },
+    {
+      "id": 523,
+      "stats": {
+        "PV": 75,
+        "Attaque": 100,
+        "Defense": 63,
+        "SpAttaque": 80,
+        "SpDefense": 63,
+        "Vitesse": 116
+      }
+    },
+    {
+      "id": 524,
+      "stats": {
+        "PV": 55,
+        "Attaque": 75,
+        "Defense": 85,
+        "SpAttaque": 25,
+        "SpDefense": 25,
+        "Vitesse": 15
+      }
+    },
+    {
+      "id": 525,
+      "stats": {
+        "PV": 70,
+        "Attaque": 105,
+        "Defense": 105,
+        "SpAttaque": 50,
+        "SpDefense": 40,
+        "Vitesse": 20
+      }
+    },
+    {
+      "id": 526,
+      "stats": {
+        "PV": 85,
+        "Attaque": 135,
+        "Defense": 130,
+        "SpAttaque": 60,
+        "SpDefense": 80,
+        "Vitesse": 25
+      }
+    },
+    {
+      "id": 527,
+      "stats": {
+        "PV": 65,
+        "Attaque": 45,
+        "Defense": 43,
+        "SpAttaque": 55,
+        "SpDefense": 43,
+        "Vitesse": 72
+      }
+    },
+    {
+      "id": 528,
+      "stats": {
+        "PV": 67,
+        "Attaque": 57,
+        "Defense": 55,
+        "SpAttaque": 77,
+        "SpDefense": 55,
+        "Vitesse": 114
+      }
+    },
+    {
+      "id": 529,
+      "stats": {
+        "PV": 60,
+        "Attaque": 85,
+        "Defense": 40,
+        "SpAttaque": 30,
+        "SpDefense": 45,
+        "Vitesse": 68
+      }
+    },
+    {
+      "id": 530,
+      "stats": {
+        "PV": 110,
+        "Attaque": 135,
+        "Defense": 60,
+        "SpAttaque": 50,
+        "SpDefense": 65,
+        "Vitesse": 88
+      }
+    },
+    {
+      "id": 531,
+      "stats": {
+        "PV": 103,
+        "Attaque": 60,
+        "Defense": 86,
+        "SpAttaque": 60,
+        "SpDefense": 86,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 532,
+      "stats": {
+        "PV": 75,
+        "Attaque": 80,
+        "Defense": 55,
+        "SpAttaque": 25,
+        "SpDefense": 35,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 533,
+      "stats": {
+        "PV": 85,
+        "Attaque": 105,
+        "Defense": 85,
+        "SpAttaque": 40,
+        "SpDefense": 50,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 534,
+      "stats": {
+        "PV": 105,
+        "Attaque": 140,
+        "Defense": 95,
+        "SpAttaque": 55,
+        "SpDefense": 65,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 535,
+      "stats": {
+        "PV": 50,
+        "Attaque": 50,
+        "Defense": 40,
+        "SpAttaque": 50,
+        "SpDefense": 40,
+        "Vitesse": 64
+      }
+    },
+    {
+      "id": 536,
+      "stats": {
+        "PV": 75,
+        "Attaque": 65,
+        "Defense": 55,
+        "SpAttaque": 65,
+        "SpDefense": 55,
+        "Vitesse": 69
+      }
+    },
+    {
+      "id": 537,
+      "stats": {
+        "PV": 105,
+        "Attaque": 95,
+        "Defense": 75,
+        "SpAttaque": 85,
+        "SpDefense": 75,
+        "Vitesse": 74
+      }
+    },
+    {
+      "id": 538,
+      "stats": {
+        "PV": 120,
+        "Attaque": 100,
+        "Defense": 85,
+        "SpAttaque": 30,
+        "SpDefense": 85,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 539,
+      "stats": {
+        "PV": 75,
+        "Attaque": 125,
+        "Defense": 75,
+        "SpAttaque": 30,
+        "SpDefense": 75,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 540,
+      "stats": {
+        "PV": 45,
+        "Attaque": 53,
+        "Defense": 70,
+        "SpAttaque": 40,
+        "SpDefense": 60,
+        "Vitesse": 42
+      }
+    },
+    {
+      "id": 541,
+      "stats": {
+        "PV": 55,
+        "Attaque": 63,
+        "Defense": 90,
+        "SpAttaque": 50,
+        "SpDefense": 80,
+        "Vitesse": 42
+      }
+    },
+    {
+      "id": 542,
+      "stats": {
+        "PV": 75,
+        "Attaque": 103,
+        "Defense": 80,
+        "SpAttaque": 70,
+        "SpDefense": 80,
+        "Vitesse": 92
+      }
+    },
+    {
+      "id": 543,
+      "stats": {
+        "PV": 30,
+        "Attaque": 45,
+        "Defense": 59,
+        "SpAttaque": 30,
+        "SpDefense": 39,
+        "Vitesse": 57
+      }
+    },
+    {
+      "id": 544,
+      "stats": {
+        "PV": 40,
+        "Attaque": 55,
+        "Defense": 99,
+        "SpAttaque": 40,
+        "SpDefense": 79,
+        "Vitesse": 47
+      }
+    },
+    {
+      "id": 545,
+      "stats": {
+        "PV": 60,
+        "Attaque": 100,
+        "Defense": 89,
+        "SpAttaque": 55,
+        "SpDefense": 69,
+        "Vitesse": 112
+      }
+    },
+    {
+      "id": 546,
+      "stats": {
+        "PV": 40,
+        "Attaque": 27,
+        "Defense": 60,
+        "SpAttaque": 37,
+        "SpDefense": 50,
+        "Vitesse": 66
+      }
+    },
+    {
+      "id": 547,
+      "stats": {
+        "PV": 60,
+        "Attaque": 67,
+        "Defense": 85,
+        "SpAttaque": 77,
+        "SpDefense": 75,
+        "Vitesse": 116
+      }
+    },
+    {
+      "id": 548,
+      "stats": {
+        "PV": 45,
+        "Attaque": 35,
+        "Defense": 50,
+        "SpAttaque": 70,
+        "SpDefense": 50,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 549,
+      "stats": {
+        "PV": 70,
+        "Attaque": 60,
+        "Defense": 75,
+        "SpAttaque": 110,
+        "SpDefense": 75,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 550,
+      "stats": {
+        "PV": 70,
+        "Attaque": 92,
+        "Defense": 65,
+        "SpAttaque": 80,
+        "SpDefense": 55,
+        "Vitesse": 98
+      }
+    },
+    {
+      "id": 551,
+      "stats": {
+        "PV": 50,
+        "Attaque": 72,
+        "Defense": 35,
+        "SpAttaque": 35,
+        "SpDefense": 35,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 552,
+      "stats": {
+        "PV": 60,
+        "Attaque": 82,
+        "Defense": 45,
+        "SpAttaque": 45,
+        "SpDefense": 45,
+        "Vitesse": 74
+      }
+    },
+    {
+      "id": 553,
+      "stats": {
+        "PV": 95,
+        "Attaque": 117,
+        "Defense": 80,
+        "SpAttaque": 65,
+        "SpDefense": 70,
+        "Vitesse": 92
+      }
+    },
+    {
+      "id": 554,
+      "stats": {
+        "PV": 70,
+        "Attaque": 90,
+        "Defense": 45,
+        "SpAttaque": 15,
+        "SpDefense": 45,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 555,
+      "stats": {
+        "PV": 105,
+        "Attaque": 140,
+        "Defense": 55,
+        "SpAttaque": 30,
+        "SpDefense": 55,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 556,
+      "stats": {
+        "PV": 75,
+        "Attaque": 86,
+        "Defense": 67,
+        "SpAttaque": 106,
+        "SpDefense": 67,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 557,
+      "stats": {
+        "PV": 50,
+        "Attaque": 65,
+        "Defense": 85,
+        "SpAttaque": 35,
+        "SpDefense": 35,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 558,
+      "stats": {
+        "PV": 70,
+        "Attaque": 105,
+        "Defense": 125,
+        "SpAttaque": 65,
+        "SpDefense": 75,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 559,
+      "stats": {
+        "PV": 50,
+        "Attaque": 75,
+        "Defense": 70,
+        "SpAttaque": 35,
+        "SpDefense": 70,
+        "Vitesse": 48
+      }
+    },
+    {
+      "id": 560,
+      "stats": {
+        "PV": 65,
+        "Attaque": 90,
+        "Defense": 115,
+        "SpAttaque": 45,
+        "SpDefense": 115,
+        "Vitesse": 58
+      }
+    },
+    {
+      "id": 561,
+      "stats": {
+        "PV": 72,
+        "Attaque": 58,
+        "Defense": 80,
+        "SpAttaque": 103,
+        "SpDefense": 80,
+        "Vitesse": 97
+      }
+    },
+    {
+      "id": 562,
+      "stats": {
+        "PV": 38,
+        "Attaque": 30,
+        "Defense": 85,
+        "SpAttaque": 55,
+        "SpDefense": 65,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 563,
+      "stats": {
+        "PV": 58,
+        "Attaque": 50,
+        "Defense": 145,
+        "SpAttaque": 95,
+        "SpDefense": 105,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 564,
+      "stats": {
+        "PV": 54,
+        "Attaque": 78,
+        "Defense": 103,
+        "SpAttaque": 53,
+        "SpDefense": 45,
+        "Vitesse": 22
+      }
+    },
+    {
+      "id": 565,
+      "stats": {
+        "PV": 74,
+        "Attaque": 108,
+        "Defense": 133,
+        "SpAttaque": 83,
+        "SpDefense": 65,
+        "Vitesse": 32
+      }
+    },
+    {
+      "id": 566,
+      "stats": {
+        "PV": 55,
+        "Attaque": 112,
+        "Defense": 45,
+        "SpAttaque": 74,
+        "SpDefense": 45,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 567,
+      "stats": {
+        "PV": 75,
+        "Attaque": 140,
+        "Defense": 65,
+        "SpAttaque": 112,
+        "SpDefense": 65,
+        "Vitesse": 110
+      }
+    },
+    {
+      "id": 568,
+      "stats": {
+        "PV": 50,
+        "Attaque": 50,
+        "Defense": 62,
+        "SpAttaque": 40,
+        "SpDefense": 62,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 569,
+      "stats": {
+        "PV": 80,
+        "Attaque": 95,
+        "Defense": 82,
+        "SpAttaque": 60,
+        "SpDefense": 82,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 570,
+      "stats": {
+        "PV": 40,
+        "Attaque": 65,
+        "Defense": 40,
+        "SpAttaque": 80,
+        "SpDefense": 40,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 571,
+      "stats": {
+        "PV": 60,
+        "Attaque": 105,
+        "Defense": 60,
+        "SpAttaque": 120,
+        "SpDefense": 60,
+        "Vitesse": 105
+      }
+    },
+    {
+      "id": 572,
+      "stats": {
+        "PV": 55,
+        "Attaque": 50,
+        "Defense": 40,
+        "SpAttaque": 40,
+        "SpDefense": 40,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 573,
+      "stats": {
+        "PV": 75,
+        "Attaque": 95,
+        "Defense": 60,
+        "SpAttaque": 65,
+        "SpDefense": 60,
+        "Vitesse": 115
+      }
+    },
+    {
+      "id": 574,
+      "stats": {
+        "PV": 45,
+        "Attaque": 30,
+        "Defense": 50,
+        "SpAttaque": 55,
+        "SpDefense": 65,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 575,
+      "stats": {
+        "PV": 60,
+        "Attaque": 45,
+        "Defense": 70,
+        "SpAttaque": 75,
+        "SpDefense": 85,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 576,
+      "stats": {
+        "PV": 70,
+        "Attaque": 55,
+        "Defense": 95,
+        "SpAttaque": 95,
+        "SpDefense": 110,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 577,
+      "stats": {
+        "PV": 45,
+        "Attaque": 30,
+        "Defense": 40,
+        "SpAttaque": 105,
+        "SpDefense": 50,
+        "Vitesse": 20
+      }
+    },
+    {
+      "id": 578,
+      "stats": {
+        "PV": 65,
+        "Attaque": 40,
+        "Defense": 50,
+        "SpAttaque": 125,
+        "SpDefense": 60,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 579,
+      "stats": {
+        "PV": 110,
+        "Attaque": 65,
+        "Defense": 75,
+        "SpAttaque": 125,
+        "SpDefense": 85,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 580,
+      "stats": {
+        "PV": 62,
+        "Attaque": 44,
+        "Defense": 50,
+        "SpAttaque": 44,
+        "SpDefense": 50,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 581,
+      "stats": {
+        "PV": 75,
+        "Attaque": 87,
+        "Defense": 63,
+        "SpAttaque": 87,
+        "SpDefense": 63,
+        "Vitesse": 98
+      }
+    },
+    {
+      "id": 582,
+      "stats": {
+        "PV": 36,
+        "Attaque": 50,
+        "Defense": 50,
+        "SpAttaque": 65,
+        "SpDefense": 60,
+        "Vitesse": 44
+      }
+    },
+    {
+      "id": 583,
+      "stats": {
+        "PV": 51,
+        "Attaque": 65,
+        "Defense": 65,
+        "SpAttaque": 80,
+        "SpDefense": 75,
+        "Vitesse": 59
+      }
+    },
+    {
+      "id": 584,
+      "stats": {
+        "PV": 71,
+        "Attaque": 95,
+        "Defense": 85,
+        "SpAttaque": 110,
+        "SpDefense": 95,
+        "Vitesse": 79
+      }
+    },
+    {
+      "id": 585,
+      "stats": {
+        "PV": 60,
+        "Attaque": 60,
+        "Defense": 50,
+        "SpAttaque": 40,
+        "SpDefense": 50,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 586,
+      "stats": {
+        "PV": 80,
+        "Attaque": 100,
+        "Defense": 70,
+        "SpAttaque": 60,
+        "SpDefense": 70,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 587,
+      "stats": {
+        "PV": 55,
+        "Attaque": 75,
+        "Defense": 60,
+        "SpAttaque": 75,
+        "SpDefense": 60,
+        "Vitesse": 103
+      }
+    },
+    {
+      "id": 588,
+      "stats": {
+        "PV": 50,
+        "Attaque": 75,
+        "Defense": 45,
+        "SpAttaque": 40,
+        "SpDefense": 45,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 589,
+      "stats": {
+        "PV": 70,
+        "Attaque": 135,
+        "Defense": 105,
+        "SpAttaque": 60,
+        "SpDefense": 105,
+        "Vitesse": 20
+      }
+    },
+    {
+      "id": 590,
+      "stats": {
+        "PV": 69,
+        "Attaque": 55,
+        "Defense": 45,
+        "SpAttaque": 55,
+        "SpDefense": 55,
+        "Vitesse": 15
+      }
+    },
+    {
+      "id": 591,
+      "stats": {
+        "PV": 114,
+        "Attaque": 85,
+        "Defense": 70,
+        "SpAttaque": 85,
+        "SpDefense": 80,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 592,
+      "stats": {
+        "PV": 55,
+        "Attaque": 40,
+        "Defense": 50,
+        "SpAttaque": 65,
+        "SpDefense": 85,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 593,
+      "stats": {
+        "PV": 100,
+        "Attaque": 60,
+        "Defense": 70,
+        "SpAttaque": 85,
+        "SpDefense": 105,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 594,
+      "stats": {
+        "PV": 165,
+        "Attaque": 75,
+        "Defense": 80,
+        "SpAttaque": 40,
+        "SpDefense": 45,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 595,
+      "stats": {
+        "PV": 50,
+        "Attaque": 47,
+        "Defense": 50,
+        "SpAttaque": 57,
+        "SpDefense": 50,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 596,
+      "stats": {
+        "PV": 70,
+        "Attaque": 77,
+        "Defense": 60,
+        "SpAttaque": 97,
+        "SpDefense": 60,
+        "Vitesse": 108
+      }
+    },
+    {
+      "id": 597,
+      "stats": {
+        "PV": 44,
+        "Attaque": 50,
+        "Defense": 91,
+        "SpAttaque": 24,
+        "SpDefense": 86,
+        "Vitesse": 10
+      }
+    },
+    {
+      "id": 598,
+      "stats": {
+        "PV": 74,
+        "Attaque": 94,
+        "Defense": 131,
+        "SpAttaque": 54,
+        "SpDefense": 116,
+        "Vitesse": 20
+      }
+    },
+    {
+      "id": 599,
+      "stats": {
+        "PV": 40,
+        "Attaque": 55,
+        "Defense": 70,
+        "SpAttaque": 45,
+        "SpDefense": 60,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 600,
+      "stats": {
+        "PV": 60,
+        "Attaque": 80,
+        "Defense": 95,
+        "SpAttaque": 70,
+        "SpDefense": 85,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 601,
+      "stats": {
+        "PV": 60,
+        "Attaque": 100,
+        "Defense": 115,
+        "SpAttaque": 70,
+        "SpDefense": 85,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 602,
+      "stats": {
+        "PV": 35,
+        "Attaque": 55,
+        "Defense": 40,
+        "SpAttaque": 45,
+        "SpDefense": 40,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 603,
+      "stats": {
+        "PV": 65,
+        "Attaque": 85,
+        "Defense": 70,
+        "SpAttaque": 75,
+        "SpDefense": 70,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 604,
+      "stats": {
+        "PV": 85,
+        "Attaque": 115,
+        "Defense": 80,
+        "SpAttaque": 105,
+        "SpDefense": 80,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 605,
+      "stats": {
+        "PV": 55,
+        "Attaque": 55,
+        "Defense": 55,
+        "SpAttaque": 85,
+        "SpDefense": 55,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 606,
+      "stats": {
+        "PV": 75,
+        "Attaque": 75,
+        "Defense": 75,
+        "SpAttaque": 125,
+        "SpDefense": 95,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 607,
+      "stats": {
+        "PV": 50,
+        "Attaque": 30,
+        "Defense": 55,
+        "SpAttaque": 65,
+        "SpDefense": 55,
+        "Vitesse": 20
+      }
+    },
+    {
+      "id": 608,
+      "stats": {
+        "PV": 60,
+        "Attaque": 40,
+        "Defense": 60,
+        "SpAttaque": 95,
+        "SpDefense": 60,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 609,
+      "stats": {
+        "PV": 60,
+        "Attaque": 55,
+        "Defense": 90,
+        "SpAttaque": 145,
+        "SpDefense": 90,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 610,
+      "stats": {
+        "PV": 46,
+        "Attaque": 87,
+        "Defense": 60,
+        "SpAttaque": 30,
+        "SpDefense": 40,
+        "Vitesse": 57
+      }
+    },
+    {
+      "id": 611,
+      "stats": {
+        "PV": 66,
+        "Attaque": 117,
+        "Defense": 70,
+        "SpAttaque": 40,
+        "SpDefense": 50,
+        "Vitesse": 67
+      }
+    },
+    {
+      "id": 612,
+      "stats": {
+        "PV": 76,
+        "Attaque": 147,
+        "Defense": 90,
+        "SpAttaque": 60,
+        "SpDefense": 70,
+        "Vitesse": 97
+      }
+    },
+    {
+      "id": 613,
+      "stats": {
+        "PV": 55,
+        "Attaque": 70,
+        "Defense": 40,
+        "SpAttaque": 60,
+        "SpDefense": 40,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 614,
+      "stats": {
+        "PV": 95,
+        "Attaque": 130,
+        "Defense": 80,
+        "SpAttaque": 70,
+        "SpDefense": 80,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 615,
+      "stats": {
+        "PV": 80,
+        "Attaque": 50,
+        "Defense": 50,
+        "SpAttaque": 95,
+        "SpDefense": 135,
+        "Vitesse": 105
+      }
+    },
+    {
+      "id": 616,
+      "stats": {
+        "PV": 50,
+        "Attaque": 40,
+        "Defense": 85,
+        "SpAttaque": 40,
+        "SpDefense": 65,
+        "Vitesse": 25
+      }
+    },
+    {
+      "id": 617,
+      "stats": {
+        "PV": 80,
+        "Attaque": 70,
+        "Defense": 40,
+        "SpAttaque": 100,
+        "SpDefense": 60,
+        "Vitesse": 145
+      }
+    },
+    {
+      "id": 618,
+      "stats": {
+        "PV": 109,
+        "Attaque": 66,
+        "Defense": 84,
+        "SpAttaque": 81,
+        "SpDefense": 99,
+        "Vitesse": 32
+      }
+    },
+    {
+      "id": 619,
+      "stats": {
+        "PV": 45,
+        "Attaque": 85,
+        "Defense": 50,
+        "SpAttaque": 55,
+        "SpDefense": 50,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 620,
+      "stats": {
+        "PV": 65,
+        "Attaque": 125,
+        "Defense": 60,
+        "SpAttaque": 95,
+        "SpDefense": 60,
+        "Vitesse": 105
+      }
+    },
+    {
+      "id": 621,
+      "stats": {
+        "PV": 77,
+        "Attaque": 120,
+        "Defense": 90,
+        "SpAttaque": 60,
+        "SpDefense": 90,
+        "Vitesse": 48
+      }
+    },
+    {
+      "id": 622,
+      "stats": {
+        "PV": 59,
+        "Attaque": 74,
+        "Defense": 50,
+        "SpAttaque": 35,
+        "SpDefense": 50,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 623,
+      "stats": {
+        "PV": 89,
+        "Attaque": 124,
+        "Defense": 80,
+        "SpAttaque": 55,
+        "SpDefense": 80,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 624,
+      "stats": {
+        "PV": 45,
+        "Attaque": 85,
+        "Defense": 70,
+        "SpAttaque": 40,
+        "SpDefense": 40,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 625,
+      "stats": {
+        "PV": 65,
+        "Attaque": 125,
+        "Defense": 100,
+        "SpAttaque": 60,
+        "SpDefense": 70,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 626,
+      "stats": {
+        "PV": 95,
+        "Attaque": 110,
+        "Defense": 95,
+        "SpAttaque": 40,
+        "SpDefense": 95,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 627,
+      "stats": {
+        "PV": 70,
+        "Attaque": 83,
+        "Defense": 50,
+        "SpAttaque": 37,
+        "SpDefense": 50,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 628,
+      "stats": {
+        "PV": 100,
+        "Attaque": 123,
+        "Defense": 75,
+        "SpAttaque": 57,
+        "SpDefense": 75,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 629,
+      "stats": {
+        "PV": 70,
+        "Attaque": 55,
+        "Defense": 75,
+        "SpAttaque": 45,
+        "SpDefense": 65,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 630,
+      "stats": {
+        "PV": 110,
+        "Attaque": 65,
+        "Defense": 105,
+        "SpAttaque": 55,
+        "SpDefense": 95,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 631,
+      "stats": {
+        "PV": 85,
+        "Attaque": 97,
+        "Defense": 66,
+        "SpAttaque": 105,
+        "SpDefense": 66,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 632,
+      "stats": {
+        "PV": 58,
+        "Attaque": 109,
+        "Defense": 112,
+        "SpAttaque": 48,
+        "SpDefense": 48,
+        "Vitesse": 109
+      }
+    },
+    {
+      "id": 633,
+      "stats": {
+        "PV": 52,
+        "Attaque": 65,
+        "Defense": 50,
+        "SpAttaque": 45,
+        "SpDefense": 50,
+        "Vitesse": 38
+      }
+    },
+    {
+      "id": 634,
+      "stats": {
+        "PV": 72,
+        "Attaque": 85,
+        "Defense": 70,
+        "SpAttaque": 65,
+        "SpDefense": 70,
+        "Vitesse": 58
+      }
+    },
+    {
+      "id": 635,
+      "stats": {
+        "PV": 92,
+        "Attaque": 105,
+        "Defense": 90,
+        "SpAttaque": 125,
+        "SpDefense": 90,
+        "Vitesse": 98
+      }
+    },
+    {
+      "id": 636,
+      "stats": {
+        "PV": 55,
+        "Attaque": 85,
+        "Defense": 55,
+        "SpAttaque": 50,
+        "SpDefense": 55,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 637,
+      "stats": {
+        "PV": 85,
+        "Attaque": 60,
+        "Defense": 65,
+        "SpAttaque": 135,
+        "SpDefense": 105,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 638,
+      "stats": {
+        "PV": 91,
+        "Attaque": 90,
+        "Defense": 129,
+        "SpAttaque": 90,
+        "SpDefense": 72,
+        "Vitesse": 108
+      }
+    },
+    {
+      "id": 639,
+      "stats": {
+        "PV": 91,
+        "Attaque": 129,
+        "Defense": 90,
+        "SpAttaque": 72,
+        "SpDefense": 90,
+        "Vitesse": 108
+      }
+    },
+    {
+      "id": 640,
+      "stats": {
+        "PV": 91,
+        "Attaque": 90,
+        "Defense": 72,
+        "SpAttaque": 90,
+        "SpDefense": 129,
+        "Vitesse": 108
+      }
+    },
+    {
+      "id": 641,
+      "stats": {
+        "PV": 79,
+        "Attaque": 115,
+        "Defense": 70,
+        "SpAttaque": 125,
+        "SpDefense": 80,
+        "Vitesse": 111
+      }
+    },
+    {
+      "id": 642,
+      "stats": {
+        "PV": 79,
+        "Attaque": 115,
+        "Defense": 70,
+        "SpAttaque": 125,
+        "SpDefense": 80,
+        "Vitesse": 111
+      }
+    },
+    {
+      "id": 643,
+      "stats": {
+        "PV": 100,
+        "Attaque": 120,
+        "Defense": 100,
+        "SpAttaque": 150,
+        "SpDefense": 120,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 644,
+      "stats": {
+        "PV": 100,
+        "Attaque": 150,
+        "Defense": 120,
+        "SpAttaque": 120,
+        "SpDefense": 100,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 645,
+      "stats": {
+        "PV": 89,
+        "Attaque": 125,
+        "Defense": 90,
+        "SpAttaque": 115,
+        "SpDefense": 80,
+        "Vitesse": 101
+      }
+    },
+    {
+      "id": 646,
+      "stats": {
+        "PV": 125,
+        "Attaque": 130,
+        "Defense": 90,
+        "SpAttaque": 130,
+        "SpDefense": 90,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 647,
+      "stats": {
+        "PV": 91,
+        "Attaque": 72,
+        "Defense": 90,
+        "SpAttaque": 129,
+        "SpDefense": 90,
+        "Vitesse": 108
+      }
+    },
+    {
+      "id": 648,
+      "stats": {
+        "PV": 100,
+        "Attaque": 77,
+        "Defense": 77,
+        "SpAttaque": 128,
+        "SpDefense": 128,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 649,
+      "stats": {
+        "PV": 71,
+        "Attaque": 120,
+        "Defense": 95,
+        "SpAttaque": 120,
+        "SpDefense": 95,
+        "Vitesse": 99
+      }
+    },
+    {
+      "id": 650,
+      "stats": {
+        "PV": 56,
+        "Attaque": 61,
+        "Defense": 65,
+        "SpAttaque": 48,
+        "SpDefense": 45,
+        "Vitesse": 38
+      }
+    },
+    {
+      "id": 651,
+      "stats": {
+        "PV": 61,
+        "Attaque": 78,
+        "Defense": 95,
+        "SpAttaque": 56,
+        "SpDefense": 58,
+        "Vitesse": 57
+      }
+    },
+    {
+      "id": 652,
+      "stats": {
+        "PV": 88,
+        "Attaque": 107,
+        "Defense": 122,
+        "SpAttaque": 74,
+        "SpDefense": 75,
+        "Vitesse": 64
+      }
+    },
+    {
+      "id": 653,
+      "stats": {
+        "PV": 40,
+        "Attaque": 45,
+        "Defense": 40,
+        "SpAttaque": 62,
+        "SpDefense": 60,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 654,
+      "stats": {
+        "PV": 59,
+        "Attaque": 59,
+        "Defense": 58,
+        "SpAttaque": 90,
+        "SpDefense": 70,
+        "Vitesse": 73
+      }
+    },
+    {
+      "id": 655,
+      "stats": {
+        "PV": 75,
+        "Attaque": 69,
+        "Defense": 72,
+        "SpAttaque": 114,
+        "SpDefense": 100,
+        "Vitesse": 104
+      }
+    },
+    {
+      "id": 656,
+      "stats": {
+        "PV": 41,
+        "Attaque": 56,
+        "Defense": 40,
+        "SpAttaque": 62,
+        "SpDefense": 44,
+        "Vitesse": 71
+      }
+    },
+    {
+      "id": 657,
+      "stats": {
+        "PV": 54,
+        "Attaque": 63,
+        "Defense": 52,
+        "SpAttaque": 83,
+        "SpDefense": 56,
+        "Vitesse": 97
+      }
+    },
+    {
+      "id": 658,
+      "stats": {
+        "PV": 72,
+        "Attaque": 95,
+        "Defense": 67,
+        "SpAttaque": 103,
+        "SpDefense": 71,
+        "Vitesse": 122
+      }
+    },
+    {
+      "id": 659,
+      "stats": {
+        "PV": 38,
+        "Attaque": 36,
+        "Defense": 38,
+        "SpAttaque": 32,
+        "SpDefense": 36,
+        "Vitesse": 57
+      }
+    },
+    {
+      "id": 660,
+      "stats": {
+        "PV": 85,
+        "Attaque": 56,
+        "Defense": 77,
+        "SpAttaque": 50,
+        "SpDefense": 77,
+        "Vitesse": 78
+      }
+    },
+    {
+      "id": 661,
+      "stats": {
+        "PV": 45,
+        "Attaque": 50,
+        "Defense": 43,
+        "SpAttaque": 40,
+        "SpDefense": 38,
+        "Vitesse": 62
+      }
+    },
+    {
+      "id": 662,
+      "stats": {
+        "PV": 62,
+        "Attaque": 73,
+        "Defense": 55,
+        "SpAttaque": 56,
+        "SpDefense": 52,
+        "Vitesse": 84
+      }
+    },
+    {
+      "id": 663,
+      "stats": {
+        "PV": 78,
+        "Attaque": 81,
+        "Defense": 71,
+        "SpAttaque": 74,
+        "SpDefense": 69,
+        "Vitesse": 126
+      }
+    },
+    {
+      "id": 664,
+      "stats": {
+        "PV": 38,
+        "Attaque": 35,
+        "Defense": 40,
+        "SpAttaque": 27,
+        "SpDefense": 25,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 665,
+      "stats": {
+        "PV": 45,
+        "Attaque": 22,
+        "Defense": 60,
+        "SpAttaque": 27,
+        "SpDefense": 30,
+        "Vitesse": 29
+      }
+    },
+    {
+      "id": 666,
+      "stats": {
+        "PV": 80,
+        "Attaque": 52,
+        "Defense": 50,
+        "SpAttaque": 90,
+        "SpDefense": 50,
+        "Vitesse": 89
+      }
+    },
+    {
+      "id": 667,
+      "stats": {
+        "PV": 62,
+        "Attaque": 50,
+        "Defense": 58,
+        "SpAttaque": 73,
+        "SpDefense": 54,
+        "Vitesse": 72
+      }
+    },
+    {
+      "id": 668,
+      "stats": {
+        "PV": 86,
+        "Attaque": 68,
+        "Defense": 72,
+        "SpAttaque": 109,
+        "SpDefense": 66,
+        "Vitesse": 106
+      }
+    },
+    {
+      "id": 669,
+      "stats": {
+        "PV": 44,
+        "Attaque": 38,
+        "Defense": 39,
+        "SpAttaque": 61,
+        "SpDefense": 79,
+        "Vitesse": 42
+      }
+    },
+    {
+      "id": 670,
+      "stats": {
+        "PV": 54,
+        "Attaque": 45,
+        "Defense": 47,
+        "SpAttaque": 75,
+        "SpDefense": 98,
+        "Vitesse": 52
+      }
+    },
+    {
+      "id": 671,
+      "stats": {
+        "PV": 78,
+        "Attaque": 65,
+        "Defense": 68,
+        "SpAttaque": 112,
+        "SpDefense": 154,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 672,
+      "stats": {
+        "PV": 66,
+        "Attaque": 65,
+        "Defense": 48,
+        "SpAttaque": 62,
+        "SpDefense": 57,
+        "Vitesse": 52
+      }
+    },
+    {
+      "id": 673,
+      "stats": {
+        "PV": 123,
+        "Attaque": 100,
+        "Defense": 62,
+        "SpAttaque": 97,
+        "SpDefense": 81,
+        "Vitesse": 68
+      }
+    },
+    {
+      "id": 674,
+      "stats": {
+        "PV": 67,
+        "Attaque": 82,
+        "Defense": 62,
+        "SpAttaque": 46,
+        "SpDefense": 48,
+        "Vitesse": 43
+      }
+    },
+    {
+      "id": 675,
+      "stats": {
+        "PV": 95,
+        "Attaque": 124,
+        "Defense": 78,
+        "SpAttaque": 69,
+        "SpDefense": 71,
+        "Vitesse": 58
+      }
+    },
+    {
+      "id": 676,
+      "stats": {
+        "PV": 75,
+        "Attaque": 80,
+        "Defense": 60,
+        "SpAttaque": 65,
+        "SpDefense": 90,
+        "Vitesse": 102
+      }
+    },
+    {
+      "id": 677,
+      "stats": {
+        "PV": 62,
+        "Attaque": 48,
+        "Defense": 54,
+        "SpAttaque": 63,
+        "SpDefense": 60,
+        "Vitesse": 68
+      }
+    },
+    {
+      "id": 678,
+      "stats": {
+        "PV": 74,
+        "Attaque": 48,
+        "Defense": 76,
+        "SpAttaque": 83,
+        "SpDefense": 81,
+        "Vitesse": 104
+      }
+    },
+    {
+      "id": 679,
+      "stats": {
+        "PV": 45,
+        "Attaque": 80,
+        "Defense": 100,
+        "SpAttaque": 35,
+        "SpDefense": 37,
+        "Vitesse": 28
+      }
+    },
+    {
+      "id": 680,
+      "stats": {
+        "PV": 59,
+        "Attaque": 110,
+        "Defense": 150,
+        "SpAttaque": 45,
+        "SpDefense": 49,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 681,
+      "stats": {
+        "PV": 60,
+        "Attaque": 50,
+        "Defense": 150,
+        "SpAttaque": 50,
+        "SpDefense": 150,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 682,
+      "stats": {
+        "PV": 78,
+        "Attaque": 52,
+        "Defense": 60,
+        "SpAttaque": 63,
+        "SpDefense": 65,
+        "Vitesse": 23
+      }
+    },
+    {
+      "id": 683,
+      "stats": {
+        "PV": 101,
+        "Attaque": 72,
+        "Defense": 72,
+        "SpAttaque": 99,
+        "SpDefense": 89,
+        "Vitesse": 29
+      }
+    },
+    {
+      "id": 684,
+      "stats": {
+        "PV": 62,
+        "Attaque": 48,
+        "Defense": 66,
+        "SpAttaque": 59,
+        "SpDefense": 57,
+        "Vitesse": 49
+      }
+    },
+    {
+      "id": 685,
+      "stats": {
+        "PV": 82,
+        "Attaque": 80,
+        "Defense": 86,
+        "SpAttaque": 85,
+        "SpDefense": 75,
+        "Vitesse": 72
+      }
+    },
+    {
+      "id": 686,
+      "stats": {
+        "PV": 53,
+        "Attaque": 54,
+        "Defense": 53,
+        "SpAttaque": 37,
+        "SpDefense": 46,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 687,
+      "stats": {
+        "PV": 86,
+        "Attaque": 92,
+        "Defense": 88,
+        "SpAttaque": 68,
+        "SpDefense": 75,
+        "Vitesse": 73
+      }
+    },
+    {
+      "id": 688,
+      "stats": {
+        "PV": 42,
+        "Attaque": 52,
+        "Defense": 67,
+        "SpAttaque": 39,
+        "SpDefense": 56,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 689,
+      "stats": {
+        "PV": 72,
+        "Attaque": 105,
+        "Defense": 115,
+        "SpAttaque": 54,
+        "SpDefense": 86,
+        "Vitesse": 68
+      }
+    },
+    {
+      "id": 690,
+      "stats": {
+        "PV": 50,
+        "Attaque": 60,
+        "Defense": 60,
+        "SpAttaque": 60,
+        "SpDefense": 60,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 691,
+      "stats": {
+        "PV": 65,
+        "Attaque": 75,
+        "Defense": 90,
+        "SpAttaque": 97,
+        "SpDefense": 123,
+        "Vitesse": 44
+      }
+    },
+    {
+      "id": 692,
+      "stats": {
+        "PV": 50,
+        "Attaque": 53,
+        "Defense": 62,
+        "SpAttaque": 58,
+        "SpDefense": 63,
+        "Vitesse": 44
+      }
+    },
+    {
+      "id": 693,
+      "stats": {
+        "PV": 71,
+        "Attaque": 73,
+        "Defense": 88,
+        "SpAttaque": 120,
+        "SpDefense": 89,
+        "Vitesse": 59
+      }
+    },
+    {
+      "id": 694,
+      "stats": {
+        "PV": 44,
+        "Attaque": 38,
+        "Defense": 33,
+        "SpAttaque": 61,
+        "SpDefense": 43,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 695,
+      "stats": {
+        "PV": 62,
+        "Attaque": 55,
+        "Defense": 52,
+        "SpAttaque": 109,
+        "SpDefense": 94,
+        "Vitesse": 109
+      }
+    },
+    {
+      "id": 696,
+      "stats": {
+        "PV": 58,
+        "Attaque": 89,
+        "Defense": 77,
+        "SpAttaque": 45,
+        "SpDefense": 45,
+        "Vitesse": 48
+      }
+    },
+    {
+      "id": 697,
+      "stats": {
+        "PV": 82,
+        "Attaque": 121,
+        "Defense": 119,
+        "SpAttaque": 69,
+        "SpDefense": 59,
+        "Vitesse": 71
+      }
+    },
+    {
+      "id": 698,
+      "stats": {
+        "PV": 77,
+        "Attaque": 59,
+        "Defense": 50,
+        "SpAttaque": 67,
+        "SpDefense": 63,
+        "Vitesse": 46
+      }
+    },
+    {
+      "id": 699,
+      "stats": {
+        "PV": 123,
+        "Attaque": 77,
+        "Defense": 72,
+        "SpAttaque": 99,
+        "SpDefense": 92,
+        "Vitesse": 58
+      }
+    },
+    {
+      "id": 700,
+      "stats": {
+        "PV": 95,
+        "Attaque": 65,
+        "Defense": 65,
+        "SpAttaque": 110,
+        "SpDefense": 130,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 701,
+      "stats": {
+        "PV": 78,
+        "Attaque": 92,
+        "Defense": 75,
+        "SpAttaque": 74,
+        "SpDefense": 63,
+        "Vitesse": 118
+      }
+    },
+    {
+      "id": 702,
+      "stats": {
+        "PV": 67,
+        "Attaque": 58,
+        "Defense": 57,
+        "SpAttaque": 81,
+        "SpDefense": 67,
+        "Vitesse": 101
+      }
+    },
+    {
+      "id": 703,
+      "stats": {
+        "PV": 50,
+        "Attaque": 50,
+        "Defense": 150,
+        "SpAttaque": 50,
+        "SpDefense": 150,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 704,
+      "stats": {
+        "PV": 45,
+        "Attaque": 50,
+        "Defense": 35,
+        "SpAttaque": 55,
+        "SpDefense": 75,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 705,
+      "stats": {
+        "PV": 68,
+        "Attaque": 75,
+        "Defense": 53,
+        "SpAttaque": 83,
+        "SpDefense": 113,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 706,
+      "stats": {
+        "PV": 90,
+        "Attaque": 100,
+        "Defense": 70,
+        "SpAttaque": 110,
+        "SpDefense": 150,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 707,
+      "stats": {
+        "PV": 57,
+        "Attaque": 80,
+        "Defense": 91,
+        "SpAttaque": 80,
+        "SpDefense": 87,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 708,
+      "stats": {
+        "PV": 43,
+        "Attaque": 70,
+        "Defense": 48,
+        "SpAttaque": 50,
+        "SpDefense": 60,
+        "Vitesse": 38
+      }
+    },
+    {
+      "id": 709,
+      "stats": {
+        "PV": 85,
+        "Attaque": 110,
+        "Defense": 76,
+        "SpAttaque": 65,
+        "SpDefense": 82,
+        "Vitesse": 56
+      }
+    },
+    {
+      "id": 710,
+      "stats": {
+        "PV": 59,
+        "Attaque": 66,
+        "Defense": 70,
+        "SpAttaque": 44,
+        "SpDefense": 55,
+        "Vitesse": 41
+      }
+    },
+    {
+      "id": 711,
+      "stats": {
+        "PV": 85,
+        "Attaque": 100,
+        "Defense": 122,
+        "SpAttaque": 58,
+        "SpDefense": 75,
+        "Vitesse": 54
+      }
+    },
+    {
+      "id": 712,
+      "stats": {
+        "PV": 55,
+        "Attaque": 69,
+        "Defense": 85,
+        "SpAttaque": 32,
+        "SpDefense": 35,
+        "Vitesse": 28
+      }
+    },
+    {
+      "id": 713,
+      "stats": {
+        "PV": 95,
+        "Attaque": 117,
+        "Defense": 184,
+        "SpAttaque": 44,
+        "SpDefense": 46,
+        "Vitesse": 28
+      }
+    },
+    {
+      "id": 714,
+      "stats": {
+        "PV": 40,
+        "Attaque": 30,
+        "Defense": 35,
+        "SpAttaque": 45,
+        "SpDefense": 40,
+        "Vitesse": 55
+      }
+    },
+    {
+      "id": 715,
+      "stats": {
+        "PV": 85,
+        "Attaque": 70,
+        "Defense": 80,
+        "SpAttaque": 97,
+        "SpDefense": 80,
+        "Vitesse": 123
+      }
+    },
+    {
+      "id": 716,
+      "stats": {
+        "PV": 126,
+        "Attaque": 131,
+        "Defense": 95,
+        "SpAttaque": 131,
+        "SpDefense": 98,
+        "Vitesse": 99
+      }
+    },
+    {
+      "id": 717,
+      "stats": {
+        "PV": 126,
+        "Attaque": 131,
+        "Defense": 95,
+        "SpAttaque": 131,
+        "SpDefense": 98,
+        "Vitesse": 99
+      }
+    },
+    {
+      "id": 718,
+      "stats": {
+        "PV": 108,
+        "Attaque": 100,
+        "Defense": 121,
+        "SpAttaque": 81,
+        "SpDefense": 95,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 719,
+      "stats": {
+        "PV": 50,
+        "Attaque": 100,
+        "Defense": 150,
+        "SpAttaque": 100,
+        "SpDefense": 150,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 720,
+      "stats": {
+        "PV": 80,
+        "Attaque": 110,
+        "Defense": 60,
+        "SpAttaque": 150,
+        "SpDefense": 130,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 721,
+      "stats": {
+        "PV": 80,
+        "Attaque": 110,
+        "Defense": 120,
+        "SpAttaque": 130,
+        "SpDefense": 90,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 722,
+      "stats": {
+        "PV": 68,
+        "Attaque": 55,
+        "Defense": 55,
+        "SpAttaque": 50,
+        "SpDefense": 50,
+        "Vitesse": 42
+      }
+    },
+    {
+      "id": 723,
+      "stats": {
+        "PV": 78,
+        "Attaque": 75,
+        "Defense": 75,
+        "SpAttaque": 70,
+        "SpDefense": 70,
+        "Vitesse": 52
+      }
+    },
+    {
+      "id": 724,
+      "stats": {
+        "PV": 78,
+        "Attaque": 107,
+        "Defense": 75,
+        "SpAttaque": 100,
+        "SpDefense": 100,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 725,
+      "stats": {
+        "PV": 45,
+        "Attaque": 65,
+        "Defense": 40,
+        "SpAttaque": 60,
+        "SpDefense": 40,
+        "Vitesse": 70
+      }
+    },
+    {
+      "id": 726,
+      "stats": {
+        "PV": 65,
+        "Attaque": 85,
+        "Defense": 50,
+        "SpAttaque": 80,
+        "SpDefense": 50,
+        "Vitesse": 90
+      }
+    },
+    {
+      "id": 727,
+      "stats": {
+        "PV": 95,
+        "Attaque": 115,
+        "Defense": 90,
+        "SpAttaque": 80,
+        "SpDefense": 90,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 728,
+      "stats": {
+        "PV": 50,
+        "Attaque": 54,
+        "Defense": 54,
+        "SpAttaque": 66,
+        "SpDefense": 56,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 729,
+      "stats": {
+        "PV": 60,
+        "Attaque": 69,
+        "Defense": 69,
+        "SpAttaque": 91,
+        "SpDefense": 81,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 730,
+      "stats": {
+        "PV": 80,
+        "Attaque": 74,
+        "Defense": 74,
+        "SpAttaque": 126,
+        "SpDefense": 116,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 731,
+      "stats": {
+        "PV": 35,
+        "Attaque": 75,
+        "Defense": 30,
+        "SpAttaque": 30,
+        "SpDefense": 30,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 732,
+      "stats": {
+        "PV": 55,
+        "Attaque": 85,
+        "Defense": 50,
+        "SpAttaque": 40,
+        "SpDefense": 50,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 733,
+      "stats": {
+        "PV": 80,
+        "Attaque": 120,
+        "Defense": 75,
+        "SpAttaque": 75,
+        "SpDefense": 75,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 734,
+      "stats": {
+        "PV": 48,
+        "Attaque": 70,
+        "Defense": 30,
+        "SpAttaque": 30,
+        "SpDefense": 30,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 735,
+      "stats": {
+        "PV": 88,
+        "Attaque": 110,
+        "Defense": 60,
+        "SpAttaque": 55,
+        "SpDefense": 60,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 736,
+      "stats": {
+        "PV": 47,
+        "Attaque": 62,
+        "Defense": 45,
+        "SpAttaque": 55,
+        "SpDefense": 45,
+        "Vitesse": 46
+      }
+    },
+    {
+      "id": 737,
+      "stats": {
+        "PV": 57,
+        "Attaque": 82,
+        "Defense": 95,
+        "SpAttaque": 55,
+        "SpDefense": 75,
+        "Vitesse": 36
+      }
+    },
+    {
+      "id": 738,
+      "stats": {
+        "PV": 77,
+        "Attaque": 70,
+        "Defense": 90,
+        "SpAttaque": 145,
+        "SpDefense": 75,
+        "Vitesse": 43
+      }
+    },
+    {
+      "id": 739,
+      "stats": {
+        "PV": 47,
+        "Attaque": 82,
+        "Defense": 57,
+        "SpAttaque": 42,
+        "SpDefense": 47,
+        "Vitesse": 63
+      }
+    },
+    {
+      "id": 740,
+      "stats": {
+        "PV": 97,
+        "Attaque": 132,
+        "Defense": 77,
+        "SpAttaque": 62,
+        "SpDefense": 67,
+        "Vitesse": 43
+      }
+    },
+    {
+      "id": 741,
+      "stats": {
+        "PV": 75,
+        "Attaque": 70,
+        "Defense": 70,
+        "SpAttaque": 98,
+        "SpDefense": 70,
+        "Vitesse": 93
+      }
+    },
+    {
+      "id": 742,
+      "stats": {
+        "PV": 40,
+        "Attaque": 45,
+        "Defense": 40,
+        "SpAttaque": 55,
+        "SpDefense": 40,
+        "Vitesse": 84
+      }
+    },
+    {
+      "id": 743,
+      "stats": {
+        "PV": 60,
+        "Attaque": 55,
+        "Defense": 60,
+        "SpAttaque": 95,
+        "SpDefense": 70,
+        "Vitesse": 124
+      }
+    },
+    {
+      "id": 744,
+      "stats": {
+        "PV": 45,
+        "Attaque": 65,
+        "Defense": 40,
+        "SpAttaque": 30,
+        "SpDefense": 40,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 745,
+      "stats": {
+        "PV": 75,
+        "Attaque": 115,
+        "Defense": 65,
+        "SpAttaque": 55,
+        "SpDefense": 65,
+        "Vitesse": 112
+      }
+    },
+    {
+      "id": 746,
+      "stats": {
+        "PV": 45,
+        "Attaque": 20,
+        "Defense": 20,
+        "SpAttaque": 25,
+        "SpDefense": 25,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 747,
+      "stats": {
+        "PV": 50,
+        "Attaque": 53,
+        "Defense": 62,
+        "SpAttaque": 43,
+        "SpDefense": 52,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 748,
+      "stats": {
+        "PV": 50,
+        "Attaque": 63,
+        "Defense": 152,
+        "SpAttaque": 53,
+        "SpDefense": 142,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 749,
+      "stats": {
+        "PV": 70,
+        "Attaque": 100,
+        "Defense": 70,
+        "SpAttaque": 45,
+        "SpDefense": 55,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 750,
+      "stats": {
+        "PV": 100,
+        "Attaque": 125,
+        "Defense": 100,
+        "SpAttaque": 55,
+        "SpDefense": 85,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 751,
+      "stats": {
+        "PV": 38,
+        "Attaque": 40,
+        "Defense": 52,
+        "SpAttaque": 40,
+        "SpDefense": 72,
+        "Vitesse": 27
+      }
+    },
+    {
+      "id": 752,
+      "stats": {
+        "PV": 68,
+        "Attaque": 70,
+        "Defense": 92,
+        "SpAttaque": 50,
+        "SpDefense": 132,
+        "Vitesse": 42
+      }
+    },
+    {
+      "id": 753,
+      "stats": {
+        "PV": 40,
+        "Attaque": 55,
+        "Defense": 35,
+        "SpAttaque": 50,
+        "SpDefense": 35,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 754,
+      "stats": {
+        "PV": 70,
+        "Attaque": 105,
+        "Defense": 90,
+        "SpAttaque": 80,
+        "SpDefense": 90,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 755,
+      "stats": {
+        "PV": 40,
+        "Attaque": 35,
+        "Defense": 55,
+        "SpAttaque": 65,
+        "SpDefense": 75,
+        "Vitesse": 15
+      }
+    },
+    {
+      "id": 756,
+      "stats": {
+        "PV": 60,
+        "Attaque": 45,
+        "Defense": 80,
+        "SpAttaque": 90,
+        "SpDefense": 100,
+        "Vitesse": 30
+      }
+    },
+    {
+      "id": 757,
+      "stats": {
+        "PV": 48,
+        "Attaque": 44,
+        "Defense": 40,
+        "SpAttaque": 71,
+        "SpDefense": 40,
+        "Vitesse": 77
+      }
+    },
+    {
+      "id": 758,
+      "stats": {
+        "PV": 68,
+        "Attaque": 64,
+        "Defense": 60,
+        "SpAttaque": 111,
+        "SpDefense": 60,
+        "Vitesse": 117
+      }
+    },
+    {
+      "id": 759,
+      "stats": {
+        "PV": 70,
+        "Attaque": 75,
+        "Defense": 50,
+        "SpAttaque": 45,
+        "SpDefense": 50,
+        "Vitesse": 50
+      }
+    },
+    {
+      "id": 760,
+      "stats": {
+        "PV": 120,
+        "Attaque": 125,
+        "Defense": 80,
+        "SpAttaque": 55,
+        "SpDefense": 60,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 761,
+      "stats": {
+        "PV": 42,
+        "Attaque": 30,
+        "Defense": 38,
+        "SpAttaque": 30,
+        "SpDefense": 38,
+        "Vitesse": 32
+      }
+    },
+    {
+      "id": 762,
+      "stats": {
+        "PV": 52,
+        "Attaque": 40,
+        "Defense": 48,
+        "SpAttaque": 40,
+        "SpDefense": 48,
+        "Vitesse": 62
+      }
+    },
+    {
+      "id": 763,
+      "stats": {
+        "PV": 72,
+        "Attaque": 120,
+        "Defense": 98,
+        "SpAttaque": 50,
+        "SpDefense": 98,
+        "Vitesse": 72
+      }
+    },
+    {
+      "id": 764,
+      "stats": {
+        "PV": 51,
+        "Attaque": 52,
+        "Defense": 90,
+        "SpAttaque": 82,
+        "SpDefense": 110,
+        "Vitesse": 100
+      }
+    },
+    {
+      "id": 765,
+      "stats": {
+        "PV": 90,
+        "Attaque": 60,
+        "Defense": 80,
+        "SpAttaque": 90,
+        "SpDefense": 110,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 766,
+      "stats": {
+        "PV": 100,
+        "Attaque": 120,
+        "Defense": 90,
+        "SpAttaque": 40,
+        "SpDefense": 60,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 767,
+      "stats": {
+        "PV": 25,
+        "Attaque": 35,
+        "Defense": 40,
+        "SpAttaque": 20,
+        "SpDefense": 30,
+        "Vitesse": 80
+      }
+    },
+    {
+      "id": 768,
+      "stats": {
+        "PV": 75,
+        "Attaque": 125,
+        "Defense": 140,
+        "SpAttaque": 60,
+        "SpDefense": 90,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 769,
+      "stats": {
+        "PV": 55,
+        "Attaque": 55,
+        "Defense": 80,
+        "SpAttaque": 70,
+        "SpDefense": 45,
+        "Vitesse": 15
+      }
+    },
+    {
+      "id": 770,
+      "stats": {
+        "PV": 85,
+        "Attaque": 75,
+        "Defense": 110,
+        "SpAttaque": 100,
+        "SpDefense": 75,
+        "Vitesse": 35
+      }
+    },
+    {
+      "id": 771,
+      "stats": {
+        "PV": 55,
+        "Attaque": 60,
+        "Defense": 130,
+        "SpAttaque": 30,
+        "SpDefense": 130,
+        "Vitesse": 5
+      }
+    },
+    {
+      "id": 772,
+      "stats": {
+        "PV": 95,
+        "Attaque": 95,
+        "Defense": 95,
+        "SpAttaque": 95,
+        "SpDefense": 95,
+        "Vitesse": 59
+      }
+    },
+    {
+      "id": 773,
+      "stats": {
+        "PV": 95,
+        "Attaque": 95,
+        "Defense": 95,
+        "SpAttaque": 95,
+        "SpDefense": 95,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 774,
+      "stats": {
+        "PV": 60,
+        "Attaque": 60,
+        "Defense": 100,
+        "SpAttaque": 60,
+        "SpDefense": 100,
+        "Vitesse": 60
+      }
+    },
+    {
+      "id": 775,
+      "stats": {
+        "PV": 65,
+        "Attaque": 115,
+        "Defense": 65,
+        "SpAttaque": 75,
+        "SpDefense": 95,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 776,
+      "stats": {
+        "PV": 60,
+        "Attaque": 78,
+        "Defense": 135,
+        "SpAttaque": 91,
+        "SpDefense": 85,
+        "Vitesse": 36
+      }
+    },
+    {
+      "id": 777,
+      "stats": {
+        "PV": 65,
+        "Attaque": 98,
+        "Defense": 63,
+        "SpAttaque": 40,
+        "SpDefense": 73,
+        "Vitesse": 96
+      }
+    },
+    {
+      "id": 778,
+      "stats": {
+        "PV": 55,
+        "Attaque": 90,
+        "Defense": 80,
+        "SpAttaque": 50,
+        "SpDefense": 105,
+        "Vitesse": 96
+      }
+    },
+    {
+      "id": 779,
+      "stats": {
+        "PV": 68,
+        "Attaque": 105,
+        "Defense": 70,
+        "SpAttaque": 70,
+        "SpDefense": 70,
+        "Vitesse": 92
+      }
+    },
+    {
+      "id": 780,
+      "stats": {
+        "PV": 78,
+        "Attaque": 60,
+        "Defense": 85,
+        "SpAttaque": 135,
+        "SpDefense": 91,
+        "Vitesse": 36
+      }
+    },
+    {
+      "id": 781,
+      "stats": {
+        "PV": 70,
+        "Attaque": 131,
+        "Defense": 100,
+        "SpAttaque": 86,
+        "SpDefense": 90,
+        "Vitesse": 40
+      }
+    },
+    {
+      "id": 782,
+      "stats": {
+        "PV": 45,
+        "Attaque": 55,
+        "Defense": 65,
+        "SpAttaque": 45,
+        "SpDefense": 45,
+        "Vitesse": 45
+      }
+    },
+    {
+      "id": 783,
+      "stats": {
+        "PV": 55,
+        "Attaque": 75,
+        "Defense": 90,
+        "SpAttaque": 65,
+        "SpDefense": 70,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 784,
+      "stats": {
+        "PV": 75,
+        "Attaque": 110,
+        "Defense": 125,
+        "SpAttaque": 100,
+        "SpDefense": 105,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 785,
+      "stats": {
+        "PV": 70,
+        "Attaque": 115,
+        "Defense": 85,
+        "SpAttaque": 95,
+        "SpDefense": 75,
+        "Vitesse": 130
+      }
+    },
+    {
+      "id": 786,
+      "stats": {
+        "PV": 70,
+        "Attaque": 85,
+        "Defense": 75,
+        "SpAttaque": 130,
+        "SpDefense": 115,
+        "Vitesse": 95
+      }
+    },
+    {
+      "id": 787,
+      "stats": {
+        "PV": 70,
+        "Attaque": 130,
+        "Defense": 115,
+        "SpAttaque": 85,
+        "SpDefense": 95,
+        "Vitesse": 75
+      }
+    },
+    {
+      "id": 788,
+      "stats": {
+        "PV": 70,
+        "Attaque": 75,
+        "Defense": 115,
+        "SpAttaque": 95,
+        "SpDefense": 130,
+        "Vitesse": 85
+      }
+    },
+    {
+      "id": 789,
+      "stats": {
+        "PV": 43,
+        "Attaque": 29,
+        "Defense": 31,
+        "SpAttaque": 29,
+        "SpDefense": 31,
+        "Vitesse": 37
+      }
+    },
+    {
+      "id": 790,
+      "stats": {
+        "PV": 43,
+        "Attaque": 29,
+        "Defense": 131,
+        "SpAttaque": 29,
+        "SpDefense": 131,
+        "Vitesse": 37
+      }
+    },
+    {
+      "id": 791,
+      "stats": {
+        "PV": 137,
+        "Attaque": 137,
+        "Defense": 107,
+        "SpAttaque": 113,
+        "SpDefense": 89,
+        "Vitesse": 97
+      }
+    },
+    {
+      "id": 792,
+      "stats": {
+        "PV": 137,
+        "Attaque": 113,
+        "Defense": 89,
+        "SpAttaque": 137,
+        "SpDefense": 107,
+        "Vitesse": 97
+      }
+    },
+    {
+      "id": 793,
+      "stats": {
+        "PV": 109,
+        "Attaque": 53,
+        "Defense": 47,
+        "SpAttaque": 127,
+        "SpDefense": 131,
+        "Vitesse": 103
+      }
+    },
+    {
+      "id": 794,
+      "stats": {
+        "PV": 107,
+        "Attaque": 139,
+        "Defense": 139,
+        "SpAttaque": 53,
+        "SpDefense": 53,
+        "Vitesse": 79
+      }
+    },
+    {
+      "id": 795,
+      "stats": {
+        "PV": 71,
+        "Attaque": 137,
+        "Defense": 37,
+        "SpAttaque": 137,
+        "SpDefense": 37,
+        "Vitesse": 151
+      }
+    },
+    {
+      "id": 796,
+      "stats": {
+        "PV": 83,
+        "Attaque": 89,
+        "Defense": 71,
+        "SpAttaque": 173,
+        "SpDefense": 71,
+        "Vitesse": 83
+      }
+    },
+    {
+      "id": 797,
+      "stats": {
+        "PV": 97,
+        "Attaque": 101,
+        "Defense": 103,
+        "SpAttaque": 107,
+        "SpDefense": 101,
+        "Vitesse": 61
+      }
+    },
+    {
+      "id": 798,
+      "stats": {
+        "PV": 59,
+        "Attaque": 181,
+        "Defense": 131,
+        "SpAttaque": 59,
+        "SpDefense": 31,
+        "Vitesse": 109
+      }
+    },
+    {
+      "id": 799,
+      "stats": {
+        "PV": 223,
+        "Attaque": 101,
+        "Defense": 53,
+        "SpAttaque": 97,
+        "SpDefense": 53,
+        "Vitesse": 43
+      }
+    },
+    {
+      "id": 800,
+      "stats": {
+        "PV": 97,
+        "Attaque": 107,
+        "Defense": 101,
+        "SpAttaque": 127,
+        "SpDefense": 89,
+        "Vitesse": 79
+      }
+    },
+    {
+      "id": 801,
+      "stats": {
+        "PV": 80,
+        "Attaque": 95,
+        "Defense": 115,
+        "SpAttaque": 130,
+        "SpDefense": 115,
+        "Vitesse": 65
+      }
+    },
+    {
+      "id": 802,
+      "stats": {
+        "PV": 90,
+        "Attaque": 125,
+        "Defense": 80,
+        "SpAttaque": 90,
+        "SpDefense": 90,
+        "Vitesse": 125
+      }
+    },
+    {
+      "id": 803,
+      "stats": {
+        "PV": 67,
+        "Attaque": 73,
+        "Defense": 67,
+        "SpAttaque": 73,
+        "SpDefense": 67,
+        "Vitesse": 73
+      }
+    },
+    {
+      "id": 804,
+      "stats": {
+        "PV": 73,
+        "Attaque": 73,
+        "Defense": 73,
+        "SpAttaque": 127,
+        "SpDefense": 73,
+        "Vitesse": 121
+      }
+    },
+    {
+      "id": 805,
+      "stats": {
+        "PV": 61,
+        "Attaque": 131,
+        "Defense": 211,
+        "SpAttaque": 53,
+        "SpDefense": 101,
+        "Vitesse": 13
+      }
+    },
+    {
+      "id": 806,
+      "stats": {
+        "PV": 53,
+        "Attaque": 127,
+        "Defense": 53,
+        "SpAttaque": 151,
+        "SpDefense": 79,
+        "Vitesse": 107
+      }
+    },
+    {
+      "id": 807,
+      "stats": {
+        "PV": 88,
+        "Attaque": 112,
+        "Defense": 75,
+        "SpAttaque": 102,
+        "SpDefense": 80,
+        "Vitesse": 143
+      }
+    },
+    {
+      "id": 808,
+      "stats": {
+        "PV": 46,
+        "Attaque": 65,
+        "Defense": 65,
+        "SpAttaque": 55,
+        "SpDefense": 35,
+        "Vitesse": 34
+      }
+    },
+    {
+      "id": 809,
+      "stats": {
+        "PV": 135,
+        "Attaque": 143,
+        "Defense": 143,
+        "SpAttaque": 80,
+        "SpDefense": 65,
+        "Vitesse": 34
+      }
+    }
+  ]
+}

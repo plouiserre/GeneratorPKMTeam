@@ -11,7 +11,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
         {
             string tousLesTypesPossibles = "Fée Dragon Combat Plante Feu Poison Glace Eau Psy Acier Ténèbres Dragon-Psy Combat-Psy Plante-Combat Plante-Poison Plante-Psy Plante-Ténèbres Feu-Combat Glace-Psy Psy-Fée Psy-Plante Poison-Spectre Acier-Fée Acier-Psy Ténèbres-Feu Ténèbres-Glace Electrique-Normal";
             var tousLesTypesConstruits = ConstruireTousLesTypesPossibles(tousLesTypesPossibles);
-            var recupererPKMTypeSimple = new RecupererPKMTypeSimple(null);
+            var recupererPKMTypeSimple = new RecupererPKMTypeSimple();
 
             var typesDoublesRecuperes = recupererPKMTypeSimple.RecupererPKMTypes(new List<PKMType>() { new PKMType() { Nom = "Eau" } }, tousLesTypesConstruits);
 
@@ -38,7 +38,8 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
                 { "Acier-Fée", new List<PKMType>() { new PKMType() { Nom = "Acier" }, new PKMType() { Nom = "Fée" } }},
             };
 
-            var recupererPKMTypeSimple = new RecupererPKMTypeSimple(pkmTypesDoubleDejaRecuperes);
+            var recupererPKMTypeSimple = new RecupererPKMTypeSimple();
+            recupererPKMTypeSimple.RecupererPKMTypeDoublesDejaCalcules(pkmTypesDoubleDejaRecuperes);
 
             var typesDoublesRecuperes = recupererPKMTypeSimple.RecupererPKMTypes(new List<PKMType>() { new PKMType() { Nom = "Eau" } }, tousLesTypesConstruits);
 
@@ -64,7 +65,8 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
                 { "Acier-Fée", new List<PKMType>() { new PKMType() { Nom = "Acier" }, new PKMType() { Nom = "Fée" } }},
             };
 
-            var recupererPKMTypeSimple = new RecupererPKMTypeSimple(pkmTypesDoubleDejaRecuperes);
+            var recupererPKMTypeSimple = new RecupererPKMTypeSimple();
+            recupererPKMTypeSimple.RecupererPKMTypeDoublesDejaCalcules(pkmTypesDoubleDejaRecuperes);
 
             var typesDoublesRecuperes = recupererPKMTypeSimple.RecupererPKMTypes(new List<PKMType>() { new PKMType() { Nom = "Feu" }, new PKMType() { Nom = "Combat" } }, tousLesTypesConstruits);
 
@@ -90,7 +92,8 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
                 { "Acier-Fée", new List<PKMType>() { new PKMType() { Nom = "Acier" }, new PKMType() { Nom = "Fée" } }},
             };
 
-            var recupererPKMTypeSimple = new RecupererPKMTypeSimple(pkmTypesDoubleDejaRecuperes);
+            var recupererPKMTypeSimple = new RecupererPKMTypeSimple();
+            recupererPKMTypeSimple.RecupererPKMTypeDoublesDejaCalcules(pkmTypesDoubleDejaRecuperes);
 
             var exception = Assert.Throws<PasAssezPKMTypeSimpleSelectionnableException>(() => recupererPKMTypeSimple.RecupererPKMTypes(new List<PKMType>() { new PKMType() { Nom = "Feu" }, new PKMType() { Nom = "Combat" } }, tousLesTypesConstruits));
 

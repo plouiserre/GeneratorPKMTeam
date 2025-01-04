@@ -6,21 +6,24 @@ using GeneratorPKMTeam.Domain.CustomException;
 using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Domain.Port.Driven;
 
-namespace GeneratorPKMTeam.Domain.Handler
+namespace GeneratorPKMTeam.Domain.Handler.SelectionPKM
 {
     public class RecuperationPKMs : IRecuperationPKMs
     {
         private IPKMPersistence _pkmPersistence;
         private IGererStarterPKM _gererStarterPKM;
+        private IDeterminerMeilleurPKMParStats _determinerMeilleurPKMParStats;
         private List<PKM> _pkms;
         private int _generation;
         private PKM _starterPKM;
 
-        public RecuperationPKMs(IPKMPersistence pkmPersistence, IGererStarterPKM gererStarterPKM, int generation)
+        public RecuperationPKMs(IPKMPersistence pkmPersistence, IGererStarterPKM gererStarterPKM,
+                    IDeterminerMeilleurPKMParStats determinerMeilleurPKMParStats, int generation)
         {
             _pkmPersistence = pkmPersistence;
             _generation = generation;
             _gererStarterPKM = gererStarterPKM;
+            _determinerMeilleurPKMParStats = determinerMeilleurPKMParStats;
         }
 
         public List<PKM> Recuperer(Dictionary<int, List<PKMType>> PKMTypesOrdonnees)
@@ -36,25 +39,39 @@ namespace GeneratorPKMTeam.Domain.Handler
                 }
                 else if (PKMTypes.Value.Count == 1)
                 {
-                    var pkmSelectionne = _pkms.OrderBy(o => o.Nom).FirstOrDefault(o => o.PKMTypes.Count == 1 &&
-                                        o.PKMTypes[0] == PKMTypes.Value[0].Nom && o.Generation <= _generation);
-                    if (pkmSelectionne != null)
-                        pkmsRecherches.Add(pkmSelectionne);
-                    else
+                    var pkmSelectionnes = _pkms.OrderBy(o => o.Nom).Where(o => o.PKMTypes.Count == 1 &&
+                                        o.PKMTypes[0] == PKMTypes.Value[0].Nom && o.Generation <= _generation).ToList();
+                    if (pkmSelectionnes == null || pkmSelectionnes.Count == 0)
                         throw new PKMAvecTypeInexistantException(PKMTypes.Value[0].Nom);
+                    else
+                    {
+                        var meilleurPkm = SelectionnerMeilleurPkm(pkmSelectionnes);
+                        pkmsRecherches.Add(meilleurPkm);
+                    }
                 }
                 else
                 {
-                    var pkmSelectionne = _pkms.OrderBy(o => o.Nom).FirstOrDefault(o => o.PKMTypes.Count > 1 && o.PKMTypes[0]
+
+                    var pkmSelectionnes = _pkms.OrderBy(o => o.Nom).Where(o => o.PKMTypes.Count > 1 && o.PKMTypes[0]
                                             == PKMTypes.Value[0].Nom && o.PKMTypes[1] == PKMTypes.Value[1].Nom
-                                            && o.Generation <= _generation);
-                    if (pkmSelectionne != null)
-                        pkmsRecherches.Add(pkmSelectionne);
-                    else
+                                            && o.Generation <= _generation).ToList();
+                    if (pkmSelectionnes == null || pkmSelectionnes.Count == 0)
                         throw new PKMAvecTypeInexistantException(PKMTypes.Value[0].Nom + "-" + PKMTypes.Value[1].Nom);
+                    else
+                    {
+                        var meilleurPkm = SelectionnerMeilleurPkm(pkmSelectionnes);
+                        pkmsRecherches.Add(meilleurPkm);
+                    }
                 }
             }
             return pkmsRecherches;
+        }
+
+        private PKM SelectionnerMeilleurPkm(List<PKM> pKMs)
+        {
+            var meilleurPkms = _determinerMeilleurPKMParStats.Calculer(pKMs);
+            var pkmSelectionne = meilleurPkms.First();
+            return pkmSelectionne;
         }
 
         private bool StarterType(List<PKMType> types)

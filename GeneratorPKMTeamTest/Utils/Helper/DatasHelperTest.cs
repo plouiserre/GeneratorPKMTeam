@@ -8,6 +8,7 @@ using GeneratorPKMTeam.Domain.Models;
 using GeneratorPKMTeam.Infrastructure.Mapper;
 using GeneratorPKMTeam.Infrastructure.Models.PKMDonnees;
 using GeneratorPKMTeam.Infrastructure.Models.PKMs;
+using GeneratorPKMTeam.Infrastructure.Models.PKMStats;
 
 namespace GeneratorPKMTeamTest.Utils.Helper
 {
@@ -109,9 +110,44 @@ namespace GeneratorPKMTeamTest.Utils.Helper
 
         private static void LoadData()
         {
-            string data = File.ReadAllText(@"../../../PKMs.json");
-            var json = JsonSerializer.Deserialize<PKMsInf>(data);
-            PKMs = PKMMapper.ToDomain(json);
+            string pkmData = File.ReadAllText(@"../../../PKMs.json");
+            var pkmJson = JsonSerializer.Deserialize<PKMsInf>(pkmData);
+            string pkmStatsData = File.ReadAllText(@"../../../PKMStats.json");
+            var pkmStatJson = JsonSerializer.Deserialize<PKMDataStatsInf>(pkmStatsData);
+            PKMs = PKMMapper.ToDomain(pkmJson, pkmStatJson);
+        }
+
+        //méthode temporaire
+        public static List<PKM> MockPKMPlantePoisonAvecStats()
+        {
+            var bulbizarre = MockPKM("Bulbizarre", 45, 49, 65, 49, 65, 45);
+
+            var ortide = MockPKM("Ortide", 60, 65, 85, 70, 75, 40);
+
+            var emplifor = MockPKM("Emplifor", 80, 105, 100, 65, 70, 70);
+
+            var roserade = MockPKM("Roserade", 60, 70, 125, 65, 105, 90);
+
+            var mockPKMs = new List<PKM>() { bulbizarre, ortide, emplifor, roserade };
+            return mockPKMs;
+        }
+
+        private static PKM MockPKM(string nom, int PV, int attaque, int speAttaque, int defense, int speDefense, int vitesse)
+        {
+            var pkm = new PKM()
+            {
+                Nom = nom,
+                Stats = new PKMStats()
+                {
+                    PV = PV,
+                    Attaque = attaque,
+                    SpeAttaque = speAttaque,
+                    Defense = defense,
+                    SpeDefense = speDefense,
+                    Vitesse = vitesse
+                }
+            };
+            return pkm;
         }
     }
 }

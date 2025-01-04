@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GeneratorPKMTeam;
+using GeneratorPKMTeam.Domain.CustomException;
 using GeneratorPKMTeam.Domain.Handler.OrdrePKMType;
+using NSubstitute;
+using NSubstitute.ExceptionExtensions;
 
 namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
 {
@@ -15,7 +18,9 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
             string tousLesTypesPossibles = "Eau Plante Roche Combat Sol Fée Insecte Ténèbres Glace Plante-Combat Plante-Ténèbres Roche-Plante Roche-Sol Roche-Insecte Roche-Ténèbres Sol-Roche Insecte-Plante Insecte-Roche Insecte-Combat Insecte-Sol Ténèbres-Glace Glace-Sol";
             var tousLesTypesConstruits = ConstruireTousLesTypesPossibles(tousLesTypesPossibles);
 
-            var gerer = new GererRecuperationPKMType();
+            var recupererPKMTypeDouble = new RecupererPKMTypeDouble();
+            var recupererPKMTypeSimple = new RecupererPKMTypeSimple();
+            var gerer = new GererRecuperationPKMType(recupererPKMTypeDouble, recupererPKMTypeSimple);
 
             var pkmTypesRecuperes = gerer.RecupererPKMTypes(new List<PKMType>() { new PKMType() { Nom = "Eau" } }, tousLesTypesConstruits);
 
@@ -34,7 +39,9 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
             string tousLesTypesPossibles = "Combat Spectre Sol Normal Ténèbres Feu Glace Fée Plante-Poison Normal-Fée Ténèbres-Spectre Ténèbres-Feu Ténèbres-Glace Feu-Combat Feu-Sol Glace-Sol";
             var tousLesTypesConstruits = ConstruireTousLesTypesPossibles(tousLesTypesPossibles);
 
-            var gerer = new GererRecuperationPKMType();
+            var recupererPKMTypeDouble = new RecupererPKMTypeDouble();
+            var recupererPKMTypeSimple = new RecupererPKMTypeSimple();
+            var gerer = new GererRecuperationPKMType(recupererPKMTypeDouble, recupererPKMTypeSimple);
 
             var pkmTypesRecuperes = gerer.RecupererPKMTypes(new List<PKMType>() { new PKMType() { Nom = "Plante" }, new PKMType() { Nom = "Poison" } }, tousLesTypesConstruits);
 
@@ -52,7 +59,33 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
             }
         }
 
+        [Fact]
+        public void AucunDunTypeSimplePrecedemmentRecupererApresDecoupageDoitEtreDecoupe()
+        {
+            string tousLesTypesPossibles = "Combat Spectre Sol Normal Ténèbres Feu Glace Fée Plante-Poison Normal-Fée Ténèbres-Spectre Ténèbres-Feu Ténèbres-Glace Feu-Combat Feu-Sol Glace-Sol";
+            var tousLesTypesConstruits = ConstruireTousLesTypesPossibles(tousLesTypesPossibles);
+            string tousLesDoublesTypesPossibles = "Plante-Poison Normal-Fée Ténèbres-Spectre Feu-Combat";
+            var tousLesTypesDoublesConstruits = ConstruireTousLesTypesPossibles(tousLesDoublesTypesPossibles);
 
+            var recupererPKMTypeDouble = Substitute.For<IRecupererPKMTypeDouble>();
+            recupererPKMTypeDouble.RecupererPKMTypes(Arg.Any<List<PKMType>>(), Arg.Any<Dictionary<string, List<PKMType>>>()).Returns(tousLesTypesDoublesConstruits);
+            var recupererPKMTypeSimple = Substitute.For<IRecupererPKMTypeSimple>();
+            recupererPKMTypeSimple.RecupererPKMTypes(Arg.Any<List<PKMType>>(), Arg.Any<Dictionary<string, List<PKMType>>>()).Throws<PasAssezPKMTypeSimpleSelectionnableException>();
+            var gerer = new GererRecuperationPKMType(recupererPKMTypeDouble, recupererPKMTypeSimple);
+
+            var pkmTypesRecuperes = gerer.RecupererPKMTypes(new List<PKMType>() { new PKMType() { Nom = "Plante" }, new PKMType() { Nom = "Poison" } }, tousLesTypesConstruits);
+
+            Assert.Equal(6, pkmTypesRecuperes.Count);
+            Assert.True(pkmTypesRecuperes.Keys.Any(o => o.Contains("Plante")));
+            Assert.True(pkmTypesRecuperes.Keys.Any(o => o.Contains("Poison")));
+            Assert.True(pkmTypesRecuperes.Keys.Any(o => o.Contains("Normal")));
+            Assert.True(pkmTypesRecuperes.Keys.Any(o => o.Contains("Fée")));
+            Assert.True(pkmTypesRecuperes.Keys.Any(o => o.Contains("Ténèbres")));
+            Assert.True(pkmTypesRecuperes.Keys.Any(o => o.Contains("Spectre")));
+            Assert.True(pkmTypesRecuperes.Keys.Any(o => o.Contains("Feu")));
+            Assert.True(pkmTypesRecuperes.Keys.Any(o => o.Contains("Combat")));
+
+        }
 
 
         private Dictionary<string, List<PKMType>> ConstruireTousLesTypesPossibles(string tousLesTypesPossibles)
