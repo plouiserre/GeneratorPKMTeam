@@ -89,7 +89,9 @@ namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
         private bool PKMTypeCorrespondStarter(string key)
         {
             var pkmTypeDoubleADiviser = _pkmTypesDoublesRecuperes[key];
-            if ((pkmTypeDoubleADiviser[0].Nom == _starterType[0].Nom && pkmTypeDoubleADiviser[1].Nom == _starterType[1].Nom) || (pkmTypeDoubleADiviser[0].Nom == _starterType[1].Nom && pkmTypeDoubleADiviser[0].Nom == _starterType[1].Nom))
+            if (_starterType.Count == 1)
+                return false;
+            else if ((pkmTypeDoubleADiviser[0].Nom == _starterType[0].Nom && pkmTypeDoubleADiviser[1].Nom == _starterType[1].Nom) || (pkmTypeDoubleADiviser[0].Nom == _starterType[1].Nom && pkmTypeDoubleADiviser[0].Nom == _starterType[1].Nom))
                 return true;
             else
                 return false;
