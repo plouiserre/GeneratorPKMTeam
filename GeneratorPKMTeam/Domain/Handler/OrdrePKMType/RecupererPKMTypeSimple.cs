@@ -6,13 +6,17 @@ using GeneratorPKMTeam.Domain.CustomException;
 
 namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
 {
-    public class RecupererPKMTypeSimple : RecupererPKMTypeBase, IRecupererPKMType
+    public class RecupererPKMTypeSimple : RecupererPKMTypeBase, IRecupererPKMType, IRecupererPKMTypeSimple
     {
         private Dictionary<string, List<PKMType>> _pKMTypesDejaRecuperes;
         private Dictionary<string, List<PKMType>> _pkmTypeRecupere;
         private List<PKMType> _starterType;
 
-        public RecupererPKMTypeSimple(Dictionary<string, List<PKMType>> pKMTypesDejaRecuperes)
+        public RecupererPKMTypeSimple()
+        {
+        }
+
+        public void RecupererPKMTypeDoublesDejaCalcules(Dictionary<string, List<PKMType>> pKMTypesDejaRecuperes)
         {
             _pKMTypesDejaRecuperes = pKMTypesDejaRecuperes;
         }

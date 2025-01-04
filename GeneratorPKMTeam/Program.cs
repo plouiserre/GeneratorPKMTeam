@@ -26,7 +26,9 @@ var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
 var choisirMeilleuresCombinaisonsTypes = new ChoisirMeilleuresCombinaisonsTypes(loadPKMTypes, selectPKMTypes, resultFightPKMTypes,
                 gererResultatTiragePKMTypes);
 var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(PKMPersistence, pKM);
-var gererRecuperationPKMType = new GererRecuperationPKMType();
+var recupererPKMTypeDouble = new RecupererPKMTypeDouble();
+var recupererPKMTypeSimple = new RecupererPKMTypeSimple();
+var gererRecuperationPKMType = new GererRecuperationPKMType(recupererPKMTypeDouble, recupererPKMTypeSimple);
 var definirOrdrePKMType = new DefinirOrdrePKMType(determinerTousLesTypesExistant, pKM, gererRecuperationPKMType, generation);
 var determinerMeilleurPKMParStats = new DeterminerMeilleurPKMParStats(PKMStatsPersistence);
 var recuperationPKM = new RecuperationPKMs(PKMPersistence, pKM, determinerMeilleurPKMParStats, generation);

@@ -9,14 +9,16 @@ namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
 {
     public class GererRecuperationPKMType : IGererRecuperationPKMType
     {
-        private RecupererPKMTypeSimple _recupererPKMTypeSimple;
-        private RecupererPKMTypeDouble _recupererPKMTypeDouble;
+        private IRecupererPKMTypeSimple _recupererPKMTypeSimple;
+        private IRecupererPKMTypeDouble _recupererPKMTypeDouble;
         private Dictionary<string, List<PKMType>> _pkmTypesDoublesRecuperes;
         private List<PKMType> _pkmTypeDoubles;
         private List<PKMType> _starterType;
 
-        public GererRecuperationPKMType()
+        public GererRecuperationPKMType(IRecupererPKMTypeDouble recupererPKMTypeDouble, IRecupererPKMTypeSimple recupererPKMTypeSimple)
         {
+            _recupererPKMTypeDouble = recupererPKMTypeDouble;
+            _recupererPKMTypeSimple = recupererPKMTypeSimple;
         }
 
 
@@ -26,11 +28,8 @@ namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
             _starterType = starterType;
             try
             {
-                _recupererPKMTypeDouble = new RecupererPKMTypeDouble();
                 _pkmTypesDoublesRecuperes = _recupererPKMTypeDouble.RecupererPKMTypes(_starterType, tousLesTypesPossibles);
-
-                _recupererPKMTypeSimple = new RecupererPKMTypeSimple(_pkmTypesDoublesRecuperes);
-
+                _recupererPKMTypeSimple.RecupererPKMTypeDoublesDejaCalcules(_pkmTypesDoublesRecuperes);
                 var tousLesPkmTypes = _recupererPKMTypeSimple.RecupererPKMTypes(_starterType, tousLesTypesPossibles);
 
                 foreach (var pkmType in tousLesPkmTypes)
@@ -59,9 +58,10 @@ namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
 
         private string pKMTypesDoubleADiviser()
         {
+            var pkmDoubles = _pkmTypesDoublesRecuperes.Where(o => o.Value.Count == 2).ToDictionary(o => o.Key, o => o.Value);
             var random = new Random();
-            int index = random.Next(_pkmTypesDoublesRecuperes.Count);
-            return _pkmTypesDoublesRecuperes.ElementAt(index).Key;
+            int index = random.Next(pkmDoubles.Count);
+            return pkmDoubles.ElementAt(index).Key;
         }
 
         private void TrouverPkmTypeDoubleADiviser()

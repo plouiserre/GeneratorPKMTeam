@@ -81,7 +81,9 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
             var starterPKM = new GererStarterPKM(pkmPersistence);
             starterPKM.ChoisirStarter("Bulbizarre");
             var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(pkmPersistence, starterPKM);
-            var gererRecuperationPKMType = new GererRecuperationPKMType();
+            var recupererPKMTypeDouble = new RecupererPKMTypeDouble();
+            var recupererPKMTypeSimple = new RecupererPKMTypeSimple();
+            var gererRecuperationPKMType = new GererRecuperationPKMType(recupererPKMTypeDouble, recupererPKMTypeSimple);
             var definirOrdrePKMTypes = new DefinirOrdrePKMType(determinerTousLesTypesExistant, starterPKM, gererRecuperationPKMType, _generation);
             var determinerMeilleurPKMParStats = new DeterminerMeilleurPKMParStats(PKMStatsPersistence);
             var recuperationPKMs = new RecuperationPKMs(pkmPersistence, starterPKM, determinerMeilleurPKMParStats, _generation);
