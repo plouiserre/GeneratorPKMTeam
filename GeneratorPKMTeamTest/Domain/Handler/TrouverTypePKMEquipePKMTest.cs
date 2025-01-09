@@ -16,12 +16,12 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         public void RecuperationPKMEquipeOK()
         {
             var listPKM = new List<PKM>() { new PKM() { Nom = "Bulbizarre" }, new PKM() { Nom = "Salamèche" }, new PKM() { Nom = "Carapuce" } };
-            var choisirMeilleuresCombinaisonsTypes = Substitute.For<IChoisirMeilleuresCombinaisonsTypes>();
-            choisirMeilleuresCombinaisonsTypes.GenererTirageParfait().Returns(new TiragePKMTypes());
+            var noterEquipePKM = Substitute.For<INoterEquipePKM>();
+            noterEquipePKM.AccepterCetteEquipe(listPKM).Returns(true);
             var assemblerEquipePKM = Substitute.For<IAssemblerEquipePKM>();
-            assemblerEquipePKM.Assembler(Arg.Any<TiragePKMTypes>()).Returns(listPKM);
+            assemblerEquipePKM.Assembler().Returns(listPKM);
 
-            var trouver = new TrouverTypePKMEquipePKM(choisirMeilleuresCombinaisonsTypes, assemblerEquipePKM);
+            var trouver = new TrouverTypePKMEquipePKM(noterEquipePKM, assemblerEquipePKM);
             var resultat = trouver.GenererEquipePKM();
 
             Assert.Equal(3, resultat.Count);
@@ -31,15 +31,33 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         }
 
         [Fact]
-        public void RecuperationPKMEquipeEchouePremiereFoisEtReussieApres()
+        public void RecuperationPKMEquipeEchouePremiereFoisCarPasAccepteEtReussieApres()
         {
             var listPKM = new List<PKM>() { new PKM() { Nom = "Bulbizarre" }, new PKM() { Nom = "Salamèche" }, new PKM() { Nom = "Carapuce" } };
-            var choisirMeilleuresCombinaisonsTypes = Substitute.For<IChoisirMeilleuresCombinaisonsTypes>();
-            choisirMeilleuresCombinaisonsTypes.GenererTirageParfait().Returns(new TiragePKMTypes());
+            var noterEquipePKM = Substitute.For<INoterEquipePKM>();
+            noterEquipePKM.AccepterCetteEquipe(listPKM).Returns(x => false, x => true);
             var assemblerEquipePKM = Substitute.For<IAssemblerEquipePKM>();
-            assemblerEquipePKM.Assembler(Arg.Any<TiragePKMTypes>()).Returns(x => null, x => listPKM);
+            assemblerEquipePKM.Assembler().Returns(listPKM);
 
-            var trouver = new TrouverTypePKMEquipePKM(choisirMeilleuresCombinaisonsTypes, assemblerEquipePKM);
+            var trouver = new TrouverTypePKMEquipePKM(noterEquipePKM, assemblerEquipePKM);
+            var resultat = trouver.GenererEquipePKM();
+
+            Assert.Equal(3, resultat.Count);
+            Assert.Equal("Bulbizarre", resultat[0].Nom);
+            Assert.Equal("Salamèche", resultat[1].Nom);
+            Assert.Equal("Carapuce", resultat[2].Nom);
+        }
+
+        [Fact]
+        public void RecuperationPKMEquipeEchouePremiereFoisCarPasTrouveEtReussieApres()
+        {
+            var listPKM = new List<PKM>() { new PKM() { Nom = "Bulbizarre" }, new PKM() { Nom = "Salamèche" }, new PKM() { Nom = "Carapuce" } };
+            var noterEquipePKM = Substitute.For<INoterEquipePKM>();
+            noterEquipePKM.AccepterCetteEquipe(listPKM).Returns(true);
+            var assemblerEquipePKM = Substitute.For<IAssemblerEquipePKM>();
+            assemblerEquipePKM.Assembler().Returns(x => null, x => listPKM);
+
+            var trouver = new TrouverTypePKMEquipePKM(noterEquipePKM, assemblerEquipePKM);
             var resultat = trouver.GenererEquipePKM();
 
             Assert.Equal(3, resultat.Count);

@@ -1,33 +1,31 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType;
 using GeneratorPKMTeam.Domain.Models;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
     public class TrouverTypePKMEquipePKM : ITrouverTypePKMEquipePKM
     {
-        private IChoisirMeilleuresCombinaisonsTypes _choisirMeilleuresCombinaisonsTypes;
+        private INoterEquipePKM _noterEquipePKM;
         private IAssemblerEquipePKM _assemblerEquipePKM;
+        private IResultatCombatPKMTypes _resultCombatPKMTypes;
 
-        public TrouverTypePKMEquipePKM(IChoisirMeilleuresCombinaisonsTypes choisirMeilleuresCombinaisonsTypes,
-            IAssemblerEquipePKM assemblerEquipePKM)
+
+        public TrouverTypePKMEquipePKM(INoterEquipePKM noterEquipePKM, IAssemblerEquipePKM assemblerEquipePKM)
         {
-            _choisirMeilleuresCombinaisonsTypes = choisirMeilleuresCombinaisonsTypes;
+            _noterEquipePKM = noterEquipePKM;
             _assemblerEquipePKM = assemblerEquipePKM;
         }
 
 
         public List<PKM> GenererEquipePKM()
         {
-            var equipePKM = new List<PKM>();
             bool equipePKMTrouve = false;
+            List<PKM> equipePKM = new List<PKM>();
             while (!equipePKMTrouve)
             {
-                var tirage = _choisirMeilleuresCombinaisonsTypes.GenererTirageParfait();
-                equipePKM = _assemblerEquipePKM.Assembler(tirage);
-                if (equipePKM != null)
+                equipePKM = _assemblerEquipePKM.Assembler();
+                bool tirageAccepter = _noterEquipePKM.AccepterCetteEquipe(equipePKM);
+                if (tirageAccepter)
                     equipePKMTrouve = true;
             }
             return equipePKM;
