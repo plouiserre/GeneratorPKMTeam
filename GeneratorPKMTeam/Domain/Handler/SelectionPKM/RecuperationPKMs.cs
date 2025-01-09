@@ -26,6 +26,7 @@ namespace GeneratorPKMTeam.Domain.Handler.SelectionPKM
             _determinerMeilleurPKMParStats = determinerMeilleurPKMParStats;
         }
 
+        //TODO subdiviser cette méthode
         public List<PKM> Recuperer(Dictionary<int, List<PKMType>> PKMTypesOrdonnees)
         {
             RecupererPKMDonnees();

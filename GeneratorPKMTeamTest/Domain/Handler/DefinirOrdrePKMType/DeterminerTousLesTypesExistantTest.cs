@@ -13,6 +13,7 @@ using NSubstitute;
 
 namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
 {
+    //TODO factoriser le début de chaque TU
     public class DeterminerTousLesTypesExistantTest
     {
         [Fact]

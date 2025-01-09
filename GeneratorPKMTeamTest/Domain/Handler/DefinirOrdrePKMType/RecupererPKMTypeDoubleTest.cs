@@ -9,6 +9,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
 {
     public class RecupererPKMTypeDoubleTest
     {
+        //TODO factoriser le début de chaque TU
         //TODO checker avec un starter 1 type de ne pas avoir 6 doubles renvoyés
         [Fact]
         public void RecupererPKMTypeDoubleAvecStarterSimple()
@@ -78,7 +79,6 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
             Assert.True(typesDoublesRecuperes.ContainsKey("Ténèbres-Glace"));
         }
 
-        //TODO centraliser cette classe
         private Dictionary<string, List<PKMType>> ConstruireTousLesTypesPossibles(string tousLesTypesPossibles)
         {
             Dictionary<string, List<PKMType>> tousLesTypesConstruits = new Dictionary<string, List<PKMType>>();

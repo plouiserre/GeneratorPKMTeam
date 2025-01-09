@@ -8,6 +8,7 @@ using GeneratorPKMTeamTest.Utils.Helper;
 
 namespace GeneratorPKMTeamTest.Domain.Handler.SelectionPKM
 {
+    //TODO factoriser la partie des assert
     public class DeterminerClassementPKMParStatTest
     {
         [Fact]

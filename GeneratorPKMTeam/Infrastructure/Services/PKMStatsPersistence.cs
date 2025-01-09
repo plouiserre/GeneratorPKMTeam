@@ -9,6 +9,7 @@ using GeneratorPKMTeam.Infrastructure.Mapper;
 
 namespace GeneratorPKMTeam.Infrastructure.Services
 {
+    //TODO revoir comment est appelée cette classe
     public class PKMStatsPersistence : IPKMStatsPersistence
     {
         public ConfigurationStats AvoirConfigurationStats()

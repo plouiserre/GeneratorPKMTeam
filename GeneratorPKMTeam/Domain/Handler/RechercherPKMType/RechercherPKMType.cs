@@ -25,6 +25,7 @@ namespace GeneratorPKMTeam.Domain.Handler.RechercherPKMType
                 }
             }
         }
+
         protected bool VerifierDoublonPKMTypes(string NomPKMType)
         {
             bool doublonPresent = false;

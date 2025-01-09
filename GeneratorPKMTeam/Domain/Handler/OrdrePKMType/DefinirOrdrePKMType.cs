@@ -13,9 +13,7 @@ namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
         private IGererRecuperationPKMType _gererRecuperationPKMType;
         private int _generation;
         private Dictionary<string, List<PKMType>> _tousLesTypesPossibles;
-        private bool _starterDoubleType;
         private Dictionary<int, List<PKMType>> _typesPKMSelectionnes;
-        private int _nbrePKMMax;
 
         public DefinirOrdrePKMType(IDeterminerTousLesTypesExistant determinerTousLesTypesExistant, IGererStarterPKM gererStarterPKM, IGererRecuperationPKMType gererRecuperationPKMType, int generation)
         {
@@ -23,8 +21,6 @@ namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
             _determinerTousLesTypesExistant = determinerTousLesTypesExistant;
             _generation = generation;
             _gererStarterPKM = gererStarterPKM;
-            _nbrePKMMax = 6;
-
         }
 
         public Dictionary<int, List<PKMType>> Generer(List<PKMType> TypesAOrdonnerParPKM)
@@ -49,7 +45,6 @@ namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
             RetirerToutesLesOccurencesDuType(pkmTypes[0]);
             if (pkmTypes.Count == 2)
             {
-                _starterDoubleType = true;
                 RetirerToutesLesOccurencesDuType(pkmTypes[1]);
             }
             return pkmTypes;

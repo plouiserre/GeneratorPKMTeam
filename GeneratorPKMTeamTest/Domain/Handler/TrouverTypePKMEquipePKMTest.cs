@@ -10,6 +10,7 @@ using NSubstitute;
 
 namespace GeneratorPKMTeamTest.Domain.Handler
 {
+    //TODO factoriser les tests
     public class TrouverTypePKMEquipePKMTest
     {
         [Fact]

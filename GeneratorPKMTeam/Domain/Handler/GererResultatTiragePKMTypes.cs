@@ -6,10 +6,9 @@ using GeneratorPKMTeam.Domain.Models;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
+    //TODO se débarasser de cette classe
     public class GererResultatTiragePKMTypes : IGererResultatTiragePKMTypes
     {
-        private TiragePKMTypes tirageEtudie;
-        private double notePireTirage;
 
         public GererResultatTiragePKMTypes()
         {
@@ -18,8 +17,6 @@ namespace GeneratorPKMTeam.Domain.Handler
 
         public bool GarderTirage(TiragePKMTypes tirageATraiter)
         {
-            tirageEtudie = tirageATraiter;
-
             if (tirageATraiter.NoteTirage >= 90)
                 return true;
             else

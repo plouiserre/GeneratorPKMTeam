@@ -11,6 +11,7 @@ namespace GeneratorPKMTeam.Infrastructure.Services
     public class PKMTypePersistence : IPKMTypePersistence
     {
 
+        //TODO revoir comment est appelée cette classe
         public PKMDonnees GetPKMDonnees()
         {
             var pkmsType = new PKMTypeJson();
