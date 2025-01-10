@@ -11,13 +11,17 @@ namespace GeneratorPKMTeam.Infrastructure.Services
     public class PKMTypePersistence : IPKMTypePersistence
     {
 
-        //TODO revoir comment est appelée cette classe
+        private PKMDonnees? _pkmDonnees { get; set; }
+
         public PKMDonnees GetPKMDonnees()
         {
-            var pkmsType = new PKMTypeJson();
-            var pkmsTypeJson = pkmsType.GetPKMDatas();
-            var PKMDonnees = PKMDonneesMapper.ToDomain(pkmsTypeJson);
-            return PKMDonnees;
+            if (_pkmDonnees == null)
+            {
+                var pkmsType = new PKMTypeJson();
+                var pkmsTypeJson = pkmsType.GetPKMDatas();
+                _pkmDonnees = PKMDonneesMapper.ToDomain(pkmsTypeJson);
+            }
+            return _pkmDonnees;
         }
     }
 }

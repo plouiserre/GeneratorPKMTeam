@@ -9,15 +9,19 @@ using GeneratorPKMTeam.Infrastructure.Mapper;
 
 namespace GeneratorPKMTeam.Infrastructure.Services
 {
-    //TODO revoir comment est appelée cette classe
     public class PKMStatsPersistence : IPKMStatsPersistence
     {
+        private ConfigurationStats? _configurationStats;
         public ConfigurationStats AvoirConfigurationStats()
         {
-            var pkmStatConnector = new PKMStatsJson();
-            var pkmStatJson = pkmStatConnector.GetPKMStatsDatas();
-            var configurationJson = pkmStatJson.ordreImportanceStats;
-            return ConfigurationStatsMapper.ToDomain(configurationJson);
+            if (_configurationStats == null)
+            {
+                var pkmStatConnector = new PKMStatsJson();
+                var pkmStatJson = pkmStatConnector.GetPKMStatsDatas();
+                var configurationJson = pkmStatJson.ordreImportanceStats;
+                _configurationStats = ConfigurationStatsMapper.ToDomain(configurationJson);
+            }
+            return _configurationStats;
         }
     }
 }
