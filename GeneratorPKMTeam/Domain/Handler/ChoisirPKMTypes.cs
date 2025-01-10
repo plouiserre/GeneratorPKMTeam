@@ -9,6 +9,7 @@ namespace GeneratorPKMTeam.Domain.Handler
     //TODO clean code cette classe
     public class ChoisirPKMTypes : IChoisirPKMTypes
     {
+        private List<PKMType> _pKMTypes;
         private PKMDonnees _datas;
         private IGererStarterPKM _gererStarterPKM;
         private PKM _starterPKM;
@@ -27,22 +28,32 @@ namespace GeneratorPKMTeam.Domain.Handler
 
         public List<PKMType> SelectionnerPKMTypes(PKMDonnees datas)
         {
+            InitDatas(datas);
+            RandomNombrePKMTypes();
+            RecupererPKMTypeStarter();
+            DeterminerPKMTypesPossibles();
+            _pKMTypes.AddRange(_PKMTypesStarter);
+            TirerAuxHasardPKMTypesNecessaires();
+            return _pKMTypes;
+        }
+
+        private void InitDatas(PKMDonnees datas)
+        {
+            _pKMTypes = new List<PKMType>();
             _PKMTypesStarter = new List<PKMType>();
             _tousLesTypesPKM = new List<PKMType>();
             _datas = datas.Clone() as PKMDonnees;
-            RandomNombrePKMTypes();
-            var pkmTypes = new List<PKMType>();
-            _starterPKM = _gererStarterPKM.RecupererStarter();
-            DeterminerPKMTypesPossibles();
-            pkmTypes.AddRange(_PKMTypesStarter);
+        }
+
+        private void TirerAuxHasardPKMTypesNecessaires()
+        {
             int nombreTypesADecouvrir = _nombrePKMTypeChoisis - _starterPKM.PKMTypes.Count;
             for (int i = 0; i < nombreTypesADecouvrir; i++)
             {
                 var newIndex = RandomIndex(_tousLesTypesPKM.Count - 1);
-                pkmTypes.Add(_tousLesTypesPKM[newIndex]);
+                _pKMTypes.Add(_tousLesTypesPKM[newIndex]);
                 _tousLesTypesPKM.Remove(_tousLesTypesPKM[newIndex]);
             }
-            return pkmTypes;
         }
 
         private void RandomNombrePKMTypes()
@@ -60,7 +71,6 @@ namespace GeneratorPKMTeam.Domain.Handler
 
         private void DeterminerPKMTypesPossibles()
         {
-            RecupererPKMTypeStarter();
             foreach (var typePKM in _datas.PKMTypes)
             {
                 if (!_PKMTypesStarter.Contains(typePKM))
@@ -70,6 +80,7 @@ namespace GeneratorPKMTeam.Domain.Handler
 
         private void RecupererPKMTypeStarter()
         {
+            _starterPKM = _gererStarterPKM.RecupererStarter();
             foreach (var typePKM in _datas.PKMTypes)
             {
                 if (typePKM.Nom == _starterPKM.PKMTypes[0])
