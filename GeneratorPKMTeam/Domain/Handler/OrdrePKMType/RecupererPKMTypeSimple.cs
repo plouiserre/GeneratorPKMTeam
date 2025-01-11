@@ -21,6 +21,7 @@ namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
             _pKMTypesDejaRecuperes = pKMTypesDejaRecuperes;
         }
 
+        //TODO réécrire plus clairement
         public override Dictionary<string, List<PKMType>> RecupererPKMTypes(List<PKMType> starterType, Dictionary<string, List<PKMType>> tousLesTypesPossibles)
         {
             _pkmTypeRecupere = new Dictionary<string, List<PKMType>>();
@@ -36,7 +37,17 @@ namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
                     _pkmTypeRecupere.Add(simpleType.Key, simpleType.Value);
             }
             if (_pkmTypeRecupere.Count < 6)
-                throw new PasAssezPKMTypeSimpleSelectionnableException();
+            {
+                var simpleTypeDejaRecupere = new List<PKMType>();
+                foreach (var pkmTypes in _pkmTypeRecupere.Values)
+                {
+                    if (pkmTypes.Count == 1)
+                    {
+                        simpleTypeDejaRecupere.AddRange(pkmTypes);
+                    }
+                }
+                throw new PasAssezPKMTypeSimpleSelectionnableException(simpleTypeDejaRecupere);
+            }
             return _pkmTypeRecupere;
         }
 
