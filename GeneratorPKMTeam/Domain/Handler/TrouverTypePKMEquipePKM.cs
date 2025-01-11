@@ -24,9 +24,12 @@ namespace GeneratorPKMTeam.Domain.Handler
             while (!equipePKMTrouve)
             {
                 equipePKM = _assemblerEquipePKM.Assembler();
-                bool tirageAccepter = _noterEquipePKM.AccepterCetteEquipe(equipePKM);
-                if (tirageAccepter)
-                    equipePKMTrouve = true;
+                if (equipePKM != null)
+                {
+                    bool tirageAccepter = _noterEquipePKM.AccepterCetteEquipe(equipePKM);
+                    if (tirageAccepter)
+                        equipePKMTrouve = true;
+                }
             }
             return equipePKM;
         }
