@@ -8,6 +8,6 @@ namespace GeneratorPKMTeam.Domain.Handler
 {
     public interface IAssemblerEquipePKM
     {
-        List<PKM> Assembler(TiragePKMTypes tirage);
+        List<PKM> Assembler();
     }
 }

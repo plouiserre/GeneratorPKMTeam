@@ -44,30 +44,23 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
             return trouverTypePKMEquipePKM;
         }
 
-        private ChoisirMeilleuresCombinaisonsTypes InitChoisirMeilleuresCombinaisonsTypes(string nomStarter)
+        private NoterEquipePKM InitChoisirMeilleuresCombinaisonsTypes(string nomStarter)
         {
             var tousTypes = DatasHelperTest.RetournerDonneesPKMTypes(null);
             var PKMDonnees = new PKMDonnees() { PKMTypes = tousTypes };
             var PKMTypePersistence = Substitute.For<IPKMTypePersistence>();
             PKMTypePersistence.GetPKMDonnees().Returns(PKMDonnees);
-            var chargementPKMTypes = new ChargerPKMTypes(PKMTypePersistence);
-            var tousPKMs = DatasHelperTest.RetournersTousPKM();
-            var pkmPersistence = Substitute.For<IPKMPersistence>();
-            pkmPersistence.GetPKMs().Returns(new PKMs() { TousPKMs = tousPKMs.ToList() });
-            var starterPKM = new GererStarterPKM(pkmPersistence);
-            starterPKM.ChoisirStarter(nomStarter);
-            var choisirPKMTypes = new ChoisirPKMTypes(starterPKM);
             var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
             var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
             var resultatCombatPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
-            var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
-            var meilleursCombinaisonsTypes = new ChoisirMeilleuresCombinaisonsTypes(chargementPKMTypes, choisirPKMTypes,
-                            resultatCombatPKMTypes, gererResultatTiragePKMTypes);
+            var meilleursCombinaisonsTypes = new NoterEquipePKM(resultatCombatPKMTypes, PKMTypePersistence);
             return meilleursCombinaisonsTypes;
         }
 
         private AssemblerEquipePKM InitAssemblerEquipePKM(string nomStarter)
         {
+            var chargementPKMTypes = ChargementPKMTypes();
+            var choisirPKMTypes = ChoisirPKMTypes(nomStarter);
             var mockStats = new Dictionary<int, PKMStatsLabel>(){
                 {6,PKMStatsLabel.SPAttaque},
                 {5,PKMStatsLabel.Attaque},
@@ -90,8 +83,29 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
             var definirOrdrePKMTypes = new DefinirOrdrePKMType(determinerTousLesTypesExistant, starterPKM, gererRecuperationPKMType, _generation);
             var determinerMeilleurPKMParStats = new DeterminerMeilleurPKMParStats(PKMStatsPersistence);
             var recuperationPKMs = new RecuperationPKMs(pkmPersistence, starterPKM, determinerMeilleurPKMParStats, _generation);
-            var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMTypes, recuperationPKMs);
+            var assemblerEquipePKM = new AssemblerEquipePKM(chargementPKMTypes, choisirPKMTypes, definirOrdrePKMTypes, recuperationPKMs);
             return assemblerEquipePKM;
+        }
+
+        private ChargerPKMTypes ChargementPKMTypes()
+        {
+            var tousTypes = DatasHelperTest.RetournerDonneesPKMTypes(null);
+            var PKMDonnees = new PKMDonnees() { PKMTypes = tousTypes };
+            var PKMTypePersistence = Substitute.For<IPKMTypePersistence>();
+            PKMTypePersistence.GetPKMDonnees().Returns(PKMDonnees);
+            var chargementPKMTypes = new ChargerPKMTypes(PKMTypePersistence);
+            return chargementPKMTypes;
+        }
+
+        private ChoisirPKMTypes ChoisirPKMTypes(string nomStarter)
+        {
+            var tousPKMs = DatasHelperTest.RetournersTousPKM();
+            var pkmPersistence = Substitute.For<IPKMPersistence>();
+            pkmPersistence.GetPKMs().Returns(new PKMs() { TousPKMs = tousPKMs.ToList() });
+            var starterPKM = new GererStarterPKM(pkmPersistence);
+            starterPKM.ChoisirStarter(nomStarter);
+            var choisirPKMTypes = new ChoisirPKMTypes(starterPKM);
+            return choisirPKMTypes;
         }
     }
 }

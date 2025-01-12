@@ -8,9 +8,6 @@ namespace GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType
 {
     public class ResultatCombatPKMTypeDEF : IResultatCombatPKMTypeDEF
     {
-        private const double NombrePKMTypes = 18;
-
-        private List<RelPKMType> _listesPKMTypesFaibles;
 
         public ResultatCombatPKMTypeDEF()
         {

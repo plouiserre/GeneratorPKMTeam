@@ -12,17 +12,10 @@ using GeneratorPKMTeam.Domain.Handler.SelectionPKM;
 namespace GeneratorPKMTeamTest.Domain.Handler.SelectionPKM
 {
 
-    //TODO factoriser les tests surtout la partie init
     public class RecuperationPKMsTest
     {
         private Dictionary<int, List<PKMType>> PKMTypesOrdonnees;
 
-        // private PKM? _eauPKM { get; set; }
-        // private PKM? _insectePKM { get; set; }
-        // private PKM? _plantePoisonPKM { get; set; }
-        // private PKM? _psyPKM { get; set; }
-        // private PKM? _feuVolPKM { get; set; }
-        // private PKM? _acierSolPkm { get; set; }
         private PKM? _starterPKM { get; set; }
         private Dictionary<int, PKMStatsLabel> _mockStats { get; set; }
 
@@ -102,23 +95,6 @@ namespace GeneratorPKMTeamTest.Domain.Handler.SelectionPKM
             else
                 return pkms.Any(o => o.PKMTypes.Count > 1 && o.PKMTypes[0] == premierType &&
                     o.PKMTypes[1] == secondType);
-        }
-
-        private bool CestUnStarter(List<string> PKMTypes)
-        {
-            if (PKMTypes.Count != _starterPKM.PKMTypes.Count)
-            {
-                return false;
-            }
-            else
-            {
-                if (_starterPKM.PKMTypes[0] != PKMTypes[0])
-                    return false;
-                else if (_starterPKM.PKMTypes.Count == 2 && _starterPKM.PKMTypes[1] != PKMTypes[1])
-                    return false;
-                else
-                    return true;
-            }
         }
 
         [Fact]

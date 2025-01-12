@@ -14,13 +14,9 @@ namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
 {
     public class ResultatCombatPKMTypeDEFTest
     {
-        private List<RelPKMType> peuPKMTypesDangereux;
-        private List<PKMType> tiragePKMTypes;
 
         public ResultatCombatPKMTypeDEFTest()
         {
-            peuPKMTypesDangereux = RelPKMTypePersonas.RetournerRelPKMType(FrequenceRelPKMType.Peu, NomListRelPKMType.Dangereux);
-            tiragePKMTypes = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Eau", "Insecte", "Dragon", "Combat", "Ténèbres", "Fée" });
         }
 
         [Fact]

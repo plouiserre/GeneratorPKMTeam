@@ -4,7 +4,6 @@ namespace GeneratorPKMTeam.Domain.Handler.ResultatCombatPKMType
 {
     public class ResultatCombatPKMTypes : IResultatCombatPKMTypes
     {
-        private const double NombrePKMTypes = 18;
         private double _pourcentPKMTypesFaiblesTrouves;
         private double _pourcentPKMTypesDangereuxTrouves;
         private double _pourcentPKMTypesFinales;

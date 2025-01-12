@@ -6,22 +6,31 @@ namespace GeneratorPKMTeam.Domain.Handler
 {
     public class AssemblerEquipePKM : IAssemblerEquipePKM
     {
+        private IChargerPKMTypes _chargementPKMTypes;
+        private IChoisirPKMTypes _choisirPKMTypes;
         private IDefinirOrdrePKMType _definirOrdrePKMType;
         private IRecuperationPKMs _recuperationPKMs;
 
-        public AssemblerEquipePKM(IDefinirOrdrePKMType definirOrdrePKMType, IRecuperationPKMs recuperationPKMs)
+        public AssemblerEquipePKM(IChargerPKMTypes chargementPKMTypes, IChoisirPKMTypes choisirPKMTypes,
+                                IDefinirOrdrePKMType definirOrdrePKMType, IRecuperationPKMs recuperationPKMs)
         {
+            _chargementPKMTypes = chargementPKMTypes;
+            _choisirPKMTypes = choisirPKMTypes;
             _definirOrdrePKMType = definirOrdrePKMType;
             _recuperationPKMs = recuperationPKMs;
         }
 
-        public List<PKM> Assembler(TiragePKMTypes tirage)
+        public List<PKM> Assembler()
         {
             try
             {
                 var resultat = new List<PKM>();
 
-                var typeOrdonnees = _definirOrdrePKMType.Generer(tirage.PKMTypes);
+                var tousPKMTypes = _chargementPKMTypes.AvoirPKMDatas();
+
+                var PKMTypesChoisis = _choisirPKMTypes.SelectionnerPKMTypes(tousPKMTypes);
+
+                var typeOrdonnees = _definirOrdrePKMType.Generer(PKMTypesChoisis);
 
                 resultat = _recuperationPKMs.Recuperer(typeOrdonnees);
 

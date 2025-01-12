@@ -49,7 +49,6 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
                 var definirOrdre = new DefinirOrdrePKMType(determinerTousLesTypesExistant, gererStarterPKM, gererRecuperationPKMType, generation);
                 Dictionary<int, List<PKMType>> regroupementTypesPKM = definirOrdre.Generer(pkmTypes);
 
-                //AssertTousPKMTypesChoisis(pkmTypes, regroupementTypesPKM);
                 AssertDifferentsTypes(regroupementTypesPKM);
             }
         }
@@ -107,31 +106,6 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
             return types;
         }
 
-        private void AssertTousPKMTypesChoisis(List<PKMType> pkmTypes, Dictionary<int, List<PKMType>> regroupementTypesPKM)
-        {
-            bool tousTypesRetournes = true;
-            var tousTypesTrouves = new List<PKMType>();
-            foreach (var regroupement in regroupementTypesPKM)
-            {
-                tousTypesTrouves.AddRange(regroupement.Value);
-            }
-            foreach (var pkmType in pkmTypes)
-            {
-                bool contains = tousTypesTrouves.Any(o => o.Nom == pkmType.Nom);
-                if (!contains)
-                {
-                    tousTypesRetournes = false;
-                    break;
-                }
-            }
-            if (!tousTypesRetournes)
-            {
-                int test = 3 + 2;
-            }
-            Assert.Equal(6, regroupementTypesPKM.Count);
-            Assert.True(tousTypesRetournes);
-        }
-
         private void AssertDifferentsTypes(Dictionary<int, List<PKMType>> regroupementTypesPKM)
         {
             bool aucunPKMTypesEnDouble = true;
@@ -156,17 +130,6 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
             }
             Assert.Equal(6, regroupementTypesPKM.Count);
             Assert.True(aucunPKMTypesEnDouble);
-            // for (int i = 0; i < regroupementTypesPKM.Count; i++)
-            // {
-            //     for (int j = 0; j < regroupementTypesPKM.Count; j++)
-            //     {
-            //         if (i == j)
-            //             continue;
-            //         var premierRegroupement = regroupementTypesPKM[i];
-            //         var secondRegroupement = regroupementTypesPKM[j];
-
-            //     }
-            // }
         }
 
 

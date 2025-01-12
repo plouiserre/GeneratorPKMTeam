@@ -17,14 +17,12 @@ string starterPKMName = Console.ReadLine();
 GererStarterPKM pKM = new GererStarterPKM(PKMPersistence);
 pKM.ChoisirStarter(starterPKMName);
 
-var loadPKMTypes = new ChargerPKMTypes(PMKTypePersistence);
-var selectPKMTypes = new ChoisirPKMTypes(pKM);
+var chargerPKMTypes = new ChargerPKMTypes(PMKTypePersistence);
+var choisirPKMTypes = new ChoisirPKMTypes(pKM);
 var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
 var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
 var resultFightPKMTypes = new ResultatCombatPKMTypes(resultatCombatPKMTypeATK, resultatCombatPKMTypeDEF);
-var gererResultatTiragePKMTypes = new GererResultatTiragePKMTypes();
-var choisirMeilleuresCombinaisonsTypes = new ChoisirMeilleuresCombinaisonsTypes(loadPKMTypes, selectPKMTypes, resultFightPKMTypes,
-                gererResultatTiragePKMTypes);
+var noterEquipePKM = new NoterEquipePKM(resultFightPKMTypes, PMKTypePersistence);
 var determinerTousLesTypesExistant = new DeterminerTousLesTypesExistant(PKMPersistence, pKM);
 var recupererPKMTypeDouble = new RecupererPKMTypeDouble();
 var recupererPKMTypeSimple = new RecupererPKMTypeSimple();
@@ -32,8 +30,8 @@ var gererRecuperationPKMType = new GererRecuperationPKMType(recupererPKMTypeDoub
 var definirOrdrePKMType = new DefinirOrdrePKMType(determinerTousLesTypesExistant, pKM, gererRecuperationPKMType, generation);
 var determinerMeilleurPKMParStats = new DeterminerMeilleurPKMParStats(PKMStatsPersistence);
 var recuperationPKM = new RecuperationPKMs(PKMPersistence, pKM, determinerMeilleurPKMParStats, generation);
-var assemblerEquipePKM = new AssemblerEquipePKM(definirOrdrePKMType, recuperationPKM);
-var trouverTypePKMEquipePKM = new TrouverTypePKMEquipePKM(choisirMeilleuresCombinaisonsTypes, assemblerEquipePKM);
+var assemblerEquipePKM = new AssemblerEquipePKM(chargerPKMTypes, choisirPKMTypes, definirOrdrePKMType, recuperationPKM);
+var trouverTypePKMEquipePKM = new TrouverTypePKMEquipePKM(noterEquipePKM, assemblerEquipePKM);
 var handler = new GeneratePKMTeamHandler(trouverTypePKMEquipePKM);
 
 var pkmsTeams = handler.Generer();

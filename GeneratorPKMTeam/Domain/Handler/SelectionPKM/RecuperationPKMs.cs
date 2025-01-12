@@ -14,6 +14,7 @@ namespace GeneratorPKMTeam.Domain.Handler.SelectionPKM
         private IGererStarterPKM _gererStarterPKM;
         private IDeterminerMeilleurPKMParStats _determinerMeilleurPKMParStats;
         private List<PKM> _pkms;
+        private List<PKM> _pkmsRecherches;
         private int _generation;
         private PKM _starterPKM;
 
@@ -30,41 +31,50 @@ namespace GeneratorPKMTeam.Domain.Handler.SelectionPKM
         {
             RecupererPKMDonnees();
             _starterPKM = _gererStarterPKM.RecupererStarter();
-            var pkmsRecherches = new List<PKM>();
+            _pkmsRecherches = new List<PKM>();
             foreach (var PKMTypes in PKMTypesOrdonnees)
             {
                 if (StarterType(PKMTypes.Value))
                 {
-                    pkmsRecherches.Add(_starterPKM);
+                    _pkmsRecherches.Add(_starterPKM);
                 }
                 else if (PKMTypes.Value.Count == 1)
                 {
-                    var pkmSelectionnes = _pkms.OrderBy(o => o.Nom).Where(o => o.PKMTypes.Count == 1 &&
-                                        o.PKMTypes[0] == PKMTypes.Value[0].Nom && o.Generation <= _generation).ToList();
-                    if (pkmSelectionnes == null || pkmSelectionnes.Count == 0)
-                        throw new PKMAvecTypeInexistantException(PKMTypes.Value[0].Nom);
-                    else
-                    {
-                        var meilleurPkm = SelectionnerMeilleurPkm(pkmSelectionnes);
-                        pkmsRecherches.Add(meilleurPkm);
-                    }
+                    SelectionnerPKMTypeSimple(PKMTypes.Value[0].Nom);
                 }
                 else
                 {
-
-                    var pkmSelectionnes = _pkms.OrderBy(o => o.Nom).Where(o => o.PKMTypes.Count > 1 && o.PKMTypes[0]
-                                            == PKMTypes.Value[0].Nom && o.PKMTypes[1] == PKMTypes.Value[1].Nom
-                                            && o.Generation <= _generation).ToList();
-                    if (pkmSelectionnes == null || pkmSelectionnes.Count == 0)
-                        throw new PKMAvecTypeInexistantException(PKMTypes.Value[0].Nom + "-" + PKMTypes.Value[1].Nom);
-                    else
-                    {
-                        var meilleurPkm = SelectionnerMeilleurPkm(pkmSelectionnes);
-                        pkmsRecherches.Add(meilleurPkm);
-                    }
+                    SelectionnerPKMTypeDouble(PKMTypes.Value[0].Nom, PKMTypes.Value[1].Nom);
                 }
             }
-            return pkmsRecherches;
+            return _pkmsRecherches;
+        }
+
+        private void SelectionnerPKMTypeSimple(string pkmTypeNom)
+        {
+            var pkmSelectionnes = _pkms.OrderBy(o => o.Nom).Where(o => o.PKMTypes.Count == 1 &&
+                                        o.PKMTypes[0] == pkmTypeNom && o.Generation <= _generation).ToList();
+            if (pkmSelectionnes == null || pkmSelectionnes.Count == 0)
+                throw new PKMAvecTypeInexistantException(pkmTypeNom);
+            else
+            {
+                var meilleurPkm = SelectionnerMeilleurPkm(pkmSelectionnes);
+                _pkmsRecherches.Add(meilleurPkm);
+            }
+        }
+
+        private void SelectionnerPKMTypeDouble(string premierPKMTypeNom, string deuxiemePKMTypeNom)
+        {
+            var pkmSelectionnes = _pkms.OrderBy(o => o.Nom).Where(o => o.PKMTypes.Count > 1 && o.PKMTypes[0]
+                                            == premierPKMTypeNom && o.PKMTypes[1] == deuxiemePKMTypeNom
+                                            && o.Generation <= _generation).ToList();
+            if (pkmSelectionnes == null || pkmSelectionnes.Count == 0)
+                throw new PKMAvecTypeInexistantException(premierPKMTypeNom + "-" + deuxiemePKMTypeNom);
+            else
+            {
+                var meilleurPkm = SelectionnerMeilleurPkm(pkmSelectionnes);
+                _pkmsRecherches.Add(meilleurPkm);
+            }
         }
 
         private PKM SelectionnerMeilleurPkm(List<PKM> pKMs)
