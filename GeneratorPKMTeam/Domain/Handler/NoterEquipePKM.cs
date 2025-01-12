@@ -4,7 +4,6 @@ using GeneratorPKMTeam.Domain.Port.Driven;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    //TODo gérer le cas quand pKMs est NULL
     public class NoterEquipePKM : INoterEquipePKM
     {
         private IResultatCombatPKMTypes _resultCombatPKMTypes;

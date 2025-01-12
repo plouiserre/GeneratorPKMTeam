@@ -21,33 +21,14 @@ namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
             _pKMTypesDejaRecuperes = pKMTypesDejaRecuperes;
         }
 
-        //TODO réécrire plus clairement
         public override Dictionary<string, List<PKMType>> RecupererPKMTypes(List<PKMType> starterType, Dictionary<string, List<PKMType>> tousLesTypesPossibles)
         {
             _pkmTypeRecupere = new Dictionary<string, List<PKMType>>();
             _starterType = starterType;
             GererStarterType();
             RecupererDoubleType();
-            var simpleTypes = tousLesTypesPossibles.Where(o => o.Value.Count == 1);
-            foreach (var simpleType in simpleTypes)
-            {
-                if (_pkmTypeRecupere.Count == 6)
-                    break;
-                if (!PKMTypeDejaSelectionne(simpleType.Key))
-                    _pkmTypeRecupere.Add(simpleType.Key, simpleType.Value);
-            }
-            if (_pkmTypeRecupere.Count < 6)
-            {
-                var simpleTypeDejaRecupere = new List<PKMType>();
-                foreach (var pkmTypes in _pkmTypeRecupere.Values)
-                {
-                    if (pkmTypes.Count == 1)
-                    {
-                        simpleTypeDejaRecupere.AddRange(pkmTypes);
-                    }
-                }
-                throw new PasAssezPKMTypeSimpleSelectionnableException(simpleTypeDejaRecupere);
-            }
+            RecupererSimpleType(tousLesTypesPossibles);
+            GererQuandPasAssezPKMRecupere();
             return _pkmTypeRecupere;
         }
 
@@ -65,6 +46,34 @@ namespace GeneratorPKMTeam.Domain.Handler.OrdrePKMType
                 {
                     _pkmTypeRecupere.Add(doubleType.Key, doubleType.Value);
                 }
+            }
+        }
+
+        private void RecupererSimpleType(Dictionary<string, List<PKMType>> tousLesTypesPossibles)
+        {
+            var simpleTypes = tousLesTypesPossibles.Where(o => o.Value.Count == 1);
+            foreach (var simpleType in simpleTypes)
+            {
+                if (_pkmTypeRecupere.Count == 6)
+                    break;
+                if (!PKMTypeDejaSelectionne(simpleType.Key))
+                    _pkmTypeRecupere.Add(simpleType.Key, simpleType.Value);
+            }
+        }
+
+        private void GererQuandPasAssezPKMRecupere()
+        {
+            if (_pkmTypeRecupere.Count < 6)
+            {
+                var simpleTypeDejaRecupere = new List<PKMType>();
+                foreach (var pkmTypes in _pkmTypeRecupere.Values)
+                {
+                    if (pkmTypes.Count == 1)
+                    {
+                        simpleTypeDejaRecupere.AddRange(pkmTypes);
+                    }
+                }
+                throw new PasAssezPKMTypeSimpleSelectionnableException(simpleTypeDejaRecupere);
             }
         }
 

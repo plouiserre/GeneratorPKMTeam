@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GeneratorPKMTeam;
 using GeneratorPKMTeam.Domain;
 using GeneratorPKMTeam.Domain.Handler;
 using GeneratorPKMTeam.Domain.Handler.OrdrePKMType;
@@ -13,22 +14,20 @@ using NSubstitute;
 
 namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
 {
-    //TODO factoriser le début de chaque TU
     public class DeterminerTousLesTypesExistantTest
     {
+
+        private IPKMPersistence _pkmPersistence;
+        private IGererStarterPKM _gererStarterPKM;
+        private List<PKMType> _pkmTypes;
+
         [Fact]
         public void CalculerSixTypesPKMPourLaGenerationUn()
         {
-            var tousPKMs = DatasHelperTest.RetournersTousPKM();
-            var pKMPersistence = Substitute.For<IPKMPersistence>();
-            pKMPersistence.GetPKMs().Returns(new PKMs() { TousPKMs = tousPKMs.ToList() });
-            var starterPKM = Substitute.For<IGererStarterPKM>();
-            starterPKM.RecupererStarter().Returns(new PKM() { Nom = "Carapuce", Generation = 1, PKMTypes = new List<string>() { "Eau" } });
-            var pkmTypes = DatasHelperTest.RetournerDonneesPKMTypes(new List<string>() { "Feu", "Eau", "Vol", "Psy", "Sol", "Roche", "Plante", "Poison", "Glace" });
+            InitTest(new List<string>() { "Feu", "Eau", "Vol", "Psy", "Sol", "Roche", "Plante", "Poison", "Glace" }, new PKM() { Nom = "Carapuce", Generation = 1, PKMTypes = new List<string>() { "Eau" } });
+            var determinerTypesExistant = new DeterminerTousLesTypesExistant(_pkmPersistence, _gererStarterPKM);
 
-            var determinerTypesExistant = new DeterminerTousLesTypesExistant(pKMPersistence, starterPKM);
-
-            var resultat = determinerTypesExistant.Calculer(1, pkmTypes);
+            var resultat = determinerTypesExistant.Calculer(1, _pkmTypes);
 
             Assert.Equal(16, resultat.Count);
             Assert.Equal("Feu", resultat["Feu"].First().Nom);
@@ -62,16 +61,10 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
         [Fact]
         public void CalculerSixTypesPKMPourLaGenerationTrois()
         {
-            var tousPKMs = DatasHelperTest.RetournersTousPKM();
-            var pKMPersistence = Substitute.For<IPKMPersistence>();
-            pKMPersistence.GetPKMs().Returns(new PKMs() { TousPKMs = tousPKMs.ToList() });
-            var pkmTypes = DatasHelperTest.RetournerDonneesPKMTypes(new List<string>() { "Feu", "Combat", "Psy", "Sol", "Fée", "Plante", "Dragon", "Glace", "Insecte" });
-            var starterPKM = Substitute.For<IGererStarterPKM>();
-            starterPKM.RecupererStarter().Returns(new PKM() { Nom = "Braségali", Generation = 3, PKMTypes = new List<string>() { "Feu", "Combat" } });
+            InitTest(new List<string>() { "Feu", "Combat", "Psy", "Sol", "Fée", "Plante", "Dragon", "Glace", "Insecte" }, new PKM() { Nom = "Braségali", Generation = 3, PKMTypes = new List<string>() { "Feu", "Combat" } });
+            var determinerTypesExistant = new DeterminerTousLesTypesExistant(_pkmPersistence, _gererStarterPKM);
 
-            var determinerTypesExistant = new DeterminerTousLesTypesExistant(pKMPersistence, starterPKM);
-
-            var resultat = determinerTypesExistant.Calculer(3, pkmTypes);
+            var resultat = determinerTypesExistant.Calculer(3, _pkmTypes);
 
             Assert.Equal(18, resultat.Count);
             Assert.Equal("Psy", resultat["Psy"].First().Nom);
@@ -108,16 +101,10 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
         [Fact]
         public void CalculerSixTypesPKMPourLaGenerationSix()
         {
-            var tousPKMs = DatasHelperTest.RetournersTousPKM();
-            var pKMPersistence = Substitute.For<IPKMPersistence>();
-            pKMPersistence.GetPKMs().Returns(new PKMs() { TousPKMs = tousPKMs.ToList() });
-            var pkmTypes = DatasHelperTest.RetournerDonneesPKMTypes(new List<string>() { "Eau", "Ténèbres", "Feu", "Acier", "Roche", "Combat", "Normal", "Vol", "Poison" });
-            var starterPKM = Substitute.For<IGererStarterPKM>();
-            starterPKM.RecupererStarter().Returns(new PKM() { Nom = "Amphinobi", Generation = 6, PKMTypes = new List<string>() { "Eau", "Ténèbres" } });
+            InitTest(new List<string>() { "Eau", "Ténèbres", "Feu", "Acier", "Roche", "Combat", "Normal", "Vol", "Poison" }, new PKM() { Nom = "Amphinobi", Generation = 6, PKMTypes = new List<string>() { "Eau", "Ténèbres" } });
+            var determinerTypesExistant = new DeterminerTousLesTypesExistant(_pkmPersistence, _gererStarterPKM);
 
-            var determinerTypesExistant = new DeterminerTousLesTypesExistant(pKMPersistence, starterPKM);
-
-            var resultat = determinerTypesExistant.Calculer(6, pkmTypes);
+            var resultat = determinerTypesExistant.Calculer(6, _pkmTypes);
 
             Assert.Equal(24, resultat.Count);
             Assert.Equal("Feu", resultat["Feu"].First().Nom);
@@ -164,16 +151,10 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
         [Fact]
         public void CalculerSixTypesPKMPourBugElectrik()
         {
-            var tousPKMs = DatasHelperTest.RetournersTousPKM();
-            var pKMPersistence = Substitute.For<IPKMPersistence>();
-            pKMPersistence.GetPKMs().Returns(new PKMs() { TousPKMs = tousPKMs.ToList() });
-            var pkmTypes = DatasHelperTest.RetournerDonneesPKMTypes(new List<string>() { "Feu", "Vol", "Combat", "Electrique", "Normal", "Psy", "Eau", "Plante", "Glace", "Spectre", "Poison" });
-            var starterPKM = Substitute.For<IGererStarterPKM>();
-            starterPKM.RecupererStarter().Returns(new PKM() { Nom = "Dracaufeu", Generation = 1, PKMTypes = new List<string>() { "Feu", "Vol" } });
+            InitTest(new List<string>() { "Feu", "Vol", "Combat", "Electrique", "Normal", "Psy", "Eau", "Plante", "Glace", "Spectre", "Poison" }, new PKM() { Nom = "Dracaufeu", Generation = 1, PKMTypes = new List<string>() { "Feu", "Vol" } });
+            var determinerTypesExistant = new DeterminerTousLesTypesExistant(_pkmPersistence, _gererStarterPKM);
 
-            var determinerTypesExistant = new DeterminerTousLesTypesExistant(pKMPersistence, starterPKM);
-
-            var resultat = determinerTypesExistant.Calculer(3, pkmTypes);
+            var resultat = determinerTypesExistant.Calculer(3, _pkmTypes);
 
             Assert.Equal(25, resultat.Count);
             Assert.Equal("Combat", resultat["Combat"].First().Nom);
@@ -217,6 +198,16 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
             Assert.Equal("Eau", resultat["Glace-Eau"][1].Nom);
             Assert.Equal("Spectre", resultat["Spectre-Poison"][0].Nom);
             Assert.Equal("Poison", resultat["Spectre-Poison"][1].Nom);
+        }
+
+        private void InitTest(List<string> pkmTypes, PKM starterPKM)
+        {
+            var tousPKMs = DatasHelperTest.RetournersTousPKM();
+            _pkmPersistence = Substitute.For<IPKMPersistence>();
+            _pkmPersistence.GetPKMs().Returns(new PKMs() { TousPKMs = tousPKMs.ToList() });
+            _gererStarterPKM = Substitute.For<IGererStarterPKM>();
+            _gererStarterPKM.RecupererStarter().Returns(starterPKM);
+            _pkmTypes = DatasHelperTest.RetournerDonneesPKMTypes(pkmTypes);
         }
     }
 }

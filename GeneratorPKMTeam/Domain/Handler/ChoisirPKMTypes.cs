@@ -6,7 +6,6 @@ using GeneratorPKMTeam.Domain.Models;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    //TODO clean code cette classe
     public class ChoisirPKMTypes : IChoisirPKMTypes
     {
         private List<PKMType> _pKMTypes;

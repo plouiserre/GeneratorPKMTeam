@@ -4,21 +4,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using GeneratorPKMTeam;
 using GeneratorPKMTeam.Domain.Handler.OrdrePKMType;
+using GeneratorPKMTeamTest.Utils.Helper;
 
 namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
 {
     public class RecupererPKMTypeDoubleTest
     {
-        //TODO factoriser le début de chaque TU
-        //TODO checker avec un starter 1 type de ne pas avoir 6 doubles renvoyés
+        private Dictionary<string, List<PKMType>> _tousLesTypesConstruits;
+
         [Fact]
         public void RecupererPKMTypeDoubleAvecStarterSimple()
         {
-            string tousLesTypesPossibles = "Eau Plante Roche Combat Sol Fée Insecte Ténèbres Glace Plante-Combat Plante-Ténèbres Roche-Plante Roche-Sol Roche-Insecte Roche-Ténèbres Sol-Roche Insecte-Plante Insecte-Roche Insecte-Combat Insecte-Sol Ténèbres-Glace Glace-Sol";
-            var tousLesTypesConstruits = ConstruireTousLesTypesPossibles(tousLesTypesPossibles);
-            var recupererPKMTypeDouble = new RecupererPKMTypeDouble();
+            var recupererPKMTypeDouble = InitRecupererPKMTypeDoubleEttousLesTypesConstruits("Eau Plante Roche Combat Sol Fée Insecte Ténèbres Glace Plante-Combat Plante-Ténèbres Roche-Plante Roche-Sol Roche-Insecte Roche-Ténèbres Sol-Roche Insecte-Plante Insecte-Roche Insecte-Combat Insecte-Sol Ténèbres-Glace Glace-Sol");
 
-            var typesDoublesRecuperes = recupererPKMTypeDouble.RecupererPKMTypes(new List<PKMType>() { new PKMType() { Nom = "Eau" } }, tousLesTypesConstruits);
+            var typesDoublesRecuperes = recupererPKMTypeDouble.RecupererPKMTypes(new List<PKMType>() { new PKMType() { Nom = "Eau" } }, _tousLesTypesConstruits);
 
             Assert.Equal(3, typesDoublesRecuperes.Count);
             Assert.True(typesDoublesRecuperes.ContainsKey("Plante-Combat"));
@@ -29,12 +28,10 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
         [Fact]
         public void RecupererPKMTypeDoubleAvecStarterDouble()
         {
-            string tousLesTypesPossibles = "Combat Spectre Sol Normal Ténèbres Feu Glace Fée Plante-Poison Normal-Fée Ténèbres-Spectre Ténèbres-Feu Ténèbres-Glace Feu-Combat Feu-Sol Glace-Sol";
-            var tousLesTypesConstruits = ConstruireTousLesTypesPossibles(tousLesTypesPossibles);
-            var recupererPKMTypeDouble = new RecupererPKMTypeDouble();
+            var recupererPKMTypeDouble = InitRecupererPKMTypeDoubleEttousLesTypesConstruits("Combat Spectre Sol Normal Ténèbres Feu Glace Fée Plante-Poison Normal-Fée Ténèbres-Spectre Ténèbres-Feu Ténèbres-Glace Feu-Combat Feu-Sol Glace-Sol");
 
             var typesDoublesRecuperes = recupererPKMTypeDouble.RecupererPKMTypes(new List<PKMType>() { new PKMType() { Nom = "Plante" },
-                                        new PKMType() { Nom = "Poison" } }, tousLesTypesConstruits);
+                                        new PKMType() { Nom = "Poison" } }, _tousLesTypesConstruits);
 
             Assert.Equal(5, typesDoublesRecuperes.Count);
             Assert.True(typesDoublesRecuperes.ContainsKey("Plante-Poison"));
@@ -47,11 +44,9 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
         [Fact]
         public void RecupererPKMTypeDoubleAvecTropTypeDouble()
         {
-            string tousLesTypesPossibles = "Fée Dragon Combat Plante Feu Poison Glace Psy Acier Ténèbres Eau-Sol Dragon-Psy Combat-Psy Plante-Combat Plante-Poison Plante-Psy Plante-Ténèbres Feu-Combat Glace-Psy Psy-Fée Psy-Plante Poison-Spectre Acier-Fée Acier-Psy Ténèbres-Feu Ténèbres-Glace Electrique-Normal";
-            var tousLesTypesConstruits = ConstruireTousLesTypesPossibles(tousLesTypesPossibles);
-            var recupererPKMTypeDouble = new RecupererPKMTypeDouble();
+            var recupererPKMTypeDouble = InitRecupererPKMTypeDoubleEttousLesTypesConstruits("Fée Dragon Combat Plante Feu Poison Glace Psy Acier Ténèbres Eau-Sol Dragon-Psy Combat-Psy Plante-Combat Plante-Poison Plante-Psy Plante-Ténèbres Feu-Combat Glace-Psy Psy-Fée Psy-Plante Poison-Spectre Acier-Fée Acier-Psy Ténèbres-Feu Ténèbres-Glace Electrique-Normal");
 
-            var typesDoublesRecuperes = recupererPKMTypeDouble.RecupererPKMTypes(new List<PKMType>() { new PKMType() { Nom = "Vol" } }, tousLesTypesConstruits);
+            var typesDoublesRecuperes = recupererPKMTypeDouble.RecupererPKMTypes(new List<PKMType>() { new PKMType() { Nom = "Vol" } }, _tousLesTypesConstruits);
 
             Assert.Equal(5, typesDoublesRecuperes.Count);
             Assert.True(typesDoublesRecuperes.ContainsKey("Eau-Sol"));
@@ -65,11 +60,9 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
         [Fact]
         public void RecupererPKMTypeDoubleAvecStarterSimpleEtRefusantDoubleTypeAvecStarter()
         {
-            string tousLesTypesPossibles = "Eau Plante Roche Combat Sol Fée Insecte Ténèbres Glace Plante-Combat Eau-Ténèbres Roche-Plante Roche-Sol Eau-Insecte Roche-Ténèbres Sol-Roche Insecte-Plante Insecte-Roche Insecte-Combat Insecte-Sol Ténèbres-Glace Glace-Sol";
-            var tousLesTypesConstruits = ConstruireTousLesTypesPossibles(tousLesTypesPossibles);
-            var recupererPKMTypeDouble = new RecupererPKMTypeDouble();
+            var recupererPKMTypeDouble = InitRecupererPKMTypeDoubleEttousLesTypesConstruits("Eau Plante Roche Combat Sol Fée Insecte Ténèbres Glace Plante-Combat Eau-Ténèbres Roche-Plante Roche-Sol Eau-Insecte Roche-Ténèbres Sol-Roche Insecte-Plante Insecte-Roche Insecte-Combat Insecte-Sol Ténèbres-Glace Glace-Sol");
 
-            var typesDoublesRecuperes = recupererPKMTypeDouble.RecupererPKMTypes(new List<PKMType>() { new PKMType() { Nom = "Eau" } }, tousLesTypesConstruits);
+            var typesDoublesRecuperes = recupererPKMTypeDouble.RecupererPKMTypes(new List<PKMType>() { new PKMType() { Nom = "Eau" } }, _tousLesTypesConstruits);
 
             Assert.Equal(3, typesDoublesRecuperes.Count);
             Assert.False(typesDoublesRecuperes.ContainsKey("Eau-Ténèbres"));
@@ -79,26 +72,11 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
             Assert.True(typesDoublesRecuperes.ContainsKey("Ténèbres-Glace"));
         }
 
-        private Dictionary<string, List<PKMType>> ConstruireTousLesTypesPossibles(string tousLesTypesPossibles)
+        private RecupererPKMTypeDouble InitRecupererPKMTypeDoubleEttousLesTypesConstruits(string tousLesTypesPossibles)
         {
-            Dictionary<string, List<PKMType>> tousLesTypesConstruits = new Dictionary<string, List<PKMType>>();
-            string[] typesDecomposes = tousLesTypesPossibles.Split(' ');
-            foreach (string type in typesDecomposes)
-            {
-                if (type.Contains('-'))
-                {
-                    string[] types = type.Split('-');
-                    tousLesTypesConstruits.Add(type, new List<PKMType>() {
-                        new PKMType() { Nom = types[0] },
-                        new PKMType() { Nom = types[1] }
-                        });
-                }
-                else
-                {
-                    tousLesTypesConstruits.Add(type, new List<PKMType>() { new PKMType() { Nom = type } });
-                }
-            }
-            return tousLesTypesConstruits;
+            _tousLesTypesConstruits = PKMHelper.ConstruireTousLesTypesPossibles(tousLesTypesPossibles);
+            var recupererPKMTypeDouble = new RecupererPKMTypeDouble();
+            return recupererPKMTypeDouble;
         }
     }
 }

@@ -10,7 +10,6 @@ using NSubstitute;
 
 namespace GeneratorPKMTeamTest.Domain.Handler.ResultatCombatPKMType
 {
-    //TODO factoriser début chaque TU
     public class ResultatCombatPKMTypesTest
     {
         private List<PKMType> peuPKMTypesFaibles;
