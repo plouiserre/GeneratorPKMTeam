@@ -6,7 +6,7 @@ using GeneratorPKMTeam.Domain.Models;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    public interface ITrouverTypePKMEquipePKM
+    public interface ITrouverEquipePKM
     {
         List<PKM> GenererEquipePKM();
     }

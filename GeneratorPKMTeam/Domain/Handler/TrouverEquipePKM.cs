@@ -3,14 +3,14 @@ using GeneratorPKMTeam.Domain.Models;
 
 namespace GeneratorPKMTeam.Domain.Handler
 {
-    public class TrouverTypePKMEquipePKM : ITrouverTypePKMEquipePKM
+    public class TrouverEquipePKM : ITrouverEquipePKM
     {
         private INoterEquipePKM _noterEquipePKM;
         private IAssemblerEquipePKM _assemblerEquipePKM;
         private IResultatCombatPKMTypes _resultCombatPKMTypes;
 
 
-        public TrouverTypePKMEquipePKM(INoterEquipePKM noterEquipePKM, IAssemblerEquipePKM assemblerEquipePKM)
+        public TrouverEquipePKM(INoterEquipePKM noterEquipePKM, IAssemblerEquipePKM assemblerEquipePKM)
         {
             _noterEquipePKM = noterEquipePKM;
             _assemblerEquipePKM = assemblerEquipePKM;

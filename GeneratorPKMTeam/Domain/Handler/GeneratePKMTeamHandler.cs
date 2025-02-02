@@ -8,9 +8,9 @@ namespace GeneratorPKMTeam.Domain.Handler
 {
     public class GeneratePKMTeamHandler : IGeneratePKMTeamHandler
     {
-        private ITrouverTypePKMEquipePKM _trouverTypePKMEquipePKM;
+        private ITrouverEquipePKM _trouverTypePKMEquipePKM;
 
-        public GeneratePKMTeamHandler(ITrouverTypePKMEquipePKM trouverTypePKMEquipePKM)
+        public GeneratePKMTeamHandler(ITrouverEquipePKM trouverTypePKMEquipePKM)
         {
             _trouverTypePKMEquipePKM = trouverTypePKMEquipePKM;
         }

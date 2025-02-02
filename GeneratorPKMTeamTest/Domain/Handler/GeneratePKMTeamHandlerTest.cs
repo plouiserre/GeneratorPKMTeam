@@ -25,7 +25,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
 
         public void RecupererPlusieursListesPKMsOptimiser(string nomStarter)
         {
-            var trouverTypePKMEquipePKM = InitTrouverTypePKMEquipePKM(nomStarter);
+            var trouverTypePKMEquipePKM = InitTrouverEquipePKM(nomStarter);
             var genererMeilleuresEquipesPKM = new GeneratePKMTeamHandler(trouverTypePKMEquipePKM);
 
             var resultats = genererMeilleuresEquipesPKM.Generer();
@@ -36,11 +36,11 @@ namespace GeneratorPKMTeamTest.Domain.Handler.OrdrePKMTypeTest
             }
         }
 
-        private TrouverTypePKMEquipePKM InitTrouverTypePKMEquipePKM(string nomStarter)
+        private TrouverEquipePKM InitTrouverEquipePKM(string nomStarter)
         {
             var choisirMeilleuresCombinaisonsTypes = InitChoisirMeilleuresCombinaisonsTypes(nomStarter);
             var assemblerEquipePKM = InitAssemblerEquipePKM(nomStarter);
-            var trouverTypePKMEquipePKM = new TrouverTypePKMEquipePKM(choisirMeilleuresCombinaisonsTypes, assemblerEquipePKM);
+            var trouverTypePKMEquipePKM = new TrouverEquipePKM(choisirMeilleuresCombinaisonsTypes, assemblerEquipePKM);
             return trouverTypePKMEquipePKM;
         }
 

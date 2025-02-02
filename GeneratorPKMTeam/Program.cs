@@ -31,7 +31,7 @@ var definirOrdrePKMType = new DefinirOrdrePKMType(determinerTousLesTypesExistant
 var determinerMeilleurPKMParStats = new DeterminerMeilleurPKMParStats(PKMStatsPersistence);
 var recuperationPKM = new RecuperationPKMs(PKMPersistence, pKM, determinerMeilleurPKMParStats, generation);
 var assemblerEquipePKM = new AssemblerEquipePKM(chargerPKMTypes, choisirPKMTypes, definirOrdrePKMType, recuperationPKM);
-var trouverTypePKMEquipePKM = new TrouverTypePKMEquipePKM(noterEquipePKM, assemblerEquipePKM);
+var trouverTypePKMEquipePKM = new TrouverEquipePKM(noterEquipePKM, assemblerEquipePKM);
 var handler = new GeneratePKMTeamHandler(trouverTypePKMEquipePKM);
 
 var pkmsTeams = handler.Generer();

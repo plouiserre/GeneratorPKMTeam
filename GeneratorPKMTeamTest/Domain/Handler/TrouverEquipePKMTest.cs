@@ -13,7 +13,7 @@ using NSubstitute;
 
 namespace GeneratorPKMTeamTest.Domain.Handler
 {
-    public class TrouverTypePKMEquipePKMTest
+    public class TrouverEquipePKMTest
     {
         [Fact]
         public void RecuperationPKMEquipeOK()
@@ -24,7 +24,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var assemblerEquipePKM = Substitute.For<IAssemblerEquipePKM>();
             assemblerEquipePKM.Assembler().Returns(listPKM);
 
-            var trouver = new TrouverTypePKMEquipePKM(noterEquipePKM, assemblerEquipePKM);
+            var trouver = new TrouverEquipePKM(noterEquipePKM, assemblerEquipePKM);
             var resultat = trouver.GenererEquipePKM();
 
             AssertPKMTeam(resultat);
@@ -39,7 +39,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var assemblerEquipePKM = Substitute.For<IAssemblerEquipePKM>();
             assemblerEquipePKM.Assembler().Returns(listPKM);
 
-            var trouver = new TrouverTypePKMEquipePKM(noterEquipePKM, assemblerEquipePKM);
+            var trouver = new TrouverEquipePKM(noterEquipePKM, assemblerEquipePKM);
             var resultat = trouver.GenererEquipePKM();
 
             AssertPKMTeam(resultat);
@@ -54,7 +54,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var assemblerEquipePKM = Substitute.For<IAssemblerEquipePKM>();
             assemblerEquipePKM.Assembler().Returns(x => null, x => listPKM);
 
-            var trouver = new TrouverTypePKMEquipePKM(noterEquipePKM, assemblerEquipePKM);
+            var trouver = new TrouverEquipePKM(noterEquipePKM, assemblerEquipePKM);
             var resultat = trouver.GenererEquipePKM();
 
             AssertPKMTeam(resultat);
@@ -74,7 +74,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             pkmTypePersistance.GetPKMDonnees().Returns<PKMDonnees>(datasFake);
             var noterEquipePKM = new NoterEquipePKM(resultatCombatPKMType, pkmTypePersistance);
 
-            var trouver = new TrouverTypePKMEquipePKM(noterEquipePKM, assemblerEquipePKM);
+            var trouver = new TrouverEquipePKM(noterEquipePKM, assemblerEquipePKM);
             var resultat = trouver.GenererEquipePKM();
 
             AssertPKMTeam(resultat);
