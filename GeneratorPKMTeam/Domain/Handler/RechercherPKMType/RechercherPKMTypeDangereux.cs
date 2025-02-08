@@ -19,13 +19,13 @@ namespace GeneratorPKMTeam.Domain.Handler.RechercherPKMType
             var pkmTypesNames = PKMTypes.Select(o => o.Nom).ToList();
             foreach (var pkmTypePeutEtreDangereux in _tousPKMTypes)
             {
-                var pKMTypes = RetournerDangereuxPKMTypesPourUnType(pkmTypePeutEtreDangereux, pkmTypesNames);
+                var pKMTypes = RetournerDangereuxPKMTypesPourPlusieursTypes(pkmTypePeutEtreDangereux, pkmTypesNames);
                 ConstruireResultatsRelPKMTypesSansDoublon(pKMTypes);
             }
             return _PKMTypesRecherches;
         }
 
-        private List<PKMType> RetournerDangereuxPKMTypesPourUnType(PKMType pkmTypePeutEtreDangereux, List<string> pkmTypesNomsEnDanger)
+        private List<PKMType> RetournerDangereuxPKMTypesPourPlusieursTypes(PKMType pkmTypePeutEtreDangereux, List<string> pkmTypesNomsEnDanger)
         {
             var pkmTypes = new List<PKMType>();
             foreach (var relPKMType in pkmTypePeutEtreDangereux.RelPKMTypes)
@@ -40,6 +40,31 @@ namespace GeneratorPKMTeam.Domain.Handler.RechercherPKMType
                 }
             }
             return pkmTypes;
+        }
+
+        public Dictionary<PKMType, List<PKMType>> TrouverPKMTypeDangereuxPourChaqueType(List<PKMType> PKMTypes)
+        {
+            var pkmDangereuxParType = new Dictionary<PKMType, List<PKMType>>();
+            var pkmTypesNames = PKMTypes.Select(o => o.Nom).ToList();
+            foreach (var pkmType in PKMTypes)
+            {
+                pkmDangereuxParType.Add(pkmType, new List<PKMType>());
+                foreach (var pkmTypePeutEtreDangereux in _tousPKMTypes)
+                {
+                    foreach (var relPKMType in pkmTypePeutEtreDangereux.RelPKMTypes)
+                    {
+                        if (relPKMType.ModeImpact > 1 && pkmType.Nom == relPKMType.TypePKM)
+                        {
+                            var pKMTypeDangereux = new PKMType()
+                            {
+                                Nom = pkmTypePeutEtreDangereux.Nom
+                            };
+                            pkmDangereuxParType[pkmType].Add(pKMTypeDangereux);
+                        }
+                    }
+                }
+            }
+            return pkmDangereuxParType;
         }
     }
 }

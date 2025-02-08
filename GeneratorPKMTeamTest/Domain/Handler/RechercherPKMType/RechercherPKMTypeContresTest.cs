@@ -13,13 +13,14 @@ namespace GeneratorPKMTeamTest.Domain.Handler.RechercherPKMType
         [Fact]
         public void TrouverPKMTypesContres()
         {
-            var PKMTypesATK = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Eau", "Fée", "Roche", "Spectre", "Normal", "Insecte" });
-            var PKMTypesDEF = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Electrik", "Feu", "Plante", "Vol", "Poison", "Glace" });
+            var tousPKMTypes = DatasHelperTest.RetournerDonneesPKMTypes(null);
+            var PKMTypesDangereux = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Eau", "Fée", "Roche", "Spectre", "Normal", "Insecte" });
+            var EquipePKMTypes = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Electrik", "Feu", "Plante", "Vol", "Poison", "Glace" });
 
-            var rechercherPKMTypeFaibles = new RechercherPKMTypeFaibles();
-            var rechercherPKMTypeContres = new RechercherPKMTypeContres(PKMTypesATK, rechercherPKMTypeFaibles);
+            var rechercherPKMTypeDangereux = new RechercherPKMTypeDangereux(tousPKMTypes);
+            var rechercherPKMTypeContres = new RechercherPKMTypeContres(EquipePKMTypes, rechercherPKMTypeDangereux);
 
-            var PKMTypesContres = rechercherPKMTypeContres.TrouverPKMType(PKMTypesDEF);
+            var PKMTypesContres = rechercherPKMTypeContres.TrouverPKMType(PKMTypesDangereux);
 
             Assert.Equal(4, PKMTypesContres.Count);
             Assert.Contains("Eau", PKMTypesContres.Select(o => o.Nom));
