@@ -26,7 +26,7 @@ namespace GeneratorPKMTeam.Domain.Handler
             InitiateRecherchePKMType(_PKMTypes);
             var PKMTypesfaibles = _rechercherPKMTypeFaibles.TrouverPKMType(PKMTypesChoisis);
             var PKMTypesDangereux = _rechercherPKMTypeDangereux.TrouverPKMType(PKMTypesChoisis);
-            var rechercherPKMTypeContres = new RechercherPKMTypeContres(PKMTypesDangereux, _rechercherPKMTypeFaibles);
+            var rechercherPKMTypeContres = new RechercherPKMTypeContres(PKMTypesDangereux, _rechercherPKMTypeDangereux);
             var PKMTypesContres = rechercherPKMTypeContres.TrouverPKMType(PKMTypesChoisis);
             var classificationResult = _resultCombatPKMTypes.NoterResultatTirage(PKMTypesfaibles, PKMTypesDangereux, PKMTypesContres);
             var tirageATraiter = new TiragePKMTypes()

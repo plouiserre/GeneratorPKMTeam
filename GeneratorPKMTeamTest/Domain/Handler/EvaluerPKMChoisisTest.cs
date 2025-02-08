@@ -15,7 +15,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
         [Fact]
         public void EvaluerExcellentTirage()
         {
-            var PKMChoisis = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Sol", "Feu", "Psy", "Ténèbres", "Poison", "Combat", "Fée", "Eau", "Glace" });
+            var PKMChoisis = DatasHelperTest.RetournerDonneesPKMTypes(new List<string> { "Feu", "Vol", "Sol", "Roche", "Insecte", "Glace", "Eau", "Normal", "Acier" });
             var tousPKMTypes = DatasHelperTest.RetournerDonneesPKMTypes(null);
             var resultatCombatPKMTypeATK = new ResultatCombatPKMTypeATK();
             var resultatCombatPKMTypeDEF = new ResultatCombatPKMTypeDEF();
@@ -25,16 +25,16 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var tirage = evaluerPKMChoisis.Evaluer(PKMChoisis);
 
             Assert.Equal(ResultatTirageStatus.Excellent, tirage.ResultatTirageStatus);
-            Assert.Equal(94.1, tirage.NoteTirage);
-            Assert.True(tirage.PKMTypes.Any(o => o.Nom == "Sol"));
-            Assert.True(tirage.PKMTypes.Any(o => o.Nom == "Feu"));
-            Assert.True(tirage.PKMTypes.Any(o => o.Nom == "Psy"));
-            Assert.True(tirage.PKMTypes.Any(o => o.Nom == "Ténèbres"));
-            Assert.True(tirage.PKMTypes.Any(o => o.Nom == "Poison"));
-            Assert.True(tirage.PKMTypes.Any(o => o.Nom == "Combat"));
-            Assert.True(tirage.PKMTypes.Any(o => o.Nom == "Fée"));
-            Assert.True(tirage.PKMTypes.Any(o => o.Nom == "Eau"));
-            Assert.True(tirage.PKMTypes.Any(o => o.Nom == "Glace"));
+            Assert.Equal(86.66, tirage.NoteTirage);
+            Assert.Contains("Feu", tirage.PKMTypes.Select(o => o.Nom));
+            Assert.Contains("Vol", tirage.PKMTypes.Select(o => o.Nom));
+            Assert.Contains("Sol", tirage.PKMTypes.Select(o => o.Nom));
+            Assert.Contains("Roche", tirage.PKMTypes.Select(o => o.Nom));
+            Assert.Contains("Insecte", tirage.PKMTypes.Select(o => o.Nom));
+            Assert.Contains("Glace", tirage.PKMTypes.Select(o => o.Nom));
+            Assert.Contains("Eau", tirage.PKMTypes.Select(o => o.Nom));
+            Assert.Contains("Normal", tirage.PKMTypes.Select(o => o.Nom));
+            Assert.Contains("Acier", tirage.PKMTypes.Select(o => o.Nom));
         }
     }
 }

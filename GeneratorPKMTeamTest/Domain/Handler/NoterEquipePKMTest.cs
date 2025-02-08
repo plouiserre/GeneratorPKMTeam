@@ -37,7 +37,7 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             starterPKM.RecupererStarter().Returns(new PKM() { Nom = "Carapuce", PKMTypes = new List<string>() { "Eau" } });
             var pKMTypePersistence = Substitute.For<IPKMTypePersistence>();
             pKMTypePersistence.GetPKMDonnees().Returns(_fakeDatas);
-            var pkms = DatasHelperTest.RetournersTousPKM().Take(6).ToList();
+            var pkms = RetournerPKMs();
             var resultatCombatPKMTypes = Substitute.For<IResultatCombatPKMTypes>();
             resultatCombatPKMTypes.NoterResultatTirage(Arg.Any<List<PKMType>>(), Arg.Any<List<PKMType>>(), Arg.Any<List<PKMType>>())
                     .Returns(new ResultatTirage() { ResultatStatus = ResultatTirageStatus, NoteResultatTirage = note });
@@ -47,6 +47,19 @@ namespace GeneratorPKMTeamTest.Domain.Handler
             var tirageResultat = noterTirage.AccepterCetteEquipe(pkms);
 
             Assert.Equal(resultat, tirageResultat);
+        }
+
+        private List<PKM> RetournerPKMs()
+        {
+            var pkms = new List<PKM>();
+            var allPkms = DatasHelperTest.RetournersTousPKM().Take(100).ToList();
+            for (int i = 0; i < allPkms.Count; i++)
+            {
+                int[] idsOK = { 0, 3, 6, 9, 15, 26 };
+                if (idsOK.Contains(i))
+                    pkms.Add(allPkms[i]);
+            }
+            return pkms;
         }
 
         private ResultatTirageStatus DeterminerResultatTirageStatusApartirLabel(string label)

@@ -7,29 +7,32 @@ namespace GeneratorPKMTeam.Domain.Handler.RechercherPKMType
 {
     public class RechercherPKMTypeContres : RechercherPKMType, IRechercherPKMType
     {
-        private List<PKMType> _PKMADefendre;
-        private RechercherPKMTypeFaibles _rechercherPKMTypesFaibles;
+        private List<PKMType> _pKMTypeEquipe;
+        private RechercherPKMTypeDangereux _rechercherPKMTypesDangereux;
 
-        public RechercherPKMTypeContres(List<PKMType> PKMADefendre, RechercherPKMTypeFaibles rechercherPKMTypeFaibles)
+        public RechercherPKMTypeContres(List<PKMType> pKMTypeEquipe, RechercherPKMTypeDangereux rechercherPKMTypeDangereux)
         {
-            _PKMADefendre = PKMADefendre;
-            _rechercherPKMTypesFaibles = rechercherPKMTypeFaibles;
+            _pKMTypeEquipe = pKMTypeEquipe;
+            _rechercherPKMTypesDangereux = rechercherPKMTypeDangereux;
         }
 
-        public List<PKMType> TrouverPKMType(List<PKMType> PKMTypesChoisis)
+        public List<PKMType> TrouverPKMType(List<PKMType> pKMTypesDangereux)
         {
-            var PKMTypesFaibles = _rechercherPKMTypesFaibles.TrouverPKMType(PKMTypesChoisis);
-            foreach (var PKMType in PKMTypesFaibles)
+            var pKMTypesDangereuxNeutralises = new List<PKMType>();
+            var pkmTypesDangereuxEnDifficultes = _rechercherPKMTypesDangereux.TrouverPKMTypeDangereuxPourChaqueType(pKMTypesDangereux);
+            foreach (var pkmTypesAllies in pkmTypesDangereuxEnDifficultes)
             {
-                foreach (var PKMTypeDEF in _PKMADefendre)
+                foreach (var pkmType in _pKMTypeEquipe)
                 {
-                    if (PKMType.Nom == PKMTypeDEF.Nom && !VerifierDoublonPKMTypes(PKMTypeDEF.Nom))
+                    bool dangereuxNeutralise = pkmTypesAllies.Value.Any(o => o.Nom == pkmType.Nom);
+                    if (dangereuxNeutralise)
                     {
-                        _PKMTypesRecherches.Add(PKMType);
+                        pKMTypesDangereuxNeutralises.Add(pkmTypesAllies.Key);
+                        break;
                     }
                 }
             }
-            return _PKMTypesRecherches;
+            return pKMTypesDangereuxNeutralises;
         }
     }
 }
